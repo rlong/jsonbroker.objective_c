@@ -1,0 +1,440 @@
+//  Copyright (c) 2013 Richard Long & HexBeerium
+//
+//  Released under the MIT license ( http://opensource.org/licenses/MIT )
+//
+
+
+#import "JBLog.h"
+#import "JBObjectTracker.h"
+#import "JBSecurityConfiguration.h"
+#import "JBSecurityUtilities.h"
+#import "JBSimpleSecurityAdapter.h"
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+@interface JBSecurityConfiguration () 
+
+
++(JBSecurityConfiguration*)buildTestConfiguration;
+
+
+-(id)initWithIdentifier:(NSString *)identifier configurationService:(JBConfigurationService*)configurationService;
+-(id)initWithValue:(JBJsonObject *)value configurationService:(JBConfigurationService*)configurationService;
+
+
+-(JBJsonObject*)toJsonObject;
+
+#pragma mark fields
+
+
+// identifier
+//NSString* _identifier;
+@property (nonatomic, retain) NSString* identifier;
+//@synthesize identifier = _identifier;
+
+// configurationService
+//ConfigurationService* _configurationService;
+@property (nonatomic, retain) JBConfigurationService* configurationService;
+//@synthesize configurationService = _configurationService;
+
+// clients
+//NSMutableDictionary* _clients;
+@property (nonatomic, retain) NSMutableDictionary* clients;
+//@synthesize clients = _clients;
+
+
+// servers
+//NSMutableDictionary* _servers;
+@property (nonatomic, retain) NSMutableDictionary* servers;
+//@synthesize servers = _servers;
+
+
+
+// registeredSubjects
+//SubjectGroup* _registeredSubjects;
+@property (nonatomic, retain) JBSubjectGroup* registeredSubjects;
+//@synthesize registeredSubjects = _registeredSubjects;
+
+@end 
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+
+@implementation JBSecurityConfiguration
+
+
+
+
+static JBSecurityConfiguration* _test = nil; 
+
+
++(JBSecurityConfiguration*)TEST {
+    
+    if( nil != _test ) { 
+        return _test;
+    }
+    
+    _test = [JBSecurityConfiguration buildTestConfiguration];
+    [_test retain];
+    
+    return _test;
+    
+    
+}
+
+
+
++(JBSecurityConfiguration*)buildTestConfiguration {
+    
+    JBSecurityConfiguration* answer = [[JBSecurityConfiguration alloc] initWithIdentifier:[JBSubject TEST_REALM] configurationService:nil];
+    [answer autorelease];
+    
+    [answer addClient:[JBSubject TEST]];
+    
+    return answer;
+}
+
+
++(JBSecurityConfiguration*)build:(id<JBSecurityAdapter>)securityAdapter configurationService:(JBConfigurationService*)configurationService {
+    
+    JBJsonObject* bundleData = [configurationService getBundle:[JBSimpleSecurityAdapter BUNDLE_NAME]];
+    
+    JBSecurityConfiguration* answer = nil;
+    
+    
+    if( nil != bundleData ) { 
+        if( [bundleData contains:@"identifier"] )  {
+            
+            // vvv pairing in production is setting up the user as 'test' (ref: 477550FB-3656-4014-B4D7-DC49821E0BA6)
+            // see SecurityConfiguration, KeychainSecurityAdapter
+            
+            if( YES ) {
+                
+                NSString* identifier = [bundleData getString:@"identifier"];
+                if( [@"test" isEqualToString:identifier] ) {
+                    Log_warnString( identifier );
+                    
+                    NSString* identifier = [securityAdapter getIdentifier];
+                    Log_debugString( identifier );
+                    
+                    answer = [[JBSecurityConfiguration alloc] initWithIdentifier:identifier configurationService:configurationService];
+                    [answer autorelease];
+                    return answer;
+                }
+                
+            }
+            
+            // ^^^ pairing in production is setting up the user as 'test' (ref: 477550FB-3656-4014-B4D7-DC49821E0BA6)
+            
+            answer = [[JBSecurityConfiguration alloc] initWithValue:bundleData configurationService:configurationService];
+            [answer autorelease];
+            return answer;
+        }
+    }
+    NSString* identifier = [securityAdapter getIdentifier];
+    Log_debugString( identifier );
+    
+    answer = [[JBSecurityConfiguration alloc] initWithIdentifier:identifier configurationService:configurationService];
+    [answer autorelease];
+    
+    return answer;
+    
+}
+
+
+-(void)save { 
+    
+    if( nil == _configurationService ) { 
+        Log_warn(@"nil == _configurationService");
+        return;
+    }
+    
+    JBJsonObject* bundleData = [self toJsonObject];
+    [_configurationService saveBundle:bundleData withName:[JBSimpleSecurityAdapter BUNDLE_NAME]];
+    [_configurationService set_bundle:[JBSimpleSecurityAdapter BUNDLE_NAME] bundle:bundleData];
+    [_configurationService saveAllBundles];
+    
+    
+}
+
+-(void)addSubject:(NSString*)subjectIdentifier password:(NSString*)subjectPassword label:(NSString*)subjectLabel { 
+    
+    JBSubject* client = [[JBSubject alloc] initWithUsername:subjectIdentifier realm:_identifier password:subjectPassword label:subjectLabel];
+    {
+        [_clients setObject:client forKey:subjectIdentifier];        
+    }
+    [client release];
+    
+    
+    JBSubject* server = [[JBSubject alloc] initWithUsername:_identifier realm:subjectIdentifier password:subjectPassword label:subjectLabel];
+    {
+        
+        [_servers setObject:server forKey:subjectIdentifier];
+    }
+    [server release];
+    
+    [self save];
+    
+}
+
+-(void)removeSubject:(NSString*)subjectIdentifier {
+    
+    [_clients removeObjectForKey:subjectIdentifier];
+    [_servers removeObjectForKey:subjectIdentifier];
+    
+    [self save];
+}
+
+
+
+
+-(JBJsonObject*)toJsonObject {
+
+    JBJsonObject* answer = [[JBJsonObject alloc] init];
+    [answer autorelease];
+    
+    [answer setObject:_identifier forKey:@"identifier"];
+    
+    JBJsonArray* subjects = [[JBJsonArray alloc] init];
+    {
+    
+        for( NSString* clientIdentifier in _clients ) { 
+            JBSubject* client = [_clients objectForKey:clientIdentifier];
+            
+            JBJsonObject* subjectData = [[JBJsonObject alloc] init];
+            {
+                [subjectData setObject:[client username] forKey:@"identifier"];
+                [subjectData setObject:[client password] forKey:@"password"];
+                [subjectData setObject:[client label] forKey:@"label"];
+                
+                [subjects add:subjectData];
+            }
+            [subjectData release];
+            
+        }
+        
+        [answer setObject:subjects forKey:@"subjects"];
+    }
+    [subjects release];
+    
+    return answer;
+    
+}
+
+#pragma mark <ClientSecurityConfiguration> implementation
+
+////////////////////////////////////////////////////////////////////////////
+// ClientSecurityConfiguration::create
+
+
+-(void)addServer:(JBSubject*)server { 
+    
+    NSString* subjectIdentifier = [server realm];
+    NSString* subjectPassword = [server password];
+    NSString* subjectLabel = [server label];
+    
+    [self addSubject:subjectIdentifier password:subjectPassword label:subjectLabel];
+    
+}
+
+////////////////////////////////////////////////////////////////////////////
+// ClientSecurityConfiguration::read
+
+-(NSString*)username { 
+    
+    return _identifier;
+}
+
+
+-(BOOL)hasServer:(NSString *)realm {
+    
+    if( nil != [_servers objectForKey:realm] ) {
+        return true;
+    }
+    return false;
+}
+
+//can return nil
+-(JBSubject*)getServer:(NSString *)realm {
+    return [_servers objectForKey:realm];
+}
+
+
+-(void)removeServer:(NSString *)realm {
+    if( nil == [_servers objectForKey:realm] ) {
+        Log_warnFormat(@"nil == [_servers objectForKey:realm]; realm = '%@'", realm );
+    }
+    [self removeSubject:realm];
+}
+
+
+#pragma mark <ServerSecurityConfiguration> implementation
+
+////////////////////////////////////////////////////////////////////////////
+// ServerSecurityConfiguration::create
+
+
+-(void)addClient:(JBSubject*)client { 
+    
+    NSString* subjectIdentifier = [client username];
+    NSString* subjectPassword = [client password];
+    NSString* subjectLabel = [client label];
+    
+    [self addSubject:subjectIdentifier password:subjectPassword label:subjectLabel];
+    
+}
+
+
+////////////////////////////////////////////////////////////////////////////
+// ServerSecurityConfiguration::read 
+
+
+-(NSString*)realm {
+    return _identifier;
+}
+
+
+//can return nil
+-(JBSubject*)getClient:(NSString *)clientUsername {
+    return [_clients objectForKey:clientUsername];
+}
+
+-(BOOL)hasClient:(NSString *)clientUsername {
+    
+    if( nil != [_clients objectForKey:clientUsername] ) {
+        return true;
+    }
+    return false;
+}
+
+
+
+-(NSArray*)getClients {
+    
+    return [_clients allValues];
+    
+}
+
+////////////////////////////////////////////////////////////////////////////
+// ServerSecurityConfiguration::delete 
+
+-(void)removeClient:(NSString*)clientUsername { 
+    
+    [self removeSubject:clientUsername];
+    
+}
+
+
+
+#pragma mark instance lifecycle
+
+
+-(id)initWithIdentifier:(NSString *)identifier configurationService:(JBConfigurationService*)configurationService {
+    
+    
+    JBSecurityConfiguration* answer = [super init];
+    
+    if( nil != answer ) { 
+        
+        [answer setIdentifier:identifier];
+        [answer setConfigurationService:configurationService];
+        
+        answer->_clients = [[NSMutableDictionary alloc] init];
+        answer->_servers = [[NSMutableDictionary alloc] init];
+        
+        
+    }
+    
+    return answer;
+    
+}
+
+
+-(id)initWithValue:(JBJsonObject *)value configurationService:(JBConfigurationService*)configurationService {
+    
+    
+    JBSecurityConfiguration* answer = [super init];
+
+    if( nil != answer ) { 
+        
+        NSString* identifier = [value getString:@"identifier"];
+        [answer setIdentifier:identifier];
+        [answer setConfigurationService:configurationService];
+        
+        answer->_clients = [[NSMutableDictionary alloc] init];
+        answer->_servers = [[NSMutableDictionary alloc] init];
+        
+        {
+            JBJsonArray* subjects = [value getJsonArray:@"subjects"];
+            for( int i = 0, count = [subjects count]; i < count; i++ ) { 
+                JBJsonObject* subjectData = [subjects jsonObjectAtIndex:i];
+                
+                NSString* subjectIdentifier = [subjectData getString:@"identifier"];
+                NSString* subjectPassword = [subjectData getString:@"password"];
+                NSString* subjectLabel = [subjectData getString:@"label"];
+                
+                [answer addSubject:subjectIdentifier password:subjectPassword label:subjectLabel];
+            }
+        }
+    }
+    
+    return answer;
+    
+    
+}
+
+
+-(void)dealloc { 
+    
+    [JBObjectTracker deallocated:self];
+    
+    [self setIdentifier:nil];
+    [self setConfigurationService:nil];
+    [self setClients:nil];
+    [self setServers:nil];
+    
+    [self setRegisteredSubjects:nil];
+    
+    [super dealloc];
+}
+
+#pragma mark fields
+
+
+// identifier
+//NSString* _identifier;
+//@property (nonatomic, retain) NSString* identifier;
+@synthesize identifier = _identifier;
+
+
+// configurationService
+//ConfigurationService* _configurationService;
+//@property (nonatomic, retain) ConfigurationService* configurationService;
+@synthesize configurationService = _configurationService;
+
+
+// clients
+//NSMutableDictionary* _clients;
+//@property (nonatomic, retain) NSMutableDictionary* clients;
+@synthesize clients = _clients;
+
+
+// servers
+//NSMutableDictionary* _servers;
+//@property (nonatomic, retain) NSMutableDictionary* servers;
+@synthesize servers = _servers;
+
+
+
+// registeredSubjects
+//SubjectGroup* _registeredSubjects;
+//@property (nonatomic, retain) SubjectGroup* registeredSubjects;
+@synthesize registeredSubjects = _registeredSubjects;
+
+
+
+@end
