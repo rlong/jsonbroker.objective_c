@@ -25,4 +25,15 @@
 
 
 
+-(void)testGetWifiNetworkName {
+    
+	NSString* wifiNetworkName = [JBNetworkUtilities getWifiNetworkName];
+    Log_debugString( wifiNetworkName );
+    
+	
+}
+
+
+
+
 @end

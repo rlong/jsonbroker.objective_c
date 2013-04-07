@@ -5,7 +5,18 @@
 
 #import <ifaddrs.h>
 #import <sys/socket.h>
-#include <arpa/inet.h> 
+#import <arpa/inet.h>
+
+#if defined(__MAC_OS_X_VERSION_MIN_REQUIRED)
+
+
+#import <CoreWLAN/CoreWLAN.h>
+
+#else
+
+#import <SystemConfiguration/CaptiveNetwork.h>
+
+#endif
 
 #import "JBBaseException.h"
 #import "JBLog.h"
@@ -49,6 +60,7 @@ static bool _loggedDeviceType = false;
 			addressIterator = addressIterator->ifa_next;
 		}
 	} else {
+        
 		NSString* technicalError = [NSString stringWithFormat:@"%s (errno = %d)", strerror(errno), errno];
 		BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
         
@@ -79,7 +91,7 @@ static bool _loggedDeviceType = false;
         
 		wifi = en0;
         
-	} else { // both are NULL ... no WIFI ? WTF !
+	} else { // both are NULL ... no WIFI ?
         
         Log_warn( @"NULL == en1 && NULL != en0. WiFi is not active" );
 		
@@ -108,5 +120,60 @@ static bool _loggedDeviceType = false;
 	
 }
 
+
+// can return nil
++(NSString*)getWifiNetworkName {
+
+    
+#if defined(__MAC_OS_X_VERSION_MIN_REQUIRED)
+    
+    
+
+    /// vvv http://stackoverflow.com/questions/4740932/getting-osx-connected-wi-fi-network-name
+    
+    CWInterface *wirelessInterface = [CWInterface interface];
+    NSString* answer = [wirelessInterface ssid];
+    Log_debugString( answer );
+
+    /// ^^^ http://stackoverflow.com/questions/4740932/getting-osx-connected-wi-fi-network-name
+
+    if( nil != answer ) {
+        return answer;
+    }
+    
+    
+#else
+    
+    // vvv http://stackoverflow.com/questions/5198716/iphone-get-ssid-without-private-library
+
+    NSString* networkInfoKeySSID = (NSString*)kCNNetworkInfoKeySSID;
+
+    NSArray *ifs = (id)CNCopySupportedInterfaces();
+    [ifs autorelease];
+    
+    for (NSString *ifname in ifs) {
+
+        NSDictionary* currentNetworkInfo = (NSDictionary*)CNCopyCurrentNetworkInfo((CFStringRef)ifname);
+        [currentNetworkInfo autorelease];
+
+        NSString* answer = [currentNetworkInfo objectForKey:networkInfoKeySSID];
+        if( nil != answer ) {
+            Log_debugString( answer );
+            return answer;
+        }
+
+    }
+    
+    
+    // ^^^ http://stackoverflow.com/questions/5198716/iphone-get-ssid-without-private-library
+
+    
+#endif
+
+
+    return nil;
+
+    
+}
 
 @end

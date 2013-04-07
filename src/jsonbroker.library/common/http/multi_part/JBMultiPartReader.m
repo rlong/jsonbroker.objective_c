@@ -335,7 +335,7 @@ const UInt8 _CARRAIGE_RETURN_AND_NEWLINE[2] = {0x0d,0x0a};
         return [self tryProcessPart:partHandler detector:detector];
     }
     @catch (BaseException *exception) {
-        [partHandler handleException:exception];
+        [partHandler handleFailure:exception];
         @throw exception;
     }
     

@@ -391,7 +391,7 @@ static NSMutableArray* _httpProcessors = nil;
         {
             int postFlags = fcntl([socket fileDescriptor], F_GETFL, 0);
             if( preFlags != postFlags ) {
-                Log_warnFormat( @"preFlags != postFlags; preFlags = %d; postFlags = %d; will reset O_NONBLOCK if it has been set", preFlags, postFlags);
+                Log_debugFormat( @"preFlags != postFlags; preFlags = %d; postFlags = %d; will reset O_NONBLOCK if it has been set", preFlags, postFlags);
                 if( O_NONBLOCK == ( postFlags & O_NONBLOCK ) ) {
                     postFlags = fcntl([socket fileDescriptor], F_SETFL, postFlags & (~O_NONBLOCK));
                 }

@@ -4,10 +4,10 @@
 //
 
 
-#import "JBHttpCall.h"
+#import "JBBaseException.h"
+#import "JBHttpAsyncCall.h"
 #import "JBLog.h"
 #import "JBObjectTracker.h"
-
 
 
 #define PENDING_COMPLETION 100
@@ -18,24 +18,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-@interface JBHttpCall ()
+@interface JBHttpAsyncCall ()
 
 
-// started
-//NSDate* _started;
-@property (nonatomic, retain) NSDate* started;
-//@synthesize started = _started;
-
-// url
-//NSString* _url;
-@property (nonatomic, retain) NSString* url;
-//@synthesize url = _url;
-
-
-// conditionLock
-//NSConditionLock* _conditionLock;
-@property (nonatomic, retain) NSConditionLock* conditionLock;
-//@synthesize conditionLock = _conditionLock;
+// delegate
+//id<JBHttpAsyncResponseHandler> _delegate;
+@property (nonatomic, assign) id<JBHttpAsyncResponseHandler> delegate;
+//@synthesize delegate = _delegate;
 
 
 // urlConnection
@@ -43,64 +32,48 @@
 @property (nonatomic, retain) NSURLConnection* urlConnection;
 //@synthesize urlConnection = _urlConnection;
 
-// request
-//NSURLRequest* _request;
-@property (nonatomic, retain) NSURLRequest* request;
-//@synthesize request = _request;
+// conditionLock
+//NSConditionLock* _conditionLock;
+@property (nonatomic, retain) NSConditionLock* conditionLock;
+//@synthesize conditionLock = _conditionLock;
 
 
-@end 
+// error
+//NSError* _error;
+@property (nonatomic, retain) NSError* error;
+//@synthesize error = _error;
+
+
+@end
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark -
 
-@implementation JBHttpCall
+@implementation JBHttpAsyncCall
 
 
 -(void)start:(NSRunLoop*)runLoop {
     
     [_urlConnection scheduleInRunLoop:runLoop forMode:NSDefaultRunLoopMode];
-    
-    [self setStarted:[NSDate date]];
     [_urlConnection start];
     
     
 }
 
 
+-(void)cancel {
+    
+    Log_info(@"[NSURLConnection cancel] requested");
+    
+    [_delegate onResponseCancelled];
+    [_urlConnection cancel];
+    [_conditionLock lock];
+    [_conditionLock unlockWithCondition:COMPLETED];
 
--(void)httpCallCompleted {
-    
-    
-    NSString* httpStatus = @"-";
-    if( nil != _response && [_response isKindOfClass:[NSHTTPURLResponse class]] ) { 
-        
-        NSHTTPURLResponse* httpUrlResponse = (NSHTTPURLResponse*)_response;
-        httpStatus = [NSString stringWithFormat:@"%ld", (long)[httpUrlResponse statusCode]];
-    }
-    
-    NSString* contentLength = @"-";
-    if( nil != _responseData ) { 
-        contentLength = [NSString stringWithFormat:@"%ld", (long)[_responseData length]];
-        //Log_debugData( _responseData );
-    }
-    
-    NSTimeInterval timeTaken;
-    {
-        NSDate* now = [NSDate date];
-        NSTimeInterval nowTimeIntervalSince1970 = [now timeIntervalSince1970];
-        NSTimeInterval startedTimeIntervalSince1970 = [_started timeIntervalSince1970];
-        timeTaken = nowTimeIntervalSince1970 - startedTimeIntervalSince1970;
-        
-    }
-    
-    NSString* logMessage = [NSString stringWithFormat:@"%@ %@ %@ %f", httpStatus, _url, contentLength, timeTaken];
-    Log_info( logMessage );
     
 }
-
 
 
 
@@ -120,6 +93,7 @@
 - (void)connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
     
     Log_enteredMethod();
+    
 }
 
 //This method gives the delegate the opportunity to determine the course of action taken for the challenge: provide credentials, continue without providing credentials, or cancel the authentication challenge and the download.
@@ -138,6 +112,8 @@
     
     Log_enteredMethod();
     
+
+    
     [[challenge sender] continueWithoutCredentialForAuthenticationChallenge:challenge];
     //[[challenge sender] cancelAuthenticationChallenge:challenge];
 }
@@ -146,6 +122,8 @@
 //This method is called before any attempt to authenticate is made. By returning NO, the delegate tells the connection not to consult the credential storage and makes itself responsible for providing credentials for any authentication challenges. Not implementing this method is the same as returning YES. The delegate is free to consult the credential storage itself when it receives a connection:didReceiveAuthenticationChallenge: message.
 //
 - (BOOL)connectionShouldUseCredentialStorage:(NSURLConnection *)connection {
+    
+
     return NO;
 }
 
@@ -155,20 +133,38 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
 
-    [self setResponse:response];
+
+    if( ![response isKindOfClass:[NSHTTPURLResponse class]] ) {
+        Log_warnFormat( @"![response isKindOfClass:[NSHTTPURLResponse class]]; NSStringFromClass([NSHTTPURLResponse class]) = %@", NSStringFromClass([NSHTTPURLResponse class]));
+        return;
+    }
+
+    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+    
+    NSDictionary* allHeaderFields = [httpResponse allHeaderFields];
+    
+    for( NSString* headerName in allHeaderFields ) {
+        
+        NSString* headerValue = [allHeaderFields valueForKey:headerName];
+        
+        headerName = [headerName lowercaseString]; // http headers are case insensitive
+        [_delegate onResponseHeaderWithName:headerName value:headerValue];
+    }
 
 }
 
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     
-    Log_debugInt( [data length] );
-    if( nil == _responseData ) { 
-        _responseData = [[NSMutableData alloc] initWithData:data];
-        return;
-    }
-    [_responseData appendData:data];
+
+    if( !_onResponseEntityStartedCalled ) {
     
+        [_delegate onResponseEntityStarted];
+        _onResponseEntityStartedCalled = true;
+        
+    }
+    
+    [_delegate onResponseBytes:[data bytes] length:[data length]];
     
 }
 
@@ -176,48 +172,73 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
 
-    [self httpCallCompleted];
+    Log_enteredMethod();
+
+    [_delegate onResponseEntityCompleted];
+    
+    
     [_conditionLock lock];
     [_conditionLock unlockWithCondition:COMPLETED];
-    
+
 
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-
-    [self setError:error];
     
-    [self httpCallCompleted];
+    Log_enteredMethod();
+    
+    [self setError:error];
+    [_delegate onResponseError:error];
+    
     [_conditionLock lock];
     [_conditionLock unlockWithCondition:COMPLETED];
 
+
 }
 
+-(void)waitUntilCompleted {
+
+    Log_debug( @"waiting ...");
+
+    @try {
+        [_conditionLock lockWhenCondition:COMPLETED];
+        [_conditionLock unlock];
+
+        if( nil != _error ) {
+            
+            NSString* faultString = [NSString stringWithFormat:@"%@ (%@)", [_error localizedDescription], [_error domain]];
+            @throw [JBBaseException baseExceptionWithOriginator:self line:__LINE__ faultString:faultString];
+            
+        }
+
+    }
+    @finally {
+        
+        Log_debug( @"completed");
+        
+    }
+    
+    
+}
 
 
 
 #pragma mark -
+#pragma mark instance lifecycle
 
--(void)waitUntilCompleted {
+-(id)initWithRequest:(NSURLRequest*)request delegate:(id<JBHttpAsyncResponseHandler>)delegate {
     
-    [_conditionLock lockWhenCondition:COMPLETED];
-    [_conditionLock unlock];
-    
-}
-
-#pragma mark instance lifecycle 
-
--(id)initWithRequest:(NSURLRequest*)request { 
-    
-    JBHttpCall* answer = [super init];
+    JBHttpAsyncCall* answer = [super init];
     
     if( nil != answer ) { 
         
         [JBObjectTracker allocated:answer];
         
-        [answer setUrl:[[request URL] absoluteString]];
-        answer->_conditionLock = [[NSConditionLock alloc] initWithCondition:PENDING_COMPLETION]; 
+        [answer setDelegate:delegate];
         answer->_urlConnection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:FALSE];
+        answer->_conditionLock = [[NSConditionLock alloc] initWithCondition:PENDING_COMPLETION];
+
+        answer->_onResponseEntityStartedCalled = false;
     }
     
 
@@ -228,15 +249,11 @@
     
     [JBObjectTracker deallocated:self];
     
-    [self setStarted:nil];
-    [self setUrl:nil];
+    
+    [self setDelegate:nil];
+    [self setUrlConnection:nil];
     
     [self setConditionLock:nil];
-    [self setUrlConnection:nil];
-    [self setRequest:nil];    
-    
-    [self setResponse:nil];
-    [self setResponseData:nil];
     [self setError:nil];
     
     [super dealloc];
@@ -246,21 +263,10 @@
 #pragma mark fields
 
 
-// started
-//NSDate* _started;
-//@property (nonatomic, retain) NSDate* started;
-@synthesize started = _started;
-
-// url
-//NSString* _url;
-//@property (nonatomic, retain) NSString* url;
-@synthesize url = _url;
-
-
-// conditionLock
-//NSConditionLock* _conditionLock;
-//@property (nonatomic, retain) NSConditionLock* conditionLock;
-@synthesize conditionLock = _conditionLock;
+// delegate
+//id<JBHttpAsyncResponseHandler> _delegate;
+//@property (nonatomic, assign) id<JBHttpAsyncResponseHandler> delegate;
+@synthesize delegate = _delegate;
 
 
 // urlConnection
@@ -268,28 +274,6 @@
 //@property (nonatomic, retain) NSURLConnection* urlConnection;
 @synthesize urlConnection = _urlConnection;
 
-
-// request
-//NSURLRequest* _request;
-//@property (nonatomic, retain) NSURLRequest* request;
-@synthesize request = _request;
-
-
-    
-// response
-//NSURLResponse* _response;
-//@property (nonatomic, retain) NSURLResponse* response;
-@synthesize response = _response;
-     
-// responseData
-//NSMutableData* _responseData;
-//@property (nonatomic, retain) NSMutableData* responseData;
-@synthesize responseData = _responseData;
-
-// error
-//NSError* _error;
-//@property (nonatomic, retain) NSError* error;
-@synthesize error = _error;
 
 
 @end

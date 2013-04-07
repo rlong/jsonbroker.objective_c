@@ -6,7 +6,9 @@
 
 #import <Foundation/Foundation.h>
 
+#import "JBHttpAsyncCall.h"
 #import "JBHttpCall.h"
+#import "JBHttpAsyncResponseHandler.h"
 
 @interface JBHttpRunLoop : NSObject {
 
@@ -29,5 +31,7 @@
 +(JBHttpRunLoop*)getInstance;
 
 -(NSData *)sendSynchronousRequest:(NSURLRequest *)request returningResponse:(NSURLResponse **)response error:(NSError **)error;
+
+-(void)startAsynchronousRequest:(JBHttpAsyncCall *)asyncCall;
 
 @end

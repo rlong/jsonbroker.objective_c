@@ -8,5 +8,6 @@
 
 @interface JBOutputStreamHelper : NSObject
 
++(long)writeTo:(NSOutputStream*)outputStream buffer:(const uint8_t *)buffer maxLength:(NSUInteger)length;
 
 @end

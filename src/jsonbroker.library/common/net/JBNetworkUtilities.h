@@ -14,5 +14,7 @@
 
 +(JBIPAddress*)getWifiIpAddress;
 
+// can return nil
++(NSString*)getWifiNetworkName;
 
 @end

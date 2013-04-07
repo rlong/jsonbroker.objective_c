@@ -15,6 +15,13 @@
 	//@property (nonatomic, retain) NetworkHost* networkHost;
 	//@synthesize networkHost = _networkHost;
     
+    
+    // extension
+    id _extension;
+    //@property (nonatomic, retain) id extension;
+    //@synthesize extension = _extension;
+
+    
 	
 }
 
@@ -51,6 +58,12 @@
 //NSString* _toString;
 @property (nonatomic, readonly, getter=toString) NSString* toString;
 //@synthesize toString = _toString;
+
+
+// extension
+//id _extension;
+@property (nonatomic, retain) id extension;
+//@synthesize extension = _extension;
 
 
 @end

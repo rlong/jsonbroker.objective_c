@@ -38,6 +38,8 @@
 
 -(void)addService:(id<JBDescribedService>)service {
     
+    Log_debugString( [[service serviceDescription] serviceName] );
+
     [_servicesRegistery addService:service];
     
 }

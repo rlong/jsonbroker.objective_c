@@ -30,6 +30,9 @@
 // can return 'nil' if the bundle is not on disk, or there is a problem reading it
 -(JBJsonObject*)getBundle:(NSString*)bundleName;
 
+// will return 'defaultValue' if the bundle is not on disk, or there is a problem reading it
+-(JBJsonObject*)getBundle:(NSString*)bundleName defaultValue:(JBJsonObject*)defaultValue;
+
 -(void)saveBundle:(JBJsonObject*)bundle withName:(NSString*)bundleName;
 
 -(void)set_bundle:(NSString*)bundleName bundle:(JBJsonObject*)bundle;

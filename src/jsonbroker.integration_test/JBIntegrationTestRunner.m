@@ -38,19 +38,19 @@
         
     }
     
-    if( YES ) {
+    if( NO ) {
         
         [suite addTest: [SenTestSuite testSuiteForTestCaseClass:[JBTestServiceIntegrationTest class]]];
         
     }
     
-    if( NO ) {
+    if( YES ) {
         
-        suite= [SenTestSuite testSuiteWithName:@"TestServiceIntegrationTest"];
+        suite= [SenTestSuite testSuiteWithName:@"JBIntegrationTestRunner"];
         
         id test;
         {
-            test = [JBTestServiceIntegrationTest testCaseWithSelector:@selector(testPing)];
+            test = [JBNetworkUtilitiesIntegrationTest testCaseWithSelector:@selector(testGetWifiNetworkName)];
         }
         
         

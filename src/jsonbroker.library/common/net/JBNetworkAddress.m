@@ -123,6 +123,8 @@
 	[JBObjectTracker deallocated:self];
 	
     [self setNetworkHost:nil];
+    [self setExtension:nil];
+
 	
 	[super dealloc];
 }
@@ -135,6 +137,10 @@
 //@property (nonatomic, retain) NetworkHost* networkHost;
 @synthesize networkHost = _networkHost;
 
+// extension
+//id _extension;
+//@property (nonatomic, retain) id extension;
+@synthesize extension = _extension;
 
 
 

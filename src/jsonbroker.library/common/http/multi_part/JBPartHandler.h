@@ -12,7 +12,7 @@
 -(void)handleHeaderWithName:(NSString*)name value:(NSString*)value;
 -(void)handleBytes:(const UInt8*)bytes offset:(NSUInteger)offset length:(NSUInteger)length;
 
--(void)handleException:(BaseException*)e;
+-(void)handleFailure:(BaseException*)e;
 
 -(void)partCompleted;
 

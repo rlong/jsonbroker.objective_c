@@ -4,6 +4,7 @@
 //
 
 
+#import "JBHttpAsyncCall.h"
 #import "JBHttpCall.h"
 #import "JBHttpRunLoop.h"
 #import "JBLog.h"
@@ -105,6 +106,12 @@ static JBHttpRunLoop* _instance = nil;
     return answer;
 
 }
+
+-(void)startAsynchronousRequest:(JBHttpAsyncCall *)asyncCall {
+    
+    [asyncCall start:_runLoop];
+}
+
 
 - (void)timerCallback:(NSTimer*)theTimer {
 	

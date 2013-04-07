@@ -14,6 +14,16 @@
 		AE088871152D1D4A002FB90D /* JBSubject.h in Headers */ = {isa = PBXBuildFile; fileRef = AE088868152D1D4A002FB90D /* JBSubject.h */; };
 		AE088872152D1D4A002FB90D /* JBSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = AE088869152D1D4A002FB90D /* JBSubject.m */; };
 		AE088873152D1D4A002FB90D /* JBSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = AE088869152D1D4A002FB90D /* JBSubject.m */; };
+		AE0AD819170D506900D0174A /* JBDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0AD817170D506900D0174A /* JBDefaults.h */; };
+		AE0AD81A170D506900D0174A /* JBDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0AD817170D506900D0174A /* JBDefaults.h */; };
+		AE0AD81B170D506900D0174A /* JBDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0AD818170D506900D0174A /* JBDefaults.m */; };
+		AE0AD81C170D506900D0174A /* JBDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0AD818170D506900D0174A /* JBDefaults.m */; };
+		AE0AD81E170D6E1600D0174A /* JBHttpAsyncResponseHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0AD81D170D6E1500D0174A /* JBHttpAsyncResponseHandler.h */; };
+		AE0AD81F170D6E1600D0174A /* JBHttpAsyncResponseHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0AD81D170D6E1500D0174A /* JBHttpAsyncResponseHandler.h */; };
+		AE0AD822170D6EF500D0174A /* JBHttpAsyncCall.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0AD820170D6EF400D0174A /* JBHttpAsyncCall.h */; };
+		AE0AD823170D6EF500D0174A /* JBHttpAsyncCall.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0AD820170D6EF400D0174A /* JBHttpAsyncCall.h */; };
+		AE0AD824170D6EF500D0174A /* JBHttpAsyncCall.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0AD821170D6EF400D0174A /* JBHttpAsyncCall.m */; };
+		AE0AD825170D6EF500D0174A /* JBHttpAsyncCall.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0AD821170D6EF400D0174A /* JBHttpAsyncCall.m */; };
 		AE0F3D4F152975C500B9D13D /* JBSecurityConfiguration_Generated.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0F3D4B152975C500B9D13D /* JBSecurityConfiguration_Generated.h */; };
 		AE0F3D50152975C500B9D13D /* JBSecurityConfiguration_Generated.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0F3D4B152975C500B9D13D /* JBSecurityConfiguration_Generated.h */; };
 		AE0F3D51152975C500B9D13D /* JBSecurityConfiguration_Generated.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3D4C152975C500B9D13D /* JBSecurityConfiguration_Generated.m */; };
@@ -22,16 +32,6 @@
 		AE0F3D54152975C500B9D13D /* JBSecurityConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0F3D4D152975C500B9D13D /* JBSecurityConfiguration.h */; };
 		AE0F3D55152975C500B9D13D /* JBSecurityConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3D4E152975C500B9D13D /* JBSecurityConfiguration.m */; };
 		AE0F3D56152975C500B9D13D /* JBSecurityConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3D4E152975C500B9D13D /* JBSecurityConfiguration.m */; };
-		AE105E35146660FB00AA500D /* JBGethostbyaddrRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A91A114640A39006037B8 /* JBGethostbyaddrRequest.h */; };
-		AE105E36146660FB00AA500D /* JBGethostbyaddrRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A91A214640A39006037B8 /* JBGethostbyaddrRequest.m */; };
-		AE105E39146660FB00AA500D /* JBHostName.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A91A514640A39006037B8 /* JBHostName.h */; };
-		AE105E3A146660FB00AA500D /* JBHostName.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A91A614640A39006037B8 /* JBHostName.m */; };
-		AE105E3B146660FB00AA500D /* JBIPAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A91A714640A39006037B8 /* JBIPAddress.h */; };
-		AE105E3C146660FB00AA500D /* JBIPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A91A814640A39006037B8 /* JBIPAddress.m */; };
-		AE105E3D146660FB00AA500D /* JBNetworkUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A91A914640A39006037B8 /* JBNetworkUtilities.h */; };
-		AE105E3E146660FB00AA500D /* JBNetworkUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A91AA14640A39006037B8 /* JBNetworkUtilities.m */; };
-		AE105E43146660FB00AA500D /* JBNetworkAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A91AF14640A39006037B8 /* JBNetworkAddress.h */; };
-		AE105E44146660FB00AA500D /* JBNetworkAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A91B014640A39006037B8 /* JBNetworkAddress.m */; };
 		AE105E6F1466624A00AA500D /* JBBrokerMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A91DC14640A39006037B8 /* JBBrokerMessage.h */; };
 		AE105E701466624A00AA500D /* JBBrokerMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A91DD14640A39006037B8 /* JBBrokerMessage.m */; };
 		AE105E711466624A00AA500D /* JBBrokerMessageType.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A91DE14640A39006037B8 /* JBBrokerMessageType.h */; };
@@ -176,28 +176,8 @@
 		AE39977914BAFEA500EDE2CA /* JBBrokerJob.m in Sources */ = {isa = PBXBuildFile; fileRef = AE39977614BAFEA400EDE2CA /* JBBrokerJob.m */; };
 		AE39977A14BAFEA500EDE2CA /* JBBrokerJob.m in Sources */ = {isa = PBXBuildFile; fileRef = AE39977614BAFEA400EDE2CA /* JBBrokerJob.m */; };
 		AE3F9D6D16BE207F00ADF5D2 /* JBDateTimeUtilitiesUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8B9A3A1551FC9D00F02F33 /* JBDateTimeUtilitiesUnitTest.m */; };
-		AE404438149B1F840049774A /* JBNetworkAddress_Generated.h in Headers */ = {isa = PBXBuildFile; fileRef = AE404436149B1F840049774A /* JBNetworkAddress_Generated.h */; };
-		AE404439149B1F840049774A /* JBNetworkAddress_Generated.h in Headers */ = {isa = PBXBuildFile; fileRef = AE404436149B1F840049774A /* JBNetworkAddress_Generated.h */; };
-		AE40443A149B1F840049774A /* JBNetworkAddress_Generated.m in Sources */ = {isa = PBXBuildFile; fileRef = AE404437149B1F840049774A /* JBNetworkAddress_Generated.m */; };
-		AE40443B149B1F840049774A /* JBNetworkAddress_Generated.m in Sources */ = {isa = PBXBuildFile; fileRef = AE404437149B1F840049774A /* JBNetworkAddress_Generated.m */; };
-		AE40443F149B25C90049774A /* JBHostName_Generated.h in Headers */ = {isa = PBXBuildFile; fileRef = AE40443D149B25C90049774A /* JBHostName_Generated.h */; };
-		AE404440149B25C90049774A /* JBHostName_Generated.h in Headers */ = {isa = PBXBuildFile; fileRef = AE40443D149B25C90049774A /* JBHostName_Generated.h */; };
-		AE404441149B25C90049774A /* JBHostName_Generated.m in Sources */ = {isa = PBXBuildFile; fileRef = AE40443E149B25C90049774A /* JBHostName_Generated.m */; };
-		AE404442149B25C90049774A /* JBHostName_Generated.m in Sources */ = {isa = PBXBuildFile; fileRef = AE40443E149B25C90049774A /* JBHostName_Generated.m */; };
 		AE42BE46147FB5C1000FC3A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE8A9169146408C3006037B8 /* Cocoa.framework */; };
 		AE42BE4C147FB5C1000FC3A4 /* jsonbroker_library_osx.m in Sources */ = {isa = PBXBuildFile; fileRef = AE42BE4B147FB5C1000FC3A4 /* jsonbroker_library_osx.m */; };
-		AE42BE5C147FB5FC000FC3A4 /* JBGethostbyaddrRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A91A114640A39006037B8 /* JBGethostbyaddrRequest.h */; };
-		AE42BE5D147FB5FC000FC3A4 /* JBGethostbyaddrRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A91A214640A39006037B8 /* JBGethostbyaddrRequest.m */; };
-		AE42BE5E147FB601000FC3A4 /* JBHostName.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A91A514640A39006037B8 /* JBHostName.h */; };
-		AE42BE5F147FB601000FC3A4 /* JBHostName.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A91A614640A39006037B8 /* JBHostName.m */; };
-		AE42BE60147FB601000FC3A4 /* JBIPAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A91A714640A39006037B8 /* JBIPAddress.h */; };
-		AE42BE61147FB601000FC3A4 /* JBIPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A91A814640A39006037B8 /* JBIPAddress.m */; };
-		AE42BE62147FB601000FC3A4 /* JBNetworkUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A91A914640A39006037B8 /* JBNetworkUtilities.h */; };
-		AE42BE63147FB601000FC3A4 /* JBNetworkUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A91AA14640A39006037B8 /* JBNetworkUtilities.m */; };
-		AE42BE64147FB60B000FC3A4 /* JBNetworkAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A91AF14640A39006037B8 /* JBNetworkAddress.h */; };
-		AE42BE65147FB60B000FC3A4 /* JBNetworkAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A91B014640A39006037B8 /* JBNetworkAddress.m */; };
-		AE42BE66147FB60B000FC3A4 /* JBNetworkHost.h in Headers */ = {isa = PBXBuildFile; fileRef = AE2719EF1469D8FD00C1E30D /* JBNetworkHost.h */; };
-		AE42BE67147FB60B000FC3A4 /* JBNetworkHost.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2719F01469D8FD00C1E30D /* JBNetworkHost.m */; };
 		AE42BE7B147FB63D000FC3A4 /* JBWorkQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6884EB1469EBD4000E8466 /* JBWorkQueue.h */; };
 		AE42BE7C147FB63D000FC3A4 /* JBWorkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6884EC1469EBD4000E8466 /* JBWorkQueue.m */; };
 		AE42BE7E147FB63D000FC3A4 /* JBWorker.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6884F41469EC1A000E8466 /* JBWorker.h */; };
@@ -288,7 +268,6 @@
 		AE66BB4514CD268B00ACD757 /* JBTestProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = AE66BB4214CD268B00ACD757 /* JBTestProxy.h */; };
 		AE66BB4614CD268B00ACD757 /* JBTestProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE66BB4314CD268B00ACD757 /* JBTestProxy.m */; };
 		AE66BB4714CD268B00ACD757 /* JBTestProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE66BB4314CD268B00ACD757 /* JBTestProxy.m */; };
-		AE6884CE1469DAFA000E8466 /* JBNetworkHost.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2719F01469D8FD00C1E30D /* JBNetworkHost.m */; };
 		AE6884EE1469EBD4000E8466 /* JBWorkQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6884EB1469EBD4000E8466 /* JBWorkQueue.h */; };
 		AE6884F01469EBD4000E8466 /* JBWorkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6884EC1469EBD4000E8466 /* JBWorkQueue.m */; };
 		AE6884F71469EC1B000E8466 /* JBWorker.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6884F41469EC1A000E8466 /* JBWorker.h */; };
@@ -445,8 +424,6 @@
 		AE9E3E5E1653404F00A5E110 /* JBLogHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AE9E3E5B1653404E00A5E110 /* JBLogHelper.h */; };
 		AE9E3E5F1653404F00A5E110 /* JBLogHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9E3E5C1653404F00A5E110 /* JBLogHelper.m */; };
 		AE9E3E601653404F00A5E110 /* JBLogHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9E3E5C1653404F00A5E110 /* JBLogHelper.m */; };
-		AEADB51816E5A3D60017C33E /* JBGethostbyaddrRequestIntegrationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A91A414640A39006037B8 /* JBGethostbyaddrRequestIntegrationTest.m */; };
-		AEADB51916E5A7200017C33E /* JBNetworkUtilitiesIntegrationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A91AC14640A39006037B8 /* JBNetworkUtilitiesIntegrationTest.m */; };
 		AEADB51B16E5B5E00017C33E /* JBJsonDocumentHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AEADB51A16E5B5E00017C33E /* JBJsonDocumentHandler.h */; };
 		AEADB51C16E5B5E00017C33E /* JBJsonDocumentHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AEADB51A16E5B5E00017C33E /* JBJsonDocumentHandler.h */; };
 		AEADB51F16E5B7930017C33E /* JBDefaultJsonHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AEADB51D16E5B7930017C33E /* JBDefaultJsonHandler.h */; };
@@ -461,6 +438,45 @@
 		AEADB52C16E5C6700017C33E /* JBJsonWalker.h in Headers */ = {isa = PBXBuildFile; fileRef = AEADB52916E5C66F0017C33E /* JBJsonWalker.h */; };
 		AEADB52D16E5C6700017C33E /* JBJsonWalker.m in Sources */ = {isa = PBXBuildFile; fileRef = AEADB52A16E5C6700017C33E /* JBJsonWalker.m */; };
 		AEADB52E16E5C6700017C33E /* JBJsonWalker.m in Sources */ = {isa = PBXBuildFile; fileRef = AEADB52A16E5C6700017C33E /* JBJsonWalker.m */; };
+		AEAE44CB170E744500D047DA /* JBGethostbyaddrRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44B7170E744500D047DA /* JBGethostbyaddrRequest.h */; };
+		AEAE44CC170E744500D047DA /* JBGethostbyaddrRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44B7170E744500D047DA /* JBGethostbyaddrRequest.h */; };
+		AEAE44CD170E744500D047DA /* JBGethostbyaddrRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE44B8170E744500D047DA /* JBGethostbyaddrRequest.m */; };
+		AEAE44CE170E744500D047DA /* JBGethostbyaddrRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE44B8170E744500D047DA /* JBGethostbyaddrRequest.m */; };
+		AEAE44CF170E744500D047DA /* JBGethostbyaddrRequestIntegrationTest.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44B9170E744500D047DA /* JBGethostbyaddrRequestIntegrationTest.h */; };
+		AEAE44D0170E744500D047DA /* JBGethostbyaddrRequestIntegrationTest.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44B9170E744500D047DA /* JBGethostbyaddrRequestIntegrationTest.h */; };
+		AEAE44D3170E744500D047DA /* JBHostName.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44BB170E744500D047DA /* JBHostName.h */; };
+		AEAE44D4170E744500D047DA /* JBHostName.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44BB170E744500D047DA /* JBHostName.h */; };
+		AEAE44D5170E744500D047DA /* JBHostName.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE44BC170E744500D047DA /* JBHostName.m */; };
+		AEAE44D6170E744500D047DA /* JBHostName.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE44BC170E744500D047DA /* JBHostName.m */; };
+		AEAE44D7170E744500D047DA /* JBHostName_Generated.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44BD170E744500D047DA /* JBHostName_Generated.h */; };
+		AEAE44D8170E744500D047DA /* JBHostName_Generated.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44BD170E744500D047DA /* JBHostName_Generated.h */; };
+		AEAE44D9170E744500D047DA /* JBHostName_Generated.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE44BE170E744500D047DA /* JBHostName_Generated.m */; };
+		AEAE44DA170E744500D047DA /* JBHostName_Generated.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE44BE170E744500D047DA /* JBHostName_Generated.m */; };
+		AEAE44DB170E744500D047DA /* JBIPAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44BF170E744500D047DA /* JBIPAddress.h */; };
+		AEAE44DC170E744500D047DA /* JBIPAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44BF170E744500D047DA /* JBIPAddress.h */; };
+		AEAE44DD170E744500D047DA /* JBIPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE44C0170E744500D047DA /* JBIPAddress.m */; };
+		AEAE44DE170E744500D047DA /* JBIPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE44C0170E744500D047DA /* JBIPAddress.m */; };
+		AEAE44DF170E744500D047DA /* JBNetworkAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44C1170E744500D047DA /* JBNetworkAddress.h */; };
+		AEAE44E0170E744500D047DA /* JBNetworkAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44C1170E744500D047DA /* JBNetworkAddress.h */; };
+		AEAE44E1170E744500D047DA /* JBNetworkAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE44C2170E744500D047DA /* JBNetworkAddress.m */; };
+		AEAE44E2170E744500D047DA /* JBNetworkAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE44C2170E744500D047DA /* JBNetworkAddress.m */; };
+		AEAE44E3170E744500D047DA /* JBNetworkAddress_Generated.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44C3170E744500D047DA /* JBNetworkAddress_Generated.h */; };
+		AEAE44E4170E744500D047DA /* JBNetworkAddress_Generated.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44C3170E744500D047DA /* JBNetworkAddress_Generated.h */; };
+		AEAE44E5170E744500D047DA /* JBNetworkAddress_Generated.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE44C4170E744500D047DA /* JBNetworkAddress_Generated.m */; };
+		AEAE44E6170E744500D047DA /* JBNetworkAddress_Generated.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE44C4170E744500D047DA /* JBNetworkAddress_Generated.m */; };
+		AEAE44E7170E744500D047DA /* JBNetworkHost.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44C5170E744500D047DA /* JBNetworkHost.h */; };
+		AEAE44E8170E744500D047DA /* JBNetworkHost.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44C5170E744500D047DA /* JBNetworkHost.h */; };
+		AEAE44E9170E744500D047DA /* JBNetworkHost.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE44C6170E744500D047DA /* JBNetworkHost.m */; };
+		AEAE44EA170E744500D047DA /* JBNetworkHost.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE44C6170E744500D047DA /* JBNetworkHost.m */; };
+		AEAE44EB170E744500D047DA /* JBNetworkUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44C7170E744500D047DA /* JBNetworkUtilities.h */; };
+		AEAE44EC170E744500D047DA /* JBNetworkUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44C7170E744500D047DA /* JBNetworkUtilities.h */; };
+		AEAE44ED170E744500D047DA /* JBNetworkUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE44C8170E744500D047DA /* JBNetworkUtilities.m */; };
+		AEAE44EE170E744500D047DA /* JBNetworkUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE44C8170E744500D047DA /* JBNetworkUtilities.m */; };
+		AEAE44EF170E744500D047DA /* JBNetworkUtilitiesIntegrationTest.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44C9170E744500D047DA /* JBNetworkUtilitiesIntegrationTest.h */; };
+		AEAE44F0170E744500D047DA /* JBNetworkUtilitiesIntegrationTest.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAE44C9170E744500D047DA /* JBNetworkUtilitiesIntegrationTest.h */; };
+		AEAE44F3170E744C00D047DA /* JBGethostbyaddrRequestIntegrationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE44BA170E744500D047DA /* JBGethostbyaddrRequestIntegrationTest.m */; };
+		AEAE44F4170E745500D047DA /* JBNetworkUtilitiesIntegrationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE44CA170E744500D047DA /* JBNetworkUtilitiesIntegrationTest.m */; };
+		AEAE44F6170E7D2400D047DA /* CoreWLAN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEAE44F5170E7D2400D047DA /* CoreWLAN.framework */; };
 		AEB07BF51511847B00E928D4 /* JBTestServiceIntegrationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB07BF41511847A00E928D4 /* JBTestServiceIntegrationTest.m */; };
 		AEB69DE6157F60130051B15D /* JBFaultSerializerUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB69DE5157F60130051B15D /* JBFaultSerializerUnitTest.m */; };
 		AEB7D2A4157902A3000BF161 /* JBTimeUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB7D2A2157902A3000BF161 /* JBTimeUtilities.h */; };
@@ -630,6 +646,11 @@
 		AE06F0F2167EE34300950AF8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AE088868152D1D4A002FB90D /* JBSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBSubject.h; sourceTree = "<group>"; };
 		AE088869152D1D4A002FB90D /* JBSubject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBSubject.m; sourceTree = "<group>"; };
+		AE0AD817170D506900D0174A /* JBDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBDefaults.h; sourceTree = "<group>"; };
+		AE0AD818170D506900D0174A /* JBDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBDefaults.m; sourceTree = "<group>"; };
+		AE0AD81D170D6E1500D0174A /* JBHttpAsyncResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBHttpAsyncResponseHandler.h; sourceTree = "<group>"; };
+		AE0AD820170D6EF400D0174A /* JBHttpAsyncCall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBHttpAsyncCall.h; sourceTree = "<group>"; };
+		AE0AD821170D6EF400D0174A /* JBHttpAsyncCall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBHttpAsyncCall.m; sourceTree = "<group>"; };
 		AE0F3D4B152975C500B9D13D /* JBSecurityConfiguration_Generated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBSecurityConfiguration_Generated.h; sourceTree = "<group>"; };
 		AE0F3D4C152975C500B9D13D /* JBSecurityConfiguration_Generated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBSecurityConfiguration_Generated.m; sourceTree = "<group>"; };
 		AE0F3D4D152975C500B9D13D /* JBSecurityConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBSecurityConfiguration.h; sourceTree = "<group>"; };
@@ -669,8 +690,6 @@
 		AE1EE22C16C9C59C0046EBBC /* JBFileHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBFileHandle.m; sourceTree = "<group>"; };
 		AE22F5A816AD2BC0003BE2BF /* JBParametersScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBParametersScanner.h; sourceTree = "<group>"; };
 		AE22F5A916AD2BC0003BE2BF /* JBParametersScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBParametersScanner.m; sourceTree = "<group>"; };
-		AE2719EF1469D8FD00C1E30D /* JBNetworkHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBNetworkHost.h; sourceTree = "<group>"; };
-		AE2719F01469D8FD00C1E30D /* JBNetworkHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBNetworkHost.m; sourceTree = "<group>"; };
 		AE27590214D7F315006E45D4 /* JBBrokerMessageResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBrokerMessageResponseHandler.h; sourceTree = "<group>"; };
 		AE27590314D7F315006E45D4 /* JBBrokerMessageResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBrokerMessageResponseHandler.m; sourceTree = "<group>"; };
 		AE27590B14D7F591006E45D4 /* JBServiceHttpProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBServiceHttpProxy.h; sourceTree = "<group>"; };
@@ -707,10 +726,6 @@
 		AE39976414BAF4CD00EDE2CA /* JBFaultSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBFaultSerializer.m; sourceTree = "<group>"; };
 		AE39977514BAFEA300EDE2CA /* JBBrokerJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBrokerJob.h; sourceTree = "<group>"; };
 		AE39977614BAFEA400EDE2CA /* JBBrokerJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBrokerJob.m; sourceTree = "<group>"; };
-		AE404436149B1F840049774A /* JBNetworkAddress_Generated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBNetworkAddress_Generated.h; sourceTree = "<group>"; };
-		AE404437149B1F840049774A /* JBNetworkAddress_Generated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBNetworkAddress_Generated.m; sourceTree = "<group>"; };
-		AE40443D149B25C90049774A /* JBHostName_Generated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBHostName_Generated.h; sourceTree = "<group>"; };
-		AE40443E149B25C90049774A /* JBHostName_Generated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBHostName_Generated.m; sourceTree = "<group>"; };
 		AE42BE45147FB5C1000FC3A4 /* libjsonbroker.library.osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libjsonbroker.library.osx.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE42BE49147FB5C1000FC3A4 /* jsonbroker.library.osx-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jsonbroker.library.osx-Prefix.pch"; sourceTree = "<group>"; };
 		AE42BE4A147FB5C1000FC3A4 /* jsonbroker_library_osx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jsonbroker_library_osx.h; sourceTree = "<group>"; };
@@ -818,20 +833,6 @@
 		AE8A916C146408C3006037B8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		AE8A916D146408C3006037B8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AE8A916E146408C3006037B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		AE8A91A114640A39006037B8 /* JBGethostbyaddrRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBGethostbyaddrRequest.h; sourceTree = "<group>"; };
-		AE8A91A214640A39006037B8 /* JBGethostbyaddrRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBGethostbyaddrRequest.m; sourceTree = "<group>"; };
-		AE8A91A314640A39006037B8 /* JBGethostbyaddrRequestIntegrationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBGethostbyaddrRequestIntegrationTest.h; sourceTree = "<group>"; };
-		AE8A91A414640A39006037B8 /* JBGethostbyaddrRequestIntegrationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBGethostbyaddrRequestIntegrationTest.m; sourceTree = "<group>"; };
-		AE8A91A514640A39006037B8 /* JBHostName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBHostName.h; sourceTree = "<group>"; };
-		AE8A91A614640A39006037B8 /* JBHostName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBHostName.m; sourceTree = "<group>"; };
-		AE8A91A714640A39006037B8 /* JBIPAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBIPAddress.h; sourceTree = "<group>"; };
-		AE8A91A814640A39006037B8 /* JBIPAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBIPAddress.m; sourceTree = "<group>"; };
-		AE8A91A914640A39006037B8 /* JBNetworkUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBNetworkUtilities.h; sourceTree = "<group>"; };
-		AE8A91AA14640A39006037B8 /* JBNetworkUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBNetworkUtilities.m; sourceTree = "<group>"; };
-		AE8A91AB14640A39006037B8 /* JBNetworkUtilitiesIntegrationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBNetworkUtilitiesIntegrationTest.h; sourceTree = "<group>"; };
-		AE8A91AC14640A39006037B8 /* JBNetworkUtilitiesIntegrationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBNetworkUtilitiesIntegrationTest.m; sourceTree = "<group>"; };
-		AE8A91AF14640A39006037B8 /* JBNetworkAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBNetworkAddress.h; sourceTree = "<group>"; };
-		AE8A91B014640A39006037B8 /* JBNetworkAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBNetworkAddress.m; sourceTree = "<group>"; };
 		AE8A91DC14640A39006037B8 /* JBBrokerMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBrokerMessage.h; sourceTree = "<group>"; };
 		AE8A91DD14640A39006037B8 /* JBBrokerMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBrokerMessage.m; sourceTree = "<group>"; };
 		AE8A91DE14640A39006037B8 /* JBBrokerMessageType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBrokerMessageType.h; sourceTree = "<group>"; };
@@ -902,6 +903,27 @@
 		AEADB52416E5BCDB0017C33E /* JBJsonStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBJsonStack.m; sourceTree = "<group>"; };
 		AEADB52916E5C66F0017C33E /* JBJsonWalker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBJsonWalker.h; sourceTree = "<group>"; };
 		AEADB52A16E5C6700017C33E /* JBJsonWalker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBJsonWalker.m; sourceTree = "<group>"; };
+		AEAE44B7170E744500D047DA /* JBGethostbyaddrRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBGethostbyaddrRequest.h; sourceTree = "<group>"; };
+		AEAE44B8170E744500D047DA /* JBGethostbyaddrRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBGethostbyaddrRequest.m; sourceTree = "<group>"; };
+		AEAE44B9170E744500D047DA /* JBGethostbyaddrRequestIntegrationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBGethostbyaddrRequestIntegrationTest.h; sourceTree = "<group>"; };
+		AEAE44BA170E744500D047DA /* JBGethostbyaddrRequestIntegrationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBGethostbyaddrRequestIntegrationTest.m; sourceTree = "<group>"; };
+		AEAE44BB170E744500D047DA /* JBHostName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBHostName.h; sourceTree = "<group>"; };
+		AEAE44BC170E744500D047DA /* JBHostName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBHostName.m; sourceTree = "<group>"; };
+		AEAE44BD170E744500D047DA /* JBHostName_Generated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBHostName_Generated.h; sourceTree = "<group>"; };
+		AEAE44BE170E744500D047DA /* JBHostName_Generated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBHostName_Generated.m; sourceTree = "<group>"; };
+		AEAE44BF170E744500D047DA /* JBIPAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBIPAddress.h; sourceTree = "<group>"; };
+		AEAE44C0170E744500D047DA /* JBIPAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBIPAddress.m; sourceTree = "<group>"; };
+		AEAE44C1170E744500D047DA /* JBNetworkAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBNetworkAddress.h; sourceTree = "<group>"; };
+		AEAE44C2170E744500D047DA /* JBNetworkAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBNetworkAddress.m; sourceTree = "<group>"; };
+		AEAE44C3170E744500D047DA /* JBNetworkAddress_Generated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBNetworkAddress_Generated.h; sourceTree = "<group>"; };
+		AEAE44C4170E744500D047DA /* JBNetworkAddress_Generated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBNetworkAddress_Generated.m; sourceTree = "<group>"; };
+		AEAE44C5170E744500D047DA /* JBNetworkHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBNetworkHost.h; sourceTree = "<group>"; };
+		AEAE44C6170E744500D047DA /* JBNetworkHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBNetworkHost.m; sourceTree = "<group>"; };
+		AEAE44C7170E744500D047DA /* JBNetworkUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBNetworkUtilities.h; sourceTree = "<group>"; };
+		AEAE44C8170E744500D047DA /* JBNetworkUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBNetworkUtilities.m; sourceTree = "<group>"; };
+		AEAE44C9170E744500D047DA /* JBNetworkUtilitiesIntegrationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBNetworkUtilitiesIntegrationTest.h; sourceTree = "<group>"; };
+		AEAE44CA170E744500D047DA /* JBNetworkUtilitiesIntegrationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBNetworkUtilitiesIntegrationTest.m; sourceTree = "<group>"; };
+		AEAE44F5170E7D2400D047DA /* CoreWLAN.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreWLAN.framework; path = System/Library/Frameworks/CoreWLAN.framework; sourceTree = SDKROOT; };
 		AEB07BF31511847A00E928D4 /* JBTestServiceIntegrationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBTestServiceIntegrationTest.h; sourceTree = "<group>"; };
 		AEB07BF41511847A00E928D4 /* JBTestServiceIntegrationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBTestServiceIntegrationTest.m; sourceTree = "<group>"; };
 		AEB69DE4157F60130051B15D /* JBFaultSerializerUnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBFaultSerializerUnitTest.h; sourceTree = "<group>"; };
@@ -1045,6 +1067,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEAE44F6170E7D2400D047DA /* CoreWLAN.framework in Frameworks */,
 				AEEFFF7116153D6F000B003D /* Security.framework in Frameworks */,
 				AE66BB4114CD25E900ACD757 /* SenTestingKit.framework in Frameworks */,
 				AE66BB4014CD25AC00ACD757 /* libjsonbroker.library.osx.a in Frameworks */,
@@ -1071,6 +1094,15 @@
 				AE06F0F2167EE34300950AF8 /* main.m */,
 			);
 			path = jsonbroker.unit_test;
+			sourceTree = "<group>";
+		};
+		AE0AD816170D505500D0174A /* defaults */ = {
+			isa = PBXGroup;
+			children = (
+				AE0AD817170D506900D0174A /* JBDefaults.h */,
+				AE0AD818170D506900D0174A /* JBDefaults.m */,
+			);
+			path = defaults;
 			sourceTree = "<group>";
 		};
 		AE105E581466623000AA500D /* jsonbroker.library.osx */ = {
@@ -1329,6 +1361,9 @@
 				AEB99E0E14CF7FC5006FDF30 /* JBAuthenticator.m */,
 				AE8A37C214BC109000AEA32E /* JBCredentials.h */,
 				AE8A37C314BC109000AEA32E /* JBCredentials.m */,
+				AE0AD820170D6EF400D0174A /* JBHttpAsyncCall.h */,
+				AE0AD821170D6EF400D0174A /* JBHttpAsyncCall.m */,
+				AE0AD81D170D6E1500D0174A /* JBHttpAsyncResponseHandler.h */,
 				AE573A161523FCE90020D2DC /* JBHttpCall.h */,
 				AE573A171523FCE90020D2DC /* JBHttpCall.m */,
 				AE8A37C814BC1A9100AEA32E /* JBHttpDispatcher.h */,
@@ -1345,6 +1380,7 @@
 		AE8A915B146408C3006037B8 = {
 			isa = PBXGroup;
 			children = (
+				AEAE44F5170E7D2400D047DA /* CoreWLAN.framework */,
 				AE8A918F14640A39006037B8 /* src */,
 				AEDFD7CA1466607500EA85F9 /* jsonbroker.library.ios */,
 				AE42BE47147FB5C1000FC3A4 /* jsonbroker.library.osx */,
@@ -1419,43 +1455,17 @@
 			children = (
 				AE3996F714BACD7800EDE2CA /* broker */,
 				AE8A37AC14BC07C100AEA32E /* http */,
-				AE8A91A014640A39006037B8 /* net */,
 			);
 			path = client;
-			sourceTree = "<group>";
-		};
-		AE8A91A014640A39006037B8 /* net */ = {
-			isa = PBXGroup;
-			children = (
-				AE8A91A114640A39006037B8 /* JBGethostbyaddrRequest.h */,
-				AE8A91A214640A39006037B8 /* JBGethostbyaddrRequest.m */,
-				AE8A91A314640A39006037B8 /* JBGethostbyaddrRequestIntegrationTest.h */,
-				AE8A91A414640A39006037B8 /* JBGethostbyaddrRequestIntegrationTest.m */,
-				AE8A91A514640A39006037B8 /* JBHostName.h */,
-				AE8A91A614640A39006037B8 /* JBHostName.m */,
-				AE40443D149B25C90049774A /* JBHostName_Generated.h */,
-				AE40443E149B25C90049774A /* JBHostName_Generated.m */,
-				AE8A91A714640A39006037B8 /* JBIPAddress.h */,
-				AE8A91A814640A39006037B8 /* JBIPAddress.m */,
-				AE8A91A914640A39006037B8 /* JBNetworkUtilities.h */,
-				AE8A91AA14640A39006037B8 /* JBNetworkUtilities.m */,
-				AE8A91AB14640A39006037B8 /* JBNetworkUtilitiesIntegrationTest.h */,
-				AE8A91AC14640A39006037B8 /* JBNetworkUtilitiesIntegrationTest.m */,
-				AE8A91AF14640A39006037B8 /* JBNetworkAddress.h */,
-				AE8A91B014640A39006037B8 /* JBNetworkAddress.m */,
-				AE404436149B1F840049774A /* JBNetworkAddress_Generated.h */,
-				AE404437149B1F840049774A /* JBNetworkAddress_Generated.m */,
-				AE2719EF1469D8FD00C1E30D /* JBNetworkHost.h */,
-				AE2719F01469D8FD00C1E30D /* JBNetworkHost.m */,
-			);
-			path = net;
 			sourceTree = "<group>";
 		};
 		AE8A91CF14640A39006037B8 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				AEAE44B6170E744500D047DA /* net */,
 				AE8B9A2C1551FC5400F02F33 /* auxiliary */,
 				AE8A91DB14640A39006037B8 /* broker */,
+				AE0AD816170D505500D0174A /* defaults */,
 				AE8A91E314640A39006037B8 /* exception */,
 				AE8A91EA14640A39006037B8 /* http */,
 				AEEE1A421624FDC200B3D7FF /* integration_test */,
@@ -1748,6 +1758,33 @@
 			path = auxiliary;
 			sourceTree = "<group>";
 		};
+		AEAE44B6170E744500D047DA /* net */ = {
+			isa = PBXGroup;
+			children = (
+				AEAE44B7170E744500D047DA /* JBGethostbyaddrRequest.h */,
+				AEAE44B8170E744500D047DA /* JBGethostbyaddrRequest.m */,
+				AEAE44B9170E744500D047DA /* JBGethostbyaddrRequestIntegrationTest.h */,
+				AEAE44BA170E744500D047DA /* JBGethostbyaddrRequestIntegrationTest.m */,
+				AEAE44BB170E744500D047DA /* JBHostName.h */,
+				AEAE44BC170E744500D047DA /* JBHostName.m */,
+				AEAE44BD170E744500D047DA /* JBHostName_Generated.h */,
+				AEAE44BE170E744500D047DA /* JBHostName_Generated.m */,
+				AEAE44BF170E744500D047DA /* JBIPAddress.h */,
+				AEAE44C0170E744500D047DA /* JBIPAddress.m */,
+				AEAE44C1170E744500D047DA /* JBNetworkAddress.h */,
+				AEAE44C2170E744500D047DA /* JBNetworkAddress.m */,
+				AEAE44C3170E744500D047DA /* JBNetworkAddress_Generated.h */,
+				AEAE44C4170E744500D047DA /* JBNetworkAddress_Generated.m */,
+				AEAE44C5170E744500D047DA /* JBNetworkHost.h */,
+				AEAE44C6170E744500D047DA /* JBNetworkHost.m */,
+				AEAE44C7170E744500D047DA /* JBNetworkUtilities.h */,
+				AEAE44C8170E744500D047DA /* JBNetworkUtilities.m */,
+				AEAE44C9170E744500D047DA /* JBNetworkUtilitiesIntegrationTest.h */,
+				AEAE44CA170E744500D047DA /* JBNetworkUtilitiesIntegrationTest.m */,
+			);
+			path = net;
+			sourceTree = "<group>";
+		};
 		AEBA0B1F14BEAD4500288884 /* jsonbroker.skeleton.osx */ = {
 			isa = PBXGroup;
 			children = (
@@ -1886,12 +1923,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE42BE5C147FB5FC000FC3A4 /* JBGethostbyaddrRequest.h in Headers */,
-				AE42BE5E147FB601000FC3A4 /* JBHostName.h in Headers */,
-				AE42BE60147FB601000FC3A4 /* JBIPAddress.h in Headers */,
-				AE42BE62147FB601000FC3A4 /* JBNetworkUtilities.h in Headers */,
-				AE42BE64147FB60B000FC3A4 /* JBNetworkAddress.h in Headers */,
-				AE42BE66147FB60B000FC3A4 /* JBNetworkHost.h in Headers */,
 				AE42BE7B147FB63D000FC3A4 /* JBWorkQueue.h in Headers */,
 				AE42BE7E147FB63D000FC3A4 /* JBWorker.h in Headers */,
 				AE42BE80147FB63D000FC3A4 /* JBWorkManager.h in Headers */,
@@ -1908,8 +1939,6 @@
 				AE42BEFA147FB6EF000FC3A4 /* JBConnectionHandler.h in Headers */,
 				AE42BF02147FB6EF000FC3A4 /* JBHttpResponseWriter.h in Headers */,
 				AE42BF10147FB725000FC3A4 /* JBOsxWebViewBridge.h in Headers */,
-				AE404439149B1F840049774A /* JBNetworkAddress_Generated.h in Headers */,
-				AE404440149B25C90049774A /* JBHostName_Generated.h in Headers */,
 				AE3996F314BACCC100EDE2CA /* JBSerializer.h in Headers */,
 				AE39970914BAD63E00EDE2CA /* JBJsonStringOutput.h in Headers */,
 				AE39970F14BAD69700EDE2CA /* JBJsonDataInput.h in Headers */,
@@ -2039,6 +2068,19 @@
 				AEBC168A16E9BAAC00E3917C /* JBJsonReader.h in Headers */,
 				AEBC169016E9BABA00E3917C /* JBJsonReaderUnitTest.h in Headers */,
 				AED43DB416ED906200367B80 /* JBHttpResponseHandler.h in Headers */,
+				AE0AD81A170D506900D0174A /* JBDefaults.h in Headers */,
+				AE0AD81F170D6E1600D0174A /* JBHttpAsyncResponseHandler.h in Headers */,
+				AE0AD823170D6EF500D0174A /* JBHttpAsyncCall.h in Headers */,
+				AEAE44CC170E744500D047DA /* JBGethostbyaddrRequest.h in Headers */,
+				AEAE44D0170E744500D047DA /* JBGethostbyaddrRequestIntegrationTest.h in Headers */,
+				AEAE44D4170E744500D047DA /* JBHostName.h in Headers */,
+				AEAE44D8170E744500D047DA /* JBHostName_Generated.h in Headers */,
+				AEAE44DC170E744500D047DA /* JBIPAddress.h in Headers */,
+				AEAE44E0170E744500D047DA /* JBNetworkAddress.h in Headers */,
+				AEAE44E4170E744500D047DA /* JBNetworkAddress_Generated.h in Headers */,
+				AEAE44E8170E744500D047DA /* JBNetworkHost.h in Headers */,
+				AEAE44EC170E744500D047DA /* JBNetworkUtilities.h in Headers */,
+				AEAE44F0170E744500D047DA /* JBNetworkUtilitiesIntegrationTest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2046,11 +2088,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE105E35146660FB00AA500D /* JBGethostbyaddrRequest.h in Headers */,
-				AE105E39146660FB00AA500D /* JBHostName.h in Headers */,
-				AE105E3B146660FB00AA500D /* JBIPAddress.h in Headers */,
-				AE105E3D146660FB00AA500D /* JBNetworkUtilities.h in Headers */,
-				AE105E43146660FB00AA500D /* JBNetworkAddress.h in Headers */,
 				AE105E6F1466624A00AA500D /* JBBrokerMessage.h in Headers */,
 				AE105E711466624A00AA500D /* JBBrokerMessageType.h in Headers */,
 				AE105E751466625900AA500D /* BaseException.h in Headers */,
@@ -2069,8 +2106,6 @@
 				AEC48B941471F56800F3FB38 /* UIWebView+NoBounce.h in Headers */,
 				AEC48B961471F56800F3FB38 /* JBIosWebViewHelper.h in Headers */,
 				AE36A4EB147E237200DE6E2E /* JBNotificationPoster2.h in Headers */,
-				AE404438149B1F840049774A /* JBNetworkAddress_Generated.h in Headers */,
-				AE40443F149B25C90049774A /* JBHostName_Generated.h in Headers */,
 				AE3996F214BACCC100EDE2CA /* JBSerializer.h in Headers */,
 				AE39970814BAD63E00EDE2CA /* JBJsonStringOutput.h in Headers */,
 				AE39970E14BAD69700EDE2CA /* JBJsonDataInput.h in Headers */,
@@ -2199,6 +2234,19 @@
 				AEBC168916E9BAAC00E3917C /* JBJsonReader.h in Headers */,
 				AEBC168F16E9BABA00E3917C /* JBJsonReaderUnitTest.h in Headers */,
 				AED43DB316ED906200367B80 /* JBHttpResponseHandler.h in Headers */,
+				AE0AD819170D506900D0174A /* JBDefaults.h in Headers */,
+				AE0AD81E170D6E1600D0174A /* JBHttpAsyncResponseHandler.h in Headers */,
+				AE0AD822170D6EF500D0174A /* JBHttpAsyncCall.h in Headers */,
+				AEAE44CB170E744500D047DA /* JBGethostbyaddrRequest.h in Headers */,
+				AEAE44CF170E744500D047DA /* JBGethostbyaddrRequestIntegrationTest.h in Headers */,
+				AEAE44D3170E744500D047DA /* JBHostName.h in Headers */,
+				AEAE44D7170E744500D047DA /* JBHostName_Generated.h in Headers */,
+				AEAE44DB170E744500D047DA /* JBIPAddress.h in Headers */,
+				AEAE44DF170E744500D047DA /* JBNetworkAddress.h in Headers */,
+				AEAE44E3170E744500D047DA /* JBNetworkAddress_Generated.h in Headers */,
+				AEAE44E7170E744500D047DA /* JBNetworkHost.h in Headers */,
+				AEAE44EB170E744500D047DA /* JBNetworkUtilities.h in Headers */,
+				AEAE44EF170E744500D047DA /* JBNetworkUtilitiesIntegrationTest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2333,12 +2381,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE42BE4C147FB5C1000FC3A4 /* jsonbroker_library_osx.m in Sources */,
-				AE42BE5D147FB5FC000FC3A4 /* JBGethostbyaddrRequest.m in Sources */,
-				AE42BE5F147FB601000FC3A4 /* JBHostName.m in Sources */,
-				AE42BE61147FB601000FC3A4 /* JBIPAddress.m in Sources */,
-				AE42BE63147FB601000FC3A4 /* JBNetworkUtilities.m in Sources */,
-				AE42BE65147FB60B000FC3A4 /* JBNetworkAddress.m in Sources */,
-				AE42BE67147FB60B000FC3A4 /* JBNetworkHost.m in Sources */,
 				AE42BE7C147FB63D000FC3A4 /* JBWorkQueue.m in Sources */,
 				AE42BE7F147FB63D000FC3A4 /* JBWorker.m in Sources */,
 				AE42BE81147FB63D000FC3A4 /* JBWorkManager.m in Sources */,
@@ -2356,8 +2398,6 @@
 				AE42BEFD147FB6EF000FC3A4 /* JBWebServer.m in Sources */,
 				AE42BF03147FB6EF000FC3A4 /* JBHttpResponseWriter.m in Sources */,
 				AE42BF11147FB725000FC3A4 /* JBOsxWebViewBridge.m in Sources */,
-				AE40443B149B1F840049774A /* JBNetworkAddress_Generated.m in Sources */,
-				AE404442149B25C90049774A /* JBHostName_Generated.m in Sources */,
 				AE3996F514BACCC100EDE2CA /* JBSerializer.m in Sources */,
 				AE39970B14BAD63E00EDE2CA /* JBJsonStringOutput.m in Sources */,
 				AE39971114BAD69700EDE2CA /* JBJsonDataInput.m in Sources */,
@@ -2461,6 +2501,16 @@
 				AEEA65BC16E6D4A400560D5C /* JBJsonBuilder.m in Sources */,
 				AEEA65C216E84C0600560D5C /* JBJsonWriter.m in Sources */,
 				AEBC168C16E9BAAC00E3917C /* JBJsonReader.m in Sources */,
+				AE0AD81C170D506900D0174A /* JBDefaults.m in Sources */,
+				AE0AD825170D6EF500D0174A /* JBHttpAsyncCall.m in Sources */,
+				AEAE44CE170E744500D047DA /* JBGethostbyaddrRequest.m in Sources */,
+				AEAE44D6170E744500D047DA /* JBHostName.m in Sources */,
+				AEAE44DA170E744500D047DA /* JBHostName_Generated.m in Sources */,
+				AEAE44DE170E744500D047DA /* JBIPAddress.m in Sources */,
+				AEAE44E2170E744500D047DA /* JBNetworkAddress.m in Sources */,
+				AEAE44E6170E744500D047DA /* JBNetworkAddress_Generated.m in Sources */,
+				AEAE44EA170E744500D047DA /* JBNetworkHost.m in Sources */,
+				AEAE44EE170E744500D047DA /* JBNetworkUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2505,8 +2555,8 @@
 				AECDB7A11614019A00367667 /* JBMetaProxyIntegrationTest.m in Sources */,
 				AECDB7C016142B4B00367667 /* JBKeychainUtilitiesIntegrationTest.m in Sources */,
 				AE6ACDAF16BE2FF40026E65D /* JBIntegrationTestUtilities.m in Sources */,
-				AEADB51816E5A3D60017C33E /* JBGethostbyaddrRequestIntegrationTest.m in Sources */,
-				AEADB51916E5A7200017C33E /* JBNetworkUtilitiesIntegrationTest.m in Sources */,
+				AEAE44F3170E744C00D047DA /* JBGethostbyaddrRequestIntegrationTest.m in Sources */,
+				AEAE44F4170E745500D047DA /* JBNetworkUtilitiesIntegrationTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2514,11 +2564,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE105E36146660FB00AA500D /* JBGethostbyaddrRequest.m in Sources */,
-				AE105E3A146660FB00AA500D /* JBHostName.m in Sources */,
-				AE105E3C146660FB00AA500D /* JBIPAddress.m in Sources */,
-				AE105E3E146660FB00AA500D /* JBNetworkUtilities.m in Sources */,
-				AE105E44146660FB00AA500D /* JBNetworkAddress.m in Sources */,
 				AE105E701466624A00AA500D /* JBBrokerMessage.m in Sources */,
 				AE105E721466624A00AA500D /* JBBrokerMessageType.m in Sources */,
 				AE105E761466625900AA500D /* BaseException.m in Sources */,
@@ -2532,15 +2577,12 @@
 				AE105EE91466635B00AA500D /* JBWebServer.m in Sources */,
 				AE105EEF1466635B00AA500D /* JBHttpResponseWriter.m in Sources */,
 				AE10647A14669E2200AA500D /* JBIosWebViewBridge.m in Sources */,
-				AE6884CE1469DAFA000E8466 /* JBNetworkHost.m in Sources */,
 				AE6884F01469EBD4000E8466 /* JBWorkQueue.m in Sources */,
 				AE6884F91469EC1B000E8466 /* JBWorker.m in Sources */,
 				AE6884FF1469ED87000E8466 /* JBWorkManager.m in Sources */,
 				AEC48B951471F56800F3FB38 /* UIWebView+NoBounce.m in Sources */,
 				AEC48B971471F56800F3FB38 /* JBIosWebViewHelper.m in Sources */,
 				AE36A4ED147E237200DE6E2E /* JBNotificationPoster2.m in Sources */,
-				AE40443A149B1F840049774A /* JBNetworkAddress_Generated.m in Sources */,
-				AE404441149B25C90049774A /* JBHostName_Generated.m in Sources */,
 				AE3996F414BACCC100EDE2CA /* JBSerializer.m in Sources */,
 				AE39970A14BAD63E00EDE2CA /* JBJsonStringOutput.m in Sources */,
 				AE39971014BAD69700EDE2CA /* JBJsonDataInput.m in Sources */,
@@ -2643,6 +2685,16 @@
 				AEEA65BB16E6D4A400560D5C /* JBJsonBuilder.m in Sources */,
 				AEEA65C116E84C0600560D5C /* JBJsonWriter.m in Sources */,
 				AEBC168B16E9BAAC00E3917C /* JBJsonReader.m in Sources */,
+				AE0AD81B170D506900D0174A /* JBDefaults.m in Sources */,
+				AE0AD824170D6EF500D0174A /* JBHttpAsyncCall.m in Sources */,
+				AEAE44CD170E744500D047DA /* JBGethostbyaddrRequest.m in Sources */,
+				AEAE44D5170E744500D047DA /* JBHostName.m in Sources */,
+				AEAE44D9170E744500D047DA /* JBHostName_Generated.m in Sources */,
+				AEAE44DD170E744500D047DA /* JBIPAddress.m in Sources */,
+				AEAE44E1170E744500D047DA /* JBNetworkAddress.m in Sources */,
+				AEAE44E5170E744500D047DA /* JBNetworkAddress_Generated.m in Sources */,
+				AEAE44E9170E744500D047DA /* JBNetworkHost.m in Sources */,
+				AEAE44ED170E744500D047DA /* JBNetworkUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

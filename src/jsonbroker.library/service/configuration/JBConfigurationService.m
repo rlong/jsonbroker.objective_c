@@ -105,6 +105,23 @@ static JBServiceDescription* _SERVICE_DESCRIPTION = nil;
 	
 }
 
+-(JBJsonObject*)getBundle:(NSString*)bundleName defaultValue:(JBJsonObject*)defaultValue {
+    
+    JBJsonObject* answer = [self getBundle:bundleName];
+    
+    if( nil == answer ) {
+        
+        
+        answer = defaultValue;
+        [_bundles setObject:defaultValue forKey:bundleName];
+        
+    }
+    
+    return answer;
+    
+}
+
+
 -(void)saveBundle:(JBJsonObject*)bundle withName:(NSString*)bundleName  {
 	
 	NSString* bundleText = [bundle toString];

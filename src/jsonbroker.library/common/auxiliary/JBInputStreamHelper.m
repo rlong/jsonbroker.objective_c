@@ -6,7 +6,9 @@
 #import "JBBaseException.h"
 #import "JBInputStreamHelper.h"
 #import "JBLog.h"
+#import "JBOutputStreamHelper.h"
 #import "JBStreamHelper.h"
+
 
 
 #define BUFFER_SIZE 8*1024
@@ -127,22 +129,9 @@
         
         bytesRemaining -= bytesRead;
         
-        long bytesWritten = [outputStream write:buffer maxLength:bytesRead];
         
-        // error
-        if( 0 > bytesWritten ) {
-            
-            // More information about the error can be obtained with streamError
-            NSError* error = [outputStream streamError];
-            
-            JBBaseException* e = [JBBaseException baseExceptionWithOriginator:self line:__LINE__ callTo:@"[NSOutputStream write:maxLength:]" failedWithError:error];
-            
-            if( EPIPE == [error code] ) {
-                [e setErrorDomain:[JBStreamHelper ERROR_DOMAIN_BROKEN_PIPE]];
-            }
-            
-            @throw  e;
-        }
+        long bytesWritten = [JBOutputStreamHelper writeTo:outputStream buffer:buffer maxLength:bytesRead];
+        
         if( 0 != bytesRead && 0 == bytesWritten ) {
             
             
