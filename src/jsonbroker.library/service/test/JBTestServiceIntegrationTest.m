@@ -23,10 +23,10 @@
 
 -(JBTestProxy*)buildProxy {
 
-    id<JBService> service = [[JBTestService alloc] init];
-    [service autorelease];
+    JBTestService* testService = [[JBTestService alloc] init];
+    [testService autorelease];
     
-    service = [JBIntegrationTestUtilities wrapAuthenticatedService:service];
+    id<JBService> service = [[JBIntegrationTestUtilities getInstance] wrapService:testService];
     
     JBTestProxy* answer = [[JBTestProxy alloc] initWithService:service];
     [answer autorelease];

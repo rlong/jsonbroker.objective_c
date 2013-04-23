@@ -10,11 +10,7 @@
 @protocol JBJavascriptCallbackAdapter 
 	
 	-(void)onFault:(NSException*)fault request:(JBBrokerMessage*)request;
-	
-	
-	-(void)onNotification:(JBBrokerMessage*)notification;
-	
-	
+		
 	-(void)onResponse:(JBBrokerMessage*)response;
 	
 

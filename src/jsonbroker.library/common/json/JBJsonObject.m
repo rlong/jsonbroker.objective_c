@@ -106,7 +106,7 @@ static NSObject* _NULL_OBJECT = nil;
 }
 
 
--(BOOL)getBoolean:(NSString*)key defaultValue:(bool)defaultValue{
+-(BOOL)boolForKey:(NSString*)key defaultValue:(bool)defaultValue{
     
     id blob = [self getBlob:key throwExceptionOnNil:false];
     
@@ -126,7 +126,7 @@ static NSObject* _NULL_OBJECT = nil;
 	return [answer boolValue];
 }
 
--(BOOL)getBoolean:(NSString*)key {
+-(BOOL)boolForKey:(NSString*)key {
     
     id blob = [self getBlob:key throwExceptionOnNil:true];
     
@@ -152,7 +152,7 @@ static NSObject* _NULL_OBJECT = nil;
 
 
 
--(NSInteger)getInteger:(NSString*)key defaultValue:(NSInteger)defaultValue{
+-(NSInteger)integerForKey:(NSString*)key defaultValue:(NSInteger)defaultValue{
 
     
 	id blob = [self getBlob:key throwExceptionOnNil:false];
@@ -172,7 +172,7 @@ static NSObject* _NULL_OBJECT = nil;
 	return [number integerValue];
 }
 
--(int)getInt:(NSString*)key {
+-(int)intForKey:(NSString*)key {
 
 	id blob = [self getBlob:key throwExceptionOnNil:true];
     
@@ -191,7 +191,7 @@ static NSObject* _NULL_OBJECT = nil;
 }
 
 
--(int)getInt:(NSString*)key defaultValue:(int)defaultValue {
+-(int)intForKey:(NSString*)key defaultValue:(int)defaultValue {
     id blob = [self getBlob:key throwExceptionOnNil:false];
 	
 	if( nil == blob ) {
@@ -227,7 +227,7 @@ static NSObject* _NULL_OBJECT = nil;
 }
 
 
--(JBJsonArray*)getJsonArray:(NSString*)key {
+-(JBJsonArray*)jsonArrayForKey:(NSString*)key {
 	
     id blob = [self getBlob:key throwExceptionOnNil:true];
 
@@ -247,7 +247,7 @@ static NSObject* _NULL_OBJECT = nil;
 }
 
 
--(JBJsonArray*)getJsonArray:(NSString*)key defaultValue:(JBJsonArray*)defaultValue {
+-(JBJsonArray*)jsonArrayForKey:(NSString*)key defaultValue:(JBJsonArray*)defaultValue {
 
     id blob = [self getBlob:key throwExceptionOnNil:false];
     
@@ -266,7 +266,7 @@ static NSObject* _NULL_OBJECT = nil;
 
 }
 
--(JBJsonObject*)getJsonObject:(NSString*)key {
+-(JBJsonObject*)jsonObjectForKey:(NSString*)key {
     
     id blob = [self getBlob:key throwExceptionOnNil:true];
     
@@ -284,7 +284,7 @@ static NSObject* _NULL_OBJECT = nil;
     
 }
 
--(JBJsonObject*)getJsonObject:(NSString*)key defaultValue:(JBJsonObject*)defaultValue {
+-(JBJsonObject*)jsonObjectForKey:(NSString*)key defaultValue:(JBJsonObject*)defaultValue {
     
     id blob = [self getBlob:key throwExceptionOnNil:false];
     
@@ -306,7 +306,7 @@ static NSObject* _NULL_OBJECT = nil;
     
 }
 
--(long)getLong:(NSString*)key {
+-(long)longForKey:(NSString*)key {
     
     id blob = [self getBlob:key throwExceptionOnNil:true];
     
@@ -330,13 +330,11 @@ static NSObject* _NULL_OBJECT = nil;
     NSNumber* number = [NSNumber numberWithLong:value];
 	
 	[_values setObject:number forKey:key];
-
-    
     
 }
 
 
--(long long)getLongLong:(NSString*)key {
+-(long long)longLongForKey:(NSString*)key {
     
     id blob = [self getBlob:key throwExceptionOnNil:true];
     
@@ -366,7 +364,7 @@ static NSObject* _NULL_OBJECT = nil;
 }
 
 
--(id)getObject:(NSString*)key {
+-(id)objectForKey:(NSString*)key {
 
     id answer = [self getBlob:key throwExceptionOnNil:true];
 
@@ -374,7 +372,7 @@ static NSObject* _NULL_OBJECT = nil;
 	
 }
 
--(id)getObject:(NSString*)key defaultValue:(id)defaultValue{
+-(id)objectForKey:(NSString*)key defaultValue:(id)defaultValue{
     
     id answer = [self getBlob:key throwExceptionOnNil:false];
     
@@ -397,7 +395,7 @@ static NSObject* _NULL_OBJECT = nil;
 }
 
 
--(NSString*)getString:(NSString*)key defaultValue:(NSString*)defaultValue{
+-(NSString*)stringForKey:(NSString*)key defaultValue:(NSString*)defaultValue{
 	
     id blob = [self getBlob:key throwExceptionOnNil:false];
 	
@@ -419,7 +417,7 @@ static NSObject* _NULL_OBJECT = nil;
 }
 
 
--(NSString*)getString:(NSString*)key {
+-(NSString*)stringForKey:(NSString*)key {
 	
     id blob = [self getBlob:key throwExceptionOnNil:true];
 
@@ -440,7 +438,7 @@ static NSObject* _NULL_OBJECT = nil;
 }
 
 
--(NSUInteger)getUnsignedInteger:(NSString*)key {
+-(NSUInteger)unsignedIntegerForKey:(NSString*)key {
     
     id blob = [self getBlob:key throwExceptionOnNil:true];
     

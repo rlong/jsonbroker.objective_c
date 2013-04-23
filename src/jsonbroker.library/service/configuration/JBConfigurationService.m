@@ -230,7 +230,7 @@ static JBServiceDescription* _SERVICE_DESCRIPTION = nil;
 	if( [@"getBundle" isEqualToString:methodName] ) { 
 		
 
-        NSString* bundleName = [requestAssociativeParamaters getString:@"bundle_name"];
+        NSString* bundleName = [requestAssociativeParamaters stringForKey:@"bundle_name"];
 		JBJsonObject* bundleValue = [self getBundle:bundleName];
 		
         JBBrokerMessage* answer = [JBBrokerMessage buildResponse:request];

@@ -6,6 +6,7 @@
 
 
 #import "JBDataEntity.h"
+#import "JBJsonArrayHelper.h"
 #import "JBServiceHttpProxy.h"
 #import "JBSerializer.h"
 
@@ -45,8 +46,9 @@
 
 -(JBBrokerMessage*)process:(JBBrokerMessage*)request {
     
+    JBJsonArray* messageComponents = [request toJsonArray];
+    NSData* bodyData = [JBJsonArrayHelper toData:messageComponents];
     
-    NSData* bodyData = [JBSerializer serialize:request];
     
     id<JBEntity> entity = [[JBDataEntity alloc] initWithData:bodyData];
     [entity autorelease];

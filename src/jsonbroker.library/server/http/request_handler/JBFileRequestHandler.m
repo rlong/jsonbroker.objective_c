@@ -5,7 +5,7 @@
 
 
 #import "JBDataEntity.h"
-#import "JBFileProcessor.h"
+#import "JBFileRequestHandler.h"
 #import "JBHttpErrorHelper.h"
 #import "JBLog.h"
 #import "JBMimeTypes.h"
@@ -16,7 +16,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-@interface JBFileProcessor ()
+@interface JBFileRequestHandler ()
 
 // rootFolder
 //NSString* _rootFolder;
@@ -30,7 +30,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-@implementation JBFileProcessor
+@implementation JBFileRequestHandler
 
 
 
@@ -144,7 +144,7 @@
 
 -(id)initWithRootFolder:(NSString*)rootFolder { 
     
-    JBFileProcessor* answer = [super init];
+    JBFileRequestHandler* answer = [super init];
     
     [answer setRootFolder:rootFolder];
     

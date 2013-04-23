@@ -38,43 +38,7 @@
 	
 }
 
-+(NSString*)buildJavascriptNotification:(JBBrokerMessage*)notification  {
-	
-	
-	JBJsonStringOutput* jsonWriter = [[JBJsonStringOutput alloc] init];
-	
-	[jsonWriter appendString:@"jsonbroker.onNotification("];
 
-	JBJsonObjectHandler* jsonObjectHandler = [JBJsonObjectHandler getInstance];
-	[jsonObjectHandler writeValue:[notification metaData] writer:jsonWriter];
-	
-	[jsonWriter appendString:@",\""];
-	[jsonWriter appendString:[notification serviceName]];
-	[jsonWriter appendString:@"\",1,0,\""];
-	[jsonWriter appendString:[notification methodName]];
-	[jsonWriter appendString:@"\","];
-	[jsonObjectHandler writeValue:[notification associativeParamaters] writer:jsonWriter];
-    
-	JBJsonArray* parameters = [notification paramaters];
-	
-	for( int i = 0, count = [parameters count]; i < count; i++ ) {
-		
-		[jsonWriter appendChar:','];
-
-		id blob = [parameters objectAtIndex:i];
-		JBJsonHandler* handler = [JBJsonHandler getHandlerForObject:blob];
-		[handler writeValue:blob writer:jsonWriter];
-	}
-	
-	[jsonWriter appendString:@");"];
-	
-	NSString* answer = [jsonWriter toString];
-	
-	[jsonWriter release];
-	
-	return answer;
-	
-}
 
 
 +(NSString*)buildJavascriptResponse:(JBBrokerMessage*)response  {
@@ -94,15 +58,32 @@
 	[jsonWriter appendString:@"\","];
 	[jsonObjectHandler writeValue:[response associativeParamaters] writer:jsonWriter];
     
-	JBJsonArray* parameters = [response paramaters];
+    
+    if( [response hasOrderedParamaters] ) {
+        
+        JBJsonArray* orderedParamaters = [response orderedParamaters];
+
+        [jsonWriter appendString:@",["];
+        
+        bool firstParameter = true;
+        
+        for( int i = 0, count = [orderedParamaters count]; i < count; i++ ) {
+            
+            if( firstParameter ) {
+                firstParameter = false;
+            } else {
+                [jsonWriter appendChar:','];
+            }
+            id blob = [orderedParamaters objectAtIndex:i];
+            JBJsonHandler* handler = [JBJsonHandler getHandlerForObject:blob];
+            [handler writeValue:blob writer:jsonWriter];
+        }
+        
+        [jsonWriter appendString:@"]"];
+
+    }
+    
 	
-	for( int i = 0, count = [parameters count]; i < count; i++ ) {
-		
-		[jsonWriter appendChar:','];
-		id blob = [parameters objectAtIndex:i];
-		JBJsonHandler* handler = [JBJsonHandler getHandlerForObject:blob];
-		[handler writeValue:blob writer:jsonWriter];
-	}
 	
 	[jsonWriter appendString:@");"];
 	NSString* answer = [jsonWriter toString];

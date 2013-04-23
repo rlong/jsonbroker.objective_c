@@ -5,7 +5,7 @@
 
 
 #import "JBAuthorization.h"
-#import "JBAuthProcessor.h"
+#import "JBAuthRequestHandler.h"
 #import "JBBrokerMessage.h"
 #import "JBHttpErrorHelper.h"
 #import "JBLog.h"
@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-@interface JBAuthProcessor () 
+@interface JBAuthRequestHandler () 
 
 
 // processors
@@ -40,14 +40,14 @@
 #pragma mark -
 
 
-@implementation JBAuthProcessor
+@implementation JBAuthRequestHandler
 
 
 static NSString* _REQUEST_URI = @"/_dynamic_/auth"; 
 
 
 
--(void)addHttpProcessor:(id<JBRequestHandler>)processor {
+-(void)addRequestHandler:(id<JBRequestHandler>)processor {
     
     NSString* requestUri = [NSString stringWithFormat:@"%@%@", _REQUEST_URI, [processor getProcessorUri]];
     Log_debugString( requestUri );
@@ -57,7 +57,7 @@ static NSString* _REQUEST_URI = @"/_dynamic_/auth";
 }
 
 
--(id<JBRequestHandler>)getHttpProcessor:(NSString*)requestUri {
+-(id<JBRequestHandler>)getRequestHandler:(NSString*)requestUri {
     
     Log_debugString( requestUri );
     
@@ -112,7 +112,7 @@ static NSString* _REQUEST_URI = @"/_dynamic_/auth";
     
     id<JBRequestHandler> httpProcessor;
     {
-        httpProcessor = [self getHttpProcessor:requestUri];
+        httpProcessor = [self getRequestHandler:requestUri];
         
         if( nil ==  httpProcessor ) {
             
@@ -164,7 +164,7 @@ static NSString* _REQUEST_URI = @"/_dynamic_/auth";
 
 -(id)initWithSecurityManager:(JBHttpSecurityManager*)httpSecurityManager { 
     
-    JBAuthProcessor* answer = [super init];
+    JBAuthRequestHandler* answer = [super init];
     
     if( nil != answer ) { 
         

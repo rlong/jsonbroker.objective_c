@@ -16,7 +16,7 @@
 #include <arpa/inet.h>
 
 #import "JBBaseException.h"
-#import "JBConnectionHandler.h"
+#import "JBHttpConnectionHandler.h"
 #import "JBObjectTracker.h"
 
 
@@ -97,7 +97,7 @@
     
     JBFileHandle* socket = [[JBFileHandle alloc] initWithFileDescriptor:socketfd];
     [socket autorelease];
-    [JBConnectionHandler handleConnection:socket httpProcessor:_httpProcessor];
+    [JBHttpConnectionHandler handleConnection:socket httpProcessor:_httpProcessor];
 	
 }
 

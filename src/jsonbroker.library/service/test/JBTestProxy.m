@@ -59,7 +59,12 @@
     
     JBTestProxy* answer = [super init];
     
-    [answer setService:service];
+    if( nil != answer ) {
+        
+        [answer setService:service];
+    
+    }
+    
     
     return answer;
 }

@@ -36,13 +36,13 @@
     JBBrokerMessage* metaResponse = [_service process:metaRequest];
     
     JBJsonObject* associativeParamaters = [metaResponse associativeParamaters];
-    bool exists = [associativeParamaters getBoolean:@"exists"];
+    bool exists = [associativeParamaters boolForKey:@"exists"];
     
     if( !exists ) { 
         return nil;
     } else {
-        int majorVersion = [associativeParamaters getInt:@"majorVersion"];
-        int minorVersion = [associativeParamaters getInt:@"minorVersion"];
+        int majorVersion = [associativeParamaters intForKey:@"majorVersion"];
+        int minorVersion = [associativeParamaters intForKey:@"minorVersion"];
         
         NSArray* answer = [NSArray arrayWithObjects:[NSNumber numberWithInt:majorVersion], [NSNumber numberWithInt:minorVersion], nil];
         return answer;

@@ -67,7 +67,7 @@ static NSObject* _NULL_OBJECT = nil;
         }
         
         if( [value isKindOfClass:[JBJsonObject class]] ) {
-            [visitor onObjectEndWithIndex:index];
+            [visitor onObjectStartWithIndex:index];
             [self walkJsonObject:(JBJsonObject*)value visitor:visitor];
             [visitor onObjectEndWithIndex:index];
             continue;
@@ -99,7 +99,7 @@ static NSObject* _NULL_OBJECT = nil;
         
 		NSString* key = [allKeys objectAtIndex:i];
         
-        NSObject* value = [jsonObject getObject:key defaultValue:nil];
+        NSObject* value = [jsonObject objectForKey:key defaultValue:nil];
         
         if( nil == value || _NULL_OBJECT == value ) {
             [visitor onNullWithKey:key];

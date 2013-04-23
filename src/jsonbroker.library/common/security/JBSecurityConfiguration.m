@@ -99,6 +99,70 @@ static JBSecurityConfiguration* _test = nil;
 }
 
 
+// vvv fix any badly formed 'identifier' in 'jsonbroker.SecurityConfiguration.json' (ref: B0312DC4-2B62-4BF4-B745-B1B99BE21D73)
+
++(bool)isValidIdentifierCharacter:(unichar)c {
+    
+    if( c == '-' ) { // 45
+        return true;
+    }
+
+    if( c == '.' ) { // 46
+        return true;
+    }
+    
+    if( c == '/' ) { // 47
+        return true;
+    }
+
+    if( c >= '0' && c <= '9') { // 48 - 57
+        return true;
+    }
+    
+    if( c == ':' ) { // 58
+        return true;
+    }
+
+    if( c == '@' ) { // 64
+        return true;
+    }
+
+    if( c >= 'A' && c <= 'Z') { // 65 - 90
+        return true;
+    }
+
+    if( c == '_' ) { // 95
+        return true;
+    }
+
+    if( c >= 'a' && c <= 'a') { // 97 - 122
+        return true;
+    }
+
+
+    return false;
+    
+}
+
++(bool)isValidIdentifier:(NSString*)identifier {
+    
+    for( NSUInteger i = 0, count = [identifier length]; i < count; i++ ) {
+        
+        unichar c = [identifier characterAtIndex:i];
+        if( ![self isValidIdentifierCharacter:c] ) {
+            Log_warnFormat( @"identifier = '%@'; i = %d; c = %d", identifier, i, c );
+            return false;
+        }
+        
+    }
+    
+    return true;
+}
+
+
+// ^^^ fix any badly formed 'identifier' in 'jsonbroker.SecurityConfiguration.json' (ref: B0312DC4-2B62-4BF4-B745-B1B99BE21D73)
+
+
 +(JBSecurityConfiguration*)build:(id<JBSecurityAdapter>)securityAdapter configurationService:(JBConfigurationService*)configurationService {
     
     JBJsonObject* bundleData = [configurationService getBundle:[JBSimpleSecurityAdapter BUNDLE_NAME]];
@@ -112,23 +176,40 @@ static JBSecurityConfiguration* _test = nil;
             // vvv pairing in production is setting up the user as 'test' (ref: 477550FB-3656-4014-B4D7-DC49821E0BA6)
             // see SecurityConfiguration, KeychainSecurityAdapter
             
-            if( YES ) {
+            
+            NSString* identifier = [bundleData stringForKey:@"identifier"];
+            
+            if( [@"test" isEqualToString:identifier] ) {
+                Log_warnString( identifier );
                 
-                NSString* identifier = [bundleData getString:@"identifier"];
-                if( [@"test" isEqualToString:identifier] ) {
-                    Log_warnString( identifier );
-                    
-                    NSString* identifier = [securityAdapter getIdentifier];
-                    Log_debugString( identifier );
-                    
-                    answer = [[JBSecurityConfiguration alloc] initWithIdentifier:identifier configurationService:configurationService];
-                    [answer autorelease];
-                    return answer;
-                }
+                NSString* identifier = [securityAdapter getIdentifier];
+                Log_debugString( identifier );
                 
+                answer = [[JBSecurityConfiguration alloc] initWithIdentifier:identifier configurationService:configurationService];
+                [answer autorelease];
+                return answer;
             }
             
+            
             // ^^^ pairing in production is setting up the user as 'test' (ref: 477550FB-3656-4014-B4D7-DC49821E0BA6)
+            
+            
+            // vvv fix any badly formed 'identifier' in 'jsonbroker.SecurityConfiguration.json' (ref: B0312DC4-2B62-4BF4-B745-B1B99BE21D73)
+            
+            if( ![JBSecurityConfiguration isValidIdentifier:identifier] ) {
+
+                Log_warnString( identifier );
+                
+                NSString* identifier = [securityAdapter getIdentifier];
+                Log_debugString( identifier );
+                
+                answer = [[JBSecurityConfiguration alloc] initWithIdentifier:identifier configurationService:configurationService];
+                [answer autorelease];
+                return answer;
+
+            }
+            
+            // ^^^ fix any badly formed 'identifier' in 'jsonbroker.SecurityConfiguration.json' (ref: B0312DC4-2B62-4BF4-B745-B1B99BE21D73)
             
             answer = [[JBSecurityConfiguration alloc] initWithValue:bundleData configurationService:configurationService];
             [answer autorelease];
@@ -361,7 +442,7 @@ static JBSecurityConfiguration* _test = nil;
 
     if( nil != answer ) { 
         
-        NSString* identifier = [value getString:@"identifier"];
+        NSString* identifier = [value stringForKey:@"identifier"];
         [answer setIdentifier:identifier];
         [answer setConfigurationService:configurationService];
         
@@ -369,13 +450,13 @@ static JBSecurityConfiguration* _test = nil;
         answer->_servers = [[NSMutableDictionary alloc] init];
         
         {
-            JBJsonArray* subjects = [value getJsonArray:@"subjects"];
+            JBJsonArray* subjects = [value jsonArrayForKey:@"subjects"];
             for( int i = 0, count = [subjects count]; i < count; i++ ) { 
                 JBJsonObject* subjectData = [subjects jsonObjectAtIndex:i];
                 
-                NSString* subjectIdentifier = [subjectData getString:@"identifier"];
-                NSString* subjectPassword = [subjectData getString:@"password"];
-                NSString* subjectLabel = [subjectData getString:@"label"];
+                NSString* subjectIdentifier = [subjectData stringForKey:@"identifier"];
+                NSString* subjectPassword = [subjectData stringForKey:@"password"];
+                NSString* subjectLabel = [subjectData stringForKey:@"label"];
                 
                 [answer addSubject:subjectIdentifier password:subjectPassword label:subjectLabel];
             }

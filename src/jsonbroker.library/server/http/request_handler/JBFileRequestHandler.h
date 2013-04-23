@@ -10,7 +10,7 @@
 #import "JBRequestHandler.h"
 
 
-@interface JBFileProcessor : NSObject <JBRequestHandler> {
+@interface JBFileRequestHandler : NSObject <JBRequestHandler> {
     
 	// rootFolder
 	NSString* _rootFolder;

@@ -7,10 +7,13 @@
 
 #import "JBDataEntity.h"
 #import "JBDataHelper.h"
+#import "JBDefaults.h"
 #import "JBHttpErrorHelper.h"
+#import "JBJsonArrayHelper.h"
 #import "JBLog.h"
 #import "JBSerializer.h"
 #import "JBServicesRequestHandler.h"
+
 
 
 
@@ -36,6 +39,18 @@
 
 @implementation JBServicesRequestHandler
 
+
+static int _MAXIMUM_REQUEST_ENTITY_LENGTH;
+
++(void)initialize {
+    
+    
+    JBDefaults* defaults = [JBDefaults getDefaultsForScope:@"vlc_amigo.ServicesRequestHandler"];
+
+    _MAXIMUM_REQUEST_ENTITY_LENGTH = [defaults intWithName:@"_MAXIMUM_REQUEST_ENTITY_LENGTH" defaultValue:32 * 1024];
+    Log_debugInt( _MAXIMUM_REQUEST_ENTITY_LENGTH );
+    
+}
 
 
 -(void)addService:(id<JBDescribedService>)service {
@@ -74,8 +89,10 @@
     
     id<JBEntity> entity = [request entity];
     
-    if( 64 * 1024 < [entity getContentLength] ) {
-        Log_errorFormat( @"64 * 1024 < [entity getContentLength]; [entity getContentLength] = %d", [entity getContentLength]);
+    
+    
+    if( _MAXIMUM_REQUEST_ENTITY_LENGTH < [entity getContentLength] ) {
+        Log_errorFormat( @"_MAXIMUM_REQUEST_ENTITY_LENGTH < [entity getContentLength]; _MAXIMUM_REQUEST_ENTITY_LENGTH = %d; [entity getContentLength] = %d", _MAXIMUM_REQUEST_ENTITY_LENGTH, [entity getContentLength]);
         @throw  [JBHttpErrorHelper requestEntityTooLarge413FromOriginator:self line:__LINE__];
     }
     
@@ -94,8 +111,12 @@
             [answer autorelease];
             
         } else {
+        
+            JBJsonArray* responseComponents = [response toJsonArray];
+            NSData* responseData = [JBJsonArrayHelper toData:responseComponents];
             
-            NSData* responseData = [JBSerializer serialize:response];
+            Log_debugData( responseData );
+            
             id<JBEntity> responseBody = [[JBDataEntity alloc] initWithData:responseData];
             [responseBody autorelease];
             

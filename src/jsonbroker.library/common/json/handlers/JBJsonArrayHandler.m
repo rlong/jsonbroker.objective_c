@@ -41,7 +41,7 @@ static JBJsonArrayHandler* _instance = nil;
 	
 	if( count > 0 ) {
 		
-		id object = [array objectAtIndex:0];
+		id object = [array objectAtIndex:0 defaultValue:nil];
 		
 		JBJsonHandler* valueHandler = [JBJsonHandler getHandlerForObject:object];
 		
@@ -52,7 +52,7 @@ static JBJsonArrayHandler* _instance = nil;
 	for( int i = 1; i < count; i++ ) {
 		[writer appendChar:','];
 
-		id object = [array objectAtIndex:i];
+		id object = [array objectAtIndex:i defaultValue:nil];
 		
 		JBJsonHandler* valueHandler = [JBJsonHandler getHandlerForObject:object];
 		

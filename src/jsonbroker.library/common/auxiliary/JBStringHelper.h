@@ -13,6 +13,7 @@
 +(NSString*)getUtf8String:(NSData*)data;
 
 +(NSData*)toUtf8Data:(NSString*)input;
++(NSMutableData*)toUtf8MutableData:(NSString*)input;
 
 // replace the likes of "&#39;" with "'" (e.g. playlist.osx.vlc-1.1.12.xml)
 +(NSString*)unescapeHtmlCodes:(NSString*)input;

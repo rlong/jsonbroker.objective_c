@@ -53,9 +53,7 @@ static JBServiceDescription* _SERVICE_DESCRIPTION = nil;
 		
 		[self ping];
 		
-		JBBrokerMessage* response = [JBBrokerMessage buildResponse:request];
-		
-		return response;
+		return [JBBrokerMessage buildResponse:request];
 
 	}
     
@@ -63,9 +61,7 @@ static JBServiceDescription* _SERVICE_DESCRIPTION = nil;
 		
 		[self raiseError];
 		
-		JBBrokerMessage* response = [JBBrokerMessage buildResponse:request];
-		
-		return response;
+		return [JBBrokerMessage buildResponse:request];
         
 	}
 	

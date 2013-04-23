@@ -38,13 +38,13 @@
         
     }
     
-    if( NO ) {
+    if( YES ) {
         
-        [suite addTest: [SenTestSuite testSuiteForTestCaseClass:[JBTestServiceIntegrationTest class]]];
+        [suite addTest: [SenTestSuite testSuiteForTestCaseClass:[JBMetaProxyIntegrationTest class]]];
         
     }
     
-    if( YES ) {
+    if( NO ) {
         
         suite= [SenTestSuite testSuiteWithName:@"JBIntegrationTestRunner"];
         

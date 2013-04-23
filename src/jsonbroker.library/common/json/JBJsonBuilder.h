@@ -19,15 +19,34 @@
     
     // objectDocument
     JBJsonObject* _objectDocument;
-    //@property (nonatomic, retain) JBJsonObject* objectDocument;
+    //@property (nonatomic, readonly) JBJsonObject* objectDocument;
+    //@property (nonatomic, retain, readwrite) JBJsonObject* objectDocument;
     //@synthesize objectDocument = _objectDocument;
 
 
     // arrayDocument
     JBJsonArray* _arrayDocument;
-    //@property (nonatomic, retain) JBJsonArray* arrayDocument;
+    //@property (nonatomic, readonly) JBJsonArray* arrayDocument;
+    //@property (nonatomic, retain, readwrite) JBJsonArray* arrayDocument;
     //@synthesize arrayDocument = _arrayDocument;
 
 }
+
+
+#pragma mark -
+#pragma mark fields
+
+// objectDocument
+//JBJsonObject* _objectDocument;
+@property (nonatomic, readonly) JBJsonObject* objectDocument;
+//@property (nonatomic, retain, readwrite) JBJsonObject* objectDocument;
+//@synthesize objectDocument = _objectDocument;
+
+
+// arrayDocument
+//JBJsonArray* _arrayDocument;
+@property (nonatomic, readonly) JBJsonArray* arrayDocument;
+//@property (nonatomic, retain, readwrite) JBJsonArray* arrayDocument;
+//@synthesize arrayDocument = _arrayDocument;
 
 @end

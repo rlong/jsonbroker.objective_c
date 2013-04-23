@@ -26,11 +26,17 @@
 -(int)getInt:(NSUInteger)index;
 
 -(void)addInteger:(NSInteger)value;
--(NSInteger)getInteger:(NSUInteger)index;
+-(void)addUnsignedInteger:(NSUInteger)value;
 
--(JBJsonArray*)getJsonArray:(NSUInteger)index;
+
+-(NSInteger)getInteger:(NSUInteger)index;
+-(NSUInteger)getUnsignedInteger:(NSUInteger)index;
+
+-(JBJsonArray*)jsonArrayAtIndex:(NSUInteger)index;
 
 -(JBJsonObject*)jsonObjectAtIndex:(NSUInteger)index;
+
+-(NSNumber*)numberAtIndex:(NSUInteger)index;
 
 -(id)objectAtIndex:(NSUInteger)index;
 -(id)objectAtIndex:(NSUInteger)index defaultValue:(id)defaultValue;
@@ -38,8 +44,6 @@
 -(NSString*)getString:(NSUInteger)index;
 -(NSString*)getString:(NSUInteger)index defaultValue:(NSString*)defaultValue;
 
--(void)addUnsignedInteger:(NSUInteger)value;
--(NSUInteger)getUnsignedInteger:(NSUInteger)index;
 
 -(int)length;
 -(int)count;

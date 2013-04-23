@@ -4,9 +4,9 @@
 //
 
 
-#import "JBAuthProcessor.h"
-#import "JBConnectionHandler.h"
-#import "JBFileProcessor.h"
+#import "JBAuthRequestHandler.h"
+#import "JBHttpConnectionHandler.h"
+#import "JBFileRequestHandler.h"
 #import "JBHttpErrorHelper.h"
 #import "JBHttpResponseWriter.h"
 
@@ -26,7 +26,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-@interface JBConnectionHandler () 
+@interface JBHttpConnectionHandler () 
 
 
 // socket
@@ -73,7 +73,7 @@
 
 
 
-@implementation JBConnectionHandler
+@implementation JBHttpConnectionHandler
 
 static int _connectionId = 1;
 
@@ -244,7 +244,7 @@ static NSMutableArray* _httpProcessors = nil;
     bool writeResponseSucceded = [self writeResponse:response];
     
     // do some logging ...		
-    [JBConnectionHandler logReqest:request response:response writeResponseSucceded:writeResponseSucceded];
+    [JBHttpConnectionHandler logReqest:request response:response writeResponseSucceded:writeResponseSucceded];
     
     if (!writeResponseSucceded)
     {
@@ -336,7 +336,7 @@ static NSMutableArray* _httpProcessors = nil;
 
 +(void)handleConnection:(JBFileHandle*)fileDescriptor httpProcessor:(id<JBRequestHandler>)httpProcessor {
     
-    JBConnectionHandler* connectionHandler = [[JBConnectionHandler alloc] initWithSocket:fileDescriptor httpProcessor:httpProcessor];
+    JBHttpConnectionHandler* connectionHandler = [[JBHttpConnectionHandler alloc] initWithSocket:fileDescriptor httpProcessor:httpProcessor];
     {
         [NSThread detachNewThreadSelector:@selector(run:) toTarget:connectionHandler withObject:nil];
     }
@@ -350,7 +350,7 @@ static NSMutableArray* _httpProcessors = nil;
 
 -(id)initWithSocket:(JBFileHandle*)socket httpProcessor:(id<JBRequestHandler>)httpProcessor { 
     
-    JBConnectionHandler* answer = [super init];
+    JBHttpConnectionHandler* answer = [super init];
     
     if( nil != answer ) { 
         

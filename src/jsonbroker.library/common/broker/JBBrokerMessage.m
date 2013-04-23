@@ -92,11 +92,25 @@
 	
 }
 
--(void)addJSONObjectParameter:(JBJsonObject*)parameter {
-	
-	[_paramaters add:parameter];
-	
+-(bool)hasOrderedParamaters {
+    if( nil != _orderedParamaters ) {
+        return false;
+    }
+    return true;
+
 }
+
+-(JBJsonArray*)orderedParamaters {
+    if( nil != _orderedParamaters ) {
+        return _orderedParamaters;
+    }
+    
+    _orderedParamaters = [[JBJsonArray alloc] init];
+    return _orderedParamaters;
+    
+}
+
+
 
 -(NSString*)toString {
     
@@ -121,6 +135,26 @@
 }
 
 
+-(JBJsonArray*)toJsonArray {
+    
+    JBJsonArray* answer = [[JBJsonArray alloc] initWithCapacity:8];
+    [answer autorelease];
+    
+    [answer add:[_messageType identifier]];
+    [answer add:_metaData];
+    [answer add:_serviceName];
+    [answer addInteger:1]; // majorVersion
+    [answer addInteger:0]; // minorVersion
+    [answer add:_methodName];
+    [answer add:_associativeParamaters];
+    if( nil != _orderedParamaters ) {
+        
+        [answer add:_orderedParamaters];
+    }
+    
+    return answer;
+}
+
 
 #pragma mark -
 #pragma mark instance lifecycle
@@ -134,7 +168,7 @@
 	
 	answer->_metaData = [[JBJsonObject alloc] init];
 	answer->_associativeParamaters = [[JBJsonObject alloc] init];
-	answer->_paramaters = [[JBJsonArray alloc] init];
+	answer->_orderedParamaters = nil;
 	
 	
 	return answer;
@@ -158,40 +192,20 @@
 	
 	if( 7 < [values count] ) { 
 		
-        [answer setParamaters:[values getJsonArray:7]];
+        [answer setOrderedParamaters:[values jsonArrayAtIndex:7]];
 		
 	} else {
         
-		JBJsonArray* parameters = [[JBJsonArray alloc] initWithCapacity:0];
-        {
-            [answer setParamaters:parameters];            
-        }
-		[parameters release];
-		
+        // no-op
+        
 	}
+    
 		
 	
 	
 	return answer;
 }
 
-
--(JBJsonArray*)toJsonArray {
-    
-    JBJsonArray* answer = [[JBJsonArray alloc] initWithCapacity:5];
-    [answer autorelease];
-    
-    [answer add:[_messageType identifier]];
-    [answer add:_metaData];
-    [answer add:_serviceName];
-    [answer addInteger:1]; // majorVersion
-    [answer addInteger:0]; // minorVersion
-    [answer add:_methodName];
-    [answer add:_associativeParamaters];
-    [answer add:_paramaters];
-    
-    return answer;
-}
 
 
 -(void)dealloc {
@@ -203,7 +217,7 @@
 	[self setServiceName:nil];
 	[self setMethodName:nil];
 	[self setAssociativeParamaters:nil];
-	[self setParamaters:nil];
+	[self setOrderedParamaters:nil];
 	
 	[super dealloc];
 	
@@ -236,9 +250,10 @@
 @synthesize associativeParamaters = _associativeParamaters;
 
 
-//JsonArray* _paramaters;
-//@property (nonatomic, retain) JsonArray* paramaters;
-@synthesize paramaters = _paramaters;
+// orderedParamaters
+//JBJsonArray* _orderedParamaters;
+//@property (nonatomic, retain, getter=orderedParamaters) JBJsonArray* orderedParamaters;
+@synthesize orderedParamaters = _orderedParamaters;
 
 
 

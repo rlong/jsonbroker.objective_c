@@ -40,7 +40,7 @@
 	
 	JBNetworkAddress_Generated* answer = [super init];
 	
-	[answer setPort:[jsonObject getInt:@"port"]];
+	[answer setPort:[jsonObject intForKey:@"port"]];
 	
 	return answer;
 	

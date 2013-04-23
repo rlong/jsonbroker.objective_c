@@ -45,7 +45,7 @@ static JBJsonObjectHandler* _instance = nil;
 		
 		[writer appendChar:':'];
 		
-		id embeddedValue = [jsonObject getObject:key defaultValue:nil];
+		id embeddedValue = [jsonObject objectForKey:key defaultValue:nil];
 		
 		JBJsonHandler* valueHander = [JBJsonHandler getHandlerForObject:embeddedValue];
 		

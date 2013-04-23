@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
-		<int key="IBDocument.SystemTarget">1070</int>
-		<string key="IBDocument.SystemVersion">11A511</string>
-		<string key="IBDocument.InterfaceBuilderVersion">1920</string>
-		<string key="IBDocument.AppKitVersion">1138</string>
-		<string key="IBDocument.HIToolboxVersion">566.00</string>
+		<int key="IBDocument.SystemTarget">1080</int>
+		<string key="IBDocument.SystemVersion">11D50</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2457</string>
+		<string key="IBDocument.AppKitVersion">1138.32</string>
+		<string key="IBDocument.HIToolboxVersion">568.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">1920</string>
+			<string key="NS.object.0">2457</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>NSWindowTemplate</string>
@@ -248,18 +248,9 @@
 								</object>
 								<object class="NSMenuItem" id="1023925487">
 									<reference key="NSMenu" ref="720053764"/>
-									<string key="NSTitle">Save</string>
+									<string key="NSTitle">Save…</string>
 									<string key="NSKeyEquiv">s</string>
 									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="35465992"/>
-									<reference key="NSMixedImage" ref="502551668"/>
-								</object>
-								<object class="NSMenuItem" id="117038363">
-									<reference key="NSMenu" ref="720053764"/>
-									<string key="NSTitle">Save As…</string>
-									<string key="NSKeyEquiv">S</string>
-									<int key="NSKeyEquivModMask">1179648</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
@@ -432,6 +423,16 @@
 												<reference key="NSOnImage" ref="35465992"/>
 												<reference key="NSMixedImage" ref="502551668"/>
 												<int key="NSTag">1</int>
+											</object>
+											<object class="NSMenuItem" id="738670835">
+												<reference key="NSMenu" ref="963351320"/>
+												<string key="NSTitle">Find and Replace…</string>
+												<string key="NSKeyEquiv">f</string>
+												<int key="NSKeyEquivModMask">1572864</int>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="35465992"/>
+												<reference key="NSMixedImage" ref="502551668"/>
+												<int key="NSTag">12</int>
 											</object>
 											<object class="NSMenuItem" id="326711663">
 												<reference key="NSMenu" ref="963351320"/>
@@ -845,14 +846,14 @@
 											</object>
 											<object class="NSMenuItem" id="691570813">
 												<reference key="NSMenu" ref="786677654"/>
-												<string key="NSTitle">Ligature</string>
+												<string key="NSTitle">Ligatures</string>
 												<string key="NSKeyEquiv"/>
 												<int key="NSMnemonicLoc">2147483647</int>
 												<reference key="NSOnImage" ref="35465992"/>
 												<reference key="NSMixedImage" ref="502551668"/>
 												<string key="NSAction">submenuAction:</string>
 												<object class="NSMenu" key="NSSubmenu" id="1058217995">
-													<string key="NSTitle">Ligature</string>
+													<string key="NSTitle">Ligatures</string>
 													<array class="NSMutableArray" key="NSMenuItems">
 														<object class="NSMenuItem" id="706297211">
 															<reference key="NSMenu" ref="1058217995"/>
@@ -1302,7 +1303,7 @@
 					<int key="NSvFlags">256</int>
 					<string key="NSFrameSize">{480, 360}</string>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
+				<string key="NSScreenRect">{{0, 0}, {2560, 1418}}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
@@ -1546,14 +1547,6 @@
 						<reference key="destination" ref="1023925487"/>
 					</object>
 					<int key="connectionID">362</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">saveDocumentAs:</string>
-						<reference key="source" ref="1014"/>
-						<reference key="destination" ref="117038363"/>
-					</object>
-					<int key="connectionID">363</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -1949,6 +1942,14 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
+						<string key="label">performFindPanelAction:</string>
+						<reference key="source" ref="1014"/>
+						<reference key="destination" ref="738670835"/>
+					</object>
+					<int key="connectionID">535</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
 						<string key="label">addFontTrait:</string>
 						<reference key="source" ref="755631768"/>
 						<reference key="destination" ref="305399458"/>
@@ -2073,7 +2074,6 @@
 						<reference key="object" ref="720053764"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="1023925487"/>
-							<reference ref="117038363"/>
 							<reference ref="49223823"/>
 							<reference ref="722745758"/>
 							<reference ref="705341025"/>
@@ -2089,11 +2089,6 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">75</int>
 						<reference key="object" ref="1023925487"/>
-						<reference key="parent" ref="720053764"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">80</int>
-						<reference key="object" ref="117038363"/>
 						<reference key="parent" ref="720053764"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -2277,6 +2272,7 @@
 							<reference ref="159080638"/>
 							<reference ref="326711663"/>
 							<reference ref="447796847"/>
+							<reference ref="738670835"/>
 						</array>
 						<reference key="parent" ref="892235320"/>
 					</object>
@@ -2994,6 +2990,11 @@
 						<reference key="object" ref="560145579"/>
 						<reference key="parent" ref="956096989"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">534</int>
+						<reference key="object" ref="738670835"/>
+						<reference key="parent" ref="963351320"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -3136,6 +3137,7 @@
 				<string key="515.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="516.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="517.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="534.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="56.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="57.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="58.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3146,7 +3148,6 @@
 				<string key="77.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="78.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="79.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="80.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="81.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="82.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="83.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3156,13 +3157,13 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">532</int>
+			<int key="maxID">535</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
-					<string key="className">ABAppCardController</string>
-					<string key="superclassName">NSWindowController</string>
+					<string key="className">ABCardController</string>
+					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="addCardViewField:">id</string>
 						<string key="copy:">id</string>
@@ -3171,7 +3172,6 @@
 						<string key="find:">id</string>
 						<string key="paste:">id</string>
 						<string key="saveChanges:">id</string>
-						<string key="toggleCardEditingMode:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="addCardViewField:">
@@ -3200,10 +3200,6 @@
 						</object>
 						<object class="IBActionInfo" key="saveChanges:">
 							<string key="name">saveChanges:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="toggleCardEditingMode:">
-							<string key="name">toggleCardEditingMode:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
@@ -3243,7 +3239,7 @@
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/ABAppCardController.h</string>
+						<string key="minorKey">./Classes/ABCardController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -3340,16 +3336,8 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">DVTAutoLayoutView</string>
-					<string key="superclassName">NSView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/DVTAutoLayoutView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
 					<string key="className">DVTBorderedView</string>
-					<string key="superclassName">DVTAutoLayoutView</string>
+					<string key="superclassName">DVTLayoutView_ML</string>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">contentView</string>
 						<string key="NS.object.0">NSView</string>
@@ -3399,6 +3387,14 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
+					<string key="className">DVTLayoutView_ML</string>
+					<string key="superclassName">NSView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/DVTLayoutView_ML.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">DVTOutlineView</string>
 					<string key="superclassName">NSOutlineView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -3415,11 +3411,19 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">DVTStackView</string>
-					<string key="superclassName">DVTAutoLayoutView</string>
+					<string key="className">DVTStackView_ML</string>
+					<string key="superclassName">DVTLayoutView_ML</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/DVTStackView.h</string>
+						<string key="minorKey">./Classes/DVTStackView_ML.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">DVTTableView</string>
+					<string key="superclassName">NSTableView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/DVTTableView.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -3473,12 +3477,22 @@
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="changeFont:">id</string>
+						<string key="performCopy:">id</string>
+						<string key="performCut:">id</string>
 						<string key="selectAll:">id</string>
 						<string key="sizeSelectionToFit:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="changeFont:">
 							<string key="name">changeFont:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="performCopy:">
+							<string key="name">performCopy:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="performCut:">
+							<string key="name">performCut:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="selectAll:">
@@ -3497,7 +3511,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">IDECapsuleListView</string>
-					<string key="superclassName">DVTStackView</string>
+					<string key="superclassName">DVTStackView_ML</string>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">dataSource</string>
 						<string key="NS.object.0">id</string>
@@ -3884,6 +3898,33 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
+					<string key="className">IDEDocDownloadsTableViewController</string>
+					<string key="superclassName">NSObject</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="_downloadButtonCell">NSButtonCell</string>
+						<string key="_tableView">DVTTableView</string>
+						<string key="prefPaneController">IDEDocViewingPrefPaneController</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="_downloadButtonCell">
+							<string key="name">_downloadButtonCell</string>
+							<string key="candidateClassName">NSButtonCell</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="_tableView">
+							<string key="name">_tableView</string>
+							<string key="candidateClassName">DVTTableView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="prefPaneController">
+							<string key="name">prefPaneController</string>
+							<string key="candidateClassName">IDEDocViewingPrefPaneController</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/IDEDocDownloadsTableViewController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">IDEDocSetOutlineView</string>
 					<string key="superclassName">NSOutlineView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -3945,6 +3986,8 @@
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="addSubscription:">id</string>
 						<string key="checkForAndInstallUpdatesNow:">id</string>
+						<string key="deleteDocSet:">id</string>
+						<string key="downloadAction:">id</string>
 						<string key="minimumFontSizeComboBoxAction:">id</string>
 						<string key="minimumFontSizeEnabledAction:">id</string>
 						<string key="showHelp:">id</string>
@@ -3960,6 +4003,14 @@
 						</object>
 						<object class="IBActionInfo" key="checkForAndInstallUpdatesNow:">
 							<string key="name">checkForAndInstallUpdatesNow:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="deleteDocSet:">
+							<string key="name">deleteDocSet:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="downloadAction:">
+							<string key="name">downloadAction:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="minimumFontSizeComboBoxAction:">
@@ -4003,6 +4054,7 @@
 						<string key="checkAndInstallNowButton">NSButton</string>
 						<string key="docSetInfoTextView">NSTextView</string>
 						<string key="docSetOutlineViewController">IDEDocSetOutlineViewController</string>
+						<string key="downloadsTableViewController">IDEDocDownloadsTableViewController</string>
 						<string key="minimumFontSizeControl">NSComboBox</string>
 						<string key="noUpdatesAvailableMessage">NSTextField</string>
 						<string key="showInfoButton">NSButton</string>
@@ -4054,6 +4106,10 @@
 						<object class="IBToOneOutletInfo" key="docSetOutlineViewController">
 							<string key="name">docSetOutlineViewController</string>
 							<string key="candidateClassName">IDEDocSetOutlineViewController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="downloadsTableViewController">
+							<string key="name">downloadsTableViewController</string>
+							<string key="candidateClassName">IDEDocDownloadsTableViewController</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="minimumFontSizeControl">
 							<string key="name">minimumFontSizeControl</string>
@@ -4174,21 +4230,21 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">NSDocumentController</string>
+					<string key="className">NSResponder</string>
 					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">_openRecentDocument:</string>
+						<string key="NS.key.0">_insertFindPattern:</string>
 						<string key="NS.object.0">id</string>
 					</object>
 					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">_openRecentDocument:</string>
+						<string key="NS.key.0">_insertFindPattern:</string>
 						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">_openRecentDocument:</string>
+							<string key="name">_insertFindPattern:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/NSDocumentController.h</string>
+						<string key="minorKey">./Classes/NSResponder.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -4573,6 +4629,28 @@
 						<string key="minorKey">./Classes/XDTableView.h</string>
 					</object>
 				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">AppDelegate</string>
+					<string key="superclassName">NSObject</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="applicationShouldTerminate:">id</string>
+						<string key="applicationWillFinishLaunching:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="applicationShouldTerminate:">
+							<string key="name">applicationShouldTerminate:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="applicationWillFinishLaunching:">
+							<string key="name">applicationWillFinishLaunching:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/AppDelegate.h</string>
+					</object>
+				</object>
 			</array>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
@@ -4580,8 +4658,9 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NSMenuCheckmark">{9, 8}</string>
-			<string key="NSMenuMixedState">{7, 2}</string>
+			<string key="NSMenuCheckmark">{11, 11}</string>
+			<string key="NSMenuMixedState">{10, 3}</string>
 		</dictionary>
+		<bool key="IBDocument.UseAutolayout">YES</bool>
 	</data>
 </archive>

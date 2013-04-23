@@ -114,6 +114,12 @@ static NSObject* _NULL_OBJECT = nil;
     
 }
 
+-(void)addUnsignedInteger:(NSUInteger)value {
+
+    [_values addObject:[NSNumber numberWithUnsignedInteger:value]];
+
+}
+
 -(int)getInt:(NSUInteger)index {
 	
     id blob = [self getBlobAtIndex:index throwExceptionOnNil:true];
@@ -156,7 +162,26 @@ static NSObject* _NULL_OBJECT = nil;
 	return [number integerValue];
 }
 
--(JBJsonArray*)getJsonArray:(NSUInteger)index {
+
+
+-(NSUInteger)getUnsignedInteger:(NSUInteger)index {
+	
+    id blob = [self getBlobAtIndex:index throwExceptionOnNil:true];
+	
+	if( ![blob isKindOfClass:[NSNumber class]] ) {
+		
+        NSString* technicalError = [NSString stringWithFormat:@"![blob isKindOfClass:[NSNumber class]]; NSStringFromClass([blob class]) = %@", NSStringFromClass([blob class])];
+		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
+		[e autorelease];
+		@throw e;
+	}
+	
+	NSNumber* number = (NSNumber*)blob;
+	return [number unsignedIntegerValue];
+}
+
+
+-(JBJsonArray*)jsonArrayAtIndex:(NSUInteger)index {
 	
 	
     id blob = [self getBlobAtIndex:index throwExceptionOnNil:true];
@@ -190,6 +215,24 @@ static NSObject* _NULL_OBJECT = nil;
 	
 	JBJsonObject* answer = (JBJsonObject*)blob;
 	return answer;
+}
+
+-(NSNumber*)numberAtIndex:(NSUInteger)index {
+    
+    id blob = [self getBlobAtIndex:index throwExceptionOnNil:true];
+    
+    if( ![blob isKindOfClass:[NSNumber class]] ) {
+		
+        NSString* technicalError = [NSString stringWithFormat:@"![blob isKindOfClass:[NSNumber class]]; NSStringFromClass([blob class]) = %@", NSStringFromClass([blob class])];
+		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
+		[e autorelease];
+		@throw e;
+	}
+	
+	NSNumber* answer = (NSNumber*)blob;
+    return answer;
+
+    
 }
 
 
@@ -252,28 +295,6 @@ static NSObject* _NULL_OBJECT = nil;
 	
 }
 
--(void)addUnsignedInteger:(NSUInteger)value {
-    
-    [_values addObject:[NSNumber numberWithUnsignedInteger:value]];
-    
-}
-
-
--(NSUInteger)getUnsignedInteger:(NSUInteger)index {
-	
-    id blob = [self getBlobAtIndex:index throwExceptionOnNil:true];
-	
-	if( ![blob isKindOfClass:[NSNumber class]] ) {
-		
-        NSString* technicalError = [NSString stringWithFormat:@"![blob isKindOfClass:[NSNumber class]]; NSStringFromClass([blob class]) = %@", NSStringFromClass([blob class])];
-		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-		[e autorelease];
-		@throw e;
-	}
-	
-	NSNumber* number = (NSNumber*)blob;
-	return [number unsignedIntegerValue];
-}
 
 
 -(int)length {

@@ -73,25 +73,25 @@
 
 +(BaseException*)toBaseException:(JBJsonObject*)jsonObject {
     
-    NSString* originator = [jsonObject getString:@"originator" defaultValue:@"NULL"];
-    NSString* fault_string = [jsonObject getString:@"faultMessage" defaultValue:@"NULL"];
+    NSString* originator = [jsonObject stringForKey:@"originator" defaultValue:@"NULL"];
+    NSString* fault_string = [jsonObject stringForKey:@"faultMessage" defaultValue:@"NULL"];
     
     BaseException* answer = [[BaseException alloc] initWithOriginator:originator faultMessage:fault_string];
     [answer autorelease];
     
 
     {
-        NSString* errorDomain = [jsonObject getString:@"errorDomain" defaultValue:nil];
+        NSString* errorDomain = [jsonObject stringForKey:@"errorDomain" defaultValue:nil];
         [answer setErrorDomain:errorDomain];
     }
 
-    int fault_code = [jsonObject getInt:@"faultCode" defaultValue:[BaseException defaultFaultCode]];
+    int fault_code = [jsonObject intForKey:@"faultCode" defaultValue:[BaseException defaultFaultCode]];
     [answer setFaultCode:fault_code];
     
-    NSString* underlyingFaultMessage = [jsonObject getString:@"underlyingFaultMessage" defaultValue:nil];
+    NSString* underlyingFaultMessage = [jsonObject stringForKey:@"underlyingFaultMessage" defaultValue:nil];
     [answer setUnderlyingFaultMessage:underlyingFaultMessage];
     
-    JBJsonArray* stack_trace = [jsonObject getJsonArray:@"stackTrace" defaultValue:nil];
+    JBJsonArray* stack_trace = [jsonObject jsonArrayForKey:@"stackTrace" defaultValue:nil];
     if( nil != stack_trace ) {
         for( int i  = 0, count = [stack_trace count]; i < count; i++ ) { 
             NSString* key = [NSString stringWithFormat:@"cause[%d]", i];
@@ -100,14 +100,14 @@
         }
     }
     
-    JBJsonObject* fault_context = [jsonObject getJsonObject:@"faultContext" defaultValue:nil];
+    JBJsonObject* fault_context = [jsonObject jsonObjectForKey:@"faultContext" defaultValue:nil];
     if( nil != fault_context ) {
         
         NSArray* allKeys = [fault_context allKeys];
         
         for( long i = 0, count = [allKeys count]; i < count; i++ ) {
             NSString* key = [allKeys objectAtIndex:i];
-            id value = [fault_context getObject:key];
+            id value = [fault_context objectForKey:key];
             if( nil != value && [value isKindOfClass:[NSString class]] ) {
                 [answer addStringContext:(NSString*)value withName:key];
             }

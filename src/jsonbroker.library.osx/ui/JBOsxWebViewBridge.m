@@ -149,17 +149,17 @@
 
 
 
--(void)onNotification:(JBBrokerMessage*)notification {
-    
-    Log_enteredMethod();
-    
-    NSString* javascript = [JBJavascriptCallbackAdapterHelper buildJavascriptNotification:notification];
-    Log_debugString(javascript );
-    
-    [self performSelectorOnMainThread:@selector(postJavascript:) withObject:javascript waitUntilDone:NO];
-    
-    
-}
+//-(void)onNotification:(JBBrokerMessage*)notification {
+//    
+//    Log_enteredMethod();
+//    
+//    NSString* javascript = [JBJavascriptCallbackAdapterHelper buildJavascriptNotification:notification];
+//    Log_debugString(javascript );
+//    
+//    [self performSelectorOnMainThread:@selector(postJavascript:) withObject:javascript waitUntilDone:NO];
+//    
+//    
+//}
 
 
 -(void)onResponse:(JBBrokerMessage*)response {

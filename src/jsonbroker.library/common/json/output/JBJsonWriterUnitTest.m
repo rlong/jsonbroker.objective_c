@@ -3,6 +3,7 @@
 // Released under the MIT license ( http://opensource.org/licenses/MIT )
 //
 
+#import "JBBrokerMessage.h"
 #import "JBLog.h"
 #import "JBJsonObject.h"
 #import "JBJsonStringOutput.h"
@@ -120,6 +121,26 @@
     
     
     
+}
+
+-(void)testBrokerMessage {
+    
+    JBBrokerMessage* message = [JBBrokerMessage buildRequestWithServiceName:@"jsonbroker.TestService" methodName:@"ping"];
+    JBJsonArray* target = [message toJsonArray];
+    
+    JBJsonStringOutput* output = [[JBJsonStringOutput alloc] init];
+    [output autorelease];
+
+    JBJsonWriter* writer = [[JBJsonWriter alloc] initWithOutput:output];
+    [writer autorelease];
+
+    [JBJsonWalker walkJsonArrayDocument:target visitor:writer];
+
+    NSString* actual = [output toString];
+    Log_debugString( actual );
+    STAssertTrue([@"[\"request\",{},\"jsonbroker.TestService\",1,0,\"ping\",{}]" isEqualToString:actual], @"actual = '%@'", actual);
+
+
 }
 
 

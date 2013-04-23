@@ -52,7 +52,7 @@ static NSMutableDictionary* _processors;
 }
 
 
--(void)addHttpProcessor:(id<JBRequestHandler>)processor {
+-(void)addRequestHandler:(id<JBRequestHandler>)processor {
     
     NSString* requestUri = [NSString stringWithFormat:@"%@%@", _REQUEST_URI, [processor getProcessorUri]];
     Log_debugString( requestUri );
@@ -62,7 +62,7 @@ static NSMutableDictionary* _processors;
 }
 
 
--(id<JBRequestHandler>)getHttpProcessor:(NSString*)requestUri {
+-(id<JBRequestHandler>)getRequestHandler:(NSString*)requestUri {
     
     NSRange indexOfQuestionMark = [requestUri rangeOfString:@"?"];
     if( NSNotFound != indexOfQuestionMark.location ) { 
@@ -86,7 +86,7 @@ static NSMutableDictionary* _processors;
     
     NSString* requestUri = [request requestUri];
     
-    id<JBRequestHandler> processor = [self getHttpProcessor:requestUri];
+    id<JBRequestHandler> processor = [self getRequestHandler:requestUri];
     
     if( nil ==  processor ) { 
         

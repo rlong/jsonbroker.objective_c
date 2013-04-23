@@ -213,18 +213,6 @@
 
 
 
--(void)onNotification:(JBBrokerMessage*)notification {
-    
-	if( !_running ) {
-		
-		Log_warn(@"!_active");
-		return;
-	}
-	
-	NSString* javascript = [JBJavascriptCallbackAdapterHelper buildJavascriptNotification:notification];
-	
-	[self performSelectorOnMainThread:@selector(postJavascript:) withObject:javascript waitUntilDone:NO];
-}
 
 
 -(void)onResponse:(JBBrokerMessage*)response {

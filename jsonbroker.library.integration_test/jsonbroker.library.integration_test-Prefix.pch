@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'jsonbroker.library.integration_test' target in the 'jsonbroker.library.integration_test' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

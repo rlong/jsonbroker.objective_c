@@ -78,7 +78,7 @@
     
 	[JBObjectTracker allocated:answer];
 	
-    JBJsonArray* inet_address = [network_host getJsonArray:@"inet_address"];
+    JBJsonArray* inet_address = [network_host jsonArrayForKey:@"inet_address"];
 	answer->_ipAddress = [[JBIPAddress alloc] initWithJsonArray:inet_address];
 	answer->_hostName = [[JBHostName alloc] initWithJsonObject:network_host];
 

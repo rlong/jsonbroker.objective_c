@@ -109,7 +109,7 @@
 	
 	[JBObjectTracker allocated:answer];
 	
-    JBJsonObject* network_host = [network_address getJsonObject:@"network_host"];
+    JBJsonObject* network_host = [network_address jsonObjectForKey:@"network_host"];
     answer->_networkHost = [[JBNetworkHost alloc] initWithJsonObject:network_host];
 	
 	return answer;

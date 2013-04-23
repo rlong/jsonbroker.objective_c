@@ -42,9 +42,9 @@
 	
 	JBHostName_Generated* answer = [super init];
 	
-	[answer setApplicationName:[jsonObject getString:@"application_name" defaultValue:nil]];
-	[answer setZeroconfName:[jsonObject getString:@"zeroconf_name" defaultValue:nil]];
-	[answer setDnsName:[jsonObject getString:@"dns_name" defaultValue:nil]];
+	[answer setApplicationName:[jsonObject stringForKey:@"application_name" defaultValue:nil]];
+	[answer setZeroconfName:[jsonObject stringForKey:@"zeroconf_name" defaultValue:nil]];
+	[answer setDnsName:[jsonObject stringForKey:@"dns_name" defaultValue:nil]];
 	
 	
 	

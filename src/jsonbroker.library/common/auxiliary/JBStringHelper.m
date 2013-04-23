@@ -37,8 +37,17 @@ const char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a'
     
 }
 
++(NSMutableData*)toUtf8MutableData:(NSString*)input {
+    
+    const char* bytes = [input UTF8String];
+	
+	NSMutableData* answer = [NSMutableData dataWithBytes:bytes length:[input lengthOfBytesUsingEncoding:NSUTF8StringEncoding]];
+    
+    return answer;
 
-+(NSString*)convertPathToUri:(NSString*)path { 
+}
+
++(NSString*)convertPathToUri:(NSString*)path {
     
     Log_debugString( path );
     

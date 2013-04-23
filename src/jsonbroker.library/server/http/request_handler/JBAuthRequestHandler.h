@@ -13,7 +13,7 @@
 #import "JBRequestHandler.h"
 
 
-@interface JBAuthProcessor : NSObject <JBRequestHandler> {
+@interface JBAuthRequestHandler : NSObject <JBRequestHandler> {
 
     // processors
 	NSMutableDictionary* _processors;
@@ -28,7 +28,7 @@
 }
 
 
--(void)addHttpProcessor:(id<JBRequestHandler>)processor;
+-(void)addRequestHandler:(id<JBRequestHandler>)processor;
 
 
 #pragma mark instance lifecycle

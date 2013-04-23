@@ -17,46 +17,45 @@
 }
 
 
+
 +(JBJsonObject*)buildWithData:(NSData*)data;
 +(JBJsonObject*)buildWithString:(NSString*)jsonString;
 
 -(NSEnumerator*)keyEnumerator;
 -(NSArray*)allKeys;
 
--(BOOL)getBoolean:(NSString*)key defaultValue:(bool)defaultValue;
--(BOOL)getBoolean:(NSString*)key;
+-(BOOL)boolForKey:(NSString*)key defaultValue:(bool)defaultValue;
+-(BOOL)boolForKey:(NSString*)key;
 -(void)setBoolean:(BOOL)value forKey:(NSString*)key;
 
--(NSInteger)getInteger:(NSString*)key defaultValue:(NSInteger)defaultValue;
--(int)getInt:(NSString*)key;
--(int)getInt:(NSString*)key defaultValue:(int)defaultValue;
+-(NSInteger)integerForKey:(NSString*)key defaultValue:(NSInteger)defaultValue;
+
+-(int)intForKey:(NSString*)key;
+-(int)intForKey:(NSString*)key defaultValue:(int)defaultValue;
+
 -(void)setInt:(int)value forKey:(NSString*)key;
 -(void)setInteger:(NSInteger)value forKey:(NSString*)key;
 
--(JBJsonArray*)getJsonArray:(NSString*)key;
--(JBJsonArray*)getJsonArray:(NSString*)key defaultValue:(JBJsonArray*)defaultValue;
+-(JBJsonArray*)jsonArrayForKey:(NSString*)key;
+-(JBJsonArray*)jsonArrayForKey:(NSString*)key defaultValue:(JBJsonArray*)defaultValue;
 
+-(JBJsonObject*)jsonObjectForKey:(NSString*)key;
+-(JBJsonObject*)jsonObjectForKey:(NSString*)key defaultValue:(JBJsonObject*)defaultValue;
 
--(JBJsonObject*)getJsonObject:(NSString*)key;
--(JBJsonObject*)getJsonObject:(NSString*)key defaultValue:(JBJsonObject*)defaultValue;
-
--(long)getLong:(NSString*)key;
+-(long)longForKey:(NSString*)key;
 -(void)setLong:(long)value forKey:(NSString*)key;
 
--(long long)getLongLong:(NSString*)key;
+-(long long)longLongForKey:(NSString*)key;
 -(void)setLongLong:(long long)value forKey:(NSString*)key;
 
--(id)getObject:(NSString*)key;
--(id)getObject:(NSString*)key defaultValue:(id)defaultValue;
-
-
-
+-(id)objectForKey:(NSString*)key;
+-(id)objectForKey:(NSString*)key defaultValue:(id)defaultValue;
 -(void)setObject:(id)object forKey:(NSString*)key;
 
--(NSString*)getString:(NSString*)key;
--(NSString*)getString:(NSString*)key defaultValue:(NSString*)defaultValue;
+-(NSString*)stringForKey:(NSString*)key;
+-(NSString*)stringForKey:(NSString*)key defaultValue:(NSString*)defaultValue;
 
--(NSUInteger)getUnsignedInteger:(NSString*)key;
+-(NSUInteger)unsignedIntegerForKey:(NSString*)key;
 -(void)setUnsignedInteger:(NSUInteger)value forKey:(NSString*)key;
 
 -(void)setUnsignedLongLong:(unsigned long long)value forKey:(NSString*)key;

@@ -43,7 +43,7 @@
 	
 	JBSecurityConfiguration_Generated* answer = [super init];
 	
-	[answer setLocalRealm:[jsonObject getString:@"localRealm" defaultValue:nil]];
+	[answer setLocalRealm:[jsonObject stringForKey:@"localRealm" defaultValue:nil]];
 	
 	return answer;
 	

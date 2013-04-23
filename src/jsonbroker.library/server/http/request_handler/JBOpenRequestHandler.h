@@ -24,7 +24,7 @@
 
 +(NSString*)REQUEST_URI;
 
--(void)addHttpProcessor:(id<JBRequestHandler>)processor;
+-(void)addRequestHandler:(id<JBRequestHandler>)processor;
 
 
 

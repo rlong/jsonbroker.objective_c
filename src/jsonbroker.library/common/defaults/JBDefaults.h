@@ -6,15 +6,38 @@
 
 #import <Foundation/Foundation.h>
 
-
-/* template implementation */ 
-@interface JBDefaults : NSObject
+#import "JBJsonObject.h"
 
 
--(bool)getBoolWithName:(NSString*)name defaultValue:(bool)defaultValue;
+/* simply uses environment variables */
+@interface JBDefaults : NSObject {
+    
+    
+    // environment
+    JBJsonObject* _environment;
+    //@property (nonatomic, retain) JBJsonObject* environment;
+    //@synthesize environment = _environment;
 
--(int)getIntWithName:(NSString*)name defaultValue:(int)defaultValue;
+    
+    
+}
 
--(id)initWithScope:(NSString*)scope;
+
+-(bool)boolWithName:(NSString*)name defaultValue:(bool)defaultValue;
+
+
+
+-(int)intWithName:(NSString*)name defaultValue:(int)defaultValue;
+
+-(JBJsonObject*)jsonObjectWithName:(NSString*)name defaultValue:(JBJsonObject*)defaultValue;
+
++(JBDefaults*)getDefaultsForScope:(NSString*)scope;
+
+
+#pragma mark -
+#pragma mark instance lifecycle
+
+-(id)initWithEnvironment:(JBJsonObject*) environment;
+//-(id)initWithScope:(NSString*)scope;
 
 @end

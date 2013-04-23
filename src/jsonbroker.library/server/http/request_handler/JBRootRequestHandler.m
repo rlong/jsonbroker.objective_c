@@ -8,13 +8,13 @@
 #import "JBHttpErrorHelper.h"
 #import "JBLog.h"
 #import "JBObjectTracker.h"
-#import "JBRootProcessor.h"
+#import "JBRootRequestHandler.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-@interface JBRootProcessor () 
+@interface JBRootRequestHandler () 
 
 // httpProcessors
 //NSMutableArray* _httpProcessors;
@@ -36,11 +36,11 @@
 #pragma mark -
 
 
-@implementation JBRootProcessor
+@implementation JBRootRequestHandler
 
 
 
--(void)addHttpProcessor:(id<JBRequestHandler>)httpProcessor {
+-(void)addRequestHandler:(id<JBRequestHandler>)httpProcessor {
     
     Log_debugString( [httpProcessor getProcessorUri] );
     
@@ -49,7 +49,7 @@
     
 }
 
-#pragma mark <HttpProcessor> implementation
+#pragma mark <JBRequestHandler> implementation
 
 
 -(NSString*)getProcessorUri {
@@ -80,7 +80,7 @@
 
 -(id)init { 
     
-    JBRootProcessor* answer = [super init];
+    JBRootRequestHandler* answer = [super init];
     
     if( nil != answer ) { 
         answer->_httpProcessors = [[NSMutableArray alloc] init];
@@ -94,7 +94,7 @@
 
 -(id)initWithDefaultProcessor:(id<JBRequestHandler>)defaultProcessor { 
     
-    JBRootProcessor* answer = [super init];
+    JBRootRequestHandler* answer = [super init];
     
     if( nil != answer ) { 
         answer->_httpProcessors = [[NSMutableArray alloc] init];

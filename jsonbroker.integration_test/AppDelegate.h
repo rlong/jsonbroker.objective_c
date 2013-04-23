@@ -2,8 +2,8 @@
 //  AppDelegate.h
 //  jsonbroker.integration_test
 //
-//  Created by Richard Long on 23/01/2012.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by rlong on 12/04/13.
+//
 //
 
 #import <Cocoa/Cocoa.h>

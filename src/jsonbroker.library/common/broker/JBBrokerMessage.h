@@ -31,9 +31,11 @@
 	//@property (nonatomic, retain) JSONObject* associativeParamaters;
 	//@synthesize associativeParamaters = _associativeParamaters;
 	
-	JBJsonArray* _paramaters;
-	//@property (nonatomic, retain) JSONArray* paramaters;
-	//@synthesize paramaters = _paramaters;
+    // orderedParamaters
+    JBJsonArray* _orderedParamaters;
+    //@property (nonatomic, retain, getter=orderedParamaters) JBJsonArray* orderedParamaters;
+    //@synthesize orderedParamaters = _orderedParamaters;
+    
 	
 	
 
@@ -48,8 +50,9 @@
 +(JBBrokerMessage*)buildMetaResponse:(JBBrokerMessage*)request;
 +(JBBrokerMessage*)buildResponse:(JBBrokerMessage*)request;
 
+-(bool)hasOrderedParamaters;
 
--(void)addJSONObjectParameter:(JBJsonObject*)parameter;
+//-(void)addJSONObjectParameter:(JBJsonObject*)parameter;
 
 -(JBJsonArray*)toJsonArray;
 
@@ -86,9 +89,9 @@
 @property (nonatomic, retain) JBJsonObject* associativeParamaters;
 //@synthesize associativeParamaters = _associativeParamaters;
 
-//JSONArray* _paramaters;
-@property (nonatomic, retain) JBJsonArray* paramaters;
-//@synthesize paramaters = _paramaters;
-
+// orderedParamaters
+//JBJsonArray* _orderedParamaters;
+@property (nonatomic, retain, getter=orderedParamaters) JBJsonArray* orderedParamaters;
+//@synthesize orderedParamaters = _orderedParamaters;
 
 @end

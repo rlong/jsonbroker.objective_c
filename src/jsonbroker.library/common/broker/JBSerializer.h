@@ -14,7 +14,6 @@
 
 +(JBBrokerMessage*)deserialize:(NSData*)data;
 	
-+(NSData*)serialize:(JBBrokerMessage*)message;
 
 
 

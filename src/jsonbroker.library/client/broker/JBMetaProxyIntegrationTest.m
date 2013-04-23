@@ -5,12 +5,12 @@
 
 
 
+#import "JBIntegrationTestUtilities.h"
+#import "JBLog.h"
 #import "JBMetaProxy.h"
 #import "JBMetaProxyIntegrationTest.h"
+#import "JBServicesRegistery.h"
 #import "JBTestService.h"
-
-#import "JBLog.h"
-#import "JBIntegrationTestUtilities.h"
 
 @implementation JBMetaProxyIntegrationTest
 
@@ -20,15 +20,29 @@
     Log_enteredMethod();
 }
 
+
++(JBMetaProxy*)buildProxy {
+    
+    JBServicesRegistery *servicesRegistery =  [[JBServicesRegistery alloc] init];
+    [servicesRegistery autorelease];
+    
+    JBTestService* testService = [[JBTestService alloc] init];
+    [servicesRegistery addService:testService];
+    
+    JBMetaProxy* answer = [[JBMetaProxy alloc] initWithService:servicesRegistery];
+    [answer autorelease];
+    
+    return answer;
+
+
+}
+
+
 -(void)testGetInterfaceVersion {
     
     Log_enteredMethod();
     
-    
-    id<JBService> openHttpProxy = [JBIntegrationTestUtilities buildOpenHttpProxy];
-    
-    JBMetaProxy* proxy = [[JBMetaProxy alloc] initWithService:openHttpProxy];
-    [proxy autorelease];
+    JBMetaProxy* proxy = [JBMetaProxyIntegrationTest buildProxy];
     
     NSArray* version = [proxy getVersion:[JBTestService SERVICE_NAME]];
     STAssertNotNil( version, @"version = %p", version);
@@ -49,12 +63,8 @@
 -(void)testGetInterfaceVersionFromNonExistingService { 
     
     Log_enteredMethod();
-    
-    
-    id<JBService> openHttpProxy = [JBIntegrationTestUtilities buildOpenHttpProxy];
-    
-    JBMetaProxy* proxy = [[JBMetaProxy alloc] initWithService:openHttpProxy];
-    [proxy autorelease];
+        
+    JBMetaProxy* proxy = [JBMetaProxyIntegrationTest buildProxy];
     
     NSArray* version = [proxy getVersion:@"module.non-existing-service"];
     STAssertNil( version, @"version = %p", version);

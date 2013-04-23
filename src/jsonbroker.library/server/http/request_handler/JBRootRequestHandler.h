@@ -11,7 +11,7 @@
 
 #import "JBRequestHandler.h"
 
-@interface JBRootProcessor : NSObject <JBRequestHandler> {
+@interface JBRootRequestHandler : NSObject <JBRequestHandler> {
     
     // httpProcessors
 	NSMutableArray* _httpProcessors;
@@ -28,7 +28,7 @@
     
 }
 
--(void)addHttpProcessor:(id<JBRequestHandler>)httpProcessor;
+-(void)addRequestHandler:(id<JBRequestHandler>)httpProcessor;
 
 
 #pragma mark instance lifecycle 

@@ -22,12 +22,14 @@
 
 // objectDocument
 //JBJsonObject* _objectDocument;
-@property (nonatomic, retain) JBJsonObject* objectDocument;
+//@property (nonatomic, readonly) JBJsonObject* objectDocument;
+@property (nonatomic, retain, readwrite) JBJsonObject* objectDocument;
 //@synthesize objectDocument = _objectDocument;
 
 // arrayDocument
 //JBJsonArray* _arrayDocument;
-@property (nonatomic, retain) JBJsonArray* arrayDocument;
+//@property (nonatomic, readonly) JBJsonArray* arrayDocument;
+@property (nonatomic, retain, readwrite) JBJsonArray* arrayDocument;
 //@synthesize arrayDocument = _arrayDocument;
 
 
@@ -238,7 +240,7 @@
 -(void)dealloc {
 	
 	[self setStack:nil];
-    [self setObjectDocument:nil];
+	[self setObjectDocument:nil];
 	[self setArrayDocument:nil];
 
 
@@ -257,12 +259,14 @@
 
 // objectDocument
 //JBJsonObject* _objectDocument;
-//@property (nonatomic, retain) JBJsonObject* objectDocument;
+//@property (nonatomic, readonly) JBJsonObject* objectDocument;
+//@property (nonatomic, retain, readwrite) JBJsonObject* objectDocument;
 @synthesize objectDocument = _objectDocument;
 
 // arrayDocument
 //JBJsonArray* _arrayDocument;
-//@property (nonatomic, retain) JBJsonArray* arrayDocument;
+//@property (nonatomic, readonly) JBJsonArray* arrayDocument;
+//@property (nonatomic, retain, readwrite) JBJsonArray* arrayDocument;
 @synthesize arrayDocument = _arrayDocument;
 
 

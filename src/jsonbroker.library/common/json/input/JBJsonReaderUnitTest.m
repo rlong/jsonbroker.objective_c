@@ -30,6 +30,16 @@ static JBDefaultJsonHandler* _handler;
 
 
 
+-(void)testBrokerRequest {
+    
+    
+    NSData* data = [JBStringHelper toUtf8Data:@"[\"request\",{},\"jsonbroker.TestService\",1,0,\"ping\",{},[]]"];
+    [JBJsonReader readFromData:data handler:_handler];
+    
+    
+}
+
+
 -(void)testEmptyObject {
     
     

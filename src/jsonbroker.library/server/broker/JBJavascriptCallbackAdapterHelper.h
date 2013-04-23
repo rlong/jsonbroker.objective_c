@@ -11,7 +11,6 @@
 }
 
 +(NSString*)buildJavascriptFault:(JBBrokerMessage*)request fault:(NSException*)fault;
-+(NSString*)buildJavascriptNotification:(JBBrokerMessage*)notification;
 +(NSString*)buildJavascriptResponse:(JBBrokerMessage*)response;
 +(NSString*)buildJavascriptForwardRequest:(JBBrokerMessage*)request;
 

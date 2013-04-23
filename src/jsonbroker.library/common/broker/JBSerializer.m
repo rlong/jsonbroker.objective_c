@@ -24,7 +24,6 @@ static JBJsonArrayHandler* _jsonArrayHandler = nil;
 	
 }
 
-
 	
 +(JBBrokerMessage*)deserialize:(NSData*)data {
 	
@@ -50,26 +49,6 @@ static JBJsonArrayHandler* _jsonArrayHandler = nil;
 	
 	return answer;
 	
-}
-
-+(NSData*)serialize:(JBBrokerMessage*)message { 
-    
-    NSData* answer;
-    
-    JBJsonStringOutput* writer = [[JBJsonStringOutput alloc] init];
-    {
-        JBJsonArray* messageComponents = [message toJsonArray];
-        [_jsonArrayHandler writeValue:messageComponents writer:writer];
-        
-        NSString* json = [writer toString];
-        
-        answer = [JBDataHelper getUtf8Data:json];
-        
-    }
-    [writer release];
-    
-    return answer;
-    
 }
 
 

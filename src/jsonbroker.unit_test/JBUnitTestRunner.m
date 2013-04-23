@@ -68,20 +68,20 @@
         
     }
     
-    if( YES ) {
+    if( NO ) {
         
-        [suite addTest: [SenTestSuite testSuiteForTestCaseClass:[JBJsonReaderUnitTest class]]];
+        [suite addTest: [SenTestSuite testSuiteForTestCaseClass:[JBJsonWriterUnitTest class]]];
         
     }
     
-    if( NO ) {
+    if( YES ) {
         
         suite= [SenTestSuite testSuiteWithName:@"JBUnitTestRunner"];
         
         id test;
         {
             // 
-            test = [JBJsonWriterUnitTest testCaseWithSelector:@selector(testSimpleObject)];
+            test = [JBJsonWriterUnitTest testCaseWithSelector:@selector(testBrokerMessage)];
         }
         
         
