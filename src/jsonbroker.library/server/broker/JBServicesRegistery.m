@@ -11,6 +11,16 @@
 #import "JBServicesRegistery.h"
 #import "JBGuiServiceDelegator.h"
 
+
+
+@implementation JBServicesRegisteryErrorDomain
+
+-(NSString*)SERVICE_NOT_FOUND {
+    return @"jsonbroker.ServicesRegistery.SERVICE_NOT_FOUND";
+}
+
+@end
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -34,6 +44,17 @@
 @implementation JBServicesRegistery
 
 
+static JBServicesRegisteryErrorDomain* _errorDomain = nil;
+
++(void)initialize {
+	
+	_errorDomain = [[JBServicesRegisteryErrorDomain alloc] init];
+	
+}
+
++(JBServicesRegisteryErrorDomain*)errorDomain {
+    return _errorDomain;
+}
 
 
 -(void)addUserInterfaceService:(id<JBGuiService>)service  {
@@ -107,7 +128,7 @@
 		NSString* technicalError = [NSString stringWithFormat:@"null == answer, serviceName = '%@'", serviceName];
 		
 		BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-        [e setErrorDomain:@"jsonbroker.ServicesRegistery.SERVICE_NOT_FOUND"];
+        [e setErrorDomain:[_errorDomain SERVICE_NOT_FOUND]];
 		[e autorelease];
 		@throw e;
 							  

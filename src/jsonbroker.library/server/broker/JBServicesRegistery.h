@@ -7,6 +7,16 @@
 #import "JBGuiService.h"
 #import "JBService.h"
 
+
+
+@interface JBServicesRegisteryErrorDomain : NSObject {
+}
+
+-(NSString*)SERVICE_NOT_FOUND;
+
+@end
+
+
 @interface JBServicesRegistery : NSObject <JBService> {
 	
 	
@@ -22,6 +32,7 @@
 	
 }
 
++(JBServicesRegisteryErrorDomain*)errorDomain;
 
 -(void)addService:(id<JBDescribedService>)service;
 -(bool)hasService:(NSString*)serviceName;
@@ -46,3 +57,5 @@
 //@synthesize next = _next;
 
 @end
+
+
