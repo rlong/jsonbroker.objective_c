@@ -24,17 +24,23 @@
 -(NSEnumerator*)keyEnumerator;
 -(NSArray*)allKeys;
 
--(BOOL)boolForKey:(NSString*)key defaultValue:(bool)defaultValue;
--(BOOL)boolForKey:(NSString*)key;
--(void)setBoolean:(BOOL)value forKey:(NSString*)key;
+#pragma mark -
+#pragma mark getters
 
+
+-(BOOL)boolForKey:(NSString*)key;
+-(BOOL)boolForKey:(NSString*)key defaultValue:(bool)defaultValue;
+
+-(double)doubleForKey:(NSString*)key;
+-(double)doubleForKey:(NSString*)key defaultValue:(double)defaultValue;
+
+-(NSInteger)integerForKey:(NSString*)key;
 -(NSInteger)integerForKey:(NSString*)key defaultValue:(NSInteger)defaultValue;
 
 -(int)intForKey:(NSString*)key;
 -(int)intForKey:(NSString*)key defaultValue:(int)defaultValue;
 
 -(void)setInt:(int)value forKey:(NSString*)key;
--(void)setInteger:(NSInteger)value forKey:(NSString*)key;
 
 -(JBJsonArray*)jsonArrayForKey:(NSString*)key;
 -(JBJsonArray*)jsonArrayForKey:(NSString*)key defaultValue:(JBJsonArray*)defaultValue;
@@ -43,23 +49,31 @@
 -(JBJsonObject*)jsonObjectForKey:(NSString*)key defaultValue:(JBJsonObject*)defaultValue;
 
 -(long)longForKey:(NSString*)key;
--(void)setLong:(long)value forKey:(NSString*)key;
 
 -(long long)longLongForKey:(NSString*)key;
--(void)setLongLong:(long long)value forKey:(NSString*)key;
 
 -(id)objectForKey:(NSString*)key;
 -(id)objectForKey:(NSString*)key defaultValue:(id)defaultValue;
--(void)setObject:(id)object forKey:(NSString*)key;
 
 -(NSString*)stringForKey:(NSString*)key;
 -(NSString*)stringForKey:(NSString*)key defaultValue:(NSString*)defaultValue;
 
 -(NSUInteger)unsignedIntegerForKey:(NSString*)key;
--(void)setUnsignedInteger:(NSUInteger)value forKey:(NSString*)key;
 
+
+#pragma mark -
+#pragma mark setters
+
+-(void)setBool:(BOOL)value forKey:(NSString*)key;
+-(void)setDoubleForKey:(double)value forKey:(NSString*)key;
+-(void)setInteger:(NSInteger)value forKey:(NSString*)key;
+-(void)setLong:(long)value forKey:(NSString*)key;
+-(void)setLongLong:(long long)value forKey:(NSString*)key;
+-(void)setObject:(id)object forKey:(NSString*)key;
+-(void)setUnsignedInteger:(NSUInteger)value forKey:(NSString*)key;
 -(void)setUnsignedLongLong:(unsigned long long)value forKey:(NSString*)key;
 
+#pragma mark -
 
 -(BOOL)hasOwnProperty:(NSString*)key;
 

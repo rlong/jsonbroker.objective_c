@@ -106,6 +106,26 @@ static NSObject* _NULL_OBJECT = nil;
 }
 
 
+#pragma mark -
+#pragma mark getters
+
+
+-(BOOL)boolForKey:(NSString*)key {
+    
+    id blob = [self getBlob:key throwExceptionOnNil:true];
+    
+    if( ![blob isKindOfClass:[NSNumber class]] ) {
+		
+        NSString* technicalError = [NSString stringWithFormat:@"![blob isKindOfClass:[NSNumber class]]; NSStringFromClass([blob class]) = %@", NSStringFromClass([blob class])];
+		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
+		[e autorelease];
+		@throw e;
+	}
+	
+	NSNumber* answer = (NSNumber*)blob;
+	return [answer boolValue];
+}
+
 -(BOOL)boolForKey:(NSString*)key defaultValue:(bool)defaultValue{
     
     id blob = [self getBlob:key throwExceptionOnNil:false];
@@ -126,30 +146,61 @@ static NSObject* _NULL_OBJECT = nil;
 	return [answer boolValue];
 }
 
--(BOOL)boolForKey:(NSString*)key {
-    
+
+
+
+-(double)doubleForKey:(NSString*)key {
+
     id blob = [self getBlob:key throwExceptionOnNil:true];
-    
-    if( ![blob isKindOfClass:[NSNumber class]] ) { 
+	
+	if( ![blob isKindOfClass:[NSNumber class]] ) {
 		
-        NSString* technicalError = [NSString stringWithFormat:@"![blob isKindOfClass:[NSNumber class]]; NSStringFromClass([blob class]) = %@", NSStringFromClass([blob class])];
-		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
+		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultStringFormat:@"![blob isKindOfClass:[NSNumber class]]; key = '%@'", key];
 		[e autorelease];
 		@throw e;
 	}
 	
-	NSNumber* answer = (NSNumber*)blob;
-	return [answer boolValue];
+	NSNumber* number = (NSNumber*)blob;
+	return [number doubleValue];
+
 }
 
--(void)setBoolean:(BOOL)value forKey:(NSString*)key {
+-(double)doubleForKey:(NSString*)key defaultValue:(double)defaultValue{
     
-    NSNumber* boolean = [NSNumber numberWithBool:value];
+    
+	id blob = [self getBlob:key throwExceptionOnNil:false];
 	
-	[_values setObject:boolean forKey:key];
-
+	if( nil == blob ) {
+		return defaultValue;
+	}
+	
+	if( ![blob isKindOfClass:[NSNumber class]] ) {
+		
+		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultStringFormat:@"![blob isKindOfClass:[NSNumber class]]; key = '%@'", key];
+		[e autorelease];
+		@throw e;
+	}
+	
+	NSNumber* number = (NSNumber*)blob;
+	return [number doubleValue];
 }
 
+
+
+-(NSInteger)integerForKey:(NSString*)key {
+    
+    id blob = [self getBlob:key throwExceptionOnNil:true];
+	
+	if( ![blob isKindOfClass:[NSNumber class]] ) {
+		
+		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultStringFormat:@"![blob isKindOfClass:[NSNumber class]]; key = '%@'", key];
+		[e autorelease];
+		@throw e;
+	}
+	
+	NSNumber* number = (NSNumber*)blob;
+	return [number integerValue];
+}
 
 
 -(NSInteger)integerForKey:(NSString*)key defaultValue:(NSInteger)defaultValue{
@@ -211,20 +262,6 @@ static NSObject* _NULL_OBJECT = nil;
 
 
 
--(void)setInt:(int)value forKey:(NSString*)key {
-	
-	NSNumber* number = [NSNumber numberWithInt:value];
-	
-	[_values setObject:number forKey:key];
-}
-
-
--(void)setInteger:(NSInteger)value forKey:(NSString*)key {
-	
-	NSNumber* number = [NSNumber numberWithInteger:value];
-	
-	[_values setObject:number forKey:key];
-}
 
 
 -(JBJsonArray*)jsonArrayForKey:(NSString*)key {
@@ -324,14 +361,6 @@ static NSObject* _NULL_OBJECT = nil;
 }
 
 
--(void)setLong:(long)value forKey:(NSString*)key {
-    
-    
-    NSNumber* number = [NSNumber numberWithLong:value];
-	
-	[_values setObject:number forKey:key];
-    
-}
 
 
 -(long long)longLongForKey:(NSString*)key {
@@ -351,17 +380,6 @@ static NSObject* _NULL_OBJECT = nil;
     
 }
 
-
--(void)setLongLong:(long long)value forKey:(NSString*)key {
-    
-    
-    NSNumber* number = [NSNumber numberWithLongLong:value];
-	
-	[_values setObject:number forKey:key];
-    
-    
-    
-}
 
 
 -(id)objectForKey:(NSString*)key {
@@ -385,14 +403,7 @@ static NSObject* _NULL_OBJECT = nil;
 }
 
 
--(void)setObject:(id)object forKey:(NSString*)key {
-	
-	if( nil == object ) {
-		[_values setObject:_NULL_OBJECT forKey:key];
-	} else {
-		[_values setObject:object forKey:key];
-	}
-}
+
 
 
 -(NSString*)stringForKey:(NSString*)key defaultValue:(NSString*)defaultValue{
@@ -457,6 +468,77 @@ static NSObject* _NULL_OBJECT = nil;
 
 
 
+
+
+#pragma mark -
+#pragma mark setters
+
+-(void)setBool:(BOOL)value forKey:(NSString*)key {
+    
+    NSNumber* boolean = [NSNumber numberWithBool:value];
+	
+	[_values setObject:boolean forKey:key];
+    
+}
+
+
+
+-(void)setDoubleForKey:(double)value forKey:(NSString*)key {
+    
+    NSNumber* number = [NSNumber numberWithDouble:value];
+	
+	[_values setObject:number forKey:key];
+    
+}
+
+
+-(void)setInt:(int)value forKey:(NSString*)key {
+	
+	NSNumber* number = [NSNumber numberWithInt:value];
+	
+	[_values setObject:number forKey:key];
+}
+
+
+-(void)setInteger:(NSInteger)value forKey:(NSString*)key {
+	
+	NSNumber* number = [NSNumber numberWithInteger:value];
+	
+	[_values setObject:number forKey:key];
+}
+
+-(void)setLong:(long)value forKey:(NSString*)key {
+    
+    
+    NSNumber* number = [NSNumber numberWithLong:value];
+	
+	[_values setObject:number forKey:key];
+    
+}
+
+
+-(void)setLongLong:(long long)value forKey:(NSString*)key {
+    
+    
+    NSNumber* number = [NSNumber numberWithLongLong:value];
+	
+	[_values setObject:number forKey:key];
+    
+    
+    
+}
+
+
+-(void)setObject:(id)object forKey:(NSString*)key {
+	
+	if( nil == object ) {
+		[_values setObject:_NULL_OBJECT forKey:key];
+	} else {
+		[_values setObject:object forKey:key];
+	}
+}
+
+
 -(void)setUnsignedInteger:(NSUInteger)value forKey:(NSString*)key {
 	
 	NSNumber* number = [NSNumber numberWithUnsignedInteger:value];
@@ -465,18 +547,17 @@ static NSObject* _NULL_OBJECT = nil;
 }
 
 -(void)setUnsignedLongLong:(unsigned long long)value forKey:(NSString*)key {
-
+    
     NSNumber* number = [NSNumber numberWithUnsignedLongLong:value];
 	
 	[_values setObject:number forKey:key];
-
+    
 }
 
+#pragma mark -
 
 
-
-
--(BOOL)hasOwnProperty:(NSString*)key { 
+-(BOOL)hasOwnProperty:(NSString*)key {
     
 	id blob = [_values objectForKey:key];
 	if( nil == blob ) { 

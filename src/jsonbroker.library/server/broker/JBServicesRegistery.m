@@ -186,11 +186,11 @@ static JBServicesRegisteryErrorDomain* _errorDomain = nil;
         id<JBDescribedService> describedService = [_services objectForKey:serviceName];
         if( nil == describedService ) { 
             
-            [associativeParamaters setBoolean:false forKey:@"exists"];
+            [associativeParamaters setBool:false forKey:@"exists"];
             
         } else {
             
-            [associativeParamaters setBoolean:true forKey:@"exists"];
+            [associativeParamaters setBool:true forKey:@"exists"];
             JBServiceDescription* serviceDescription = [describedService serviceDescription];
             [associativeParamaters setInt:[serviceDescription majorVersion] forKey:@"majorVersion"];
             [associativeParamaters setInt:[serviceDescription minorVersion] forKey:@"minorVersion"];

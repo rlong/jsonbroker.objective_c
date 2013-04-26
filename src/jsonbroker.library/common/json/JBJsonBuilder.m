@@ -101,7 +101,7 @@
 
 -(void)onBooleanWithKey:(NSString*)key value:(bool)value {
     
-    [[_stack currentObject] setBoolean:value forKey:key];
+    [[_stack currentObject] setBool:value forKey:key];
     
 }
 

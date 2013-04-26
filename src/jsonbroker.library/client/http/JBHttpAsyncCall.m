@@ -275,5 +275,17 @@
 @synthesize urlConnection = _urlConnection;
 
 
+// conditionLock
+//NSConditionLock* _conditionLock;
+//@property (nonatomic, retain) NSConditionLock* conditionLock;
+@synthesize conditionLock = _conditionLock;
+
+
+// error
+//NSError* _error;
+//@property (nonatomic, retain) NSError* error;
+@synthesize error = _error;
+
+
 
 @end
