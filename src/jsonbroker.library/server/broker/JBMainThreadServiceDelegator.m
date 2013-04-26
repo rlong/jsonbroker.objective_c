@@ -5,7 +5,7 @@
 
 #import "JBLog.h"
 #import "JBObjectTracker.h"
-#import "JBGuiServiceDelegator.h"
+#import "JBMainThreadServiceDelegator.h"
 
 
 
@@ -13,7 +13,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-@interface JBGuiServiceDelegator () 
+@interface JBMainThreadServiceDelegator () 
 
 
 
@@ -34,7 +34,7 @@
 #pragma mark -
 
 
-@implementation JBGuiServiceDelegator
+@implementation JBMainThreadServiceDelegator
 
 
 -(void)processInMainThread:(JBBrokerMessage*)request {
@@ -79,9 +79,9 @@
 
 #pragma mark instance lifecycle 
 
--(id)initWithDelegate:(id<JBGuiService>)delegate { 
+-(id)initWithDelegate:(id<JBMainThreadService>)delegate { 
 	
-	JBGuiServiceDelegator* answer = [super init];
+	JBMainThreadServiceDelegator* answer = [super init];
 	
 	[JBObjectTracker allocated:answer];
 	

@@ -4,7 +4,7 @@
 //
 
 #import "JBDescribedService.h"
-#import "JBGuiService.h"
+#import "JBMainThreadService.h"
 #import "JBService.h"
 
 

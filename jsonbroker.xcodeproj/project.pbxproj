@@ -46,8 +46,8 @@
 		AE105ECA1466633200AA500D /* JBJavascriptCallbackAdapterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A925614640A39006037B8 /* JBJavascriptCallbackAdapterHelper.m */; };
 		AE105ED21466633C00AA500D /* JBServicesRegistery.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A925F14640A39006037B8 /* JBServicesRegistery.h */; };
 		AE105ED31466633C00AA500D /* JBServicesRegistery.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A926014640A39006037B8 /* JBServicesRegistery.m */; };
-		AE105ED41466633C00AA500D /* JBGuiServiceDelegator.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A926114640A39006037B8 /* JBGuiServiceDelegator.h */; };
-		AE105ED51466633C00AA500D /* JBGuiServiceDelegator.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A926214640A39006037B8 /* JBGuiServiceDelegator.m */; };
+		AE105ED41466633C00AA500D /* JBMainThreadServiceDelegator.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A926114640A39006037B8 /* JBMainThreadServiceDelegator.h */; };
+		AE105ED51466633C00AA500D /* JBMainThreadServiceDelegator.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A926214640A39006037B8 /* JBMainThreadServiceDelegator.m */; };
 		AE105EE61466635B00AA500D /* JBHttpConnectionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A927814640A39006037B8 /* JBHttpConnectionHandler.h */; };
 		AE105EE71466635B00AA500D /* JBHttpConnectionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A927914640A39006037B8 /* JBHttpConnectionHandler.m */; };
 		AE105EE91466635B00AA500D /* JBWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A927B14640A39006037B8 /* JBWebServer.m */; };
@@ -194,8 +194,8 @@
 		AE42BEDC147FB6B3000FC3A4 /* JBJavascriptCallbackAdapterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A925614640A39006037B8 /* JBJavascriptCallbackAdapterHelper.m */; };
 		AE42BEE6147FB6C6000FC3A4 /* JBServicesRegistery.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A925F14640A39006037B8 /* JBServicesRegistery.h */; };
 		AE42BEE7147FB6C6000FC3A4 /* JBServicesRegistery.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A926014640A39006037B8 /* JBServicesRegistery.m */; };
-		AE42BEE8147FB6C6000FC3A4 /* JBGuiServiceDelegator.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A926114640A39006037B8 /* JBGuiServiceDelegator.h */; };
-		AE42BEE9147FB6C6000FC3A4 /* JBGuiServiceDelegator.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A926214640A39006037B8 /* JBGuiServiceDelegator.m */; };
+		AE42BEE8147FB6C6000FC3A4 /* JBMainThreadServiceDelegator.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A926114640A39006037B8 /* JBMainThreadServiceDelegator.h */; };
+		AE42BEE9147FB6C6000FC3A4 /* JBMainThreadServiceDelegator.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A926214640A39006037B8 /* JBMainThreadServiceDelegator.m */; };
 		AE42BEFA147FB6EF000FC3A4 /* JBHttpConnectionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A927814640A39006037B8 /* JBHttpConnectionHandler.h */; };
 		AE42BEFB147FB6EF000FC3A4 /* JBHttpConnectionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A927914640A39006037B8 /* JBHttpConnectionHandler.m */; };
 		AE42BEFD147FB6EF000FC3A4 /* JBWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A927B14640A39006037B8 /* JBWebServer.m */; };
@@ -482,8 +482,8 @@
 		AEB99E1014CF7FC5006FDF30 /* JBAuthenticator.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB99E0D14CF7FC4006FDF30 /* JBAuthenticator.h */; };
 		AEB99E1114CF7FC5006FDF30 /* JBAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB99E0E14CF7FC5006FDF30 /* JBAuthenticator.m */; };
 		AEB99E1214CF7FC5006FDF30 /* JBAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB99E0E14CF7FC5006FDF30 /* JBAuthenticator.m */; };
-		AEBC167316E98F0D00E3917C /* JBGuiService.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBC167216E98F0D00E3917C /* JBGuiService.h */; };
-		AEBC167416E98F0D00E3917C /* JBGuiService.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBC167216E98F0D00E3917C /* JBGuiService.h */; };
+		AEBC167316E98F0D00E3917C /* JBMainThreadService.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBC167216E98F0D00E3917C /* JBMainThreadService.h */; };
+		AEBC167416E98F0D00E3917C /* JBMainThreadService.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBC167216E98F0D00E3917C /* JBMainThreadService.h */; };
 		AEBC167616E98FCC00E3917C /* JBJavascriptCallbackAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBC167516E98FCB00E3917C /* JBJavascriptCallbackAdapter.h */; };
 		AEBC167716E98FCC00E3917C /* JBJavascriptCallbackAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBC167516E98FCB00E3917C /* JBJavascriptCallbackAdapter.h */; };
 		AEBC167916E990AF00E3917C /* JBService.h in Headers */ = {isa = PBXBuildFile; fileRef = AEBC167816E990AE00E3917C /* JBService.h */; };
@@ -854,8 +854,8 @@
 		AE8A925614640A39006037B8 /* JBJavascriptCallbackAdapterHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBJavascriptCallbackAdapterHelper.m; sourceTree = "<group>"; };
 		AE8A925F14640A39006037B8 /* JBServicesRegistery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBServicesRegistery.h; sourceTree = "<group>"; };
 		AE8A926014640A39006037B8 /* JBServicesRegistery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBServicesRegistery.m; sourceTree = "<group>"; };
-		AE8A926114640A39006037B8 /* JBGuiServiceDelegator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBGuiServiceDelegator.h; sourceTree = "<group>"; };
-		AE8A926214640A39006037B8 /* JBGuiServiceDelegator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBGuiServiceDelegator.m; sourceTree = "<group>"; };
+		AE8A926114640A39006037B8 /* JBMainThreadServiceDelegator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBMainThreadServiceDelegator.h; sourceTree = "<group>"; };
+		AE8A926214640A39006037B8 /* JBMainThreadServiceDelegator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBMainThreadServiceDelegator.m; sourceTree = "<group>"; };
 		AE8A927814640A39006037B8 /* JBHttpConnectionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBHttpConnectionHandler.h; sourceTree = "<group>"; };
 		AE8A927914640A39006037B8 /* JBHttpConnectionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBHttpConnectionHandler.m; sourceTree = "<group>"; };
 		AE8A927B14640A39006037B8 /* JBWebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBWebServer.m; sourceTree = "<group>"; };
@@ -949,7 +949,7 @@
 		AEBA0B4814BEAD9100288884 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AEBA0B4914BEAD9100288884 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AEBA0B4C14BEAD9100288884 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		AEBC167216E98F0D00E3917C /* JBGuiService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBGuiService.h; sourceTree = "<group>"; };
+		AEBC167216E98F0D00E3917C /* JBMainThreadService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBMainThreadService.h; sourceTree = "<group>"; };
 		AEBC167516E98FCB00E3917C /* JBJavascriptCallbackAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBJavascriptCallbackAdapter.h; sourceTree = "<group>"; };
 		AEBC167816E990AE00E3917C /* JBService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBService.h; sourceTree = "<group>"; };
 		AEBC168716E9BAAC00E3917C /* JBJsonReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBJsonReader.h; sourceTree = "<group>"; };
@@ -1683,12 +1683,12 @@
 				AE61AFBA156C9B42001790CD /* JBChainedService.h */,
 				AE61AFBB156C9B42001790CD /* JBChainedService.m */,
 				AEF5A80A16E98E07000FD14C /* JBDescribedService.h */,
-				AEBC167216E98F0D00E3917C /* JBGuiService.h */,
-				AE8A926114640A39006037B8 /* JBGuiServiceDelegator.h */,
-				AE8A926214640A39006037B8 /* JBGuiServiceDelegator.m */,
 				AEBC167516E98FCB00E3917C /* JBJavascriptCallbackAdapter.h */,
 				AE8A925514640A39006037B8 /* JBJavascriptCallbackAdapterHelper.h */,
 				AE8A925614640A39006037B8 /* JBJavascriptCallbackAdapterHelper.m */,
+				AEBC167216E98F0D00E3917C /* JBMainThreadService.h */,
+				AE8A926114640A39006037B8 /* JBMainThreadServiceDelegator.h */,
+				AE8A926214640A39006037B8 /* JBMainThreadServiceDelegator.m */,
 				AEBC167816E990AE00E3917C /* JBService.h */,
 				AEF304FE1511CDC1002E9E46 /* JBServiceHelper.h */,
 				AEF304FF1511CDC1002E9E46 /* JBServiceHelper.m */,
@@ -1986,7 +1986,7 @@
 				AE42BEC0147FB694000FC3A4 /* JBSecurityUtilities.h in Headers */,
 				AE42BEDB147FB6B3000FC3A4 /* JBJavascriptCallbackAdapterHelper.h in Headers */,
 				AE42BEE6147FB6C6000FC3A4 /* JBServicesRegistery.h in Headers */,
-				AE42BEE8147FB6C6000FC3A4 /* JBGuiServiceDelegator.h in Headers */,
+				AE42BEE8147FB6C6000FC3A4 /* JBMainThreadServiceDelegator.h in Headers */,
 				AE42BEFA147FB6EF000FC3A4 /* JBHttpConnectionHandler.h in Headers */,
 				AE42BF02147FB6EF000FC3A4 /* JBHttpResponseWriter.h in Headers */,
 				AE42BF10147FB725000FC3A4 /* JBOsxWebViewBridge.h in Headers */,
@@ -2112,7 +2112,7 @@
 				AEEA65C816E84F7A00560D5C /* JBJobListener.h in Headers */,
 				AEEA65CB16E8527700560D5C /* JBJob.h in Headers */,
 				AEF5A80C16E98E07000FD14C /* JBDescribedService.h in Headers */,
-				AEBC167416E98F0D00E3917C /* JBGuiService.h in Headers */,
+				AEBC167416E98F0D00E3917C /* JBMainThreadService.h in Headers */,
 				AEBC167716E98FCC00E3917C /* JBJavascriptCallbackAdapter.h in Headers */,
 				AEBC167A16E990AF00E3917C /* JBService.h in Headers */,
 				AEBC168A16E9BAAC00E3917C /* JBJsonReader.h in Headers */,
@@ -2156,7 +2156,7 @@
 				AE105EAF146662BE00AA500D /* JBSecurityUtilities.h in Headers */,
 				AE105EC91466633200AA500D /* JBJavascriptCallbackAdapterHelper.h in Headers */,
 				AE105ED21466633C00AA500D /* JBServicesRegistery.h in Headers */,
-				AE105ED41466633C00AA500D /* JBGuiServiceDelegator.h in Headers */,
+				AE105ED41466633C00AA500D /* JBMainThreadServiceDelegator.h in Headers */,
 				AE105EE61466635B00AA500D /* JBHttpConnectionHandler.h in Headers */,
 				AE105EEE1466635B00AA500D /* JBHttpResponseWriter.h in Headers */,
 				AE10647814669E2200AA500D /* JBIosWebViewBridge.h in Headers */,
@@ -2286,7 +2286,7 @@
 				AEEA65C716E84F7A00560D5C /* JBJobListener.h in Headers */,
 				AEEA65CA16E8527700560D5C /* JBJob.h in Headers */,
 				AEF5A80B16E98E07000FD14C /* JBDescribedService.h in Headers */,
-				AEBC167316E98F0D00E3917C /* JBGuiService.h in Headers */,
+				AEBC167316E98F0D00E3917C /* JBMainThreadService.h in Headers */,
 				AEBC167616E98FCC00E3917C /* JBJavascriptCallbackAdapter.h in Headers */,
 				AEBC167916E990AF00E3917C /* JBService.h in Headers */,
 				AEBC168916E9BAAC00E3917C /* JBJsonReader.h in Headers */,
@@ -2469,7 +2469,7 @@
 				AE42BEC1147FB694000FC3A4 /* JBSecurityUtilities.m in Sources */,
 				AE42BEDC147FB6B3000FC3A4 /* JBJavascriptCallbackAdapterHelper.m in Sources */,
 				AE42BEE7147FB6C6000FC3A4 /* JBServicesRegistery.m in Sources */,
-				AE42BEE9147FB6C6000FC3A4 /* JBGuiServiceDelegator.m in Sources */,
+				AE42BEE9147FB6C6000FC3A4 /* JBMainThreadServiceDelegator.m in Sources */,
 				AE42BEFB147FB6EF000FC3A4 /* JBHttpConnectionHandler.m in Sources */,
 				AE42BEFD147FB6EF000FC3A4 /* JBWebServer.m in Sources */,
 				AE42BF03147FB6EF000FC3A4 /* JBHttpResponseWriter.m in Sources */,
@@ -2654,7 +2654,7 @@
 				AE105EB0146662BE00AA500D /* JBSecurityUtilities.m in Sources */,
 				AE105ECA1466633200AA500D /* JBJavascriptCallbackAdapterHelper.m in Sources */,
 				AE105ED31466633C00AA500D /* JBServicesRegistery.m in Sources */,
-				AE105ED51466633C00AA500D /* JBGuiServiceDelegator.m in Sources */,
+				AE105ED51466633C00AA500D /* JBMainThreadServiceDelegator.m in Sources */,
 				AE105EE71466635B00AA500D /* JBHttpConnectionHandler.m in Sources */,
 				AE105EE91466635B00AA500D /* JBWebServer.m in Sources */,
 				AE105EEF1466635B00AA500D /* JBHttpResponseWriter.m in Sources */,

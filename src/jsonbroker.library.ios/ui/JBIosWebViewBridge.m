@@ -7,7 +7,7 @@
 
 
 #import "JBBrokerJob.h"
-#import "JBGuiService.h"
+#import "JBMainThreadService.h"
 #import "JBJavascriptCallbackAdapterHelper.h"
 #import "JBObjectTracker.h"
 

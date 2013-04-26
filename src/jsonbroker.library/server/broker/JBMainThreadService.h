@@ -7,6 +7,6 @@
 
 #import "JBDescribedService.h"
 
-@protocol JBGuiService <NSObject,JBDescribedService>
+@protocol JBMainThreadService <NSObject,JBDescribedService>
 
 @end

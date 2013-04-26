@@ -3,11 +3,11 @@
 //  Released under the MIT license ( http://opensource.org/licenses/MIT )
 //
 
-#import "JBGuiService.h"
+#import "JBMainThreadService.h"
 
-@interface JBGuiServiceDelegator : NSObject <JBService> {
+@interface JBMainThreadServiceDelegator : NSObject <JBService> {
 
-	id<JBGuiService> _delegate;
+	id<JBMainThreadService> _delegate;
 	//@property (nonatomic, retain) id<UserInterfaceService> delegate;
 	//@synthesize delegate = _delegate;
 	
@@ -23,13 +23,13 @@
 
 #pragma mark instance lifecycle 
 
--(id)initWithDelegate:(id<JBGuiService>)delegate;
+-(id)initWithDelegate:(id<JBMainThreadService>)delegate;
 
 
 #pragma mark fields
 
 //id<UserInterfaceService> _delegate;
-@property (nonatomic, retain) id<JBGuiService> delegate;
+@property (nonatomic, retain) id<JBMainThreadService> delegate;
 //@synthesize delegate = _delegate;
 
 	

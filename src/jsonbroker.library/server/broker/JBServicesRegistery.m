@@ -9,7 +9,7 @@
 #import "JBObjectTracker.h"
 #import "JBServiceHelper.h"
 #import "JBServicesRegistery.h"
-#import "JBGuiServiceDelegator.h"
+#import "JBMainThreadServiceDelegator.h"
 
 
 
@@ -57,7 +57,7 @@ static JBServicesRegisteryErrorDomain* _errorDomain = nil;
 }
 
 
--(void)addUserInterfaceService:(id<JBGuiService>)service  {
+-(void)addUserInterfaceService:(id<JBMainThreadService>)service  {
     
     if( nil == service ) {
         Log_warnPointer( service  );
@@ -72,7 +72,7 @@ static JBServicesRegisteryErrorDomain* _errorDomain = nil;
         Log_warnPointer( existingService );
     }
     
-    JBGuiServiceDelegator* userInterfaceService = [[JBGuiServiceDelegator alloc] initWithDelegate:service];
+    JBMainThreadServiceDelegator* userInterfaceService = [[JBMainThreadServiceDelegator alloc] initWithDelegate:service];
     
 	[_services setObject:userInterfaceService forKey:serviceName];
 	
@@ -85,12 +85,12 @@ static JBServicesRegisteryErrorDomain* _errorDomain = nil;
     
     // vvv http://stackoverflow.com/questions/2344672/objective-c-given-a-class-id-can-i-check-if-this-class-implements-a-certain-p
     
-    if( [[service class] conformsToProtocol:@protocol(JBGuiService)] ) 
+    if( [[service class] conformsToProtocol:@protocol(JBMainThreadService)] ) 
         
         // ^^^ http://stackoverflow.com/questions/2344672/objective-c-given-a-class-id-can-i-check-if-this-class-implements-a-certain-p
     { 
         
-        id<JBGuiService> userInterfaceService = (id<JBGuiService>)service;
+        id<JBMainThreadService> userInterfaceService = (id<JBMainThreadService>)service;
         [self addUserInterfaceService:userInterfaceService];
         
     } else { 
