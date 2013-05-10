@@ -11,6 +11,24 @@
 
 @implementation JBFileUtilities
 
+
++(BOOL)fileExistsAtPath:(NSString*)path {
+
+    NSFileManager* defaultManager = [NSFileManager defaultManager];
+    return [defaultManager fileExistsAtPath:path];
+
+}
+
++(BOOL)fileWithName:(NSString*)filename existsInFolder:(NSString*)folderPath {
+    
+    
+    NSString* fullPath = [folderPath stringByAppendingPathComponent:filename];
+    
+    NSFileManager* defaultManager = [NSFileManager defaultManager];
+    return [defaultManager fileExistsAtPath:fullPath];
+    
+}
+
 +(unsigned long long)getFileLength:(NSString*)path {
     
     

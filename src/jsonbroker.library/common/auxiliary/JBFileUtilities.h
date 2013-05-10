@@ -6,9 +6,10 @@
 
 @interface JBFileUtilities : NSObject
 
++(BOOL)fileExistsAtPath:(NSString*)path;
++(BOOL)fileWithName:(NSString*)filename existsInFolder:(NSString*)folderPath;
 
 +(unsigned long long)getFileLength:(NSString*)path;
-
 
 +(BOOL)isFile:(NSString *)srcPath;
                

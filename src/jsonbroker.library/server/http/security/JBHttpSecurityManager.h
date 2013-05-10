@@ -34,7 +34,7 @@
 
 -(id<JBServerSecurityConfiguration>)getSecurityConfiguration;
 
-
+//entity can be null, if it is not, it must be of type 'JBDataEntity'
 -(void)authenticateRequest:(NSString*)method authorizationRequestHeader:(JBAuthorization*)authorizationRequestHeader entity:(id<JBEntity>)entity;
 -(void)authenticateRequest:(NSString*)method authorizationRequestHeader:(JBAuthorization*)authorizationRequestHeader;
 -(id<JBHttpHeader>)getHeaderForResponse:(JBAuthorization*)authorization responseStatusCode:(int)responseStatusCode responseEntity:(id<JBEntity>)responseEntity;

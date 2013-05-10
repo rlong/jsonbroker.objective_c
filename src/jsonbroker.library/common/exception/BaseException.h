@@ -9,6 +9,15 @@
 @interface BaseException  : NSException <JBLoggable>
 {
 
+    // cause
+	NSException* _cause;
+	//@property (nonatomic, retain) NSException* cause;
+	//@synthesize cause = _cause;
+
+    // errorDomain
+    NSString* _errorDomain;
+    //@property (nonatomic, retain) NSString* errorDomain;
+    //@synthesize errorDomain = _errorDomain;
 
     ///////////////////////////////////////////////////////////////////////
     // from XML-RPC ... faultCode
@@ -16,44 +25,34 @@
 	//@property (nonatomic) int faultCode;
 	//@synthesize faultCode = _faultCode;
 
+	NSMutableDictionary *_faultContext;
+	//@property (nonatomic, retain) NSMutableDictionary* faultContext;
+	//@synthesize faultContext = _faultContext;
 
-    // underlyingFaultMessage
-	NSString* _underlyingFaultMessage;
-	//@property (nonatomic, retain) NSString* underlyingFaultMessage;
-	//@synthesize underlyingFaultMessage = _underlyingFaultMessage;
+    
+	NSError *_error;
+	//@property (nonatomic, retain) NSError* error;
+	//@synthesize error = _error;
+
+    NSString* _file;
+	//@property (nonatomic, retain) NSString* file;
+	//@synthesize file = _file;
 
     
 	NSString* _function;
 	//@property (nonatomic, retain) NSString* function;
 	//@synthesize function = _function;
 
-	
-	NSString* _file;
-	//@property (nonatomic, retain) NSString* file;
-	//@synthesize file = _file;
-
 	NSString* _originator;
 	//@property (nonatomic, retain) NSString* originator;
 	//@synthesize originator = _originator;
+
     
-	
-	NSMutableDictionary *_faultContext;
-	//@property (nonatomic, retain) NSMutableDictionary* faultContext;
-	//@synthesize faultContext = _faultContext;
-	
-	NSError *_error;	
-	//@property (nonatomic, retain) NSError* error;
-	//@synthesize error = _error;
-    
-    // cause
-	NSException* _cause;
-	//@property (nonatomic, retain) NSException* cause;
-	//@synthesize cause = _cause;
-    
-    // errorDomain
-    NSString* _errorDomain;
-    //@property (nonatomic, retain) NSString* errorDomain;
-    //@synthesize errorDomain = _errorDomain;
+    // underlyingFaultMessage
+	NSString* _underlyingFaultMessage;
+	//@property (nonatomic, retain) NSString* underlyingFaultMessage;
+	//@synthesize underlyingFaultMessage = _underlyingFaultMessage;
+
     
 
 	
@@ -69,6 +68,7 @@
 -(void)addContext:(NSDictionary*)moreContext;
 
 
+#pragma mark -
 #pragma mark instance lifecycle
 
 -(id)initWithOriginator:(NSString*)originator faultMessage:(NSString *)faultMessage;
@@ -81,44 +81,8 @@
 
 
 
-
+#pragma mark -
 #pragma mark fields
-
-
-// originally from XML-RPC ... faultCode
-//int _faultCode;
-@property (nonatomic, setter = setFaultCode:) int faultCode;
-//@synthesize faultCode = _faultCode;
-
-
-// underlyingFaultMessage
-//NSString* _underlyingFaultMessage;
-@property (nonatomic, retain) NSString* underlyingFaultMessage;
-//@synthesize underlyingFaultMessage = _underlyingFaultMessage;
-
-
-//NSString* _function;
-@property (nonatomic, retain) NSString* function;
-//@synthesize function = _function;
-
-
-//NSString* _file;
-@property (nonatomic, retain) NSString* file;
-//@synthesize file = _file;
-
-//NSString* _originator;
-@property (nonatomic, retain) NSString* originator;
-//@synthesize originator = _originator;
-
-
-//NSMutableDictionary *_faultContext;
-@property (nonatomic, retain) NSMutableDictionary* faultContext;
-//@synthesize faultContext = _faultContext;
-
-
-//NSError *_error;	
-@property (nonatomic, retain) NSError* error;
-//@synthesize error = _error;
 
 
 // cause
@@ -126,10 +90,46 @@
 @property (nonatomic, retain) NSException* cause;
 //@synthesize cause = _cause;
 
+
+//NSError *_error;
+@property (nonatomic, retain) NSError* error;
+//@synthesize error = _error;
+
+// originally from XML-RPC ... faultCode
+
 // errorDomain
 //NSString* _errorDomain;
 @property (nonatomic, retain) NSString* errorDomain;
 //@synthesize errorDomain = _errorDomain;
+
+//int _faultCode;
+@property (nonatomic, setter = setFaultCode:) int faultCode;
+//@synthesize faultCode = _faultCode;
+
+//NSMutableDictionary *_faultContext;
+@property (nonatomic, retain) NSMutableDictionary* faultContext;
+//@synthesize faultContext = _faultContext;
+
+//NSString* _file;
+@property (nonatomic, retain) NSString* file;
+//@synthesize file = _file;
+
+
+//NSString* _function;
+@property (nonatomic, retain) NSString* function;
+//@synthesize function = _function;
+
+//NSString* _originator;
+@property (nonatomic, retain) NSString* originator;
+//@synthesize originator = _originator;
+
+// underlyingFaultMessage
+//NSString* _underlyingFaultMessage;
+@property (nonatomic, retain) NSString* underlyingFaultMessage;
+//@synthesize underlyingFaultMessage = _underlyingFaultMessage;
+
+
+
 
 
 @end

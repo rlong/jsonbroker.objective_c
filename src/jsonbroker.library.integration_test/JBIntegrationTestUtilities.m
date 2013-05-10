@@ -61,7 +61,6 @@ static JBIntegrationTestUtilities* _INSTANCE;
 
 +(void)initialize {
     
-    
     /*
      name: jsonbroker_IntegrationTestUtilities
      value: {}
@@ -71,15 +70,17 @@ static JBIntegrationTestUtilities* _INSTANCE;
      value: {"externalServerConfig":{"hostIp4Address":"127.0.0.1","useAuthService":true}}
      */
     
-    JBDefaults* defaults = [[JBDefaults alloc] initWithScope:@"jsonbroker.IntegrationTestUtilities"];
-    {
-        
-        _internalServerConfig = [[defaults jsonObjectWithName:@"internalServerConfig" defaultValue:nil] retain];
-        _externalServerConfig = [[defaults jsonObjectWithName:@"externalServerConfig" defaultValue:nil] retain];
-        
-    }
-    [defaults release];
+    JBDefaults* defaults = [JBDefaults getDefaultsForScope:@"jsonbroker.IntegrationTestUtilities"];
     
+    _internalServerConfig = [defaults jsonObjectWithName:@"internalServerConfig" defaultValue:nil];
+    if( nil != _internalServerConfig ) {
+        [_internalServerConfig retain];
+    }
+    
+    _externalServerConfig = [defaults jsonObjectWithName:@"externalServerConfig" defaultValue:nil];
+    if( nil != _externalServerConfig ) {
+        [_externalServerConfig retain];
+    }
     
     Log_debugPointer( _internalServerConfig );
     Log_debugPointer( _externalServerConfig );

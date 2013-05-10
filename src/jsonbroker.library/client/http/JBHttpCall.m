@@ -162,7 +162,8 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     
-    Log_debugInt( [data length] );
+    //Log_debugInt( [data length] );
+    
     if( nil == _responseData ) { 
         _responseData = [[NSMutableData alloc] initWithData:data];
         return;

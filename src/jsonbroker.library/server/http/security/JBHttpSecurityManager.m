@@ -68,7 +68,7 @@
 }
 
 
-//entity can be null
+//entity can be null, if it is not, it must be of type 'JBDataEntity'
 -(void)authenticateRequest:(NSString*)method authorizationRequestHeader:(JBAuthorization*)authorizationRequestHeader entity:(id<JBEntity>)entity {
 	
 	NSString* opaque = [authorizationRequestHeader opaque];

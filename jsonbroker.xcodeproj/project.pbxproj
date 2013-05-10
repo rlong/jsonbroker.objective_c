@@ -214,10 +214,6 @@
 		AE573A1A1523FCE90020D2DC /* JBHttpCall.m in Sources */ = {isa = PBXBuildFile; fileRef = AE573A171523FCE90020D2DC /* JBHttpCall.m */; };
 		AE573A1B1523FCE90020D2DC /* JBHttpCall.m in Sources */ = {isa = PBXBuildFile; fileRef = AE573A171523FCE90020D2DC /* JBHttpCall.m */; };
 		AE587AF4156B6D5F00C77358 /* JBJsonStringHandlerUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE587AF3156B6D5F00C77358 /* JBJsonStringHandlerUnitTest.m */; };
-		AE5ABE15154F9F68001CA1A1 /* JBProxyHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5ABE13154F9F68001CA1A1 /* JBProxyHelper.h */; };
-		AE5ABE16154F9F68001CA1A1 /* JBProxyHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AE5ABE13154F9F68001CA1A1 /* JBProxyHelper.h */; };
-		AE5ABE17154F9F68001CA1A1 /* JBProxyHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5ABE14154F9F68001CA1A1 /* JBProxyHelper.m */; };
-		AE5ABE18154F9F68001CA1A1 /* JBProxyHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5ABE14154F9F68001CA1A1 /* JBProxyHelper.m */; };
 		AE606E0C1664975B00EE332A /* JBBaseException.h in Headers */ = {isa = PBXBuildFile; fileRef = AE606E0A1664975B00EE332A /* JBBaseException.h */; };
 		AE606E0D1664975B00EE332A /* JBBaseException.h in Headers */ = {isa = PBXBuildFile; fileRef = AE606E0A1664975B00EE332A /* JBBaseException.h */; };
 		AE606E0E1664975B00EE332A /* JBBaseException.m in Sources */ = {isa = PBXBuildFile; fileRef = AE606E0B1664975B00EE332A /* JBBaseException.m */; };
@@ -734,8 +730,6 @@
 		AE573A171523FCE90020D2DC /* JBHttpCall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBHttpCall.m; sourceTree = "<group>"; };
 		AE587AF2156B6D5F00C77358 /* JBJsonStringHandlerUnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBJsonStringHandlerUnitTest.h; sourceTree = "<group>"; };
 		AE587AF3156B6D5F00C77358 /* JBJsonStringHandlerUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBJsonStringHandlerUnitTest.m; sourceTree = "<group>"; };
-		AE5ABE13154F9F68001CA1A1 /* JBProxyHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBProxyHelper.h; sourceTree = "<group>"; };
-		AE5ABE14154F9F68001CA1A1 /* JBProxyHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBProxyHelper.m; sourceTree = "<group>"; };
 		AE606E0A1664975B00EE332A /* JBBaseException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBaseException.h; sourceTree = "<group>"; };
 		AE606E0B1664975B00EE332A /* JBBaseException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBaseException.m; sourceTree = "<group>"; };
 		AE61AFBA156C9B42001790CD /* JBChainedService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBChainedService.h; sourceTree = "<group>"; };
@@ -1192,8 +1186,6 @@
 				AECDB7991613FF3A00367667 /* JBMetaProxy.m */,
 				AECDB79F1614019A00367667 /* JBMetaProxyIntegrationTest.h */,
 				AECDB7A01614019A00367667 /* JBMetaProxyIntegrationTest.m */,
-				AE5ABE13154F9F68001CA1A1 /* JBProxyHelper.h */,
-				AE5ABE14154F9F68001CA1A1 /* JBProxyHelper.m */,
 				AE27590B14D7F591006E45D4 /* JBServiceHttpProxy.h */,
 				AE27590C14D7F591006E45D4 /* JBServiceHttpProxy.m */,
 			);
@@ -2038,7 +2030,6 @@
 				AED6513F153E7BFF0070C670 /* JBConfigurationService.h in Headers */,
 				AE319C411540F2470039EC59 /* JBSubjectGroup.h in Headers */,
 				AEFCA73B154A12D8006E7ADA /* JBBaseProxy.h in Headers */,
-				AE5ABE16154F9F68001CA1A1 /* JBProxyHelper.h in Headers */,
 				AE8B9A501551FC9D00F02F33 /* JBClassHelper.h in Headers */,
 				AE8B9A541551FC9D00F02F33 /* JBDataHelper.h in Headers */,
 				AE8B9A581551FC9D00F02F33 /* JBDateTimeUtilities.h in Headers */,
@@ -2213,7 +2204,6 @@
 				AED6513E153E7BFF0070C670 /* JBConfigurationService.h in Headers */,
 				AE319C401540F2470039EC59 /* JBSubjectGroup.h in Headers */,
 				AEFCA73A154A12D8006E7ADA /* JBBaseProxy.h in Headers */,
-				AE5ABE15154F9F68001CA1A1 /* JBProxyHelper.h in Headers */,
 				AE8B9A4F1551FC9D00F02F33 /* JBClassHelper.h in Headers */,
 				AE8B9A531551FC9D00F02F33 /* JBDataHelper.h in Headers */,
 				AE8B9A571551FC9D00F02F33 /* JBDateTimeUtilities.h in Headers */,
@@ -2522,7 +2512,6 @@
 				AED65141153E7BFF0070C670 /* JBConfigurationService.m in Sources */,
 				AE319C431540F2470039EC59 /* JBSubjectGroup.m in Sources */,
 				AEFCA73D154A12D8006E7ADA /* JBBaseProxy.m in Sources */,
-				AE5ABE18154F9F68001CA1A1 /* JBProxyHelper.m in Sources */,
 				AE8B9A521551FC9D00F02F33 /* JBClassHelper.m in Sources */,
 				AE8B9A561551FC9D00F02F33 /* JBDataHelper.m in Sources */,
 				AE8B9A5A1551FC9D00F02F33 /* JBDateTimeUtilities.m in Sources */,
@@ -2712,7 +2701,6 @@
 				AED65140153E7BFF0070C670 /* JBConfigurationService.m in Sources */,
 				AE319C421540F2470039EC59 /* JBSubjectGroup.m in Sources */,
 				AEFCA73C154A12D8006E7ADA /* JBBaseProxy.m in Sources */,
-				AE5ABE17154F9F68001CA1A1 /* JBProxyHelper.m in Sources */,
 				AE8B9A511551FC9D00F02F33 /* JBClassHelper.m in Sources */,
 				AE8B9A551551FC9D00F02F33 /* JBDataHelper.m in Sources */,
 				AE8B9A591551FC9D00F02F33 /* JBDateTimeUtilities.m in Sources */,

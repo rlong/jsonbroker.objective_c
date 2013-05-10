@@ -45,7 +45,11 @@
         entityBodyHash = [JBSecurityUtilities md5HashOfString:@""];
     } else {
         if( !([entity isKindOfClass:[JBDataEntity class]]) ) {
-            BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultStringFormat:@"!([entity isKindOfClass:[DataEntity class]]); NSStringFromClass([DataEntity class]) = '%@'", NSStringFromClass([JBDataEntity class])];
+            
+            NSString* faultMessage = [NSString stringWithFormat:@"!([entity isKindOfClass:[DataEntity class]]); NSStringFromClass([entity class]) = '%@'", NSStringFromClass([entity class])];
+            Log_error(faultMessage);
+            
+            BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:faultMessage];
             [e autorelease];
             @throw  e;
         }

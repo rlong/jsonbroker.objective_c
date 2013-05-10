@@ -175,6 +175,7 @@ static NSMutableArray* _httpProcessors = nil;
             contentLength = [range getContentLength:contentLength];
         }
     }
+    
     float timeTaken = -[[request created] timeIntervalSinceNow];
     
     NSString* completed;
@@ -212,7 +213,6 @@ static NSMutableArray* _httpProcessors = nil;
 
     // process the request ... 
     JBHttpResponse* response = [self processRequest:request];
-    
     
     bool continueProcessingRequests = true;
     

@@ -108,11 +108,11 @@
     //Log_debugFormat( @"\n%@", statusLineAndHeaders);
 
     
-    NSData* data = [JBDataHelper getUtf8Data:statusLineAndHeaders];
+    NSData* headersUtf8Data = [JBDataHelper getUtf8Data:statusLineAndHeaders];
     long maxLength = [statusLineAndHeaders lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
 
     
-    [outputStream write:[data bytes] maxLength:maxLength];
+    [outputStream write:[headersUtf8Data bytes] maxLength:maxLength];
 
 
     ////////////////////////////////////////////////////////////////////////

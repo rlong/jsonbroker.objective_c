@@ -135,7 +135,7 @@ static JBSecurityConfiguration* _test = nil;
         return true;
     }
 
-    if( c >= 'a' && c <= 'a') { // 97 - 122
+    if( c >= 'a' && c <= 'z') { // 97 - 122
         return true;
     }
 
