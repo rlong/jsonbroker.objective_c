@@ -214,6 +214,7 @@ static NSMutableArray* _httpProcessors = nil;
     // process the request ... 
     JBHttpResponse* response = [self processRequest:request];
     
+    
     bool continueProcessingRequests = true;
     
     // vvv http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.10

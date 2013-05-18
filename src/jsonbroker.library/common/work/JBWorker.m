@@ -4,6 +4,7 @@
 //
 
 #import "JBLog.h"
+#import "JBMainThreadJob.h"
 #import "JBObjectTracker.h"
 #import "JBWorker.h"
 
@@ -31,17 +32,38 @@
 
 @implementation JBWorker
 
-- (void)processJob:(NSTimer*)theTimer {
+
+-(void)executeJob:(id<JBJob>)job {
+    
+    //Log_enteredMethod();
+	
+    @try {
+        
+        [job execute];
+        
+    }
+    @catch (NSException* exception) {
+        
+        Log_errorException(exception);
+        
+    }
+	
+}
+
+
+-(void)processJob:(NSTimer*)theTimer {
 	
 	id<JBJob> job = [_workQueue dequeue];
     
-    @try {
-        [job execute];
+    if( [job conformsToProtocol:@protocol(JBMainThreadJob)] ) {
+        
+        [self performSelectorOnMainThread:@selector(executeJob:) withObject:job waitUntilDone:NO];
+        
+    } else {
+        
+        [self executeJob:job];
+        
     }
-    @catch (NSException* exception) {
-        Log_errorException(exception);
-    }
-	
 	
 }
 

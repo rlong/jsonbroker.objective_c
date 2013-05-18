@@ -45,7 +45,11 @@
     if( nil != _delegate )  {
         
         [self performSelectorOnMainThread:@selector(mainThreadJobCompleted:) withObject:job waitUntilDone:NO];        
+
     }
+    
+    return;
+
 }
 
 
@@ -80,6 +84,7 @@
         [self performSelectorOnMainThread:@selector(mainThreadJobFailed:) withObject:params waitUntilDone:NO];
     
     }
+    return;
 }
 
 

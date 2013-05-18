@@ -5,12 +5,10 @@
 
 #import "JBBaseException.h"
 
+#import "JBLog.h"
 #import "JBListenedJob.h"
+#import "JBMainThreadJob.h"
 #import "JBMainThreadJobListener2.h"
-
-
-
-
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -30,6 +28,12 @@
 @property (nonatomic, retain) id<JBJobListener> listener;
 //@synthesize listener = _listener;
 
+// exceptionCaughtDuringExecute
+//BaseException* _exceptionCaughtDuringExecute;
+@property (nonatomic, retain) BaseException* exceptionCaughtDuringExecute;
+//@synthesize exceptionCaughtDuringExecute = _exceptionCaughtDuringExecute;
+
+
 @end
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -41,63 +45,139 @@
 @implementation JBListenedJob
 
 
--(void)jobFailedWithException:(BaseException*)exception {
-    
-    
-    id<JBMainThreadJobListener2> mainThreadJobListener = (id<JBMainThreadJobListener2>)_listener;
-    
-    if( [mainThreadJobListener jobListenerIsRunning] ) {
-        [mainThreadJobListener jobFailed:_delegate withException:exception];
-    }
-    
-    
-}
 
 
--(void)jobCompleted:(id)ignoredObject {
-    
-    id<JBMainThreadJobListener2> mainThreadJobListener = (id<JBMainThreadJobListener2>)_listener;
-    
-    if( [mainThreadJobListener jobListenerIsRunning] ) {
-        [mainThreadJobListener jobCompleted:_delegate];
-    }
-
-    
-}
-
--(void)execute {
+-(void)callExecuteOnDelegate:(id)ignoredObject {
     
     @try {
         [_delegate execute];
-        
-        if( [_listener conformsToProtocol:@protocol(JBMainThreadJobListener2)] ) {
-            [self performSelectorOnMainThread:@selector(jobCompleted:) withObject:nil waitUntilDone:NO];
-        } else {
-            [_listener jobCompleted:_delegate];
-        }
     }
     @catch (JBBaseException *exception) {
         
-        if( [_listener conformsToProtocol:@protocol(JBMainThreadJobListener2)] ) {
-            [self performSelectorOnMainThread:@selector(jobFailedWithException:) withObject:exception waitUntilDone:NO];
-        } else {
-            [_listener jobFailed:_delegate withException:exception];
-        }
-        
+        [self setExceptionCaughtDuringExecute:exception];
     }
     @catch (BaseException *exception) {
         
+        [self setExceptionCaughtDuringExecute:exception];
+    }
+    
+}
+
+-(void)callJobCompletedOnListener:(id)ignoredObject {
+    
+    @try {
+        
         if( [_listener conformsToProtocol:@protocol(JBMainThreadJobListener2)] ) {
-            [self performSelectorOnMainThread:@selector(jobFailedWithException:) withObject:exception waitUntilDone:NO];
+            id<JBMainThreadJobListener2> mainThreadJobListener = (id<JBMainThreadJobListener2>)_listener;
+            if( ![mainThreadJobListener jobListenerIsRunning]) {
+                [mainThreadJobListener jobCompleted:_delegate ];
+            }
         } else {
-            [_listener jobFailed:_delegate withException:exception];
+            [_listener jobCompleted:_delegate];
         }
+
+    }
+    @catch (NSException *exception) {
+        Log_errorException(exception);
+    }
+    
+}
+
+-(void)callJobFailedOnListener:(id)ignoredObject {
+    
+    @try {
+        
+        if( [_listener conformsToProtocol:@protocol(JBMainThreadJobListener2)] ) {
+            id<JBMainThreadJobListener2> mainThreadJobListener = (id<JBMainThreadJobListener2>)_listener;
+            if( ![mainThreadJobListener jobListenerIsRunning]) {
+                [mainThreadJobListener jobFailed:_delegate withException:_exceptionCaughtDuringExecute];
+            }
+        } else {
+            [_listener jobFailed:_delegate withException:_exceptionCaughtDuringExecute];
+        }
+        
+    }
+    @catch (NSException *exception) {
+        Log_errorException(exception);
     }
     
 }
 
 
+-(void)executeAllInMainThread:(id)ignoredObject {
+    
+    Log_enteredMethod();
+    
+    [self callExecuteOnDelegate:nil];
+    
+    //  make the callback to the listener
+    if( nil == _exceptionCaughtDuringExecute ) {
+        
+        [self callJobCompletedOnListener:nil];
+        
+    } else {
+        
+        [self callJobFailedOnListener:nil];
+        
+    }
+}
 
+
+
+
+-(void)execute {
+    
+    // execute job and callback to listener in the main thread ?
+    if( [_delegate conformsToProtocol:@protocol(JBMainThreadJob)] && [_listener conformsToProtocol:@protocol(JBMainThreadJobListener2)] ) {
+
+        [self performSelectorOnMainThread:@selector(executeAllInMainThread:) withObject:nil waitUntilDone:NO];
+        return;
+    }
+
+    // execute
+    {
+        if( [_delegate conformsToProtocol:@protocol(JBMainThreadJob)] ) {
+            
+            [self performSelectorOnMainThread:@selector(callExecuteOnDelegate:) withObject:nil waitUntilDone:YES];
+            
+        } else {
+            
+            [self callExecuteOnDelegate:nil];
+        }
+        
+    }
+    
+    // callback
+    {
+        if( [_listener conformsToProtocol:@protocol(JBMainThreadJobListener2)] ) {
+            
+            if( nil == _exceptionCaughtDuringExecute ) {
+                
+                [self performSelectorOnMainThread:@selector(callJobCompletedOnListener:) withObject:nil waitUntilDone:YES];
+                
+            } else {
+
+                [self performSelectorOnMainThread:@selector(callJobFailedOnListener:) withObject:nil waitUntilDone:YES];
+
+            }
+        
+        } else {
+            
+            if( nil == _exceptionCaughtDuringExecute ) {
+                
+                [self callJobCompletedOnListener:nil];
+                
+            } else {
+                
+                [self callJobFailedOnListener:nil];
+                
+            }
+            
+        }
+        
+    }
+    
+}
 
 #pragma mark -
 #pragma mark instance lifecycle
@@ -118,7 +198,8 @@
 	
     [self setDelegate:nil];
 	[self setListener:nil];
-	
+	[self setExceptionCaughtDuringExecute:nil];
+
 	[super dealloc];
 	
 }
@@ -140,6 +221,10 @@
 //@property (nonatomic, retain) id<JobListener> listener;
 @synthesize listener = _listener;
 
+// exceptionCaughtDuringExecute
+//BaseException* _exceptionCaughtDuringExecute;
+//@property (nonatomic, retain) BaseException* exceptionCaughtDuringExecute;
+@synthesize exceptionCaughtDuringExecute = _exceptionCaughtDuringExecute;
 
 
 @end

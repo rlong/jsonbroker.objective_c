@@ -291,6 +291,19 @@
 		AE78B7AA1512E6B10049BAD5 /* JBJsonBooleanHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AE78B7A61512E6B10049BAD5 /* JBJsonBooleanHandler.m */; };
 		AE7A6C0C16686571003EB854 /* JBWebServer.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7A6C0B16686571003EB854 /* JBWebServer.h */; };
 		AE7A6C0D16686571003EB854 /* JBWebServer.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7A6C0B16686571003EB854 /* JBWebServer.h */; };
+		AE7CBBE21745C1D1000FCA37 /* JBAbstractAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7CBBE01745C1D1000FCA37 /* JBAbstractAdapter.h */; };
+		AE7CBBE31745C1D1000FCA37 /* JBAbstractAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7CBBE01745C1D1000FCA37 /* JBAbstractAdapter.h */; };
+		AE7CBBE41745C1D1000FCA37 /* JBAbstractAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7CBBE11745C1D1000FCA37 /* JBAbstractAdapter.m */; };
+		AE7CBBE51745C1D1000FCA37 /* JBAbstractAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7CBBE11745C1D1000FCA37 /* JBAbstractAdapter.m */; };
+		AE7CBBE81745E631000FCA37 /* JBActionSheetBlockAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7CBBE61745E630000FCA37 /* JBActionSheetBlockAdapter.h */; };
+		AE7CBBE91745E631000FCA37 /* JBActionSheetBlockAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7CBBE61745E630000FCA37 /* JBActionSheetBlockAdapter.h */; };
+		AE7CBBEA1745E631000FCA37 /* JBActionSheetBlockAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7CBBE71745E630000FCA37 /* JBActionSheetBlockAdapter.m */; };
+		AE7CBBF917460373000FCA37 /* JBTableViewBlockAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7CBBF717460372000FCA37 /* JBTableViewBlockAdapter.h */; };
+		AE7CBBFA17460373000FCA37 /* JBTableViewBlockAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7CBBF817460372000FCA37 /* JBTableViewBlockAdapter.m */; };
+		AE7CBC0A17462507000FCA37 /* JBBlockAdapterJob.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7CBC0817462505000FCA37 /* JBBlockAdapterJob.h */; };
+		AE7CBC0B17462507000FCA37 /* JBBlockAdapterJob.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7CBC0917462506000FCA37 /* JBBlockAdapterJob.m */; };
+		AE7CBC0E17462E75000FCA37 /* JBTabBarBlockAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7CBC0C17462E74000FCA37 /* JBTabBarBlockAdapter.h */; };
+		AE7CBC0F17462E75000FCA37 /* JBTabBarBlockAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7CBC0D17462E74000FCA37 /* JBTabBarBlockAdapter.m */; };
 		AE7D3E4A16AFACB4008B4F9C /* JBMultiPartReaderUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7D3E4916AFACB4008B4F9C /* JBMultiPartReaderUnitTest.m */; };
 		AE7D3E4E16AFC6F4008B4F9C /* JBTestPartHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7D3E4D16AFC6F3008B4F9C /* JBTestPartHandler.m */; };
 		AE7D3E5116AFC772008B4F9C /* JBTestMultiPartHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7D3E5016AFC771008B4F9C /* JBTestMultiPartHandler.m */; };
@@ -402,6 +415,18 @@
 		AE8B9A8C1551FD3000F02F33 /* JBErrorCodeUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8B9A881551FD3000F02F33 /* JBErrorCodeUtilities.m */; };
 		AE8CB54D16BE33FB000F62DC /* JBJsonOutput.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8CB54C16BE33FB000F62DC /* JBJsonOutput.h */; };
 		AE8CB54E16BE33FB000F62DC /* JBJsonOutput.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8CB54C16BE33FB000F62DC /* JBJsonOutput.h */; };
+		AE90E6FF17447595006C0F33 /* JBBlockJob.h in Headers */ = {isa = PBXBuildFile; fileRef = AE90E6FD17447595006C0F33 /* JBBlockJob.h */; };
+		AE90E70017447595006C0F33 /* JBBlockJob.h in Headers */ = {isa = PBXBuildFile; fileRef = AE90E6FD17447595006C0F33 /* JBBlockJob.h */; };
+		AE90E70117447595006C0F33 /* JBBlockJob.m in Sources */ = {isa = PBXBuildFile; fileRef = AE90E6FE17447595006C0F33 /* JBBlockJob.m */; };
+		AE90E70217447595006C0F33 /* JBBlockJob.m in Sources */ = {isa = PBXBuildFile; fileRef = AE90E6FE17447595006C0F33 /* JBBlockJob.m */; };
+		AE90E705174477A5006C0F33 /* JBButtonBlockAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = AE90E703174477A5006C0F33 /* JBButtonBlockAdapter.h */; };
+		AE90E706174477A5006C0F33 /* JBButtonBlockAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE90E704174477A5006C0F33 /* JBButtonBlockAdapter.m */; };
+		AE90E70917449899006C0F33 /* JBBlockAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = AE90E70717449899006C0F33 /* JBBlockAdapter.h */; };
+		AE90E70A17449899006C0F33 /* JBBlockAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = AE90E70717449899006C0F33 /* JBBlockAdapter.h */; };
+		AE90E72E1744BD35006C0F33 /* JBAlertViewBlockAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = AE90E72C1744BD35006C0F33 /* JBAlertViewBlockAdapter.h */; };
+		AE90E72F1744BD35006C0F33 /* JBAlertViewBlockAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE90E72D1744BD35006C0F33 /* JBAlertViewBlockAdapter.m */; };
+		AE9133121747578A002149DD /* JBBarButtonItemBlockAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = AE91331017475789002149DD /* JBBarButtonItemBlockAdapter.h */; };
+		AE9133131747578A002149DD /* JBBarButtonItemBlockAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9133111747578A002149DD /* JBBarButtonItemBlockAdapter.m */; };
 		AE91EF671618055100FFAC35 /* JBJsonBrokerException.h in Headers */ = {isa = PBXBuildFile; fileRef = AE91EF651618055100FFAC35 /* JBJsonBrokerException.h */; };
 		AE91EF681618055100FFAC35 /* JBJsonBrokerException.h in Headers */ = {isa = PBXBuildFile; fileRef = AE91EF651618055100FFAC35 /* JBJsonBrokerException.h */; };
 		AE91EF691618055100FFAC35 /* JBJsonBrokerException.m in Sources */ = {isa = PBXBuildFile; fileRef = AE91EF661618055100FFAC35 /* JBJsonBrokerException.m */; };
@@ -685,6 +710,7 @@
 		AE1EE22C16C9C59C0046EBBC /* JBFileHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBFileHandle.m; sourceTree = "<group>"; };
 		AE22F5A816AD2BC0003BE2BF /* JBParametersScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBParametersScanner.h; sourceTree = "<group>"; };
 		AE22F5A916AD2BC0003BE2BF /* JBParametersScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBParametersScanner.m; sourceTree = "<group>"; };
+		AE26B658173CC1CD00056EE8 /* JBMainThreadJob.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBMainThreadJob.h; sourceTree = "<group>"; };
 		AE27590214D7F315006E45D4 /* JBBrokerMessageResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBrokerMessageResponseHandler.h; sourceTree = "<group>"; };
 		AE27590314D7F315006E45D4 /* JBBrokerMessageResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBrokerMessageResponseHandler.m; sourceTree = "<group>"; };
 		AE27590B14D7F591006E45D4 /* JBServiceHttpProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBServiceHttpProxy.h; sourceTree = "<group>"; };
@@ -723,6 +749,14 @@
 		AE42BE49147FB5C1000FC3A4 /* jsonbroker.library.osx-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jsonbroker.library.osx-Prefix.pch"; sourceTree = "<group>"; };
 		AE42BE4A147FB5C1000FC3A4 /* jsonbroker_library_osx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jsonbroker_library_osx.h; sourceTree = "<group>"; };
 		AE42BE4B147FB5C1000FC3A4 /* jsonbroker_library_osx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jsonbroker_library_osx.m; sourceTree = "<group>"; };
+		AE4E441717446EDE009C2F97 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		AE4E441A17446EDE009C2F97 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		AE4E441E17446EDE009C2F97 /* jsonbroker.samples.ios-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "jsonbroker.samples.ios-Info.plist"; sourceTree = "<group>"; };
+		AE4E442017446EDE009C2F97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AE4E442417446EDE009C2F97 /* jsonbroker.samples.ios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jsonbroker.samples.ios-Prefix.pch"; sourceTree = "<group>"; };
+		AE4E442817446EDE009C2F97 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		AE4E442A17446EDE009C2F97 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		AE4E442C17446EDE009C2F97 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AE4EB8F216B0C19500BD8CBE /* JBHttpStatus_ErrorDomain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBHttpStatus_ErrorDomain.h; sourceTree = "<group>"; };
 		AE573A0F1523F76D0020D2DC /* JBHttpRunLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBHttpRunLoop.h; sourceTree = "<group>"; };
 		AE573A101523F76D0020D2DC /* JBHttpRunLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBHttpRunLoop.m; sourceTree = "<group>"; };
@@ -785,6 +819,16 @@
 		AE78B7A51512E6B10049BAD5 /* JBJsonBooleanHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBJsonBooleanHandler.h; sourceTree = "<group>"; };
 		AE78B7A61512E6B10049BAD5 /* JBJsonBooleanHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBJsonBooleanHandler.m; sourceTree = "<group>"; };
 		AE7A6C0B16686571003EB854 /* JBWebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBWebServer.h; sourceTree = "<group>"; };
+		AE7CBBE01745C1D1000FCA37 /* JBAbstractAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBAbstractAdapter.h; sourceTree = "<group>"; };
+		AE7CBBE11745C1D1000FCA37 /* JBAbstractAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBAbstractAdapter.m; sourceTree = "<group>"; };
+		AE7CBBE61745E630000FCA37 /* JBActionSheetBlockAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBActionSheetBlockAdapter.h; sourceTree = "<group>"; };
+		AE7CBBE71745E630000FCA37 /* JBActionSheetBlockAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBActionSheetBlockAdapter.m; sourceTree = "<group>"; };
+		AE7CBBF717460372000FCA37 /* JBTableViewBlockAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBTableViewBlockAdapter.h; sourceTree = "<group>"; };
+		AE7CBBF817460372000FCA37 /* JBTableViewBlockAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBTableViewBlockAdapter.m; sourceTree = "<group>"; };
+		AE7CBC0817462505000FCA37 /* JBBlockAdapterJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBlockAdapterJob.h; sourceTree = "<group>"; };
+		AE7CBC0917462506000FCA37 /* JBBlockAdapterJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBlockAdapterJob.m; sourceTree = "<group>"; };
+		AE7CBC0C17462E74000FCA37 /* JBTabBarBlockAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBTabBarBlockAdapter.h; sourceTree = "<group>"; };
+		AE7CBC0D17462E74000FCA37 /* JBTabBarBlockAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBTabBarBlockAdapter.m; sourceTree = "<group>"; };
 		AE7D3E4816AFACB4008B4F9C /* JBMultiPartReaderUnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBMultiPartReaderUnitTest.h; sourceTree = "<group>"; };
 		AE7D3E4916AFACB4008B4F9C /* JBMultiPartReaderUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBMultiPartReaderUnitTest.m; sourceTree = "<group>"; };
 		AE7D3E4C16AFC6F3008B4F9C /* JBTestPartHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBTestPartHandler.h; sourceTree = "<group>"; };
@@ -889,6 +933,15 @@
 		AE8DACD11717C9890045B1A8 /* JBIntegrationTestRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBIntegrationTestRunner.h; sourceTree = "<group>"; };
 		AE8DACD21717C9890045B1A8 /* JBIntegrationTestRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBIntegrationTestRunner.m; sourceTree = "<group>"; };
 		AE8DACD31717C9890045B1A8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AE90E6FD17447595006C0F33 /* JBBlockJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBlockJob.h; sourceTree = "<group>"; };
+		AE90E6FE17447595006C0F33 /* JBBlockJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBlockJob.m; sourceTree = "<group>"; };
+		AE90E703174477A5006C0F33 /* JBButtonBlockAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBButtonBlockAdapter.h; sourceTree = "<group>"; };
+		AE90E704174477A5006C0F33 /* JBButtonBlockAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBButtonBlockAdapter.m; sourceTree = "<group>"; };
+		AE90E70717449899006C0F33 /* JBBlockAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBlockAdapter.h; sourceTree = "<group>"; };
+		AE90E72C1744BD35006C0F33 /* JBAlertViewBlockAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBAlertViewBlockAdapter.h; sourceTree = "<group>"; };
+		AE90E72D1744BD35006C0F33 /* JBAlertViewBlockAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBAlertViewBlockAdapter.m; sourceTree = "<group>"; };
+		AE91331017475789002149DD /* JBBarButtonItemBlockAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBarButtonItemBlockAdapter.h; sourceTree = "<group>"; };
+		AE9133111747578A002149DD /* JBBarButtonItemBlockAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBarButtonItemBlockAdapter.m; sourceTree = "<group>"; };
 		AE91EF651618055100FFAC35 /* JBJsonBrokerException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBJsonBrokerException.h; sourceTree = "<group>"; };
 		AE91EF661618055100FFAC35 /* JBJsonBrokerException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBJsonBrokerException.m; sourceTree = "<group>"; };
 		AE9AE6FB15536D6F007DF312 /* JBStringHelperUnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBStringHelperUnitTest.h; sourceTree = "<group>"; };
@@ -1242,6 +1295,51 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AE4E441117446E5F009C2F97 /* block_adapter */ = {
+			isa = PBXGroup;
+			children = (
+				AE7CBBE01745C1D1000FCA37 /* JBAbstractAdapter.h */,
+				AE7CBBE11745C1D1000FCA37 /* JBAbstractAdapter.m */,
+				AE7CBBE61745E630000FCA37 /* JBActionSheetBlockAdapter.h */,
+				AE7CBBE71745E630000FCA37 /* JBActionSheetBlockAdapter.m */,
+				AE90E72C1744BD35006C0F33 /* JBAlertViewBlockAdapter.h */,
+				AE90E72D1744BD35006C0F33 /* JBAlertViewBlockAdapter.m */,
+				AE91331017475789002149DD /* JBBarButtonItemBlockAdapter.h */,
+				AE9133111747578A002149DD /* JBBarButtonItemBlockAdapter.m */,
+				AE90E703174477A5006C0F33 /* JBButtonBlockAdapter.h */,
+				AE90E704174477A5006C0F33 /* JBButtonBlockAdapter.m */,
+				AE90E70717449899006C0F33 /* JBBlockAdapter.h */,
+				AE7CBC0817462505000FCA37 /* JBBlockAdapterJob.h */,
+				AE7CBC0917462506000FCA37 /* JBBlockAdapterJob.m */,
+				AE7CBC0C17462E74000FCA37 /* JBTabBarBlockAdapter.h */,
+				AE7CBC0D17462E74000FCA37 /* JBTabBarBlockAdapter.m */,
+				AE7CBBF717460372000FCA37 /* JBTableViewBlockAdapter.h */,
+				AE7CBBF817460372000FCA37 /* JBTableViewBlockAdapter.m */,
+			);
+			path = block_adapter;
+			sourceTree = "<group>";
+		};
+		AE4E441C17446EDE009C2F97 /* jsonbroker.samples.ios */ = {
+			isa = PBXGroup;
+			children = (
+				AE4E441D17446EDE009C2F97 /* Supporting Files */,
+			);
+			path = jsonbroker.samples.ios;
+			sourceTree = "<group>";
+		};
+		AE4E441D17446EDE009C2F97 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE4E441E17446EDE009C2F97 /* jsonbroker.samples.ios-Info.plist */,
+				AE4E441F17446EDE009C2F97 /* InfoPlist.strings */,
+				AE4E442417446EDE009C2F97 /* jsonbroker.samples.ios-Prefix.pch */,
+				AE4E442817446EDE009C2F97 /* Default.png */,
+				AE4E442A17446EDE009C2F97 /* Default@2x.png */,
+				AE4E442C17446EDE009C2F97 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		AE66BAF914CD1AF000ACD757 /* service */ = {
 			isa = PBXGroup;
 			children = (
@@ -1314,7 +1412,12 @@
 			isa = PBXGroup;
 			children = (
 				AEEA65C916E8527500560D5C /* JBJob.h */,
+				AE90E6FD17447595006C0F33 /* JBBlockJob.h */,
+				AE90E6FE17447595006C0F33 /* JBBlockJob.m */,
 				AEEA65C616E84F7900560D5C /* JBJobListener.h */,
+				AEF5AA7E16709DFD00336EB5 /* JBListenedJob.h */,
+				AEF5AA7F16709DFD00336EB5 /* JBListenedJob.m */,
+				AE26B658173CC1CD00056EE8 /* JBMainThreadJob.h */,
 				AE8762E9151B23C500263C80 /* JBMainThreadJobListener1.h */,
 				AE8762EA151B23C500263C80 /* JBMainThreadJobListener1.m */,
 				AEBF65FD17001B84004B656E /* JBMainThreadJobListener2.h */,
@@ -1324,8 +1427,6 @@
 				AE6884F51469EC1A000E8466 /* JBWorker.m */,
 				AE6884FA1469ED87000E8466 /* JBWorkManager.h */,
 				AE6884FB1469ED87000E8466 /* JBWorkManager.m */,
-				AEF5AA7E16709DFD00336EB5 /* JBListenedJob.h */,
-				AEF5AA7F16709DFD00336EB5 /* JBListenedJob.m */,
 			);
 			path = work;
 			sourceTree = "<group>";
@@ -1414,6 +1515,7 @@
 				AE86B0BC1717C48C00AFC43E /* jsonbroker.library.integration_test */,
 				AE8DACC61717C96B0045B1A8 /* jsonbroker.integration_test */,
 				AEDBC2001717E76E0073ABA8 /* jsonbroker.integration_test */,
+				AE4E441C17446EDE009C2F97 /* jsonbroker.samples.ios */,
 				AE8A9168146408C3006037B8 /* Frameworks */,
 				AE8A9167146408C3006037B8 /* Products */,
 			);
@@ -1440,6 +1542,8 @@
 				AE8A9169146408C3006037B8 /* Cocoa.framework */,
 				AEDFD7C81466607500EA85F9 /* Foundation.framework */,
 				AEFFB259147FAD6700FFE5CD /* CoreFoundation.framework */,
+				AE4E441717446EDE009C2F97 /* UIKit.framework */,
+				AE4E441A17446EDE009C2F97 /* CoreGraphics.framework */,
 				AE8A916B146408C3006037B8 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -1733,6 +1837,7 @@
 		AE8A929914640A39006037B8 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				AE4E441117446E5F009C2F97 /* block_adapter */,
 				AEC48B901471F56700F3FB38 /* UIWebView+NoBounce.h */,
 				AEC48B911471F56700F3FB38 /* UIWebView+NoBounce.m */,
 				AE10647514669E2100AA500D /* JBIosWebViewBridge.h */,
@@ -2124,6 +2229,10 @@
 				AEAE44F0170E744500D047DA /* JBNetworkUtilitiesIntegrationTest.h in Headers */,
 				AEA9AD16171654A400CDFB76 /* JBJsonObjectHelper.h in Headers */,
 				AEC9C6101718D900000CA6E4 /* JBJsonArrayHelper.h in Headers */,
+				AE90E70017447595006C0F33 /* JBBlockJob.h in Headers */,
+				AE90E70A17449899006C0F33 /* JBBlockAdapter.h in Headers */,
+				AE7CBBE31745C1D1000FCA37 /* JBAbstractAdapter.h in Headers */,
+				AE7CBBE91745E631000FCA37 /* JBActionSheetBlockAdapter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2297,6 +2406,16 @@
 				AEAE44EF170E744500D047DA /* JBNetworkUtilitiesIntegrationTest.h in Headers */,
 				AEA9AD15171654A400CDFB76 /* JBJsonObjectHelper.h in Headers */,
 				AEC9C60F1718D900000CA6E4 /* JBJsonArrayHelper.h in Headers */,
+				AE90E6FF17447595006C0F33 /* JBBlockJob.h in Headers */,
+				AE90E705174477A5006C0F33 /* JBButtonBlockAdapter.h in Headers */,
+				AE90E70917449899006C0F33 /* JBBlockAdapter.h in Headers */,
+				AE90E72E1744BD35006C0F33 /* JBAlertViewBlockAdapter.h in Headers */,
+				AE7CBBE21745C1D1000FCA37 /* JBAbstractAdapter.h in Headers */,
+				AE7CBBE81745E631000FCA37 /* JBActionSheetBlockAdapter.h in Headers */,
+				AE7CBBF917460373000FCA37 /* JBTableViewBlockAdapter.h in Headers */,
+				AE7CBC0A17462507000FCA37 /* JBBlockAdapterJob.h in Headers */,
+				AE7CBC0E17462E75000FCA37 /* JBTabBarBlockAdapter.h in Headers */,
+				AE9133121747578A002149DD /* JBBarButtonItemBlockAdapter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2578,6 +2697,8 @@
 				AEAE44EE170E744500D047DA /* JBNetworkUtilities.m in Sources */,
 				AEA9AD18171654A400CDFB76 /* JBJsonObjectHelper.m in Sources */,
 				AEC9C6121718D900000CA6E4 /* JBJsonArrayHelper.m in Sources */,
+				AE90E70217447595006C0F33 /* JBBlockJob.m in Sources */,
+				AE7CBBE51745C1D1000FCA37 /* JBAbstractAdapter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2766,12 +2887,29 @@
 				AEAE44ED170E744500D047DA /* JBNetworkUtilities.m in Sources */,
 				AEA9AD17171654A400CDFB76 /* JBJsonObjectHelper.m in Sources */,
 				AEC9C6111718D900000CA6E4 /* JBJsonArrayHelper.m in Sources */,
+				AE90E70117447595006C0F33 /* JBBlockJob.m in Sources */,
+				AE90E706174477A5006C0F33 /* JBButtonBlockAdapter.m in Sources */,
+				AE90E72F1744BD35006C0F33 /* JBAlertViewBlockAdapter.m in Sources */,
+				AE7CBBE41745C1D1000FCA37 /* JBAbstractAdapter.m in Sources */,
+				AE7CBBEA1745E631000FCA37 /* JBActionSheetBlockAdapter.m in Sources */,
+				AE7CBBFA17460373000FCA37 /* JBTableViewBlockAdapter.m in Sources */,
+				AE7CBC0B17462507000FCA37 /* JBBlockAdapterJob.m in Sources */,
+				AE7CBC0F17462E75000FCA37 /* JBTabBarBlockAdapter.m in Sources */,
+				AE9133131747578A002149DD /* JBBarButtonItemBlockAdapter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		AE4E441F17446EDE009C2F97 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE4E442017446EDE009C2F97 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		AE66BB0B14CD1C3F00ACD757 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

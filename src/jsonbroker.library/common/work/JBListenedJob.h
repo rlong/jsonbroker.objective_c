@@ -19,6 +19,13 @@
 	id<JBJobListener> _listener;
 	//@property (nonatomic, retain) id<JobListener> listener;
 	//@synthesize listener = _listener;
+    
+    
+    // exceptionCaughtDuringExecute
+    BaseException* _exceptionCaughtDuringExecute;
+    //@property (nonatomic, retain) BaseException* exceptionCaughtDuringExecute;
+    //@synthesize exceptionCaughtDuringExecute = _exceptionCaughtDuringExecute;
+
 
     
 }
