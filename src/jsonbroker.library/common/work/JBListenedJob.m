@@ -69,7 +69,7 @@
         
         if( [_listener conformsToProtocol:@protocol(JBMainThreadJobListener2)] ) {
             id<JBMainThreadJobListener2> mainThreadJobListener = (id<JBMainThreadJobListener2>)_listener;
-            if( ![mainThreadJobListener jobListenerIsRunning]) {
+            if( [mainThreadJobListener jobListenerIsRunning]) {
                 [mainThreadJobListener jobCompleted:_delegate ];
             }
         } else {
