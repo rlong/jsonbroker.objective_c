@@ -415,6 +415,8 @@
 		AE9E3E5E1653404F00A5E110 /* JBLogHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AE9E3E5B1653404E00A5E110 /* JBLogHelper.h */; };
 		AE9E3E5F1653404F00A5E110 /* JBLogHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9E3E5C1653404F00A5E110 /* JBLogHelper.m */; };
 		AE9E3E601653404F00A5E110 /* JBLogHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9E3E5C1653404F00A5E110 /* JBLogHelper.m */; };
+		AEA1764217559F8C00C7DA44 /* JBMemoryModel.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA1764017559F8C00C7DA44 /* JBMemoryModel.h */; };
+		AEA1764317559F8C00C7DA44 /* JBMemoryModel.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA1764017559F8C00C7DA44 /* JBMemoryModel.h */; };
 		AEA9AD15171654A400CDFB76 /* JBJsonObjectHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA9AD13171654A300CDFB76 /* JBJsonObjectHelper.h */; };
 		AEA9AD16171654A400CDFB76 /* JBJsonObjectHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA9AD13171654A300CDFB76 /* JBJsonObjectHelper.h */; };
 		AEA9AD17171654A400CDFB76 /* JBJsonObjectHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA9AD14171654A300CDFB76 /* JBJsonObjectHelper.m */; };
@@ -910,6 +912,7 @@
 		AE9AE6FC15536D6F007DF312 /* JBStringHelperUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBStringHelperUnitTest.m; sourceTree = "<group>"; };
 		AE9E3E5B1653404E00A5E110 /* JBLogHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBLogHelper.h; sourceTree = "<group>"; };
 		AE9E3E5C1653404F00A5E110 /* JBLogHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBLogHelper.m; sourceTree = "<group>"; };
+		AEA1764017559F8C00C7DA44 /* JBMemoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBMemoryModel.h; sourceTree = "<group>"; };
 		AEA9AD13171654A300CDFB76 /* JBJsonObjectHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBJsonObjectHelper.h; sourceTree = "<group>"; };
 		AEA9AD14171654A300CDFB76 /* JBJsonObjectHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBJsonObjectHelper.m; sourceTree = "<group>"; };
 		AEADB51A16E5B5E00017C33E /* JBJsonDocumentHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBJsonDocumentHandler.h; sourceTree = "<group>"; };
@@ -1543,6 +1546,7 @@
 				AE8A922714640A39006037B8 /* log */,
 				AE8A922C14640A39006037B8 /* security */,
 				AE6884EA1469EBB0000E8466 /* work */,
+				AEA1764017559F8C00C7DA44 /* JBMemoryModel.h */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -2167,6 +2171,7 @@
 				AEA9AD16171654A400CDFB76 /* JBJsonObjectHelper.h in Headers */,
 				AEC9C6101718D900000CA6E4 /* JBJsonArrayHelper.h in Headers */,
 				AE90E70017447595006C0F33 /* JBBlockJob.h in Headers */,
+				AEA1764317559F8C00C7DA44 /* JBMemoryModel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2341,6 +2346,7 @@
 				AEA9AD15171654A400CDFB76 /* JBJsonObjectHelper.h in Headers */,
 				AEC9C60F1718D900000CA6E4 /* JBJsonArrayHelper.h in Headers */,
 				AE90E6FF17447595006C0F33 /* JBBlockJob.h in Headers */,
+				AEA1764217559F8C00C7DA44 /* JBMemoryModel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3033,7 +3039,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -3062,7 +3068,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3141,7 +3146,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "jsonbroker.library.ios/jsonbroker.library.ios-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -3153,15 +3158,11 @@
 		AEDFD7D11466607500EA85F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					"$(ARCHS_STANDARD_32_BIT)",
-					armv6,
-				);
 				DSTROOT = /tmp/jsonbroker_library_ios.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "jsonbroker.library.ios/jsonbroker.library.ios-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

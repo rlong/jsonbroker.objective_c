@@ -159,8 +159,8 @@
     if( nil != authenticator ) { 
 
         NSString* authorization = [authenticator getRequestAuthorizationForMethod:[answer HTTPMethod] requestUri:requestUri entity:nil];
-        Log_debugString( authorization);
-        if( nil != authorization ) { 
+
+        if( nil != authorization ) {
             [answer addValue:authorization forHTTPHeaderField:@"Authorization"];
         }
     }

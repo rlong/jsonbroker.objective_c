@@ -29,9 +29,12 @@ static NSMutableDictionary* _objects;
 #ifdef DEBUG
     
     
+    
+    
     @synchronized(_objects) {
+
         NSString* key = [self keyForObject:object];
-        
+
         if( nil != [_objects objectForKey:key] ) {
             
             Log_warnFormat( @"nil != [_objects objectForKey:key]; key = '%@'", key );
@@ -60,6 +63,7 @@ static NSMutableDictionary* _objects;
     @synchronized(_objects) {
         
         NSString* key = [self keyForObject:object];
+
         
         if( nil == [_objects objectForKey:key] ) {
             Log_warnFormat( @"nil == [_objects objectForKey:key]; key = '%@'", key );
