@@ -27,6 +27,7 @@
 +(BaseException*)badRequest400FromOriginator:(id)originator line:(int)line {
   
     BaseException* answer = [self buildException:originator line:line statusCode:HttpStatus_BAD_REQUEST_400];
+    [answer setErrorDomain:[[JBHttpStatus errorDomain] BAD_REQUEST_400]];
     return answer;
 }
 
