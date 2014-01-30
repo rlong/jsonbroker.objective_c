@@ -35,9 +35,16 @@
 static NSObject* _NULL_OBJECT = nil;
 
 
++(NSString*)NULL_VALUE_REFERENCED {
+    return @"jsonbroker.JsonArray.NULL_VALUE_REFERENCED";
+}
+
+
+
 +(void)initialize {
 	
 	_NULL_OBJECT = [NSNull null];
+    
 }
 
 
@@ -55,6 +62,7 @@ static NSObject* _NULL_OBJECT = nil;
 	if( nil == answer && throwExceptionOnNil ) {
         NSString* technicalError = [NSString stringWithFormat:@"nil == answer; index = %ld",(unsigned long)index];
 		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
+        [e setErrorDomain:[JBJsonArray NULL_VALUE_REFERENCED]];
 		[e autorelease];
 		@throw e;
 		

@@ -16,6 +16,8 @@
 
 }
 
++(NSString*)NULL_VALUE_REFERENCED;
+
 -(void)add:(id)object;
 
 -(void)addBoolean:(bool)value;

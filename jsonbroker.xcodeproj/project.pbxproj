@@ -421,6 +421,8 @@
 		AEA9AD16171654A400CDFB76 /* JBJsonObjectHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA9AD13171654A300CDFB76 /* JBJsonObjectHelper.h */; };
 		AEA9AD17171654A400CDFB76 /* JBJsonObjectHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA9AD14171654A300CDFB76 /* JBJsonObjectHelper.m */; };
 		AEA9AD18171654A400CDFB76 /* JBJsonObjectHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA9AD14171654A300CDFB76 /* JBJsonObjectHelper.m */; };
+		AEAB4FBE17DFD01B004231A6 /* JBIosWebViewShower.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAB4FBC17DFD01B004231A6 /* JBIosWebViewShower.h */; };
+		AEAB4FBF17DFD01B004231A6 /* JBIosWebViewShower.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAB4FBD17DFD01B004231A6 /* JBIosWebViewShower.m */; };
 		AEADB51B16E5B5E00017C33E /* JBJsonDocumentHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AEADB51A16E5B5E00017C33E /* JBJsonDocumentHandler.h */; };
 		AEADB51C16E5B5E00017C33E /* JBJsonDocumentHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AEADB51A16E5B5E00017C33E /* JBJsonDocumentHandler.h */; };
 		AEADB51F16E5B7930017C33E /* JBDefaultJsonHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AEADB51D16E5B7930017C33E /* JBDefaultJsonHandler.h */; };
@@ -915,6 +917,8 @@
 		AEA1764017559F8C00C7DA44 /* JBMemoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBMemoryModel.h; sourceTree = "<group>"; };
 		AEA9AD13171654A300CDFB76 /* JBJsonObjectHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBJsonObjectHelper.h; sourceTree = "<group>"; };
 		AEA9AD14171654A300CDFB76 /* JBJsonObjectHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBJsonObjectHelper.m; sourceTree = "<group>"; };
+		AEAB4FBC17DFD01B004231A6 /* JBIosWebViewShower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBIosWebViewShower.h; sourceTree = "<group>"; };
+		AEAB4FBD17DFD01B004231A6 /* JBIosWebViewShower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBIosWebViewShower.m; sourceTree = "<group>"; };
 		AEADB51A16E5B5E00017C33E /* JBJsonDocumentHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBJsonDocumentHandler.h; sourceTree = "<group>"; };
 		AEADB51D16E5B7930017C33E /* JBDefaultJsonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBDefaultJsonHandler.h; sourceTree = "<group>"; };
 		AEADB51E16E5B7930017C33E /* JBDefaultJsonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBDefaultJsonHandler.m; sourceTree = "<group>"; };
@@ -1785,6 +1789,8 @@
 				AE10647614669E2100AA500D /* JBIosWebViewBridge.m */,
 				AEC48B921471F56700F3FB38 /* JBIosWebViewHelper.h */,
 				AEC48B931471F56700F3FB38 /* JBIosWebViewHelper.m */,
+				AEAB4FBC17DFD01B004231A6 /* JBIosWebViewShower.h */,
+				AEAB4FBD17DFD01B004231A6 /* JBIosWebViewShower.m */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -2347,6 +2353,7 @@
 				AEC9C60F1718D900000CA6E4 /* JBJsonArrayHelper.h in Headers */,
 				AE90E6FF17447595006C0F33 /* JBBlockJob.h in Headers */,
 				AEA1764217559F8C00C7DA44 /* JBMemoryModel.h in Headers */,
+				AEAB4FBE17DFD01B004231A6 /* JBIosWebViewShower.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2818,6 +2825,7 @@
 				AEA9AD17171654A400CDFB76 /* JBJsonObjectHelper.m in Sources */,
 				AEC9C6111718D900000CA6E4 /* JBJsonArrayHelper.m in Sources */,
 				AE90E70117447595006C0F33 /* JBBlockJob.m in Sources */,
+				AEAB4FBF17DFD01B004231A6 /* JBIosWebViewShower.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

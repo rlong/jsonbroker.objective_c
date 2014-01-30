@@ -69,6 +69,7 @@
 	NSError* error = nil;
 
     JBHttpRunLoop* httpRunLoop = [JBHttpRunLoop getInstance];
+    
 	NSData* data = [httpRunLoop sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
     
     
@@ -139,6 +140,7 @@
     NSString* requestUri = [requestAdapter requestUri];
     
     NSString* urlString = [NSString stringWithFormat:@"http://%@%@", [_networkAddress toString], requestUri];
+    // Log_debugString( urlString );
     
     NSURL* url = [NSURL URLWithString:urlString];
     
@@ -153,6 +155,7 @@
         for( NSString* name in requestHeaders ) { 
             NSString* value = [requestHeaders objectForKey:name];
             [answer addValue:value forHTTPHeaderField:name];
+            // Log_debugFormat( @"%@: %@", name, value );
         }        
     }
     

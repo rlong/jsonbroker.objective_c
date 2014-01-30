@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h> // for UIWebViewDelegate, UIWebView
 
 #import "JBBrokerMessage.h"
+#import "JBIosWebViewShower.h"
 #import "JBJavascriptCallbackAdapter.h"
 #import "JBServicesRegistery.h"
 
@@ -35,6 +36,14 @@
 
     bool _webViewDidFinishLoad;
     bool _onResumeCalled;
+    
+    
+    // webViewShower
+    JBIosWebViewShower* _webViewShower;
+    //@property (nonatomic, retain) JBIosWebViewShower* webViewShower;
+    //@synthesize webViewShower = _webViewShower;
+    
+
 
 }
 
@@ -54,6 +63,7 @@
 -(JBIosWebViewBridge*)initWithWebView:(UIWebView*)webView path:(NSString*)path servicesRegistery:(JBServicesRegistery*)servicesRegistery;
 -(JBIosWebViewBridge*)initWithWebView:(UIWebView*)webView path:(NSString*)path service:(id<JBDescribedService>)service;
 -(JBIosWebViewBridge*)initWithWebView:(UIWebView*)webView path:(NSString*)path;
+
 
 
 @end

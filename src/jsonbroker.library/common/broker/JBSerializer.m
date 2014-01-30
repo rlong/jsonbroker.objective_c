@@ -12,6 +12,8 @@
 #import "JBJsonDataInput.h"
 #import "JBJsonStringOutput.h"
 
+#import "JBLog.h"
+
 
 @implementation JBSerializer
 
@@ -29,6 +31,9 @@ static JBJsonArrayHandler* _jsonArrayHandler = nil;
 	
 	JBJsonDataInput* reader = [[JBJsonDataInput alloc] initWithData:data];
 	
+    
+    //Log_debugData( data );
+    
 	[reader scanToNextToken];
 
     JBJsonArray* messageComponents;

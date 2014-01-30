@@ -64,7 +64,6 @@ static NSMutableDictionary* _objects;
         
         NSString* key = [self keyForObject:object];
 
-        
         if( nil == [_objects objectForKey:key] ) {
             Log_warnFormat( @"nil == [_objects objectForKey:key]; key = '%@'", key );
             

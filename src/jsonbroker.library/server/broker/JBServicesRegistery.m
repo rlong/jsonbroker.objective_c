@@ -219,8 +219,10 @@ static JBServicesRegisteryErrorDomain* _errorDomain = nil;
         
     }
     
-    
-    id<JBService> serviceDelegate = [self getService:[request serviceName]];
+
+    NSString* serviceName = [request serviceName];
+    Log_debugString( serviceName );
+    id<JBService> serviceDelegate = [self getService:serviceName];
     return [serviceDelegate process:request];
     
 }

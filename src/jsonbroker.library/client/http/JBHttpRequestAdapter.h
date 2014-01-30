@@ -28,6 +28,9 @@
 
 }
 
+// as per NSMutableURLRequest
+- (void)addValue:(NSString *)value forHTTPHeaderField:(NSString *)field;
+
 
 #pragma mark instance lifecycle
 

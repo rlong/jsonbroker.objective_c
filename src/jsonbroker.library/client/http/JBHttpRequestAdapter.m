@@ -8,6 +8,16 @@
 
 @implementation JBHttpRequestAdapter
 
+
+
+
+// as per NSMutableURLRequest
+- (void)addValue:(NSString *)value forHTTPHeaderField:(NSString *)field {
+    
+    [_requestHeaders setObject:value forKey:field];
+    
+}
+
 #pragma mark instance lifecycle
 
 -(id)initWithRequestUri:(NSString*)requestUri { 

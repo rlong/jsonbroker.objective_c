@@ -68,13 +68,13 @@
         
     }
     
-    if( NO ) {
+    if( YES ) {
         
-        [suite addTest: [SenTestSuite testSuiteForTestCaseClass:[JBJsonWriterUnitTest class]]];
+        [suite addTest: [SenTestSuite testSuiteForTestCaseClass:[JBJsonStringHandlerUnitTest class]]];
         
     }
     
-    if( YES ) {
+    if( NO ) {
         
         suite= [SenTestSuite testSuiteWithName:@"JBUnitTestRunner"];
         

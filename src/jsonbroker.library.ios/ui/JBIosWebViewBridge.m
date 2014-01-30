@@ -42,6 +42,12 @@
 //@synthesize pendingRequest = _pendingRequest;
 
 
+// webViewShower
+//JBIosWebViewShower* _webViewShower;
+@property (nonatomic, retain) JBIosWebViewShower* webViewShower;
+//@synthesize webViewShower = _webViewShower;
+
+
 @end 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -52,17 +58,26 @@
 
 @implementation JBIosWebViewBridge
 
+#pragma mark -
 #pragma mark <UIWebViewDelegate> implementation
 
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-	
+
+
+    [_webViewShower webView:webView didFailLoadWithError:error];
+
     Log_warnError( error );
+    
+    
+    
+    
 }
 
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-	
+
+    [_webViewShower webView:webView shouldStartLoadWithRequest:request navigationType:navigationType]; // response is ignored
 	
 	NSURL* url = [request URL];
 	NSString* absoluteString = [url absoluteString];
@@ -84,9 +99,10 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
 	
-    _webViewDidFinishLoad = true;
     
-    [webView setHidden:false];
+    [_webViewShower webViewDidFinishLoad:webView];
+    
+    _webViewDidFinishLoad = true;
     
     if( _onResumeCalled ) {
         [self onResume];
@@ -98,7 +114,12 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
 	
+    [_webViewShower webViewDidStartLoad:webView];
+    
 }
+
+
+#pragma mark -
 
 
 -(void)dispatchPendingRequest {
@@ -243,6 +264,9 @@
     
     [JBObjectTracker allocated:answer];
     
+    [answer setWebViewShower:[JBIosWebViewShower setup:webView]];
+    
+    
     answer->_onResumeCalled = FALSE;
     
 	answer->_running = FALSE;
@@ -255,20 +279,39 @@
     
     NSURLRequest* urlRequest;
     {
-        NSRange rangeOfLastDot = [path rangeOfString:@"." options:NSBackwardsSearch];
-        if( NSNotFound == rangeOfLastDot.location ) {
-            BaseException* e = [[BaseException alloc] initWithOriginator:answer line:__LINE__ faultStringFormat:@"NSNotFound == rangeOfLastDot.location; path = '%@'", path];
-            [e autorelease];
-            @throw e;
+        
+        
+        NSString* resourcePath = path;
+        NSString* params = nil;
+        
+        // has parameters ?
+        NSRange rangeOfFirstQuestionMark = [path rangeOfString:@"?"];
+        if( NSNotFound != rangeOfFirstQuestionMark.location ) {
+            resourcePath = [path substringToIndex:rangeOfFirstQuestionMark.location];
+            params = [path substringFromIndex:rangeOfFirstQuestionMark.location];
+            
         }
         
-        NSString* resourcePath = [path substringToIndex:rangeOfLastDot.location];
-        NSString* extension = [path substringFromIndex:rangeOfLastDot.location+1];
+        Log_debugString(resourcePath);
+        Log_debugString(params);
+
+        // vvv http://stackoverflow.com/questions/11882501/nsurl-add-parameters-to-fileurlwithpath-method
         
-        NSString *absoluteFilePath = [[NSBundle mainBundle] pathForResource:resourcePath ofType:extension];
-        NSURL* baseURL = [NSURL fileURLWithPath:absoluteFilePath];
+        NSString *absoluteFilePath = [[NSBundle mainBundle] pathForResource:resourcePath ofType:nil];
+        NSURL* url = [NSURL fileURLWithPath:absoluteFilePath];
         
-        urlRequest = [NSURLRequest requestWithURL:baseURL];
+        if( nil != params ) {
+            NSString *urlString = [url absoluteString];
+            NSString *urlWithQueryString = [urlString stringByAppendingString:params];
+            Log_debugString( urlWithQueryString );
+            
+            url = [NSURL URLWithString:urlWithQueryString];
+        }
+        
+        // ^^^ http://stackoverflow.com/questions/11882501/nsurl-add-parameters-to-fileurlwithpath-method
+
+        
+        urlRequest = [NSURLRequest requestWithURL:url];
     }
     [webView loadRequest:urlRequest];
     
@@ -319,12 +362,16 @@
 	[self setWebView:nil];
     [self setServicesRegistery:nil];
     [self setPendingRequest:nil];
+	[self setWebViewShower:nil];
 
 	[super dealloc];
 }
 
 
+#pragma mark -
 #pragma mark fields
+
+
 
 //WebView _webView;
 //UIWebView* _webView;
@@ -341,6 +388,11 @@
 //JBBrokerMessage* _pendingRequest;
 //@property (nonatomic, retain) JBBrokerMessage* pendingRequest;
 @synthesize pendingRequest = _pendingRequest;
+
+// webViewShower
+//JBIosWebViewShower* _webViewShower;
+//@property (nonatomic, retain) JBIosWebViewShower* webViewShower;
+@synthesize webViewShower = _webViewShower;
 
 
 @end

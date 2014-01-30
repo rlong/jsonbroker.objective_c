@@ -13,10 +13,8 @@
 #if ! __has_feature(objc_arc)
 
     #define JBAutorelease(__v) ([__v autorelease]);
-    #define JBReturnAutorelease JBAutorelease
 
     #define JBRetain(__v) ([__v retain])
-    #define JBReturnRetain JBRetain
 
     #define JBRelease(__v) ([__v release])
 
@@ -26,10 +24,8 @@
     // -fobjc-arc
 
     #define JBAutorelease(__v)
-    #define JBReturnAutorelease(__v) (__v)
 
     #define JBRetain(__v)
-    #define JBReturnRetain (__v)
 
     #define JBRelease(__v)
 

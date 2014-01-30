@@ -13,7 +13,8 @@
 @implementation JBJsonStringHandler
 
 
-static JBJsonStringHandler* _instance = nil; 
+static JBJsonStringHandler* _instance = nil;
+static bool _doNotEscapeForwardSlashForOldRemoteGateway = false;
 
 +(void)initialize {
 	
@@ -27,6 +28,13 @@ static JBJsonStringHandler* _instance = nil;
 	
 }
 
+
+// major hack to handle older builds of 'RemoteGateway'
++(void)doNotEscapeForwardSlashForOldRemoteGateway {
+    
+    _doNotEscapeForwardSlashForOldRemoteGateway = true;
+    
+}
 
 
 
@@ -63,7 +71,7 @@ static JBJsonStringHandler* _instance = nil;
 			
 			b = [reader nextByte];
             
-            if ('"' == b || '\\' == b ) {
+            if ('"' == b || '\\' == b || '/' == b) {
                 
                 [data appendBytes:&b length:1];
                 
@@ -141,7 +149,26 @@ static JBJsonStringHandler* _instance = nil;
 			
 			continue;
 		}
-		
+
+        if( '/' == c ) {
+
+            if( _doNotEscapeForwardSlashForOldRemoteGateway ) {
+        
+                [writer appendChar:c];
+
+            } else {
+                
+                [writer appendString:@"\\/"];
+
+                
+            }
+
+			
+			continue;
+		}
+
+
+
 		if( '\n' == c ) {
 			
 			[writer appendString:@"\\n"];

@@ -400,7 +400,7 @@ const UInt8 _CARRAIGE_RETURN_AND_NEWLINE[2] = {0x0d,0x0a};
     }
     @catch (BaseException *exception) {
         
-        [multiPartHandler handleException:exception];
+        [multiPartHandler handleExceptionZZZ:exception];
     }
 }
 

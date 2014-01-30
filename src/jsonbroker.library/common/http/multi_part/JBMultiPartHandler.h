@@ -14,7 +14,9 @@
 
 -(id<JBPartHandler>)foundPartDelimiter;
 
--(void)handleException:(BaseException*)e;
+
+// gives a warning in "iOS App" validation
+-(void)handleExceptionZZZ:(BaseException*)e;
 
 -(void)foundCloseDelimiter;
 

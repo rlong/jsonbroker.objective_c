@@ -15,6 +15,15 @@
 +(JBJsonStringHandler*)getInstance;
 
 
+#ifdef REMOTE_GATEWAY_CLIENT
+
+// major hack to handle older builds of 'RemoteGateway'
++(void)doNotEscapeForwardSlashForOldRemoteGateway;
+
+#endif
+
+
+
 +(NSString*)readString:(JBJsonInput*)reader;
 +(void)writeString:(NSString*)value writer:(id<JBJsonOutput>)writer;
 

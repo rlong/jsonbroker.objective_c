@@ -89,8 +89,10 @@
         
         if( [_listener conformsToProtocol:@protocol(JBMainThreadJobListener2)] ) {
             id<JBMainThreadJobListener2> mainThreadJobListener = (id<JBMainThreadJobListener2>)_listener;
-            if( ![mainThreadJobListener jobListenerIsRunning]) {
+            if( [mainThreadJobListener jobListenerIsRunning]) {
                 [mainThreadJobListener jobFailed:_delegate withException:_exceptionCaughtDuringExecute];
+            } else {
+                Log_warnException(_exceptionCaughtDuringExecute);
             }
         } else {
             [_listener jobFailed:_delegate withException:_exceptionCaughtDuringExecute];

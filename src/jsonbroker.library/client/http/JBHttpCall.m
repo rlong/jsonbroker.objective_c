@@ -102,10 +102,20 @@
 }
 
 
-
+#pragma mark -
+#pragma mark <NSURLConnectionDelegate> implementation
 
 #pragma mark NSURLConnection delegate callbacks related to "Connection Authentication"
 
+
+
+- (void)connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+    Log_enteredMethod();
+    
+    [[challenge sender] continueWithoutCredentialForAuthenticationChallenge:challenge];
+    
+    
+}
 
 ////This method is called before connection:didReceiveAuthenticationChallenge:, allowing the delegate to inspect a protection space before attempting to authenticate against it. By returning YES, the delegate indicates that it can handle the form of authentication, which it does in the subsequent call to connection:didReceiveAuthenticationChallenge:. If the delegate returns NO, the system attempts to use the user’s keychain to authenticate. If your delegate does not implement this method and the protection space uses client certificate authentication or server trust authentication, the system behaves as if you returned NO. The system behaves as if you returned YES for all other authentication methods.
 //- (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
@@ -146,6 +156,9 @@
 //This method is called before any attempt to authenticate is made. By returning NO, the delegate tells the connection not to consult the credential storage and makes itself responsible for providing credentials for any authentication challenges. Not implementing this method is the same as returning YES. The delegate is free to consult the credential storage itself when it receives a connection:didReceiveAuthenticationChallenge: message.
 //
 - (BOOL)connectionShouldUseCredentialStorage:(NSURLConnection *)connection {
+    
+    Log_enteredMethod();
+
     return NO;
 }
 

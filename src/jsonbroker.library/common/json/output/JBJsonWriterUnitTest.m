@@ -79,7 +79,7 @@
         JBJsonObject* target = [[JBJsonObject alloc] init];
         [target autorelease];
         [target setObject:nil forKey:@"nullKey"];
-        [target setBoolean:true forKey:@"booleanKey"];
+        [target setBool:true forKey:@"booleanKey"];
         [target setInt:314 forKey:@"integerKey"];
         [target setObject:@"value" forKey:@"stringKey"];
         

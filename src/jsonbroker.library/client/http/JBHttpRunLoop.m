@@ -70,6 +70,9 @@ static JBHttpRunLoop* _instance = nil;
 
 - (NSData *)sendSynchronousRequest:(NSURLRequest*)request returningResponse:(NSURLResponse **)urlResponse error:(NSError **)error {
     
+    
+    Log_enteredMethod();
+    
     if( NO ) { 
         return [NSURLConnection sendSynchronousRequest:request returningResponse:urlResponse error:error];
     }

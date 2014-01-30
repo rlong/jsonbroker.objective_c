@@ -9,9 +9,9 @@
 #import "JBJob.h"
 
 
-typedef id(^JBBlock)(id context);
-typedef void(^JBBlockDone)(id context, id blockResponse);
-typedef void(^JBBlockFailed)(id context, JBBaseException* exceptionThrown);
+typedef id(^jbBlock)(id context);
+typedef void(^jbBlockDone)(id context, id blockResponse);
+typedef void(^jbBlockFailed)(id context, JBBaseException* exceptionThrown);
 
 
 @interface JBBlockJob : NSObject <JBJob> {
@@ -22,7 +22,7 @@ typedef void(^JBBlockFailed)(id context, JBBaseException* exceptionThrown);
     //@synthesize context = _context;
 
     // block
-    JBBlock _block;
+    jbBlock _block;
     //@property (nonatomic, copy) JBBlock block;
     //@synthesize block = _block;
     
@@ -33,25 +33,25 @@ typedef void(^JBBlockFailed)(id context, JBBaseException* exceptionThrown);
 
     
     // blockDone
-    JBBlockDone _blockDone;
+    jbBlockDone _blockDone;
     //@property (nonatomic, copy) JBBlockDone blockDone;
     //@synthesize blockDone = _blockDone;
 
     // blockFailed
-    JBBlockFailed _blockFailed;
+    jbBlockFailed _blockFailed;
     //@property (nonatomic, copy) JBBlockFailed blockFailed;
     //@synthesize blockFailed = _blockFailed;
 
     
 }
 
-+(void)executeWithContext:(id)context block:(JBBlock)block;
-+(void)executeWithContext:(id)context block:(JBBlock)block onBlockDone:(JBBlockDone)blockDone onBlockFailed:(JBBlockFailed) blockFailed;
++(void)executeWithContext:(id)context block:(jbBlock)block;
++(void)executeWithContext:(id)context block:(jbBlock)block onBlockDone:(jbBlockDone)blockDone onBlockFailed:(jbBlockFailed) blockFailed;
 
 #pragma mark -
 #pragma mark instance lifecycle
 
--(id)initWithContext:(id)context block:(JBBlock)block;
--(id)initWithContext:(id)context block:(JBBlock)block onBlockDone:(JBBlockDone)blockDone onBlockFailed:(JBBlockFailed) blockFailed;
+-(id)initWithContext:(id)context block:(jbBlock)block;
+-(id)initWithContext:(id)context block:(jbBlock)block onBlockDone:(jbBlockDone)blockDone onBlockFailed:(jbBlockFailed) blockFailed;
 
 @end

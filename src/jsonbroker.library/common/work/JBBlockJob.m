@@ -22,7 +22,7 @@
 
 // block
 //JBBlock _block;
-@property (nonatomic, copy) JBBlock block;
+@property (nonatomic, copy) jbBlock block;
 //@synthesize block = _block;
 
 // blockResponse
@@ -32,12 +32,12 @@
 
 // blockDone
 //JBBlockDone _blockDone;
-@property (nonatomic, copy) JBBlockDone blockDone;
+@property (nonatomic, copy) jbBlockDone blockDone;
 //@synthesize blockDone = _blockDone;
 
 // blockFailed
 //JBBlockFailed _blockFailed;
-@property (nonatomic, copy) JBBlockFailed blockFailed;
+@property (nonatomic, copy) jbBlockFailed blockFailed;
 //@synthesize blockFailed = _blockFailed;
 
 
@@ -124,7 +124,7 @@
 
 
 
-+(void)executeWithContext:(id)context block:(JBBlock)block {
++(void)executeWithContext:(id)context block:(jbBlock)block {
     
     JBBlockJob* job = [[JBBlockJob alloc] initWithContext:context block:block];
     {
@@ -137,9 +137,9 @@
 
 }
 
-+(void)executeWithContext:(id)context block:(JBBlock)block onBlockDone:(JBBlockDone)blockDone onBlockFailed:(JBBlockFailed) blockFailed {
++(void)executeWithContext:(id)context block:(jbBlock)block onBlockDone:(jbBlockDone)blockDone onBlockFailed:(jbBlockFailed) blockFailed {
 
-    JBBlockJob* job = [[JBBlockJob alloc] initWithContext:context block:(JBBlock)block onBlockDone:(JBBlockDone)blockDone onBlockFailed:(JBBlockFailed) blockFailed];
+    JBBlockJob* job = [[JBBlockJob alloc] initWithContext:context block:(jbBlock)block onBlockDone:(jbBlockDone)blockDone onBlockFailed:(jbBlockFailed) blockFailed];
     {
         
         [JBWorkManager enqueue:job];
@@ -153,7 +153,7 @@
 #pragma mark -
 #pragma mark instance lifecycle
 
--(id)initWithContext:(id)context block:(JBBlock)block {
+-(id)initWithContext:(id)context block:(jbBlock)block {
     
     JBBlockJob* answer = [super init];
     
@@ -168,7 +168,7 @@
     
 }
 
--(id)initWithContext:(id)context block:(JBBlock)block onBlockDone:(JBBlockDone)blockDone onBlockFailed:(JBBlockFailed) blockFailed {
+-(id)initWithContext:(id)context block:(jbBlock)block onBlockDone:(jbBlockDone)blockDone onBlockFailed:(jbBlockFailed) blockFailed {
     
     JBBlockJob* answer = [super init];
     

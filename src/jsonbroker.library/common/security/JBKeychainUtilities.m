@@ -14,6 +14,7 @@
 
 
 #import "JBBaseException.h"
+#import "JBDataHelper.h"
 #import "JBKeychainUtilities.h"
 #import "JBLog.h"
 
@@ -222,7 +223,31 @@
         
         NSDictionary* attributesDictionary = (NSDictionary*)attributes;
         
-        NSString* answer = [attributesDictionary objectForKey:kSecAttrAccount]; // 'acct'        
+        id secAttrAccount = [attributesDictionary objectForKey:kSecAttrAccount]; // 'acct'
+
+        NSString* answer = nil;
+
+        // vvv documentation says 'secAttrAccount' should be a CFStringRef (i.e. NSString), but finding in simulator on OSX 10.8.5 that 'secAttrAccount' is a NSData
+        if( nil == secAttrAccount ) {
+            answer = nil; // just to be explicit
+        } else if( [secAttrAccount isKindOfClass:[NSString class]] ) {
+            answer = (NSString*)secAttrAccount;
+            
+        } else if( [secAttrAccount isKindOfClass:[NSData class]] ) {
+            Log_warn(@"[secAttrAccount isKindOfClass:[NSData class]]");
+            NSData* secAttrAccountData = (NSData*)secAttrAccount;
+            answer = [JBDataHelper toUtf8String:secAttrAccountData];
+        } else {
+            Class clazz = [secAttrAccount class];
+            NSString* technicalError = [NSString stringWithFormat:@"unsupported type; NSStringFromClass(clazz) = %@", NSStringFromClass(clazz)];
+            
+            BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
+            [e autorelease];
+            @throw  e;
+        }
+        // ^^^ documentation says 'secAttrAccount' should be a CFStringRef (i.e. NSString), but finding in simulator on OSX 10.8.5 that 'secAttrAccount' is a NSData
+        
+        
         Log_debugString( answer );
         return answer;
         
