@@ -13,7 +13,8 @@
 
 static NSString* _applicationSupportDirectory = nil;
 static NSString* _cachesDirectory = nil;
-
+static NSString* _documentDirectory = nil;
+static NSString* _libraryDirectory = nil;
 
 +(BOOL)directoryExistsAtPath:(NSString*)path {
     
@@ -84,6 +85,54 @@ static NSString* _cachesDirectory = nil;
     
 }
 
++(NSString*)getDocumentDirectory {
+    
+    if( nil != _documentDirectory ) {
+        return _documentDirectory;
+    }
+    
+    
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    if( 0 == [paths count] ) {
+        
+        @throw  [JBBaseException baseExceptionWithOriginator:self line:__LINE__ faultStringFormat:@"0 == [paths count], searching for `NSDocumentDirectory`"];
+        
+    } else if( 1 == [paths count] ) {
+        _documentDirectory = [[paths objectAtIndex:0] retain];
+    } else {
+        Log_warnInt([paths count]);
+        _documentDirectory = [[paths objectAtIndex:0] retain];
+    }
+    
+    Log_debugString(_documentDirectory);
+    return _documentDirectory;
+    
+}
+
+
++(NSString*)getLibraryDirectory {
+    
+    if( nil != _libraryDirectory ) {
+        return _libraryDirectory;
+    }
+    
+    
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    if( 0 == [paths count] ) {
+        
+        @throw  [JBBaseException baseExceptionWithOriginator:self line:__LINE__ faultStringFormat:@"0 == [paths count], searching for `NSLibraryDirectory`"];
+        
+    } else if( 1 == [paths count] ) {
+        _libraryDirectory = [[paths objectAtIndex:0] retain];
+    } else {
+        Log_warnInt([paths count]);
+        _libraryDirectory = [[paths objectAtIndex:0] retain];
+    }
+    
+    Log_debugString(_libraryDirectory);
+    return _libraryDirectory;
+    
+}
 
 +(void)mkdirs:(NSString*)pathname {
     

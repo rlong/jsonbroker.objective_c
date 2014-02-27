@@ -176,7 +176,7 @@ static int _defaultFaultCode;
 -(id)initWithOriginator:(id)originatingObject line:(int)line faultMessage:(NSString *)faultMessage {
 	
 	NSString* className = NSStringFromClass([originatingObject class]);
-    NSString* originator = [NSString stringWithFormat:@"%@:%x", className, line];
+    NSString* originator = [NSString stringWithFormat:@"%@:%d", className, line];
     
     BaseException* answer = [self initWithOriginator:originator faultMessage:faultMessage];
     
@@ -189,7 +189,7 @@ static int _defaultFaultCode;
 -(id)initWithOriginator:(id)originatingObject line:(int)line faultStringFormat:(NSString *)faultStringFormat arguments:(va_list)argList {
     
     NSString* className = NSStringFromClass([originatingObject class]);
-    NSString* originator = [NSString stringWithFormat:@"%@:%x", className, line];
+    NSString* originator = [NSString stringWithFormat:@"%@:%d", className, line];
     
 	NSString* technicalError = nil;
 	
@@ -226,7 +226,7 @@ static int _defaultFaultCode;
     
     
 	NSString* className = NSStringFromClass([originatingObject class]);
-    NSString* originator = [NSString stringWithFormat:@"%@:%x", className, line];
+    NSString* originator = [NSString stringWithFormat:@"%@:%d", className, line];
 
 	NSString* technicalError = [NSString stringWithFormat:@"'%@' call failed, errno = %d, strerror(errno) = %s", methodName, value, strerror(value) ];
 	
@@ -244,7 +244,7 @@ static int _defaultFaultCode;
 -(id)initWithOriginator:(id)originatingObject line:(int)line callTo:(NSString*)methodName failedWithError:(NSError*)error {
 
     NSString* className = NSStringFromClass([originatingObject class]);
-    NSString* originator = [NSString stringWithFormat:@"%@:%x", className, line];
+    NSString* originator = [NSString stringWithFormat:@"%@:%d", className, line];
     
     NSString* localizedErrorDescrition = [error localizedDescription];
     
@@ -261,7 +261,7 @@ static int _defaultFaultCode;
 -(id)initWithOriginator:(id)originatingObject line:(int)line cause:(NSException*)cause {
 
     NSString* className = NSStringFromClass([originatingObject class]);
-    NSString* originator = [NSString stringWithFormat:@"%@:%x", className, line];
+    NSString* originator = [NSString stringWithFormat:@"%@:%d", className, line];
 
     NSString* technicalError = [cause reason];
     

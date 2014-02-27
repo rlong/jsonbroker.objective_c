@@ -12,6 +12,8 @@
 
 +(NSString*)getApplicationSupportDirectory;
 +(NSString*)getCachesDirectory;
++(NSString*)getDocumentDirectory;
++(NSString*)getLibraryDirectory;
 
 +(void)mkdirs:(NSString*)pathname;
 

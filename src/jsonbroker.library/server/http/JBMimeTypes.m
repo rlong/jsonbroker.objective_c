@@ -22,6 +22,7 @@ static NSMutableDictionary* mimeTypes = nil;
 	mimeTypes = [[NSMutableDictionary alloc] init];
 	
 	[mimeTypes setObject:@"text/css" forKey:@".css"];
+	[mimeTypes setObject:@"application/vnd.ms-fontobject" forKey:@".eot"]; // http://symbolset.com/blog/properly-serve-webfonts/
 	[mimeTypes setObject:@"text/html" forKey:@".html"];
 	[mimeTypes setObject:@"image/gif" forKey:@".gif"];
 	[mimeTypes setObject:@"image/x-icon" forKey:@".ico"];	
@@ -29,9 +30,12 @@ static NSMutableDictionary* mimeTypes = nil;
 	[mimeTypes setObject:@"image/jpeg" forKey:@".jpg"];
 	[mimeTypes setObject:@"application/javascript" forKey:@".js"];
 	[mimeTypes setObject:MimeTypes_APPLICATION_JSON forKey:@".json"];
-	[mimeTypes setObject:@"image/png" forKey:@".png"];
+	[mimeTypes setObject:MimeTypes_APPLICATION_JSON forKey:@".map"]; // http://stackoverflow.com/questions/19911929/what-mime-type-should-i-use-for-source-map-files
 	[mimeTypes setObject:@"image/png" forKey:@".png"];
 	[mimeTypes setObject:@"image/svg+xml" forKey:@".svg"]; // http://www.ietf.org/rfc/rfc3023.txt, section 8.19
+	[mimeTypes setObject:@"text/x.typescript" forKey:@".ts"]; // http://stackoverflow.com/questions/13213787/whats-the-mime-type-of-typescript
+	[mimeTypes setObject:@"application/x-font-ttf" forKey:@".ttf"]; // http://symbolset.com/blog/properly-serve-webfonts/
+	[mimeTypes setObject:@"application/x-font-woff" forKey:@".woff"]; // http://symbolset.com/blog/properly-serve-webfonts/
 
 }
 
