@@ -10,6 +10,7 @@
 #import "JBIntegrationTestRunner.h"
 #import "JBMetaProxyIntegrationTest.h"
 #import "JBNetworkUtilitiesIntegrationTest.h"
+#import "JBSaxHandlerIntegrationTest.h"
 #import "JBTestServiceIntegrationTest.h"
 
 
@@ -29,18 +30,19 @@
     if( NO ) {
         
 
-        [suite addTest: [SenTestSuite testSuiteForTestCaseClass:[JBGethostbyaddrRequestIntegrationTest class]]];
-        [suite addTest: [SenTestSuite testSuiteForTestCaseClass:[JBMetaProxyIntegrationTest class]]];
-        [suite addTest: [SenTestSuite testSuiteForTestCaseClass:[JBNetworkUtilitiesIntegrationTest class]]];
-        [suite addTest: [SenTestSuite testSuiteForTestCaseClass:[JBKeychainUtilitiesIntegrationTest class]]];
-        [suite addTest: [SenTestSuite testSuiteForTestCaseClass:[JBTestServiceIntegrationTest class]]];
+        [suite addTest:[SenTestSuite testSuiteForTestCaseClass:[JBGethostbyaddrRequestIntegrationTest class]]];
+        [suite addTest:[SenTestSuite testSuiteForTestCaseClass:[JBKeychainUtilitiesIntegrationTest class]]];
+        [suite addTest:[SenTestSuite testSuiteForTestCaseClass:[JBMetaProxyIntegrationTest class]]];
+        [suite addTest:[SenTestSuite testSuiteForTestCaseClass:[JBNetworkUtilitiesIntegrationTest class]]];
+        [suite addTest:[SenTestSuite testSuiteForTestCaseClass:[JBSaxHandlerIntegrationTest class]]];
+        [suite addTest:[SenTestSuite testSuiteForTestCaseClass:[JBTestServiceIntegrationTest class]]];
         
         
     }
     
     if( YES ) {
         
-        [suite addTest: [SenTestSuite testSuiteForTestCaseClass:[JBMetaProxyIntegrationTest class]]];
+        [suite addTest: [SenTestSuite testSuiteForTestCaseClass:[JBSaxHandlerIntegrationTest class]]];
         
     }
     

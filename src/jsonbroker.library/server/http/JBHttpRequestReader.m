@@ -232,7 +232,7 @@ static bool INVALID_CHARS[256];
     long contentLength = [JBNumericUtilities parseLong:contentLengthString];
     
     
-    JBStreamEntity* entity = [[JBStreamEntity alloc] initWithContentLength:contentLength content:inputStream];
+    JBStreamEntity* entity = [[JBStreamEntity alloc] initWithContent:inputStream contentLength:contentLength];
     {
         [answer setEntity:entity];
     }

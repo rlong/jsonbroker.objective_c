@@ -80,7 +80,6 @@
 
 -(void)onArrayStartWithKey:(NSString*)key {
     
-    Log_debugString(key);
     
     JBJsonArray* jsonArray = [[JBJsonArray alloc] init];
     {
@@ -93,7 +92,6 @@
 
 -(void)onArrayEndWithKey:(NSString*)key {
     
-    Log_debugString(key);
     [_stack pop];
     
 }
@@ -150,7 +148,6 @@
 
 -(void)onArrayStartWithIndex:(NSUInteger)index {
     
-    Log_debugInt(index);
     
     JBJsonArray* jsonArray = [[JBJsonArray alloc] init];
     {
@@ -164,7 +161,6 @@
 
 -(void)onArrayEndWithIndex:(NSUInteger)index {
 
-    Log_debugInt(index);
     [_stack pop];
 
 }
@@ -198,13 +194,11 @@
         [_stack pushJsonObject:jsonObject];
     }
     [jsonObject release];
-
     
 }
 
 -(void)onObjectEndWithIndex:(NSUInteger)index {
     
-    Log_debugInt(index);
     [_stack pop];
 
 }
@@ -217,11 +211,8 @@
 }
 
 
-
-
 #pragma mark -
 #pragma mark instance lifecycle
-
 
 
 -(id)init {
@@ -243,8 +234,6 @@
 	[self setObjectDocument:nil];
 	[self setArrayDocument:nil];
 
-
-	
 	[super dealloc];
 	
 }

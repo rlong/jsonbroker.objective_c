@@ -113,7 +113,7 @@
 #pragma mark instance lifecycle
 
 
--(id)initWithContentLength:(unsigned long long)contentLength content:(NSInputStream*)content {
+-(id)initWithContent:(NSInputStream*)content contentLength:(unsigned long long)contentLength {
     
     JBStreamEntity* answer = [super init];
     

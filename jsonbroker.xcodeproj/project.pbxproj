@@ -24,6 +24,13 @@
 		AE0AD823170D6EF500D0174A /* JBHttpAsyncCall.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0AD820170D6EF400D0174A /* JBHttpAsyncCall.h */; };
 		AE0AD824170D6EF500D0174A /* JBHttpAsyncCall.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0AD821170D6EF400D0174A /* JBHttpAsyncCall.m */; };
 		AE0AD825170D6EF500D0174A /* JBHttpAsyncCall.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0AD821170D6EF400D0174A /* JBHttpAsyncCall.m */; };
+		AE0D2AD318E91C3B008D1F32 /* JBSaxHandlerIntegrationTest.testRss.xml in Resources */ = {isa = PBXBuildFile; fileRef = AE0D2AD118E91C3B008D1F32 /* JBSaxHandlerIntegrationTest.testRss.xml */; };
+		AE0D2AD418E91C3B008D1F32 /* JBSaxHandlerIntegrationTest.testSimple.xml in Resources */ = {isa = PBXBuildFile; fileRef = AE0D2AD218E91C3B008D1F32 /* JBSaxHandlerIntegrationTest.testSimple.xml */; };
+		AE0D2AD718E91C6F008D1F32 /* JBSaxHandlerIntegrationTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0D2AD618E91C6F008D1F32 /* JBSaxHandlerIntegrationTest.m */; };
+		AE0D2ADA18E91D8C008D1F32 /* JBSaxHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0D2AD818E91D8C008D1F32 /* JBSaxHandler.h */; };
+		AE0D2ADB18E91D8C008D1F32 /* JBSaxHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0D2AD818E91D8C008D1F32 /* JBSaxHandler.h */; };
+		AE0D2ADC18E91D8C008D1F32 /* JBSaxHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0D2AD918E91D8C008D1F32 /* JBSaxHandler.m */; };
+		AE0D2ADD18E91D8C008D1F32 /* JBSaxHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0D2AD918E91D8C008D1F32 /* JBSaxHandler.m */; };
 		AE0F3D4F152975C500B9D13D /* JBSecurityConfiguration_Generated.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0F3D4B152975C500B9D13D /* JBSecurityConfiguration_Generated.h */; };
 		AE0F3D50152975C500B9D13D /* JBSecurityConfiguration_Generated.h in Headers */ = {isa = PBXBuildFile; fileRef = AE0F3D4B152975C500B9D13D /* JBSecurityConfiguration_Generated.h */; };
 		AE0F3D51152975C500B9D13D /* JBSecurityConfiguration_Generated.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3D4C152975C500B9D13D /* JBSecurityConfiguration_Generated.m */; };
@@ -580,6 +587,10 @@
 		AEDBC2171717E7C40073ABA8 /* libjsonbroker.library.osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE42BE45147FB5C1000FC3A4 /* libjsonbroker.library.osx.a */; };
 		AEDBC2181717E7D50073ABA8 /* JBIntegrationTestRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8DACD21717C9890045B1A8 /* JBIntegrationTestRunner.m */; };
 		AEDBC2191717E7DD0073ABA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8DACD31717C9890045B1A8 /* main.m */; };
+		AEDD0DE118EA8A5C00AC06AB /* JBJsonMlHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AEDD0DDF18EA8A5C00AC06AB /* JBJsonMlHelper.h */; };
+		AEDD0DE218EA8A5C00AC06AB /* JBJsonMlHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AEDD0DDF18EA8A5C00AC06AB /* JBJsonMlHelper.h */; };
+		AEDD0DE318EA8A5C00AC06AB /* JBJsonMlHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDD0DE018EA8A5C00AC06AB /* JBJsonMlHelper.m */; };
+		AEDD0DE418EA8A5C00AC06AB /* JBJsonMlHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AEDD0DE018EA8A5C00AC06AB /* JBJsonMlHelper.m */; };
 		AEDE16541676CB6E003E05B4 /* JBEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = AEDE16531676CB6E003E05B4 /* JBEntity.h */; };
 		AEDE16551676CB6E003E05B4 /* JBEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = AEDE16531676CB6E003E05B4 /* JBEntity.h */; };
 		AEDFD7C91466607500EA85F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDFD7C81466607500EA85F9 /* Foundation.framework */; };
@@ -619,6 +630,10 @@
 		AEEA65CB16E8527700560D5C /* JBJob.h in Headers */ = {isa = PBXBuildFile; fileRef = AEEA65C916E8527500560D5C /* JBJob.h */; };
 		AEEEB7FA160BDA4E00D14265 /* JBLogUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A922B14640A39006037B8 /* JBLogUnitTest.m */; };
 		AEEFFF7316153D7D000B003D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE8A96DA1464164B006037B8 /* Security.framework */; };
+		AEF0BC9B18C7088A001F8E0C /* JBBlockJob2.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF0BC9918C7088A001F8E0C /* JBBlockJob2.h */; };
+		AEF0BC9C18C7088A001F8E0C /* JBBlockJob2.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF0BC9918C7088A001F8E0C /* JBBlockJob2.h */; };
+		AEF0BC9D18C7088A001F8E0C /* JBBlockJob2.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF0BC9A18C7088A001F8E0C /* JBBlockJob2.m */; };
+		AEF0BC9E18C7088A001F8E0C /* JBBlockJob2.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF0BC9A18C7088A001F8E0C /* JBBlockJob2.m */; };
 		AEF305001511CDC1002E9E46 /* JBServiceHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF304FE1511CDC1002E9E46 /* JBServiceHelper.h */; };
 		AEF305011511CDC1002E9E46 /* JBServiceHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF304FE1511CDC1002E9E46 /* JBServiceHelper.h */; };
 		AEF305021511CDC1002E9E46 /* JBServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF304FF1511CDC1002E9E46 /* JBServiceHelper.m */; };
@@ -654,6 +669,12 @@
 		AE0AD81D170D6E1500D0174A /* JBHttpAsyncResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBHttpAsyncResponseHandler.h; sourceTree = "<group>"; };
 		AE0AD820170D6EF400D0174A /* JBHttpAsyncCall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBHttpAsyncCall.h; sourceTree = "<group>"; };
 		AE0AD821170D6EF400D0174A /* JBHttpAsyncCall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBHttpAsyncCall.m; sourceTree = "<group>"; };
+		AE0D2AD118E91C3B008D1F32 /* JBSaxHandlerIntegrationTest.testRss.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = JBSaxHandlerIntegrationTest.testRss.xml; sourceTree = "<group>"; };
+		AE0D2AD218E91C3B008D1F32 /* JBSaxHandlerIntegrationTest.testSimple.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = JBSaxHandlerIntegrationTest.testSimple.xml; sourceTree = "<group>"; };
+		AE0D2AD518E91C6F008D1F32 /* JBSaxHandlerIntegrationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBSaxHandlerIntegrationTest.h; sourceTree = "<group>"; };
+		AE0D2AD618E91C6F008D1F32 /* JBSaxHandlerIntegrationTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBSaxHandlerIntegrationTest.m; sourceTree = "<group>"; };
+		AE0D2AD818E91D8C008D1F32 /* JBSaxHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBSaxHandler.h; sourceTree = "<group>"; };
+		AE0D2AD918E91D8C008D1F32 /* JBSaxHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBSaxHandler.m; sourceTree = "<group>"; };
 		AE0F3D4B152975C500B9D13D /* JBSecurityConfiguration_Generated.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBSecurityConfiguration_Generated.h; sourceTree = "<group>"; };
 		AE0F3D4C152975C500B9D13D /* JBSecurityConfiguration_Generated.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBSecurityConfiguration_Generated.m; sourceTree = "<group>"; };
 		AE0F3D4D152975C500B9D13D /* JBSecurityConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBSecurityConfiguration.h; sourceTree = "<group>"; };
@@ -1024,6 +1045,8 @@
 		AEDBC20C1717E76E0073ABA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AEDBC20D1717E76E0073ABA8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AEDBC2101717E76E0073ABA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		AEDD0DDF18EA8A5C00AC06AB /* JBJsonMlHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBJsonMlHelper.h; sourceTree = "<group>"; };
+		AEDD0DE018EA8A5C00AC06AB /* JBJsonMlHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBJsonMlHelper.m; sourceTree = "<group>"; };
 		AEDE16531676CB6E003E05B4 /* JBEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBEntity.h; sourceTree = "<group>"; };
 		AEDFD7C71466607500EA85F9 /* libjsonbroker.library.ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libjsonbroker.library.ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEDFD7C81466607500EA85F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1051,6 +1074,8 @@
 		AEEA65C416E84C1E00560D5C /* JBJsonWriterUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBJsonWriterUnitTest.m; sourceTree = "<group>"; };
 		AEEA65C616E84F7900560D5C /* JBJobListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBJobListener.h; sourceTree = "<group>"; };
 		AEEA65C916E8527500560D5C /* JBJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBJob.h; sourceTree = "<group>"; };
+		AEF0BC9918C7088A001F8E0C /* JBBlockJob2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBlockJob2.h; sourceTree = "<group>"; };
+		AEF0BC9A18C7088A001F8E0C /* JBBlockJob2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBlockJob2.m; sourceTree = "<group>"; };
 		AEF304FE1511CDC1002E9E46 /* JBServiceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBServiceHelper.h; sourceTree = "<group>"; };
 		AEF304FF1511CDC1002E9E46 /* JBServiceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBServiceHelper.m; sourceTree = "<group>"; };
 		AEF5A80A16E98E07000FD14C /* JBDescribedService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBDescribedService.h; sourceTree = "<group>"; };
@@ -1133,6 +1158,21 @@
 				AE0AD818170D506900D0174A /* JBDefaults.m */,
 			);
 			path = defaults;
+			sourceTree = "<group>";
+		};
+		AE0D2AD018E91A66008D1F32 /* jsonml */ = {
+			isa = PBXGroup;
+			children = (
+				AE0D2AD118E91C3B008D1F32 /* JBSaxHandlerIntegrationTest.testRss.xml */,
+				AE0D2AD218E91C3B008D1F32 /* JBSaxHandlerIntegrationTest.testSimple.xml */,
+				AE0D2AD518E91C6F008D1F32 /* JBSaxHandlerIntegrationTest.h */,
+				AE0D2AD618E91C6F008D1F32 /* JBSaxHandlerIntegrationTest.m */,
+				AE0D2AD818E91D8C008D1F32 /* JBSaxHandler.h */,
+				AE0D2AD918E91D8C008D1F32 /* JBSaxHandler.m */,
+				AEDD0DDF18EA8A5C00AC06AB /* JBJsonMlHelper.h */,
+				AEDD0DE018EA8A5C00AC06AB /* JBJsonMlHelper.m */,
+			);
+			path = jsonml;
 			sourceTree = "<group>";
 		};
 		AE105E581466623000AA500D /* jsonbroker.library.osx */ = {
@@ -1359,6 +1399,8 @@
 				AEEA65C916E8527500560D5C /* JBJob.h */,
 				AE90E6FD17447595006C0F33 /* JBBlockJob.h */,
 				AE90E6FE17447595006C0F33 /* JBBlockJob.m */,
+				AEF0BC9918C7088A001F8E0C /* JBBlockJob2.h */,
+				AEF0BC9A18C7088A001F8E0C /* JBBlockJob2.m */,
 				AEEA65C616E84F7900560D5C /* JBJobListener.h */,
 				AEF5AA7E16709DFD00336EB5 /* JBListenedJob.h */,
 				AEF5AA7F16709DFD00336EB5 /* JBListenedJob.m */,
@@ -1540,14 +1582,15 @@
 		AE8A91CF14640A39006037B8 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				AEAE44B6170E744500D047DA /* net */,
 				AE8B9A2C1551FC5400F02F33 /* auxiliary */,
 				AE8A91DB14640A39006037B8 /* broker */,
 				AE0AD816170D505500D0174A /* defaults */,
 				AE8A91E314640A39006037B8 /* exception */,
 				AE8A91EA14640A39006037B8 /* http */,
 				AE8A920D14640A39006037B8 /* json */,
+				AE0D2AD018E91A66008D1F32 /* jsonml */,
 				AE8A922714640A39006037B8 /* log */,
+				AEAE44B6170E744500D047DA /* net */,
 				AE8A922C14640A39006037B8 /* security */,
 				AE6884EA1469EBB0000E8466 /* work */,
 				AEA1764017559F8C00C7DA44 /* JBMemoryModel.h */,
@@ -2025,6 +2068,7 @@
 				AE42BE80147FB63D000FC3A4 /* JBWorkManager.h in Headers */,
 				AE42BE82147FB643000FC3A4 /* JBBrokerMessage.h in Headers */,
 				AE42BE84147FB643000FC3A4 /* JBBrokerMessageType.h in Headers */,
+				AEDD0DE218EA8A5C00AC06AB /* JBJsonMlHelper.h in Headers */,
 				AE42BE88147FB64E000FC3A4 /* BaseException.h in Headers */,
 				AE42BEA0147FB676000FC3A4 /* JBHttpStatus.h in Headers */,
 				AE42BEC0147FB694000FC3A4 /* JBSecurityUtilities.h in Headers */,
@@ -2110,6 +2154,7 @@
 				AECDB7BD161428AE00367667 /* JBKeychainUtilitiesIntegrationTest.h in Headers */,
 				AE91EF681618055100FFAC35 /* JBJsonBrokerException.h in Headers */,
 				AE9E3E5E1653404F00A5E110 /* JBLogHelper.h in Headers */,
+				AE0D2ADB18E91D8C008D1F32 /* JBSaxHandler.h in Headers */,
 				AE606E0D1664975B00EE332A /* JBBaseException.h in Headers */,
 				AE7A6C0D16686571003EB854 /* JBWebServer.h in Headers */,
 				AEF5AA8116709DFE00336EB5 /* JBListenedJob.h in Headers */,
@@ -2131,6 +2176,7 @@
 				AE4EB8F416B0C19500BD8CBE /* JBHttpStatus_ErrorDomain.h in Headers */,
 				AEE75CE316B237E500309103 /* JBRequestHandler.h in Headers */,
 				AECFFFAA16BCF826009D0846 /* JBHttpMethod.h in Headers */,
+				AEF0BC9C18C7088A001F8E0C /* JBBlockJob2.h in Headers */,
 				AE6ACDAD16BE2DC10026E65D /* JBHttpHeader.h in Headers */,
 				AE8CB54E16BE33FB000F62DC /* JBJsonOutput.h in Headers */,
 				AED34B1916BF558C00BE0C37 /* JBAuthRequestHandler.h in Headers */,
@@ -2204,6 +2250,7 @@
 				AE105ED41466633C00AA500D /* JBMainThreadServiceDelegator.h in Headers */,
 				AE105EE61466635B00AA500D /* JBHttpConnectionHandler.h in Headers */,
 				AE105EEE1466635B00AA500D /* JBHttpResponseWriter.h in Headers */,
+				AEDD0DE118EA8A5C00AC06AB /* JBJsonMlHelper.h in Headers */,
 				AE10647814669E2200AA500D /* JBIosWebViewBridge.h in Headers */,
 				AE6884EE1469EBD4000E8466 /* JBWorkQueue.h in Headers */,
 				AE6884F71469EC1B000E8466 /* JBWorker.h in Headers */,
@@ -2233,6 +2280,7 @@
 				AE8A377114BBFE8F00AEA32E /* JBStreamEntity.h in Headers */,
 				AE8A379414BC074000AEA32E /* JBAuthenticationHeaderScanner.h in Headers */,
 				AE8A37C414BC109000AEA32E /* JBCredentials.h in Headers */,
+				AEF0BC9B18C7088A001F8E0C /* JBBlockJob2.h in Headers */,
 				AE8A37CA14BC1A9200AEA32E /* JBHttpDispatcher.h in Headers */,
 				AED9B74914BD76E80026BC96 /* JBHttpRequestReader.h in Headers */,
 				AE66BAFD14CD1AF000ACD757 /* JBTestService.h in Headers */,
@@ -2269,6 +2317,7 @@
 				AE8B9A7B1551FC9D00F02F33 /* JBRandomUtilities.h in Headers */,
 				AE8B9A7F1551FC9D00F02F33 /* JBStreamHelper.h in Headers */,
 				AE8B9A831551FC9D00F02F33 /* JBStringHelper.h in Headers */,
+				AE0D2ADA18E91D8C008D1F32 /* JBSaxHandler.h in Headers */,
 				AE8B9A891551FD3000F02F33 /* JBErrorCodeUtilities.h in Headers */,
 				AEFEC8CD156100D00046B891 /* JBHttpSecurityJanitor.h in Headers */,
 				AE61AFBC156C9B43001790CD /* JBChainedService.h in Headers */,
@@ -2493,7 +2542,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEDBC2051717E76E0073ABA8 /* InfoPlist.strings in Resources */,
+				AE0D2AD418E91C3B008D1F32 /* JBSaxHandlerIntegrationTest.testSimple.xml in Resources */,
 				AEDBC20B1717E76E0073ABA8 /* Credits.rtf in Resources */,
+				AE0D2AD318E91C3B008D1F32 /* JBSaxHandlerIntegrationTest.testRss.xml in Resources */,
 				AEDBC2111717E76E0073ABA8 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2606,6 +2657,7 @@
 				AE70206916AE712200453991 /* JBPartialDelimiterMatched.m in Sources */,
 				AE70207216AE7EA900453991 /* JBPartHandlerHelper.m in Sources */,
 				AE70207B16AE809500453991 /* JBMultiPartReader.m in Sources */,
+				AE0D2ADD18E91D8C008D1F32 /* JBSaxHandler.m in Sources */,
 				AECFFFAC16BCF826009D0846 /* JBHttpMethod.m in Sources */,
 				AED34B1B16BF558C00BE0C37 /* JBAuthRequestHandler.m in Sources */,
 				AED34B1F16BF558C00BE0C37 /* JBFileRequestHandler.m in Sources */,
@@ -2625,8 +2677,10 @@
 				AEBC168C16E9BAAC00E3917C /* JBJsonReader.m in Sources */,
 				AE0AD81C170D506900D0174A /* JBDefaults.m in Sources */,
 				AE0AD825170D6EF500D0174A /* JBHttpAsyncCall.m in Sources */,
+				AEF0BC9E18C7088A001F8E0C /* JBBlockJob2.m in Sources */,
 				AEAE44CE170E744500D047DA /* JBGethostbyaddrRequest.m in Sources */,
 				AEAE44D6170E744500D047DA /* JBHostName.m in Sources */,
+				AEDD0DE418EA8A5C00AC06AB /* JBJsonMlHelper.m in Sources */,
 				AEAE44DA170E744500D047DA /* JBHostName_Generated.m in Sources */,
 				AEAE44DE170E744500D047DA /* JBIPAddress.m in Sources */,
 				AEAE44E2170E744500D047DA /* JBNetworkAddress.m in Sources */,
@@ -2686,6 +2740,7 @@
 			files = (
 				AEDBC20E1717E76E0073ABA8 /* AppDelegate.m in Sources */,
 				AEDBC2181717E7D50073ABA8 /* JBIntegrationTestRunner.m in Sources */,
+				AE0D2AD718E91C6F008D1F32 /* JBSaxHandlerIntegrationTest.m in Sources */,
 				AEDBC2191717E7DD0073ABA8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2726,6 +2781,7 @@
 				AE39976714BAF4CF00EDE2CA /* JBFaultSerializer.m in Sources */,
 				AE39977914BAFEA500EDE2CA /* JBBrokerJob.m in Sources */,
 				AE8A374814BBD29100AEA32E /* JBHttpSecurityManager.m in Sources */,
+				AEDD0DE318EA8A5C00AC06AB /* JBJsonMlHelper.m in Sources */,
 				AE8A374C14BBD29100AEA32E /* JBHttpSecuritySession.m in Sources */,
 				AE8A375214BBD94E00AEA32E /* JBHttpResponse.m in Sources */,
 				AE8A375B14BBDAD500AEA32E /* JBDataEntity.m in Sources */,
@@ -2745,6 +2801,7 @@
 				AE1A860314D7A74600F0A0A0 /* JBWwwAuthenticate.m in Sources */,
 				AE1A860514D7A74600F0A0A0 /* JBAuthenticationInfo.m in Sources */,
 				AE1A861214D7AD2B00F0A0A0 /* JBMimeTypes.m in Sources */,
+				AE0D2ADC18E91D8C008D1F32 /* JBSaxHandler.m in Sources */,
 				AE1A861814D7B9A900F0A0A0 /* JBHttpRequestAdapter.m in Sources */,
 				AE27590614D7F315006E45D4 /* JBBrokerMessageResponseHandler.m in Sources */,
 				AE27590F14D7F591006E45D4 /* JBServiceHttpProxy.m in Sources */,
@@ -2797,6 +2854,7 @@
 				AE70207A16AE809500453991 /* JBMultiPartReader.m in Sources */,
 				AECFFFAB16BCF826009D0846 /* JBHttpMethod.m in Sources */,
 				AED34B1A16BF558C00BE0C37 /* JBAuthRequestHandler.m in Sources */,
+				AEF0BC9D18C7088A001F8E0C /* JBBlockJob2.m in Sources */,
 				AED34B1E16BF558C00BE0C37 /* JBFileRequestHandler.m in Sources */,
 				AED34B2216BF558C00BE0C37 /* JBOpenRequestHandler.m in Sources */,
 				AED34B2616BF558C00BE0C37 /* JBServicesRequestHandler.m in Sources */,

@@ -22,6 +22,7 @@
 +(NSString*)escapeString:(NSString*)input;
 
 +(NSString*)toHexString:(UInt8[16])bytes;
++(NSString*)toHexString:(UInt8*)bytes count:(int)count;
 
 
 // as per javascript

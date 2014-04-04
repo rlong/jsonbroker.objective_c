@@ -15,6 +15,8 @@
                
 +(void)moveItemAtPath:(NSString *)srcPath toPath:(NSString *)dstPath;
 
++(BOOL)removeFileWithPath:(NSString*)path swallowErrors:(BOOL)swallowErrors;
+
 +(void)writeContent:(NSString*)content toPath:(NSString*)path;
 
 

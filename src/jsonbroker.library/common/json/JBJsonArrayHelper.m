@@ -4,13 +4,16 @@
 //
 
 
+#import "JBBaseException.h"
 #import "JBJsonBuilder.h"
 #import "JBJsonArrayHandler.h"
 #import "JBJsonArrayHelper.h"
+#import "JBFileUtilities.h"
 #import "JBJsonReader.h"
 #import "JBJsonStringOutput.h"
 #import "JBJsonWalker.h"
 #import "JBJsonWriter.h"
+#import "JBLog.h"
 #import "JBStringHelper.h"
 
 
@@ -22,6 +25,32 @@ static JBJsonArrayHandler* _jsonArrayHandler = nil;
 	
     _jsonArrayHandler = [JBJsonArrayHandler getInstance];
 	
+}
+
+
+
+// can return nil
++(JBJsonArray*)fromFile:(NSString*)path {
+    
+    if( ![JBFileUtilities fileExistsAtPath:path] ) {
+        return nil;
+    }
+    
+    NSData* jsonData = [NSData dataWithContentsOfFile:path];
+    
+    if( nil == jsonData ) {
+        Log_warnFormat(@"nil == jsonData; path = '%@'", path);
+        return nil;
+    }
+    
+    JBJsonBuilder* builder = [[JBJsonBuilder alloc] init];
+    [builder autorelease];
+    
+    [JBJsonReader readFromData:jsonData handler:builder];
+    
+    return [builder arrayDocument];
+    
+    
 }
 
 
@@ -44,6 +73,9 @@ static JBJsonArrayHandler* _jsonArrayHandler = nil;
         [builder release];
     }
 }
+
+
+
 
 
 
@@ -85,6 +117,25 @@ static JBJsonArrayHandler* _jsonArrayHandler = nil;
     
 }
 
+
++(void)write:(JBJsonArray*)array toFile:(NSString*)path {
+    
+    NSString* arrayText = [array toString];
+    
+    NSError* error = nil;
+
+    [arrayText writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:&error];
+    
+    if( nil != error ) {
+        
+        JBBaseException* e = [JBBaseException baseExceptionWithOriginator:self line:__LINE__ callTo:@"[NSString writeToFile:atomically:encoding:error:]" failedWithError:error];
+        [e addStringContext:path withName:@"path"];
+        @throw e;
+
+
+    }
+    
+}
 
 
 @end

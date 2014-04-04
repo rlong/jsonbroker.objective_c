@@ -131,7 +131,7 @@
         
         if ('[' == nextTokenStart) {
             
-            [handler onArrayEndWithKey:key];
+            [handler onArrayStartWithKey:key];
             [input nextByte]; // skip past the '['
             [self readArrayFromInput:input handler:handler];
             [input nextByte]; // skip past the ']'

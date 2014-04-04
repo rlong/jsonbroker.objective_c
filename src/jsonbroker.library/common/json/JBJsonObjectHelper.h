@@ -11,7 +11,11 @@
 @interface JBJsonObjectHelper : NSObject
 
 
+// can return nil
++(JBJsonObject*)fromFile:(NSString*)path;
+
 +(JBJsonObject*)buildFromString:(NSString*)jsonString;
 
 
++(void)write:(JBJsonObject*)object toFile:(NSString*)path;
 @end

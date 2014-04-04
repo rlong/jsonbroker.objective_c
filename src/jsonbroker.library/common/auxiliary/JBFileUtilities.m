@@ -8,6 +8,7 @@
 
 #import "JBBaseException.h"
 #import "JBFileUtilities.h"
+#import "JBLog.h"
 
 @implementation JBFileUtilities
 
@@ -104,6 +105,39 @@
     }
     
 }
+
+
++(BOOL)removeFileWithPath:(NSString*)path swallowErrors:(BOOL)swallowErrors {
+    
+    NSFileManager* defaultManager = [NSFileManager defaultManager];
+    
+    if( [defaultManager fileExistsAtPath:path] ) {
+        
+        NSError* error = nil;
+        
+        [defaultManager removeItemAtPath:path error:&error];
+        
+        if( nil != error ) {
+            
+            if( swallowErrors ) {
+                Log_warnError( error);
+                return false;
+                
+            } else {
+                
+                JBBaseException* e = [JBBaseException baseExceptionWithOriginator:self line:__LINE__ callTo:@"[NSFileManager removeItemAtPath:error:]" failedWithError:error];
+                [e addStringContext:path withName:@"path"];
+                @throw  e;
+            }
+        }
+    }
+    
+    return true;
+    
+}
+
+
+
 
 
 +(void)writeContent:(NSString*)content toPath:(NSString*)path { 

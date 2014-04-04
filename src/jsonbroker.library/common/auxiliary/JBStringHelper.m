@@ -182,6 +182,8 @@ const char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a'
 
 
 
+
+
 +(NSString*)toHexString:(UInt8[16])bytes {
 	
 	char utf8HashString[33];
@@ -200,6 +202,21 @@ const char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a'
 	
 }
 
+
++(NSString*)toHexString:(UInt8*)bytes count:(int)count {
+    
+    NSMutableString* answer = [[NSMutableString alloc] initWithCapacity:(2*count)+1];
+    
+    for( int i = 0; i < count; i++ ) {
+		UInt8 byte = bytes[i];
+		
+        char hi = hexDigits[ byte >> 4 ];
+        char lo = hexDigits[ byte & 0xf ];
+        [answer appendFormat:@"%c%c",hi,lo];
+	}
+    
+    return answer;
+}
 
 // as per javascript
 +(NSString*)decodeURIComponent:(NSString*)encodedURIComponent {

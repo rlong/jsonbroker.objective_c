@@ -29,20 +29,21 @@
 	//@property (nonatomic) unsigned long long contentLength;
 	//@synthesize contentLength = _contentLength;
 
+    bool _didOpen;
+
     // mimeType
     NSString* _mimeType;
     //@property (nonatomic, retain) NSString* mimeType;
     //@synthesize mimeType = _mimeType;
 
     
-    bool _didOpen;
     
 }
 
 
 #pragma mark instance lifecycle
 
--(id)initWithContentLength:(unsigned long long)contentLength content:(NSInputStream*)content;
+-(id)initWithContent:(NSInputStream*)content contentLength:(unsigned long long)contentLength;
 -(id)initWithContentSource:(NSURL*)contentSource contentLength:(unsigned long long)contentLength mimeType:(NSString*)mimeType;
 
 
