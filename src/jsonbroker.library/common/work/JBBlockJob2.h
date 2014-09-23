@@ -13,7 +13,7 @@
 #import "JBJob.h"
 
 
-typedef void(^jbBlock2)();
+typedef id(^jbBlock2)();
 typedef void(^jbBlockDone2)();
 typedef void(^jbBlockFailed2)(JBBaseException* exceptionThrown);
 
@@ -34,6 +34,12 @@ typedef void(^jbBlockFailed2)(JBBaseException* exceptionThrown);
     jbBlockFailed2 _blockFailed;
     //@property (nonatomic, copy) JBBlockFailed blockFailed;
     //@synthesize blockFailed = _blockFailed;
+    
+    // blockResponse
+    id _blockResponse;
+    //@property (nonatomic, retain) id blockResponse;
+    //@synthesize blockResponse = _blockResponse;
+
 
     
 }

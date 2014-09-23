@@ -51,6 +51,7 @@
 -(long)longForKey:(NSString*)key;
 
 -(long long)longLongForKey:(NSString*)key;
+-(long long)longLongForKey:(NSString*)key defaultValue:(long long)defaultValue;
 
 -(id)objectForKey:(NSString*)key;
 -(id)objectForKey:(NSString*)key defaultValue:(id)defaultValue;

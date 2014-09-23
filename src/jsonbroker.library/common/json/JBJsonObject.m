@@ -381,6 +381,29 @@ static NSObject* _NULL_OBJECT = nil;
 }
 
 
+-(long long)longLongForKey:(NSString*)key defaultValue:(long long)defaultValue {
+    
+    id blob = [self getBlob:key throwExceptionOnNil:false];
+    
+    if( nil == blob ) {
+		return defaultValue;
+	}
+    
+    if( ![blob isKindOfClass:[NSNumber class]] ) {
+		
+        NSString* technicalError = [NSString stringWithFormat:@"![blob isKindOfClass:[NSNumber class]]; NSStringFromClass([blob class]) = %@", NSStringFromClass([blob class])];
+		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
+		[e autorelease];
+		@throw e;
+	}
+	
+	NSNumber* answer = (NSNumber*)blob;
+	return [answer longLongValue];
+
+}
+
+
+
 
 -(id)objectForKey:(NSString*)key {
 

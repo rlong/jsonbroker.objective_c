@@ -14,6 +14,7 @@
 // can return nil
 +(JBJsonObject*)fromFile:(NSString*)path;
 
++(JBJsonObject*)buildFromData:(NSData*)jsonData;
 +(JBJsonObject*)buildFromString:(NSString*)jsonString;
 
 

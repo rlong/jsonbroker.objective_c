@@ -32,6 +32,11 @@
 @property (nonatomic, copy) jbBlockFailed2 blockFailed;
 //@synthesize blockFailed = _blockFailed;
 
+// blockResponse
+//id _blockResponse;
+@property (nonatomic, retain) id blockResponse;
+//@synthesize blockResponse = _blockResponse;
+
 
 
 @end
@@ -59,8 +64,8 @@
     JBBaseException *exceptionCaught = nil;
     
     @try {
-        
-        _block();
+        id blockResponse = _block();
+        [self setBlockResponse:blockResponse];
     }
     @catch (JBBaseException *exception) {
         
@@ -110,7 +115,6 @@
             
         }
     }
-
 
 }
 
@@ -182,7 +186,8 @@
     [self setBlock:nil];
 	[self setBlockDone:nil];
 	[self setBlockFailed:nil];
-    
+    [self setBlockResponse:nil];
+
 	[super dealloc];
 	
 }
@@ -209,5 +214,9 @@
 //@property (nonatomic, copy) JBBlockFailed blockFailed;
 @synthesize blockFailed = _blockFailed;
 
+// blockResponse
+//id _blockResponse;
+//@property (nonatomic, retain) id blockResponse;
+@synthesize blockResponse = _blockResponse;
 
 @end

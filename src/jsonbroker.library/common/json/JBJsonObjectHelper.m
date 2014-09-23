@@ -41,19 +41,25 @@
 }
 
 
++(JBJsonObject*)buildFromData:(NSData*)jsonData {
+    
 
-+(JBJsonObject*)buildFromString:(NSString*)jsonString {
-    
-    
-    NSData* jsonData = [JBStringHelper toUtf8Data:jsonString];
-    
     JBJsonBuilder* builder = [[JBJsonBuilder alloc] init];
     [builder autorelease];
     
     [JBJsonReader readFromData:jsonData handler:builder];
     
     return [builder objectDocument];
+    
+}
 
+
++(JBJsonObject*)buildFromString:(NSString*)jsonString {
+    
+    
+    NSData* jsonData = [JBStringHelper toUtf8Data:jsonString];
+    return [self buildFromData:jsonData];
+    
     
 }
 
