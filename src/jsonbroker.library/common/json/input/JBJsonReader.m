@@ -196,8 +196,22 @@
     _continue = true;
     
     UInt8 nextByte = [input currentByte];
-    [input nextByte];  // skip past the '{' / '['
     
+    const UInt8 ht = 0x09;
+    const UInt8 nl = 0x0a;
+    const UInt8 cr = 0x0d;
+    const UInt8 spc = 0x20;
+    
+    while( nextByte != '{' && nextByte != '[' ) {
+        if( nextByte != ht && nextByte != nl && nextByte != cr  && nextByte != spc ) {
+            @throw [JBBaseException baseExceptionWithOriginator:self line:__LINE__ faultStringFormat:@"unexpected character before beginning of JSON document; nextByte = %d (%c)", nextByte, nextByte ];
+        }
+        nextByte = [input nextByte];
+    }
+
+        
+    [input nextByte];  // skip past the '{' / '['
+
     if( '{' == nextByte ) {
         
         [handler onObjectDocumentStart];
