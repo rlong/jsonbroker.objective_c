@@ -5,9 +5,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import "JBBaseException.h"
 #import "JBJob.h"
 
+@class JBBaseException;
 
 typedef id(^jbBlock)(id context);
 typedef void(^jbBlockDone)(id context, id blockResponse);
