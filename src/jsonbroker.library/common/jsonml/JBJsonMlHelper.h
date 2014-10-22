@@ -13,6 +13,8 @@
 @interface JBJsonMlHelper : NSObject
 
 
++(JBJsonArray*)buildWithContentsOfData:(NSData*)data;
+
 +(JBJsonArray*)buildWithContentsOfURL:(NSURL *)url;
 
 +(NSArray*)allChildrenOfParent:(JBJsonArray*)parentElement withName:(NSString*)elementName;

@@ -32,7 +32,18 @@
 
 }
 
+
++(JBJsonArray*)buildWithContentsOfData:(NSData*)data {
+
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
+    JBAutorelease(parser);
+    
+    return [self buildWithParser:parser];
+
+}
+
 +(JBJsonArray*)buildWithContentsOfURL:(NSURL *)url {
+    
     
     
     NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
