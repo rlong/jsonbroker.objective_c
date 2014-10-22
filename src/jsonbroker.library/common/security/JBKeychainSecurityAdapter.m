@@ -23,7 +23,7 @@
     if( nil != savedUsername ) {
         
         // vvv pairing in production is setting up the user as 'test' (ref: 477550FB-3656-4014-B4D7-DC49821E0BA6)
-        // fixed in "VLC Amigo" 4.2.0
+        // fixed in "VLC Pal" 4.2.0
         // see SecurityConfiguration, KeychainSecurityAdapter
         
         if( [@"test" isEqualToString:savedUsername] ) {
