@@ -5,6 +5,7 @@
 
 
 #import "JBBaseException.h"
+#import "JBDataHelper.h"
 #import "JBLog.h"
 #import "JBMemoryModel.h"
 #import "JBSaxHandler.h"
@@ -155,14 +156,17 @@
     
 }
 
-
-
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     
     [_elementText appendString:string];
     
 }
 
+- (void)parser:(NSXMLParser *)parser foundCDATA:(NSData *)CDATABlock {
+    
+    NSString* cDataText = [JBDataHelper toUtf8String:CDATABlock];
+    [_elementText appendString:cDataText];
+}
 
 
 
