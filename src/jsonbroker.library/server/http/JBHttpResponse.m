@@ -4,11 +4,13 @@
 //
 
 
+#import "JBConnectionDelegate.h"
 #import "JBHttpResponse.h"
 #import "JBHttpStatus.h"
 #import "JBObjectTracker.h"
-
 #import "JBLog.h"
+#import "JBMemoryModel.h"
+
 
 
 
@@ -69,12 +71,18 @@
     [self setRange:nil];
     [self setEntity:nil];
 	
-	[super dealloc];
+    JBSuperDealloc();
 }
 
 
 
+#pragma mark -
 #pragma mark fields
+
+// connectionDelegate
+//id<JBConnectionDelegate> _connectionDelegate;
+//@property (nonatomic, retain) id<JBConnectionDelegate> connectionDelegate;
+@synthesize connectionDelegate = _connectionDelegate;
 
 
 // status

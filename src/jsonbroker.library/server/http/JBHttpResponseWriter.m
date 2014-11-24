@@ -50,15 +50,30 @@
     
     if( nil == entity ) { 
         
-        if( 204 != statusCode ) { 
-            Log_warnFormat( @"nil == entity && 204 != statusCode; statusCode = %d", statusCode );
-            [statusLineAndHeaders appendString:@"Content-Length: 0\r\n"];
+        if( 101 == statusCode ) {
+            
+            // 'Switching Protocols'
+            [statusLineAndHeaders appendString:@"\r\n"];
+            
         } else {
-            // from ... 
-            // http://stackoverflow.com/questions/912863/is-an-http-application-that-sends-a-content-length-or-transfer-encoding-with-a-2
-            // ... it would 'appear' safest to not include 'Content-Length' on a 204
+            
+            if( 204 == statusCode ) {
+                
+                // from ...
+                // http://stackoverflow.com/questions/912863/is-an-http-application-that-sends-a-content-length-or-transfer-encoding-with-a-2
+                // ... it would 'appear' safest to not include 'Content-Length' on a 204
+                
+            } else if( 304 == statusCode ) {
+                
+                // http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.5
+                // http://www.w3.org/Protocols/rfc2616/rfc2616-sec4.html#sec4.3
+                
+            } else {
+                Log_warnFormat( @"nil == entity; statusCode = %d", statusCode );
+                [statusLineAndHeaders appendString:@"Content-Length: 0\r\n"];
+            }
+            [statusLineAndHeaders appendString:@"Accept-Ranges: bytes\r\n\r\n"];
         }
-        [statusLineAndHeaders appendString:@"Accept-Ranges: bytes\r\n\r\n"];
         
         NSData* data = [JBDataHelper getUtf8Data:statusLineAndHeaders];
         long maxLength = [statusLineAndHeaders lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
@@ -99,28 +114,22 @@
         }
     }
     
-    // 'Content-Length' final newline
+    ////////////////////////////////////////////////////////////////////////
+    // content-length and final newline
     [statusLineAndHeaders appendFormat:@"Content-Length: %llu\r\n\r\n", amountToWrite];
     
     ////////////////////////////////////////////////////////////////////////
     // write the headers
     
-    //Log_debugFormat( @"\n%@", statusLineAndHeaders);
-
-    
     NSData* headersUtf8Data = [JBDataHelper getUtf8Data:statusLineAndHeaders];
     long maxLength = [statusLineAndHeaders lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
-
-    
     [outputStream write:[headersUtf8Data bytes] maxLength:maxLength];
 
 
     ////////////////////////////////////////////////////////////////////////
     // write the entity
 
-    
     [entity writeTo:outputStream offset:seekPosition length:amountToWrite];
-
 
 }
 

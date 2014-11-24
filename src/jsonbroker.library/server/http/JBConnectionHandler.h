@@ -3,43 +3,42 @@
 //  Released under the MIT license ( http://opensource.org/licenses/MIT )
 //
 
+#import <Foundation/Foundation.h>
 
 
-#import "JBFileHandle.h"
-#import "JBRequestHandler.h"
+@protocol JBConnectionDelegate;
+@class JBFileHandle;
+@protocol JBRequestHandler;
 
 
-
-@interface JBHttpConnectionHandler : NSObject {
-	
-	
-    // socket
-	JBFileHandle* _socket;
-	//@property (nonatomic, retain) JBFileDescriptor* socket;
-	//@synthesize socket = _socket;
-
+@interface JBConnectionHandler : NSObject {
     
+    // delegate
+    id<JBConnectionDelegate> _delegate;
+    //@property (nonatomic, retain) id<JBConnectionDelegate> delegate;
+    //@synthesize delegate = _delegate;
+    
+    
+    // socket
+    JBFileHandle* _socket;
+    //@property (nonatomic, retain) JBFileDescriptor* socket;
+    //@synthesize socket = _socket;
     
     // inputStream
     NSInputStream* _inputStream;
     //@property (nonatomic, retain) NSInputStream* inputStream;
     //@synthesize inputStream = _inputStream;
-
-
+    
+    
     // outputStream
     NSOutputStream* _outputStream;
     //@property (nonatomic, retain) NSOutputStream* outputStream;
     //@synthesize outputStream = _outputStream;
-
-    NSTimer* _callbackTimer;
-	//@property (nonatomic, retain) NSTimer* callbackTimer;
-	//@synthesize callbackTimer = _callbackTimer;
     
-	// httpProcessor
-	id<JBRequestHandler> _httpProcessor;
-	//@property (nonatomic, retain) id<HttpProcessor> httpProcessor;
-	//@synthesize httpProcessor = _httpProcessor;
-
+    NSTimer* _callbackTimer;
+    //@property (nonatomic, retain) NSTimer* callbackTimer;
+    //@synthesize callbackTimer = _callbackTimer;
+    
 }
 
 

@@ -55,8 +55,8 @@
 		AE105ED31466633C00AA500D /* JBServicesRegistery.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A926014640A39006037B8 /* JBServicesRegistery.m */; };
 		AE105ED41466633C00AA500D /* JBMainThreadServiceDelegator.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A926114640A39006037B8 /* JBMainThreadServiceDelegator.h */; };
 		AE105ED51466633C00AA500D /* JBMainThreadServiceDelegator.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A926214640A39006037B8 /* JBMainThreadServiceDelegator.m */; };
-		AE105EE61466635B00AA500D /* JBHttpConnectionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A927814640A39006037B8 /* JBHttpConnectionHandler.h */; };
-		AE105EE71466635B00AA500D /* JBHttpConnectionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A927914640A39006037B8 /* JBHttpConnectionHandler.m */; };
+		AE105EE61466635B00AA500D /* JBHttpDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A927814640A39006037B8 /* JBHttpDelegate.h */; };
+		AE105EE71466635B00AA500D /* JBHttpDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A927914640A39006037B8 /* JBHttpDelegate.m */; };
 		AE105EE91466635B00AA500D /* JBWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A927B14640A39006037B8 /* JBWebServer.m */; };
 		AE105EEE1466635B00AA500D /* JBHttpResponseWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A928014640A39006037B8 /* JBHttpResponseWriter.h */; };
 		AE105EEF1466635B00AA500D /* JBHttpResponseWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A928114640A39006037B8 /* JBHttpResponseWriter.m */; };
@@ -94,6 +94,13 @@
 		AE1A861714D7B9A900F0A0A0 /* JBHttpRequestAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = AE1A861414D7B9A800F0A0A0 /* JBHttpRequestAdapter.h */; };
 		AE1A861814D7B9A900F0A0A0 /* JBHttpRequestAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1A861514D7B9A800F0A0A0 /* JBHttpRequestAdapter.m */; };
 		AE1A861914D7B9A900F0A0A0 /* JBHttpRequestAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1A861514D7B9A800F0A0A0 /* JBHttpRequestAdapter.m */; };
+		AE1AAB3B19FF2771009D593E /* JBConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE1AAB3919FF2771009D593E /* JBConnectionDelegate.h */; };
+		AE1AAB3C19FF2771009D593E /* JBConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE1AAB3919FF2771009D593E /* JBConnectionDelegate.h */; };
+		AE1AAB3D19FF2771009D593E /* JBConnectionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE1AAB3919FF2771009D593E /* JBConnectionDelegate.h */; };
+		AE1AAB4019FF5185009D593E /* JBConnectionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AE1AAB3E19FF5185009D593E /* JBConnectionHandler.h */; };
+		AE1AAB4119FF5185009D593E /* JBConnectionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AE1AAB3E19FF5185009D593E /* JBConnectionHandler.h */; };
+		AE1AAB4219FF5185009D593E /* JBConnectionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1AAB3F19FF5185009D593E /* JBConnectionHandler.m */; };
+		AE1AAB4319FF5185009D593E /* JBConnectionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1AAB3F19FF5185009D593E /* JBConnectionHandler.m */; };
 		AE1EE22116C9C3FF0046EBBC /* JBInputStreamHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AE1EE21F16C9C3FE0046EBBC /* JBInputStreamHelper.h */; };
 		AE1EE22216C9C3FF0046EBBC /* JBInputStreamHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AE1EE21F16C9C3FE0046EBBC /* JBInputStreamHelper.h */; };
 		AE1EE22316C9C3FF0046EBBC /* JBInputStreamHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1EE22016C9C3FF0046EBBC /* JBInputStreamHelper.m */; };
@@ -110,6 +117,12 @@
 		AE22F5AB16AD2BC0003BE2BF /* JBParametersScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = AE22F5A816AD2BC0003BE2BF /* JBParametersScanner.h */; };
 		AE22F5AC16AD2BC0003BE2BF /* JBParametersScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = AE22F5A916AD2BC0003BE2BF /* JBParametersScanner.m */; };
 		AE22F5AD16AD2BC0003BE2BF /* JBParametersScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = AE22F5A916AD2BC0003BE2BF /* JBParametersScanner.m */; };
+		AE2701261A231841002113CD /* JBRequestHandlerHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AE2701241A231841002113CD /* JBRequestHandlerHelper.h */; };
+		AE2701271A231841002113CD /* JBRequestHandlerHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AE2701241A231841002113CD /* JBRequestHandlerHelper.h */; };
+		AE2701281A231841002113CD /* JBRequestHandlerHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AE2701241A231841002113CD /* JBRequestHandlerHelper.h */; };
+		AE2701291A231841002113CD /* JBRequestHandlerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2701251A231841002113CD /* JBRequestHandlerHelper.m */; };
+		AE27012A1A231841002113CD /* JBRequestHandlerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2701251A231841002113CD /* JBRequestHandlerHelper.m */; };
+		AE27012B1A231841002113CD /* JBRequestHandlerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2701251A231841002113CD /* JBRequestHandlerHelper.m */; };
 		AE27590414D7F315006E45D4 /* JBBrokerMessageResponseHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AE27590214D7F315006E45D4 /* JBBrokerMessageResponseHandler.h */; };
 		AE27590514D7F315006E45D4 /* JBBrokerMessageResponseHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AE27590214D7F315006E45D4 /* JBBrokerMessageResponseHandler.h */; };
 		AE27590614D7F315006E45D4 /* JBBrokerMessageResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AE27590314D7F315006E45D4 /* JBBrokerMessageResponseHandler.m */; };
@@ -203,8 +216,8 @@
 		AE42BEE7147FB6C6000FC3A4 /* JBServicesRegistery.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A926014640A39006037B8 /* JBServicesRegistery.m */; };
 		AE42BEE8147FB6C6000FC3A4 /* JBMainThreadServiceDelegator.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A926114640A39006037B8 /* JBMainThreadServiceDelegator.h */; };
 		AE42BEE9147FB6C6000FC3A4 /* JBMainThreadServiceDelegator.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A926214640A39006037B8 /* JBMainThreadServiceDelegator.m */; };
-		AE42BEFA147FB6EF000FC3A4 /* JBHttpConnectionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A927814640A39006037B8 /* JBHttpConnectionHandler.h */; };
-		AE42BEFB147FB6EF000FC3A4 /* JBHttpConnectionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A927914640A39006037B8 /* JBHttpConnectionHandler.m */; };
+		AE42BEFA147FB6EF000FC3A4 /* JBHttpDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A927814640A39006037B8 /* JBHttpDelegate.h */; };
+		AE42BEFB147FB6EF000FC3A4 /* JBHttpDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A927914640A39006037B8 /* JBHttpDelegate.m */; };
 		AE42BEFD147FB6EF000FC3A4 /* JBWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A927B14640A39006037B8 /* JBWebServer.m */; };
 		AE42BF02147FB6EF000FC3A4 /* JBHttpResponseWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = AE8A928014640A39006037B8 /* JBHttpResponseWriter.h */; };
 		AE42BF03147FB6EF000FC3A4 /* JBHttpResponseWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A928114640A39006037B8 /* JBHttpResponseWriter.m */; };
@@ -706,6 +719,9 @@
 		AE1A860F14D7AD2B00F0A0A0 /* JBMimeTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBMimeTypes.m; sourceTree = "<group>"; };
 		AE1A861414D7B9A800F0A0A0 /* JBHttpRequestAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBHttpRequestAdapter.h; sourceTree = "<group>"; };
 		AE1A861514D7B9A800F0A0A0 /* JBHttpRequestAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBHttpRequestAdapter.m; sourceTree = "<group>"; };
+		AE1AAB3919FF2771009D593E /* JBConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBConnectionDelegate.h; sourceTree = "<group>"; };
+		AE1AAB3E19FF5185009D593E /* JBConnectionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBConnectionHandler.h; sourceTree = "<group>"; };
+		AE1AAB3F19FF5185009D593E /* JBConnectionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBConnectionHandler.m; sourceTree = "<group>"; };
 		AE1EE21F16C9C3FE0046EBBC /* JBInputStreamHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBInputStreamHelper.h; sourceTree = "<group>"; };
 		AE1EE22016C9C3FF0046EBBC /* JBInputStreamHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBInputStreamHelper.m; sourceTree = "<group>"; };
 		AE1EE22516C9C4390046EBBC /* JBOutputStreamHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBOutputStreamHelper.h; sourceTree = "<group>"; };
@@ -715,6 +731,8 @@
 		AE22F5A816AD2BC0003BE2BF /* JBParametersScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBParametersScanner.h; sourceTree = "<group>"; };
 		AE22F5A916AD2BC0003BE2BF /* JBParametersScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBParametersScanner.m; sourceTree = "<group>"; };
 		AE26B658173CC1CD00056EE8 /* JBMainThreadJob.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBMainThreadJob.h; sourceTree = "<group>"; };
+		AE2701241A231841002113CD /* JBRequestHandlerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBRequestHandlerHelper.h; sourceTree = "<group>"; };
+		AE2701251A231841002113CD /* JBRequestHandlerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBRequestHandlerHelper.m; sourceTree = "<group>"; };
 		AE27590214D7F315006E45D4 /* JBBrokerMessageResponseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBrokerMessageResponseHandler.h; sourceTree = "<group>"; };
 		AE27590314D7F315006E45D4 /* JBBrokerMessageResponseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBrokerMessageResponseHandler.m; sourceTree = "<group>"; };
 		AE27590B14D7F591006E45D4 /* JBServiceHttpProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBServiceHttpProxy.h; sourceTree = "<group>"; };
@@ -888,8 +906,8 @@
 		AE8A926014640A39006037B8 /* JBServicesRegistery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBServicesRegistery.m; sourceTree = "<group>"; };
 		AE8A926114640A39006037B8 /* JBMainThreadServiceDelegator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBMainThreadServiceDelegator.h; sourceTree = "<group>"; };
 		AE8A926214640A39006037B8 /* JBMainThreadServiceDelegator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBMainThreadServiceDelegator.m; sourceTree = "<group>"; };
-		AE8A927814640A39006037B8 /* JBHttpConnectionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBHttpConnectionHandler.h; sourceTree = "<group>"; };
-		AE8A927914640A39006037B8 /* JBHttpConnectionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBHttpConnectionHandler.m; sourceTree = "<group>"; };
+		AE8A927814640A39006037B8 /* JBHttpDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBHttpDelegate.h; sourceTree = "<group>"; };
+		AE8A927914640A39006037B8 /* JBHttpDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBHttpDelegate.m; sourceTree = "<group>"; };
 		AE8A927B14640A39006037B8 /* JBWebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBWebServer.m; sourceTree = "<group>"; };
 		AE8A928014640A39006037B8 /* JBHttpResponseWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBHttpResponseWriter.h; sourceTree = "<group>"; };
 		AE8A928114640A39006037B8 /* JBHttpResponseWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBHttpResponseWriter.m; sourceTree = "<group>"; };
@@ -1790,8 +1808,11 @@
 			children = (
 				AED34B0D16BF558C00BE0C37 /* request_handler */,
 				AE2D0F931495ABA200ABE310 /* security */,
-				AE8A927814640A39006037B8 /* JBHttpConnectionHandler.h */,
-				AE8A927914640A39006037B8 /* JBHttpConnectionHandler.m */,
+				AE1AAB3E19FF5185009D593E /* JBConnectionHandler.h */,
+				AE1AAB3F19FF5185009D593E /* JBConnectionHandler.m */,
+				AE1AAB3919FF2771009D593E /* JBConnectionDelegate.h */,
+				AE8A927814640A39006037B8 /* JBHttpDelegate.h */,
+				AE8A927914640A39006037B8 /* JBHttpDelegate.m */,
 				AE8A375D14BBE36B00AEA32E /* JBHttpErrorHelper.h */,
 				AE8A375E14BBE36C00AEA32E /* JBHttpErrorHelper.m */,
 				AE1EE22B16C9C59B0046EBBC /* JBFileHandle.h */,
@@ -1964,6 +1985,8 @@
 				AED34B0F16BF558C00BE0C37 /* JBAuthRequestHandler.m */,
 				AED34B1016BF558C00BE0C37 /* JBFileRequestHandler.h */,
 				AED34B1116BF558C00BE0C37 /* JBFileRequestHandler.m */,
+				AE2701241A231841002113CD /* JBRequestHandlerHelper.h */,
+				AE2701251A231841002113CD /* JBRequestHandlerHelper.m */,
 				AE6301C816C4AA1A009785B8 /* JBCorsServicesRequestHandler.h */,
 				AE6301C916C4AA1A009785B8 /* JBCorsServicesRequestHandler.m */,
 				AED34B1216BF558C00BE0C37 /* JBOpenRequestHandler.h */,
@@ -2075,7 +2098,7 @@
 				AE42BEDB147FB6B3000FC3A4 /* JBJavascriptCallbackAdapterHelper.h in Headers */,
 				AE42BEE6147FB6C6000FC3A4 /* JBServicesRegistery.h in Headers */,
 				AE42BEE8147FB6C6000FC3A4 /* JBMainThreadServiceDelegator.h in Headers */,
-				AE42BEFA147FB6EF000FC3A4 /* JBHttpConnectionHandler.h in Headers */,
+				AE42BEFA147FB6EF000FC3A4 /* JBHttpDelegate.h in Headers */,
 				AE42BF02147FB6EF000FC3A4 /* JBHttpResponseWriter.h in Headers */,
 				AE42BF10147FB725000FC3A4 /* JBOsxWebViewBridge.h in Headers */,
 				AE3996F314BACCC100EDE2CA /* JBSerializer.h in Headers */,
@@ -2108,6 +2131,7 @@
 				AEB99DFE14CF697F006FDF30 /* JBNullService.h in Headers */,
 				AEB99E1014CF7FC5006FDF30 /* JBAuthenticator.h in Headers */,
 				AE1A85E714D7A69500F0A0A0 /* JBRange.h in Headers */,
+				AE2701271A231841002113CD /* JBRequestHandlerHelper.h in Headers */,
 				AE1A85F014D7A70E00F0A0A0 /* JBAuthorization.h in Headers */,
 				AE1A85FE14D7A74500F0A0A0 /* JBWwwAuthenticate.h in Headers */,
 				AE1A860014D7A74500F0A0A0 /* JBAuthenticationInfo.h in Headers */,
@@ -2127,6 +2151,7 @@
 				AE319C411540F2470039EC59 /* JBSubjectGroup.h in Headers */,
 				AEFCA73B154A12D8006E7ADA /* JBBaseProxy.h in Headers */,
 				AE8B9A501551FC9D00F02F33 /* JBClassHelper.h in Headers */,
+				AE1AAB4119FF5185009D593E /* JBConnectionHandler.h in Headers */,
 				AE8B9A541551FC9D00F02F33 /* JBDataHelper.h in Headers */,
 				AE8B9A581551FC9D00F02F33 /* JBDateTimeUtilities.h in Headers */,
 				AE8B9A601551FC9D00F02F33 /* JBExceptionHelper.h in Headers */,
@@ -2162,6 +2187,7 @@
 				AE7DA8D6168168390053D037 /* JBLogConsumer.h in Headers */,
 				AE8099B316816907000FC028 /* JBLogEntry.h in Headers */,
 				AE8099B81681699A000FC028 /* JBLogLevel.h in Headers */,
+				AE1AAB3C19FF2771009D593E /* JBConnectionDelegate.h in Headers */,
 				AE22F5AB16AD2BC0003BE2BF /* JBParametersScanner.h in Headers */,
 				AEE2FC0C16AE340E00C854B9 /* JBMediaType.h in Headers */,
 				AEE2FC1C16AE5B1D00C854B9 /* JBContentDisposition.h in Headers */,
@@ -2231,6 +2257,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE1AAB3D19FF2771009D593E /* JBConnectionDelegate.h in Headers */,
+				AE2701281A231841002113CD /* JBRequestHandlerHelper.h in Headers */,
 				AE86B1041717C77A00AFC43E /* JBIntegrationTestServer.h in Headers */,
 				AE86B1061717C77A00AFC43E /* JBIntegrationTestUtilities.h in Headers */,
 			);
@@ -2248,7 +2276,7 @@
 				AE105EC91466633200AA500D /* JBJavascriptCallbackAdapterHelper.h in Headers */,
 				AE105ED21466633C00AA500D /* JBServicesRegistery.h in Headers */,
 				AE105ED41466633C00AA500D /* JBMainThreadServiceDelegator.h in Headers */,
-				AE105EE61466635B00AA500D /* JBHttpConnectionHandler.h in Headers */,
+				AE105EE61466635B00AA500D /* JBHttpDelegate.h in Headers */,
 				AE105EEE1466635B00AA500D /* JBHttpResponseWriter.h in Headers */,
 				AEDD0DE118EA8A5C00AC06AB /* JBJsonMlHelper.h in Headers */,
 				AE10647814669E2200AA500D /* JBIosWebViewBridge.h in Headers */,
@@ -2307,6 +2335,7 @@
 				AE319C401540F2470039EC59 /* JBSubjectGroup.h in Headers */,
 				AEFCA73A154A12D8006E7ADA /* JBBaseProxy.h in Headers */,
 				AE8B9A4F1551FC9D00F02F33 /* JBClassHelper.h in Headers */,
+				AE1AAB3B19FF2771009D593E /* JBConnectionDelegate.h in Headers */,
 				AE8B9A531551FC9D00F02F33 /* JBDataHelper.h in Headers */,
 				AE8B9A571551FC9D00F02F33 /* JBDateTimeUtilities.h in Headers */,
 				AE8B9A5F1551FC9D00F02F33 /* JBExceptionHelper.h in Headers */,
@@ -2350,6 +2379,7 @@
 				AE70206616AE712200453991 /* JBPartialDelimiterMatched.h in Headers */,
 				AE70206B16AE7D9A00453991 /* JBPartHandler.h in Headers */,
 				AE70206F16AE7EA900453991 /* JBPartHandlerHelper.h in Headers */,
+				AE2701261A231841002113CD /* JBRequestHandlerHelper.h in Headers */,
 				AE70207416AE7FAB00453991 /* JBMultiPartHandler.h in Headers */,
 				AE70207816AE809500453991 /* JBMultiPartReader.h in Headers */,
 				AE4EB8F316B0C19500BD8CBE /* JBHttpStatus_ErrorDomain.h in Headers */,
@@ -2364,6 +2394,7 @@
 				AED34B2816BF558C00BE0C37 /* JBRootRequestHandler.h in Headers */,
 				AE6301CA16C4AA1A009785B8 /* JBCorsServicesRequestHandler.h in Headers */,
 				AE6301E316C4ECF4009785B8 /* JBFolderUtilities.h in Headers */,
+				AE1AAB4019FF5185009D593E /* JBConnectionHandler.h in Headers */,
 				AE1EE22116C9C3FF0046EBBC /* JBInputStreamHelper.h in Headers */,
 				AE1EE22716C9C4390046EBBC /* JBOutputStreamHelper.h in Headers */,
 				AE1EE22D16C9C59C0046EBBC /* JBFileHandle.h in Headers */,
@@ -2568,7 +2599,7 @@
 				AE42BEDC147FB6B3000FC3A4 /* JBJavascriptCallbackAdapterHelper.m in Sources */,
 				AE42BEE7147FB6C6000FC3A4 /* JBServicesRegistery.m in Sources */,
 				AE42BEE9147FB6C6000FC3A4 /* JBMainThreadServiceDelegator.m in Sources */,
-				AE42BEFB147FB6EF000FC3A4 /* JBHttpConnectionHandler.m in Sources */,
+				AE42BEFB147FB6EF000FC3A4 /* JBHttpDelegate.m in Sources */,
 				AE42BEFD147FB6EF000FC3A4 /* JBWebServer.m in Sources */,
 				AE42BF03147FB6EF000FC3A4 /* JBHttpResponseWriter.m in Sources */,
 				AE42BF11147FB725000FC3A4 /* JBOsxWebViewBridge.m in Sources */,
@@ -2618,6 +2649,7 @@
 				AE0F3D56152975C500B9D13D /* JBSecurityConfiguration.m in Sources */,
 				AE088873152D1D4A002FB90D /* JBSubject.m in Sources */,
 				AED65141153E7BFF0070C670 /* JBConfigurationService.m in Sources */,
+				AE27012A1A231841002113CD /* JBRequestHandlerHelper.m in Sources */,
 				AE319C431540F2470039EC59 /* JBSubjectGroup.m in Sources */,
 				AEFCA73D154A12D8006E7ADA /* JBBaseProxy.m in Sources */,
 				AE8B9A521551FC9D00F02F33 /* JBClassHelper.m in Sources */,
@@ -2636,6 +2668,7 @@
 				AE61AFBF156C9B43001790CD /* JBChainedService.m in Sources */,
 				AE61AFEA156CD9FD001790CD /* JBSimpleSecurityAdapter.m in Sources */,
 				AEB7D2A7157902A3000BF161 /* JBTimeUtilities.m in Sources */,
+				AE1AAB4319FF5185009D593E /* JBConnectionHandler.m in Sources */,
 				AE187F2815B55B93006F94BC /* JBWebUIDelegate.m in Sources */,
 				AEC4D11515DE141200A15CBC /* JBServiceDescription.m in Sources */,
 				AED4017A15F985B100559EDD /* JBSimpleLogConsumer.m in Sources */,
@@ -2729,6 +2762,7 @@
 			files = (
 				AE86B0C11717C48C00AFC43E /* jsonbroker_library_integration_test.m in Sources */,
 				AE86B0DD1717C58700AFC43E /* JBMetaProxyIntegrationTest.m in Sources */,
+				AE27012B1A231841002113CD /* JBRequestHandlerHelper.m in Sources */,
 				AE86B1051717C77A00AFC43E /* JBIntegrationTestServer.m in Sources */,
 				AE86B1071717C77A00AFC43E /* JBIntegrationTestUtilities.m in Sources */,
 			);
@@ -2757,7 +2791,7 @@
 				AE105ECA1466633200AA500D /* JBJavascriptCallbackAdapterHelper.m in Sources */,
 				AE105ED31466633C00AA500D /* JBServicesRegistery.m in Sources */,
 				AE105ED51466633C00AA500D /* JBMainThreadServiceDelegator.m in Sources */,
-				AE105EE71466635B00AA500D /* JBHttpConnectionHandler.m in Sources */,
+				AE105EE71466635B00AA500D /* JBHttpDelegate.m in Sources */,
 				AE105EE91466635B00AA500D /* JBWebServer.m in Sources */,
 				AE105EEF1466635B00AA500D /* JBHttpResponseWriter.m in Sources */,
 				AE10647A14669E2200AA500D /* JBIosWebViewBridge.m in Sources */,
@@ -2783,6 +2817,7 @@
 				AE8A374814BBD29100AEA32E /* JBHttpSecurityManager.m in Sources */,
 				AEDD0DE318EA8A5C00AC06AB /* JBJsonMlHelper.m in Sources */,
 				AE8A374C14BBD29100AEA32E /* JBHttpSecuritySession.m in Sources */,
+				AE1AAB4219FF5185009D593E /* JBConnectionHandler.m in Sources */,
 				AE8A375214BBD94E00AEA32E /* JBHttpResponse.m in Sources */,
 				AE8A375B14BBDAD500AEA32E /* JBDataEntity.m in Sources */,
 				AE8A376114BBE36D00AEA32E /* JBHttpErrorHelper.m in Sources */,
@@ -2874,6 +2909,7 @@
 				AE0AD824170D6EF500D0174A /* JBHttpAsyncCall.m in Sources */,
 				AEAE44CD170E744500D047DA /* JBGethostbyaddrRequest.m in Sources */,
 				AEAE44D5170E744500D047DA /* JBHostName.m in Sources */,
+				AE2701291A231841002113CD /* JBRequestHandlerHelper.m in Sources */,
 				AEAE44D9170E744500D047DA /* JBHostName_Generated.m in Sources */,
 				AEAE44DD170E744500D047DA /* JBIPAddress.m in Sources */,
 				AEAE44E1170E744500D047DA /* JBNetworkAddress.m in Sources */,

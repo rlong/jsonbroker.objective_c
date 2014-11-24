@@ -13,8 +13,18 @@
 
 #import "JBEntity.h"
 
+@protocol JBConnectionDelegate;
+
 
 @interface JBHttpResponse : NSObject {
+    
+    
+    
+    // connectionDelegate
+    id<JBConnectionDelegate> _connectionDelegate;
+    //@property (nonatomic, retain) id<JBConnectionDelegate> connectionDelegate;
+    //@synthesize connectionDelegate = _connectionDelegate;
+
 	
     // status
 	int _status;
@@ -55,7 +65,13 @@
 -(id)initWithStatus:(int)status entity:(id<JBEntity>)entity;
 
 
+#pragma mark -
 #pragma mark fields
+
+// connectionDelegate
+//id<JBConnectionDelegate> _connectionDelegate;
+@property (nonatomic, retain) id<JBConnectionDelegate> connectionDelegate;
+//@synthesize connectionDelegate = _connectionDelegate;
 
 
 // status

@@ -56,6 +56,7 @@ static NSMutableDictionary* _processors;
     
     NSString* requestUri = [NSString stringWithFormat:@"%@%@", _REQUEST_URI, [processor getProcessorUri]];
     Log_debugString( requestUri );
+    Log_infoFormat( @"'%@' -> '%@'", requestUri, NSStringFromClass( [processor class]) );
     
     [_processors setObject:processor forKey:requestUri];
     
@@ -68,6 +69,7 @@ static NSMutableDictionary* _processors;
     if( NSNotFound != indexOfQuestionMark.location ) { 
         
         requestUri = [requestUri substringToIndex:indexOfQuestionMark.location];
+        Log_debugString( requestUri );
     }
     
     
@@ -85,6 +87,12 @@ static NSMutableDictionary* _processors;
 -(JBHttpResponse*)processRequest:(JBHttpRequest*)request {
     
     NSString* requestUri = [request requestUri];
+    
+    NSRange rangeOfParameters = [requestUri rangeOfString:@"?"];
+    if( NSNotFound != rangeOfParameters.location ) {
+        requestUri = [requestUri substringToIndex:rangeOfParameters.location];
+        Log_debugString( requestUri );
+    }
     
     id<JBRequestHandler> processor = [self getRequestHandler:requestUri];
     

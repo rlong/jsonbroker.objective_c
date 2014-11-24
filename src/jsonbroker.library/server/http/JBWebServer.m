@@ -16,13 +16,14 @@
 #include <arpa/inet.h>
 
 #import "JBBaseException.h"
-#import "JBHttpConnectionHandler.h"
-#import "JBObjectTracker.h"
-
-
+#import "JBConnectionHandler.h"
 #import "JBFileHandle.h"
-#import "JBWebServer.h"
 #import "JBLog.h"
+#import "JBMemoryModel.h"
+#import "JBObjectTracker.h"
+#import "JBRequestHandler.h"
+#import "JBWebServer.h"
+
 
 
 
@@ -97,7 +98,7 @@
     
     JBFileHandle* socket = [[JBFileHandle alloc] initWithFileDescriptor:socketfd];
     [socket autorelease];
-    [JBHttpConnectionHandler handleConnection:socket httpProcessor:_httpProcessor];
+    [JBConnectionHandler handleConnection:socket httpProcessor:_httpProcessor];
 	
 }
 
@@ -255,8 +256,8 @@
         
     }
     [self setHttpProcessor:nil];
-	
-	[super dealloc];
+
+    JBSuperDealloc();
 }
 
 #pragma mark fields

@@ -3,11 +3,12 @@
 // Released under the MIT license ( http://opensource.org/licenses/MIT )
 //
 
+#import <Foundation/Foundation.h>
 
 
-#import "JBBrokerMessageType.h"
-#import "JBJsonArray.h"
-#import "JBJsonObject.h"
+@class JBBrokerMessageType;
+@class JBJsonArray;
+@class JBJsonObject;
 
 @interface JBBrokerMessage : NSObject {
 	

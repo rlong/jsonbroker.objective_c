@@ -11,10 +11,12 @@
 #import "JBHttpRequest.h"
 #import "JBHttpRequestReader.h"
 #import "JBLog.h"
+#import "JBMemoryModel.h"
 #import "JBInputStreamHelper.h"
 #import "JBNumericUtilities.h"
 #import "JBStreamEntity.h"
 #import "JBStringHelper.h"
+
 
 
 #define LINE_LENGTH_UPPER_BOUND 512
@@ -101,7 +103,7 @@ static bool INVALID_CHARS[256];
     if( 1 != bytesRead ) {
         
         Log_debugInt( [inputStream streamStatus] );
-        Log_warnError( [inputStream streamError] );
+        Log_debugError( [inputStream streamError] );
         return nil;
     }
     
@@ -190,7 +192,7 @@ static bool INVALID_CHARS[256];
     }
     
     JBHttpRequest* answer = [[JBHttpRequest alloc] init];
-    [answer autorelease];
+    JBAutorelease( answer );
     
     [self setOperationDetailsForRequest:answer withLine:firstLine];
     
@@ -236,7 +238,7 @@ static bool INVALID_CHARS[256];
     {
         [answer setEntity:entity];
     }
-    [entity release];
+    JBRelease( entity );
     
     return answer;
 }

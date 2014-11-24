@@ -4,12 +4,13 @@
 //
 
 
+#import "JBJob.h"
+#import "JBJobListener.h"
+#import "JBListenedJob.h"
+#import "JBLog.h"
 #import "JBWorkManager.h"
 #import "JBWorker.h"
 #import "JBWorkQueue.h"
-
-#import "JBListenedJob.h"
-#import "JBLog.h"
 
 
 #define NUM_WORKERS 5
@@ -24,7 +25,6 @@ static JBWorker** _workers = nil;
 +(void)initialize {
 	
 	_workQueue = [[JBWorkQueue alloc] init];
-	
 	
 }
 

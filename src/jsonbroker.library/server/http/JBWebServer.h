@@ -5,7 +5,8 @@
 
 #include <arpa/inet.h> 
 
-#import "JBRequestHandler.h"
+
+@class JBRequestHandler;
 
 @interface JBWebServer : NSObject {
 

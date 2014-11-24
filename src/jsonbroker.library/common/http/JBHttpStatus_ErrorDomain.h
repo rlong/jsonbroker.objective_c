@@ -12,5 +12,6 @@
 
 -(NSString*)BAD_REQUEST_400;
 -(NSString*)UNAUTHORIZED_401;
+-(NSString*)NOT_FOUND_404;
 
 @end

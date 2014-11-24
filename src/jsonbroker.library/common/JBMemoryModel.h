@@ -29,7 +29,7 @@
 
     #define JBRelease(__v)
 
-    #define JBSuperDealloc(__v)
+    #define JBSuperDealloc()
 
 #endif
 

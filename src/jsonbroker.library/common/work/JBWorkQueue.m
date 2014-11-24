@@ -37,6 +37,11 @@
 @implementation JBWorkQueue
 
 
+-(uint32_t)count {
+    
+    return (uint32_t)[_inqueue count];
+}
+
 -(void)enqueue:(id<JBJob>)request {
 	
 	[_inqueueLock lock];

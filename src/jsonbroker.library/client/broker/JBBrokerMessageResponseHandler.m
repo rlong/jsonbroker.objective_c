@@ -5,6 +5,7 @@
 
 
 #import "JBBrokerMessageResponseHandler.h"
+#import "JBBrokerMessageType.h"
 #import "JBDataHelper.h"
 #import "JBFaultSerializer.h"
 #import "JBSerializer.h"

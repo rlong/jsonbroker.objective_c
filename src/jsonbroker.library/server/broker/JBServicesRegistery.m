@@ -5,6 +5,8 @@
 
 
 #import "JBBaseException.h"
+#import "JBBrokerMessageType.h"
+#import "JBJsonObject.h"
 #import "JBLog.h"
 #import "JBObjectTracker.h"
 #import "JBServiceHelper.h"

@@ -17,7 +17,7 @@
 
 }
 
-
+-(uint32_t)count;
 -(void)enqueue:(id<JBJob>)request;
 -(id<JBJob>)dequeue;
 

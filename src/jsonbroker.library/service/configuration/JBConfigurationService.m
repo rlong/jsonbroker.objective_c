@@ -8,6 +8,7 @@
 
 #import "JBBaseException.h"
 #import "JBConfigurationService.h"
+#import "JBJsonObject.h"
 #import "JBLog.h"
 #import "JBObjectTracker.h"
 #import "JBServiceDescription.h"

@@ -18,7 +18,9 @@
 
 #endif
 
+
 #import "JBBaseException.h"
+#import "JBIPAddress.h"
 #import "JBLog.h"
 #import "JBNetworkUtilities.h"
 #import "JBTimeUtilities.h"

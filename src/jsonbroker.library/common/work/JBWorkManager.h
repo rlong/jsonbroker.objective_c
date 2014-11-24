@@ -4,8 +4,9 @@
 //
 
 
-#import "JBJob.h"
-#import "JBJobListener.h"
+@protocol JBJob;
+@protocol JBJobListener;
+
 
 @interface JBWorkManager : NSObject
 

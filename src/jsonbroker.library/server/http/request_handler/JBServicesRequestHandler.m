@@ -5,6 +5,7 @@
 
 
 
+#import "JBBrokerMessageType.h"
 #import "JBDataEntity.h"
 #import "JBDataHelper.h"
 #import "JBDefaults.h"
@@ -13,7 +14,6 @@
 #import "JBLog.h"
 #import "JBSerializer.h"
 #import "JBServicesRequestHandler.h"
-
 
 
 
@@ -115,7 +115,6 @@ static int _MAXIMUM_REQUEST_ENTITY_LENGTH;
             JBJsonArray* responseComponents = [response toJsonArray];
             NSData* responseData = [JBJsonArrayHelper toData:responseComponents];
             
-            Log_debugData( responseData );
             
             id<JBEntity> responseBody = [[JBDataEntity alloc] initWithData:responseData];
             [responseBody autorelease];

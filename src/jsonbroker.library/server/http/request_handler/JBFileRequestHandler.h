@@ -4,8 +4,8 @@
 //
 
 
-#import "JBHttpRequest.h"
-#import "JBHttpResponse.h"
+@class JBHttpRequest;
+@class JBHttpResponse;
 
 #import "JBRequestHandler.h"
 

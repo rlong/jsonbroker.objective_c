@@ -7,8 +7,11 @@
 #import "JBDataEntity.h"
 #import "JBFileRequestHandler.h"
 #import "JBHttpErrorHelper.h"
+#import "JBHttpRequest.h"
+#import "JBHttpResponse.h"
 #import "JBLog.h"
 #import "JBMimeTypes.h"
+#import "JBRequestHandlerHelper.h"
 
 
 
@@ -34,38 +37,6 @@
 
 
 
-
--(void)validateRequestUri:(NSString*) requestUri {
-	
-	
-	if( '/' != [requestUri characterAtIndex:0] ) {
-        Log_errorFormat( @"'/' != [requestUri characterAtIndex:0]; requestUri = '%@'", requestUri);
-        @throw [JBHttpErrorHelper forbidden403FromOriginator:self line:__LINE__];
-	}
-	
-	if( NSNotFound != [requestUri rangeOfString:@"/."].location ) { // UNIX hidden files
-        Log_errorFormat( @"NSNotFound != [requestUri rangeOfString:@\"/.\"].location; requestUri = '%@'", requestUri);
-        @throw [JBHttpErrorHelper forbidden403FromOriginator:self line:__LINE__];
-	}
-	if( NSNotFound != [requestUri rangeOfString:@".."].location ) { // parent directory
-        Log_errorFormat( @"NSNotFound != [requestUri rangeOfString:@\"..\"].location; requestUri = '%@'", requestUri);
-        @throw [JBHttpErrorHelper forbidden403FromOriginator:self line:__LINE__];
-	}
-}
-
-
-
-
--(void)validateMimeTypeForRequestUri:(NSString*) requestUri {
-	
-	
-	if( nil == [JBMimeTypes getMimeTypeForPath:requestUri] ) { 
-        
-        Log_errorFormat( @"nil == [self getMimeTypeForRequestUri:requestUri]; requestUri = '%@'", requestUri);
-        @throw [JBHttpErrorHelper forbidden403FromOriginator:self line:__LINE__];
-	}
-	
-}
 
 
 -(id<JBEntity>)readFile:(NSString*)relativePath {
@@ -114,8 +85,8 @@
     
     { // some validation
         
-		[self validateRequestUri:requestUri];
-		[self validateMimeTypeForRequestUri:requestUri];        
+		[JBRequestHandlerHelper validateRequestUri:requestUri];
+		[JBRequestHandlerHelper validateMimeTypeForRequestUri:requestUri];
     }
     
     @try {

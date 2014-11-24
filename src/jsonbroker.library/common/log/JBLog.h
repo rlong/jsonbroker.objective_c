@@ -70,6 +70,14 @@
 #endif
 
 
++(void)debugError:(NSError*)error withName:(const char*)name inFunction:(const char*)function;
+#ifdef DEBUG
+#define Log_debugError(value) [JBLog debugError:value withName:#value inFunction:__func__]
+#else
+#define Log_debugFloat(value)
+#endif
+
+
 + (void)debugFloat:(double)value withName:(const char*)name inFunction:(const char*)function;
 #ifdef DEBUG
 #define Log_debugFloat(value) [JBLog debugFloat:value withName:#value inFunction:__func__]

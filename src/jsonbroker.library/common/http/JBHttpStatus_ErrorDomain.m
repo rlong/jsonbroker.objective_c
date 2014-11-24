@@ -17,4 +17,11 @@
     return @"jsonbroker.HttpStatus.UNAUTHORIZED_401";
 }
 
+
+-(NSString*)NOT_FOUND_404 {
+    return @"jsonbroker.HttpStatus.NOT_FOUND_404";
+}
+
+
+
 @end

@@ -42,7 +42,9 @@
 }
 
 +(BaseException*)notFound404FromOriginator:(id)originator line:(int)line {
-    return [self buildException:originator line:line statusCode:HttpStatus_NOT_FOUND_404];
+    BaseException* answer =  [self buildException:originator line:line statusCode:HttpStatus_NOT_FOUND_404];
+    [answer setErrorDomain:[[JBHttpStatus errorDomain] NOT_FOUND_404]];
+    return answer;
 }
 
 

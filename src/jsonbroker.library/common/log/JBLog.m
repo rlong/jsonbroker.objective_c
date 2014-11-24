@@ -199,6 +199,28 @@ static id <JBLogConsumer> _logConsumer;
 	
 }
 
++(void)debugError:(NSError*)error withName:(const char*)name inFunction:(const char*)function {
+
+#ifdef DEBUG // see GCC_PREPROCESSOR_DEFINITIONS in the build settings
+
+    if( nil == error ) {
+        
+        [JBLog debugForFunction:function format:@"%s = NULL", name];
+        
+    } else {
+        
+        [JBLog debugForFunction:function format:@"[%s localizedDescription] = '%@'", name, [error localizedDescription]];
+        [JBLog debugForFunction:function format:@"[%s localizedFailureReason] = '%@'", name, [error localizedFailureReason]];
+        [JBLog debugForFunction:function format:@"[%s domain] = '%@'", name, [error domain]];
+        [JBLog debugForFunction:function format:@"[%s code] = '%d'", name, [error code]];
+        
+    }
+    
+#endif
+
+}
+
+
 
 +(void)debugForFunction:(const char*)function format:(NSString *)format, ... {
     
