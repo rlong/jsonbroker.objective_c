@@ -10,6 +10,7 @@
 #import "JBHttpRequest.h"
 #import "JBHttpResponse.h"
 #import "JBLog.h"
+#import "JBMemoryModel.h"
 #import "JBMimeTypes.h"
 #import "JBRequestHandlerHelper.h"
 
@@ -39,32 +40,61 @@
 
 
 
--(id<JBEntity>)readFile:(NSString*)relativePath {
+-(id<JBEntity>)readFile:(NSString*)absolutePath {
     
     
-    NSString* absoluteFilename = [_rootFolder stringByAppendingString:relativePath];
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager]; 
-    
-    if( ![fileManager fileExistsAtPath:absoluteFilename] ) { 
-        Log_errorFormat( @"![fileManager fileExistsAtPath:absoluteFilename]; absoluteFilename = '%@'", absoluteFilename);
-        @throw [JBHttpErrorHelper notFound404FromOriginator:self line:__LINE__];
-    }
-    
-    if( ![fileManager isReadableFileAtPath:absoluteFilename] ) { 
-        Log_errorFormat( @"![fileManager isReadableFileAtPath:absoluteFilename]; absoluteFilename = '%@'", absoluteFilename);
-        @throw [JBHttpErrorHelper forbidden403FromOriginator:self line:__LINE__];
-        
-    }
-    
-
-    NSData* fileData = [NSData dataWithContentsOfFile:absoluteFilename];
+    NSData* fileData = [NSData dataWithContentsOfFile:absolutePath];
     JBDataEntity* answer = [[JBDataEntity alloc] initWithData:fileData];
     [answer autorelease];
     return answer;
 
 }
 
+-(NSString*)toAbsolutePath:(NSString*)relativePath {
+    
+    
+    NSString* answer = [_rootFolder stringByAppendingString:relativePath];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if( ![fileManager fileExistsAtPath:answer] ) {
+        Log_errorFormat( @"![fileManager fileExistsAtPath:answer]; answer = '%@'", answer);
+        @throw [JBHttpErrorHelper notFound404FromOriginator:self line:__LINE__];
+    }
+    
+    if( ![fileManager isReadableFileAtPath:answer] ) {
+        Log_errorFormat( @"![fileManager isReadableFileAtPath:answer]; answer = '%@'", answer);
+        @throw [JBHttpErrorHelper forbidden403FromOriginator:self line:__LINE__];
+        
+    }
+    
+    return answer;
+}
+
+
+// could return `nil`
+-(NSString*)getETag:(NSString*)absolutePath {
+
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+
+    NSError* error = nil;
+    NSDictionary* fileAttributes = [fileManager attributesOfItemAtPath:absolutePath error:&error];
+    
+    if( nil != error ) {
+        Log_errorError( error );
+        return nil;
+    }
+    
+    NSDate* fileModificationDate = [fileAttributes fileModificationDate];
+    
+    NSTimeInterval modificationInterval = [fileModificationDate timeIntervalSince1970];
+    uint64_t modificationTime = (uint64_t)modificationInterval;
+    NSString* answer = [NSString stringWithFormat:@"\"%lld\"", modificationTime];
+    Log_debugString( answer );
+    return answer;
+
+}
 
 
 -(NSString*)getProcessorUri {
@@ -72,11 +102,9 @@
 }
 
 
-
 -(JBHttpResponse*)processRequest:(JBHttpRequest*)request {
 	
     
-	
 	NSString* requestUri = [request requestUri];
 
     if( [requestUri hasSuffix:@"/"] ) { 
@@ -89,25 +117,32 @@
 		[JBRequestHandlerHelper validateMimeTypeForRequestUri:requestUri];
     }
     
-    @try {
+    NSString* absolutePath = [self toAbsolutePath:requestUri];
+    
+    NSString* eTag = [self getETag:absolutePath];
+    
+    
+    JBHttpResponse* answer;
+    
+    NSString* ifNoneMatch = [request getHttpHeader:@"if-none-match"];
+    if( nil != ifNoneMatch && [ifNoneMatch isEqualToString:eTag] ) {
+        answer = [[JBHttpResponse alloc] initWithStatus:HttpStatus_NOT_MODIFIED_304];
+        JBAutorelease( answer );
+    } else {
         
-        id<JBEntity> body = [self readFile:requestUri];
+        id<JBEntity> body = [self readFile:absolutePath];
         
-        JBHttpResponse* answer = [[JBHttpResponse alloc] initWithStatus:HttpStatus_OK_200 entity:body];
-        [answer autorelease];
+        answer = [[JBHttpResponse alloc] initWithStatus:HttpStatus_OK_200 entity:body];
+        JBAutorelease( answer );
         
         NSString* contentType = [JBMimeTypes getMimeTypeForPath:requestUri];
         [answer setContentType:contentType];
         
-        return answer;
     }
-    @catch (BaseException *exception) {
-        @throw exception;
-    }
-    @catch (NSException *exception) {
-        Log_errorException( exception );
-        @throw [JBHttpErrorHelper notFound404FromOriginator:self line:__LINE__];
-    }
+    
+    [answer putHeader:@"ETag" value:eTag];
+    
+    return answer;
 	
 }
 

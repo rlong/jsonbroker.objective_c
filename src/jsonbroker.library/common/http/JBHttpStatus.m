@@ -44,6 +44,9 @@ static JBHttpStatus_ErrorDomain* _errorDomain = nil;
 		case 206:
 			return @"Partial Content";
 
+        case 304:
+            return @"Not Modified";
+
 		case 400:
 			return @"Bad Request";
 		case 401:
@@ -110,6 +113,8 @@ static JBHttpStatus_ErrorDomain* _errorDomain = nil;
 int const HttpStatus_OK_200 = 200;
 int const HttpStatus_NO_CONTENT_204 = 204;
 int const HttpStatus_PARTIAL_CONTENT_206 = 206;
+
+int const HttpStatus_NOT_MODIFIED_304 = 304;
 
 int const HttpStatus_BAD_REQUEST_400 = 400;
 int const HttpStatus_UNAUTHORIZED_401 = 401;

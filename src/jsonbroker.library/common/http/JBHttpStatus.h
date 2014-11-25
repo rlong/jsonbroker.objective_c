@@ -24,6 +24,7 @@ extern int const HttpStatus_OK_200;
 extern int const HttpStatus_NO_CONTENT_204;
 extern int const HttpStatus_PARTIAL_CONTENT_206;
 
+extern int const HttpStatus_NOT_MODIFIED_304;
 
 extern int const HttpStatus_BAD_REQUEST_400;
 extern int const HttpStatus_UNAUTHORIZED_401;
