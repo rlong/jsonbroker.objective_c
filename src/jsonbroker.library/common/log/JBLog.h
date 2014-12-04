@@ -74,7 +74,7 @@
 #ifdef DEBUG
 #define Log_debugError(value) [JBLog debugError:value withName:#value inFunction:__func__]
 #else
-#define Log_debugFloat(value)
+#define Log_debugError(value)
 #endif
 
 

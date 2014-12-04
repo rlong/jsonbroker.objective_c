@@ -4,6 +4,7 @@
 //
 
 #import "JBLog.h"
+#import "JBMemoryModel.h"
 #import "JBStringHelper.h"
 
 @implementation JBStringHelper
@@ -22,7 +23,7 @@ const char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a'
 // DEPRECATED: use [DataHelper toUtf8String]
 +(NSString*)getUtf8String:(NSData*)data { 
     NSString* answer = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    [answer autorelease];
+    JBAutorelease( answer );
     return answer;
 }
 
@@ -93,73 +94,23 @@ const char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a'
 }
 
 
-// replace the likes of "&#39;" with "'" (e.g. playlist.osx.vlc-1.1.12.xml)
-+(NSString*)unescapeHtmlCodes:(NSString*)input { 
+// as per javascript
++(NSString*)decodeURIComponent:(NSString*)encodedURIComponent {
     
-
-    
-    
-#if defined(__MAC_OS_X_VERSION_MIN_REQUIRED)
-	
-    if( NO ) { 
-        // OSX ... 
-        Log_debug(@"OSX");
-        
-        // vvv http://stackoverflow.com/questions/1067652/converting-amp-to-in-objective-c
-        
-        CFStringRef escapedAnswer = (CFStringRef)input;
-        CFStringRef unescapedAnswer = CFXMLCreateStringByUnescapingEntities(kCFAllocatorDefault, escapedAnswer, NULL);
-        return (NSString*)[NSMakeCollectable(unescapedAnswer) autorelease];
-        
-        // ^^^ http://stackoverflow.com/questions/1067652/converting-amp-to-in-objective-c
-    }
-	
-#endif
-    
-    
-    NSRange rangeOfHTMLEntity = [input rangeOfString:@"&#"];
-    if( NSNotFound == rangeOfHTMLEntity.location ) { 
-        return input;
-    }
-    
-    
-    NSMutableString* answer = [[NSMutableString alloc] init];
-    [answer autorelease];
-    
-    NSScanner* scanner = [NSScanner scannerWithString:input];
-    [scanner setCharactersToBeSkipped:nil]; // we want all white-space
-    
-    while( ![scanner isAtEnd] ) { 
-        
-        NSString* fragment;
-        [scanner scanUpToString:@"&#" intoString:&fragment];
-        if( nil != fragment ) { // e.g. '&#38; B'
-            [answer appendString:fragment];        
-        }
-        
-        if( ![scanner isAtEnd] ) { // implicitly we scanned to the next '&#'
-            
-            int scanLocation = (int)[scanner scanLocation];
-            [scanner setScanLocation:scanLocation+2]; // skip over '&#'
-            
-            int htmlCode;
-            if( [scanner scanInt:&htmlCode] ) {
-                char c = htmlCode;
-                [answer appendFormat:@"%c", c];
-                
-                scanLocation = (int)[scanner scanLocation];
-                [scanner setScanLocation:scanLocation+1]; // skip over ';'
-                
-            } else {
-                // err ? 
-            }
-        }
-        
-    }
-    
+    NSString* answer = [encodedURIComponent stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     return answer;
     
 }
+
+
+//// as per javascript
+//+(NSString*)encodeURIComponent:(NSString*)decodedURIComponent {
+//    
+//    NSString* answer = [decodedURIComponent stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    return answer;
+//    
+//}
+
 
 
 // see also RFC-2396
@@ -175,7 +126,7 @@ const char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a'
 	// answerAsStringRef = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, inputAsStringRef, NULL,CFSTR("!$&'()*+,-./:;=?@_~"),kCFStringEncodingUTF8);
 	
 	NSString* answer = (NSString*)answerAsStringRef;
-	[answer autorelease];
+    JBAutorelease( answer );
     
 	return answer;
 }
@@ -206,6 +157,7 @@ const char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a'
 +(NSString*)toHexString:(UInt8*)bytes count:(int)count {
     
     NSMutableString* answer = [[NSMutableString alloc] initWithCapacity:(2*count)+1];
+    JBAutorelease( answer );
     
     for( int i = 0; i < count; i++ ) {
 		UInt8 byte = bytes[i];
@@ -218,13 +170,76 @@ const char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a'
     return answer;
 }
 
-// as per javascript
-+(NSString*)decodeURIComponent:(NSString*)encodedURIComponent {
+
+
+// replace the likes of "&#39;" with "'" (e.g. playlist.osx.vlc-1.1.12.xml)
++(NSString*)unescapeHtmlCodes:(NSString*)input {
     
-    NSString* answer = [encodedURIComponent stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    
+    
+#if defined(__MAC_OS_X_VERSION_MIN_REQUIRED)
+    
+    if( NO ) {
+        // OSX ...
+        Log_debug(@"OSX");
+        
+        // vvv http://stackoverflow.com/questions/1067652/converting-amp-to-in-objective-c
+        
+        CFStringRef escapedAnswer = (CFStringRef)input;
+        CFStringRef unescapedAnswer = CFXMLCreateStringByUnescapingEntities(kCFAllocatorDefault, escapedAnswer, NULL);
+        return (NSString*)[NSMakeCollectable(unescapedAnswer) autorelease];
+        
+        // ^^^ http://stackoverflow.com/questions/1067652/converting-amp-to-in-objective-c
+    }
+    
+#endif
+    
+    
+    NSRange rangeOfHTMLEntity = [input rangeOfString:@"&#"];
+    if( NSNotFound == rangeOfHTMLEntity.location ) {
+        return input;
+    }
+    
+    
+    NSMutableString* answer = [[NSMutableString alloc] init];
+    [answer autorelease];
+    
+    NSScanner* scanner = [NSScanner scannerWithString:input];
+    [scanner setCharactersToBeSkipped:nil]; // we want all white-space
+    
+    while( ![scanner isAtEnd] ) {
+        
+        NSString* fragment;
+        [scanner scanUpToString:@"&#" intoString:&fragment];
+        if( nil != fragment ) { // e.g. '&#38; B'
+            [answer appendString:fragment];
+        }
+        
+        if( ![scanner isAtEnd] ) { // implicitly we scanned to the next '&#'
+            
+            int scanLocation = (int)[scanner scanLocation];
+            [scanner setScanLocation:scanLocation+2]; // skip over '&#'
+            
+            int htmlCode;
+            if( [scanner scanInt:&htmlCode] ) {
+                char c = htmlCode;
+                [answer appendFormat:@"%c", c];
+                
+                scanLocation = (int)[scanner scanLocation];
+                [scanner setScanLocation:scanLocation+1]; // skip over ';'
+                
+            } else {
+                // err ?
+            }
+        }
+        
+    }
+    
     return answer;
     
 }
+
 
 
 @end

@@ -6,14 +6,15 @@
 
 #import <Foundation/Foundation.h>
 
-#import "JBHttpRequest.h"
-#import "JBHttpResponse.h"
+@class JBHttpRequest;
+@class JBHttpResponse;
 
 @protocol JBRequestHandler <NSObject>
 
 
+-(NSString*)getProcessorUri;
+
 -(JBHttpResponse*)processRequest:(JBHttpRequest*)request;
 
--(NSString*)getProcessorUri;
 
 @end

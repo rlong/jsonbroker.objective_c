@@ -5,6 +5,7 @@
 
 
 
+#import "JBBaseException.h"
 #import "JBDataEntity.h"
 #import "JBHttpErrorHelper.h"
 #import "JBHttpSecuritySession.h"

@@ -91,7 +91,6 @@
     NSTimeInterval modificationInterval = [fileModificationDate timeIntervalSince1970];
     uint64_t modificationTime = (uint64_t)modificationInterval;
     NSString* answer = [NSString stringWithFormat:@"\"%lld\"", modificationTime];
-    Log_debugString( answer );
     return answer;
 
 }

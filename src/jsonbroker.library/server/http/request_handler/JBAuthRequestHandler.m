@@ -6,8 +6,10 @@
 
 #import "JBAuthorization.h"
 #import "JBAuthRequestHandler.h"
+#import "JBBaseException.h"
 #import "JBBrokerMessage.h"
 #import "JBHttpErrorHelper.h"
+#import "JBHttpSecurityManager.h"
 #import "JBLog.h"
 #import "JBServicesRegistery.h"
 

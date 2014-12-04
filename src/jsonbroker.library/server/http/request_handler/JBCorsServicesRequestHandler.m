@@ -9,6 +9,8 @@
 #import "JBDataEntity.h"
 #import "JBDataHelper.h"
 #import "JBHttpErrorHelper.h"
+#import "JBHttpRequest.h"
+#import "JBHttpResponse.h"
 #import "JBLog.h"
 #import "JBSerializer.h"
 #import "JBServicesRequestHandler.h"

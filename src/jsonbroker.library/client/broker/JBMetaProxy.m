@@ -8,6 +8,7 @@
 #import "JBBrokerMessage.h"
 #import "JBJsonObject.h"
 #import "JBMetaProxy.h"
+#import "JBService.h"
 
 
 ////////////////////////////////////////////////////////////////////////////////

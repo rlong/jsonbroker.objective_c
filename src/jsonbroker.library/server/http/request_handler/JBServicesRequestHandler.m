@@ -10,6 +10,8 @@
 #import "JBDataHelper.h"
 #import "JBDefaults.h"
 #import "JBHttpErrorHelper.h"
+#import "JBHttpRequest.h"
+#import "JBHttpResponse.h"
 #import "JBJsonArrayHelper.h"
 #import "JBLog.h"
 #import "JBSerializer.h"

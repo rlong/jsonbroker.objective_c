@@ -4,8 +4,10 @@
 //
 
 
+#import "JBBaseException.h"
 #import "JBDataEntity.h"
 #import "JBHttpErrorHelper.h"
+#import "JBHttpResponse.h"
 #import "JBHttpStatus.h"
 
 #import "JBEntity.h"
@@ -13,51 +15,51 @@
 
 @implementation JBHttpErrorHelper
 
-+(BaseException*)buildException:(id)originator line:(int)line statusCode:(int)statusCode { 
++(JBBaseException*)buildException:(id)originator line:(int)line statusCode:(int)statusCode {
     
     NSString* reason = [JBHttpStatus getReason:statusCode];
     
-    BaseException* answer = [[BaseException alloc] initWithOriginator:originator line:line faultMessage:reason];
+    JBBaseException* answer = [[JBBaseException alloc] initWithOriginator:originator line:line faultMessage:reason];
     [answer autorelease];
     [answer setFaultCode:statusCode];
     
     return answer;
 }
 
-+(BaseException*)badRequest400FromOriginator:(id)originator line:(int)line {
++(JBBaseException*)badRequest400FromOriginator:(id)originator line:(int)line {
   
-    BaseException* answer = [self buildException:originator line:line statusCode:HttpStatus_BAD_REQUEST_400];
+    JBBaseException* answer = [self buildException:originator line:line statusCode:HttpStatus_BAD_REQUEST_400];
     [answer setErrorDomain:[[JBHttpStatus errorDomain] BAD_REQUEST_400]];
     return answer;
 }
 
-+(BaseException*)unauthorized401FromOriginator:(id)originator line:(int)line {
-    BaseException* answer = [self buildException:originator line:line statusCode:HttpStatus_UNAUTHORIZED_401];
++(JBBaseException*)unauthorized401FromOriginator:(id)originator line:(int)line {
+    JBBaseException* answer = [self buildException:originator line:line statusCode:HttpStatus_UNAUTHORIZED_401];
     [answer setErrorDomain:[[JBHttpStatus errorDomain] UNAUTHORIZED_401]];
     return answer;
 }
 
-+(BaseException*)forbidden403FromOriginator:(id)originator line:(int)line {
++(JBBaseException*)forbidden403FromOriginator:(id)originator line:(int)line {
     return [self buildException:originator line:line statusCode:HttpStatus_FORBIDDEN_403];
 }
 
-+(BaseException*)notFound404FromOriginator:(id)originator line:(int)line {
-    BaseException* answer =  [self buildException:originator line:line statusCode:HttpStatus_NOT_FOUND_404];
++(JBBaseException*)notFound404FromOriginator:(id)originator line:(int)line {
+    JBBaseException* answer =  [self buildException:originator line:line statusCode:HttpStatus_NOT_FOUND_404];
     [answer setErrorDomain:[[JBHttpStatus errorDomain] NOT_FOUND_404]];
     return answer;
 }
 
 
-+(BaseException*)requestEntityTooLarge413FromOriginator:(id)originator line:(int)line {
++(JBBaseException*)requestEntityTooLarge413FromOriginator:(id)originator line:(int)line {
     return [self buildException:originator line:line statusCode:HttpStatus_REQUEST_ENTITY_TOO_LARGE_413];
 }
 
 
-+(BaseException*)internalServerError500FromOriginator:(id)originator line:(int)line {
++(JBBaseException*)internalServerError500FromOriginator:(id)originator line:(int)line {
     return [self buildException:originator line:line statusCode:HttpStatus_INTERNAL_SERVER_ERROR_500];
 }
 
-+(BaseException*)notImplemented501FromOriginator:(id)originator line:(int)line {
++(JBBaseException*)notImplemented501FromOriginator:(id)originator line:(int)line {
     return [self buildException:originator line:line statusCode:HttpStatus_NOT_IMPLEMENTED_501];
 }
 

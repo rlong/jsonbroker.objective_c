@@ -4,6 +4,7 @@
 //
 
 
+#import "JBBrokerMessage.h"
 #import "JBBrokerMessageResponseHandler.h"
 #import "JBBrokerMessageType.h"
 #import "JBDataHelper.h"

@@ -6,8 +6,10 @@
 
 #import <Foundation/Foundation.h>
 
-#import "JBBrokerMessage.h"
+
 #import "JBHttpResponseHandler.h"
+
+@class JBBrokerMessage;
 
 @interface JBBrokerMessageResponseHandler : NSObject <JBHttpResponseHandler> {
     

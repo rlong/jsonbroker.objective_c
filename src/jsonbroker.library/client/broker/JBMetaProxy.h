@@ -6,7 +6,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "JBService.h"
+
+@protocol JBService;
 
 @interface JBMetaProxy : NSObject {
     

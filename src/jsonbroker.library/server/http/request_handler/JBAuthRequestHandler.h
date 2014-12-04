@@ -5,11 +5,7 @@
 
 
 
-
-#import "JBHttpRequest.h"
-#import "JBHttpResponse.h"
-#import "JBHttpSecurityManager.h"
-
+@class JBHttpSecurityManager;
 #import "JBRequestHandler.h"
 
 
