@@ -291,5 +291,7 @@
 + (void)errorString:(NSString *)value withName:(const char*)name inFunction:(const char*)function;
 #define Log_errorString(value) [JBLog errorString:value withName:#value inFunction:__func__]
 
++ (void)errorUtf8String:(const char*)value withName:(const char*)name inFunction:(const char*)function;
+#define Log_errorUtf8String(value) [JBLog errorUtf8String:value withName:#value inFunction:__func__]
 
 @end

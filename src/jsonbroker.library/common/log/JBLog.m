@@ -921,7 +921,21 @@ static id <JBLogConsumer> _logConsumer;
     [self error:message inFunction:function];
 }
 
++ (void)errorUtf8String:(const char*)value withName:(const char*)name inFunction:(const char*)function {
+    
+    NSString *message;
+    if( nil == value )
+    {
+        message  = [NSString stringWithFormat : @"%s = NULL" , name];
+    }
+    else
+    {
+        message  = [NSString stringWithFormat : @"%s = '%s'" , name, value];
+    }
+    
+    [self error:message inFunction:function];
 
+}
 
 
 @end
