@@ -4,6 +4,7 @@
 //
 
 #import "JBIPAddress.h"
+#import "JBJsonArray.h"
 #import "JBLog.h"
 
 static const uint32_t loopbackIp4Address = (1 << 24) + 127;

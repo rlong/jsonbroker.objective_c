@@ -7,9 +7,12 @@
 
 
 #import "JBBrokerJob.h"
+#import "JBBrokerMessage.h"
+#import "JBIosWebViewShower.h"
 #import "JBMainThreadService.h"
 #import "JBJavascriptCallbackAdapterHelper.h"
 #import "JBObjectTracker.h"
+#import "JBServicesRegistery.h"
 
 #import "JBLog.h"
 #import "JBIosWebViewBridge.h"

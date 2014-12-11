@@ -3,8 +3,9 @@
 // Released under the MIT license ( http://opensource.org/licenses/MIT )
 //
 
-#import "JBHostName.h"
-#import "JBIPAddress.h"
+
+@class JBHostName;
+@class JBIPAddress;
 
 @interface JBNetworkHost : NSObject {
     

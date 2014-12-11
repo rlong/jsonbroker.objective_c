@@ -7,10 +7,13 @@
 
 #import <UIKit/UIKit.h> // for UIWebViewDelegate, UIWebView
 
-#import "JBBrokerMessage.h"
-#import "JBIosWebViewShower.h"
+@class JBBrokerMessage;
+@protocol JBDescribedService;
+@class JBIosWebViewShower;
 #import "JBJavascriptCallbackAdapter.h"
-#import "JBServicesRegistery.h"
+@class JBServicesRegistery;
+
+
 
 @interface JBIosWebViewBridge : NSObject <UIWebViewDelegate,JBJavascriptCallbackAdapter> {
 	

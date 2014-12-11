@@ -168,6 +168,18 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
 
+    Log_enteredMethod();
+    
+    if( [response isKindOfClass:[NSHTTPURLResponse class]] ) {
+        
+        NSHTTPURLResponse* httpUrlResponse = (NSHTTPURLResponse*)response;
+        NSDictionary *allHeaderFields = [httpUrlResponse allHeaderFields];
+        for( NSString* key in allHeaderFields ) {
+            Log_debugFormat( @"%@: %@", key, [allHeaderFields objectForKey:key] );
+        }
+    }
+
+    
     [self setResponse:response];
 
 }
@@ -175,6 +187,7 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     
+    Log_enteredMethod();
     //Log_debugInt( [data length] );
     
     if( nil == _responseData ) { 
@@ -190,6 +203,7 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
 
+    Log_enteredMethod();
     [self httpCallCompleted];
     [_conditionLock lock];
     [_conditionLock unlockWithCondition:COMPLETED];

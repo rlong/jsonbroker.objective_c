@@ -112,7 +112,6 @@ static JBServiceDescription* _SERVICE_DESCRIPTION = nil;
     
     if( nil == answer ) {
         
-        
         answer = defaultValue;
         [_bundles setObject:defaultValue forKey:bundleName];
         

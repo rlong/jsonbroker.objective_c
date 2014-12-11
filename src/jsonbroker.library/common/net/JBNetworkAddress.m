@@ -4,7 +4,10 @@
 //
 
 
+#import "JBHostName.h"
+#import "JBIPAddress.h"
 #import "JBNetworkAddress.h"
+#import "JBNetworkHost.h"
 #import "JBObjectTracker.h"
 
 #import "JBLog.h"

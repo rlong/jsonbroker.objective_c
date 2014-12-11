@@ -6,7 +6,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface JBHttpCall : NSObject {
+@interface JBHttpCall : NSObject <NSURLConnectionDelegate> {
     
     
     // started

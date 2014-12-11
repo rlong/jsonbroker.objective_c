@@ -3,7 +3,8 @@
 // Released under the MIT license ( http://opensource.org/licenses/MIT )
 //
 
-#import "JBJsonArray.h"
+
+@class JBJsonArray;
 
 @interface JBIPAddress : NSObject {
 

@@ -3,9 +3,9 @@
 // Released under the MIT license ( http://opensource.org/licenses/MIT )
 //
 
-#import "JBHostName.h"
-#import "JBIPAddress.h"
-#import "JBNetworkHost.h"
+@class JBHostName;
+@class JBIPAddress;
+@class JBNetworkHost;
 #import "JBNetworkAddress_Generated.h"
 
 @interface JBNetworkAddress : JBNetworkAddress_Generated {

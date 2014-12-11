@@ -3,6 +3,8 @@
 // Released under the MIT license ( http://opensource.org/licenses/MIT )
 //
 
+#import "JBHostName.h"
+#import "JBIPAddress.h"
 #import "JBNetworkHost.h"
 #import "JBObjectTracker.h"
 
