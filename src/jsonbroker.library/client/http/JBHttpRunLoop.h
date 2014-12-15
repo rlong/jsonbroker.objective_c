@@ -6,9 +6,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "JBHttpAsyncCall.h"
-#import "JBHttpCall.h"
-#import "JBHttpAsyncResponseHandler.h"
+@class JBHttpAsyncCall;
 
 @interface JBHttpRunLoop : NSObject {
 

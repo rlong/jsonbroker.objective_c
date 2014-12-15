@@ -3,8 +3,8 @@
 // Released under the MIT license ( http://opensource.org/licenses/MIT )
 //
 
-#import "JBJsonObject.h"
 
+@class JBJsonObject;
 
 @interface JBNetworkAddress_Generated  : NSObject {
     

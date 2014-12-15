@@ -3,7 +3,9 @@
 // Released under the MIT license ( http://opensource.org/licenses/MIT )
 //
 
+
 #import "JBHostName_Generated.h"
+#import "JBJsonObject.h"
 
 
 ////////////////////////////////////////////////////////////////////////////////

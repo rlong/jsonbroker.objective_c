@@ -5,7 +5,8 @@
 
 
 
-#import "JBJsonObject.h"
+@class JBJsonObject;
+
 
 
 @interface JBHostName_Generated  : NSObject {

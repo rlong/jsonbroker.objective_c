@@ -4,8 +4,6 @@
 //
 
 #import "JBHostName_Generated.h"
-#import "JBIPAddress.h"
-#import "JBJsonObject.h"
 
 @interface JBHostName : JBHostName_Generated {
 

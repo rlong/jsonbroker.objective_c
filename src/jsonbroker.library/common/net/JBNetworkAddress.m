@@ -6,6 +6,7 @@
 
 #import "JBHostName.h"
 #import "JBIPAddress.h"
+#import "JBJsonObject.h"
 #import "JBNetworkAddress.h"
 #import "JBNetworkHost.h"
 #import "JBObjectTracker.h"
