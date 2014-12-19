@@ -634,7 +634,18 @@ static NSObject* _NULL_OBJECT = nil;
 	
 }
 
+#pragma mark -
+#pragma mark <NSFastEnumeration> implementation
 
+
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id __unsafe_unretained [])buffer count:(NSUInteger)len {
+
+    return [_values countByEnumeratingWithState:state objects:buffer count:len];
+    
+}
+
+
+#pragma mark -
 #pragma mark instance lifecycle
 
 

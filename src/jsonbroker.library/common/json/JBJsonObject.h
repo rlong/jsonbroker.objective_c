@@ -8,7 +8,7 @@
 #import "JBJsonArray.h"
 
 
-@interface JBJsonObject : NSObject {
+@interface JBJsonObject : NSObject <NSFastEnumeration> {
 	
 	NSMutableDictionary* _values;
 	//@property (nonatomic, retain) NSMutableDictionary* values;
