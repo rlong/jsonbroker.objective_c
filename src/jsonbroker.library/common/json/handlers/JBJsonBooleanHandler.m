@@ -5,6 +5,7 @@
 
 
 #import "JBJsonBooleanHandler.h"
+#import "JBJsonInput.h"
 
 @implementation JBJsonBooleanHandler
 

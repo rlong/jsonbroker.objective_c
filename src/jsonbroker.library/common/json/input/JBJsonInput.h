@@ -7,7 +7,7 @@
 
 @interface JBJsonInput : NSObject {
     
-    NSMutableData** _mutableDataPool;
+    __unsafe_unretained NSMutableData**  _mutableDataPool;
 	int _mutableDataPoolIndex;
 	
 

@@ -4,7 +4,7 @@
 //
 
 
-#import "JBJsonInput.h"
+@class JBJsonInput;
 #import "JBJsonOutput.h"
 
 @interface JBJsonHandler : NSObject {

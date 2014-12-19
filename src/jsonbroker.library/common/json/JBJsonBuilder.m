@@ -5,8 +5,12 @@
 
 
 
+#import "JBJsonArray.h"
 #import "JBJsonBuilder.h"
+#import "JBJsonObject.h"
+#import "JBJsonStack.h"
 #import "JBLog.h"
+
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -130,7 +134,6 @@
 
 -(void)onObjectEndWithKey:(NSString*)key {
     
-    Log_debugString(key);
     [_stack pop];
 
 }

@@ -6,7 +6,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "JBJsonObject.h"
+@class JBJsonObject;
 
 @interface JBJsonObjectHelper : NSObject
 
@@ -19,4 +19,5 @@
 
 
 +(void)write:(JBJsonObject*)object toFile:(NSString*)path;
+
 @end

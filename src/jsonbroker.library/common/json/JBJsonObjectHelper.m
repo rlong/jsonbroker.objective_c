@@ -6,6 +6,7 @@
 #import "JBBaseException.h"
 #import "JBFileUtilities.h"
 #import "JBJsonBuilder.h"
+#import "JBJsonObject.h"
 #import "JBJsonObjectHelper.h"
 #import "JBJsonReader.h"
 #import "JBLog.h"

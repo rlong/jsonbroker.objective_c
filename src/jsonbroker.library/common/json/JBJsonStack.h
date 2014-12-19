@@ -7,8 +7,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import "JBJsonArray.h"
-#import "JBJsonObject.h"
+@class JBJsonArray;
+@class JBJsonObject;
+
 
 @interface JBJsonStack : NSObject {
     

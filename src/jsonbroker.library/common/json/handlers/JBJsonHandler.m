@@ -9,6 +9,7 @@
 #import "JBJsonArrayHandler.h"
 #import "JBJsonBooleanHandler.h"
 #import "JBJsonHandler.h"
+#import "JBJsonInput.h"
 #import "JBJsonNullHandler.h"
 #import "JBJsonNumberHandler.h"
 #import "JBJsonObject.h"

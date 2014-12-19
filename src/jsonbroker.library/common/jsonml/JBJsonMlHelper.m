@@ -9,6 +9,7 @@
 
 #import "JBJsonBuilder.h"
 #import "JBJsonMlHelper.h"
+#import "JBJsonObject.h"
 #import "JBMemoryModel.h"
 #import "JBSaxHandler.h"
 

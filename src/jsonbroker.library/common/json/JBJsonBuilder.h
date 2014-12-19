@@ -6,8 +6,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class JBJsonArray;
+@class JBJsonObject;
 #import "JBJsonDocumentHandler.h"
-#import "JBJsonStack.h"
+@class JBJsonStack;
 
 @interface JBJsonBuilder : NSObject <JBJsonDocumentHandler> {
     
