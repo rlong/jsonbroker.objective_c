@@ -51,6 +51,7 @@
 -(int)length;
 -(int)count;
 
+-(void)removeAllObjects;
 -(void)removeObjectAtIndex:(int)index;
 
 -(NSString*)toString;

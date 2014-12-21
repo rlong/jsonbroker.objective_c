@@ -314,6 +314,11 @@ static NSObject* _NULL_OBJECT = nil;
 	return (int)[_values count];
 }
 
+
+-(void)removeAllObjects {
+    [_values removeAllObjects];
+}
+
 -(void)removeObjectAtIndex:(int)index {
     [_values removeObjectAtIndex:index];
 }
