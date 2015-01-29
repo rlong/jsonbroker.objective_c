@@ -20,6 +20,8 @@
 
 @end
 
+extern int const HttpStatus_SWITCHING_PROTOCOLS_101;
+
 extern int const HttpStatus_OK_200;
 extern int const HttpStatus_NO_CONTENT_204;
 extern int const HttpStatus_PARTIAL_CONTENT_206;

@@ -36,7 +36,12 @@ static JBHttpStatus_ErrorDomain* _errorDomain = nil;
 +(NSString*)getReason:(int)statusCode {
     
     
+
     switch (statusCode) {
+    
+        case 101:
+            return @"Switching Protocols";
+
 		case 200:
 			return @"OK";
 		case 204:
@@ -109,6 +114,8 @@ static JBHttpStatus_ErrorDomain* _errorDomain = nil;
 
 @end
 
+
+int const HttpStatus_SWITCHING_PROTOCOLS_101 = 101;
 
 int const HttpStatus_OK_200 = 200;
 int const HttpStatus_NO_CONTENT_204 = 204;

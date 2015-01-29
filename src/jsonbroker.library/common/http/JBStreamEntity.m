@@ -56,7 +56,6 @@
 
 -(NSInputStream*)getContent {
     
-    Log_enteredMethod();
     
     if( nil == _content ) {
         [self setContent:[NSInputStream inputStreamWithURL:_contentSource]];
@@ -157,7 +156,6 @@
 -(void)dealloc{
     
     
-    Log_enteredMethod();
 
 
     [JBObjectTracker deallocated:self];

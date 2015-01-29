@@ -32,8 +32,11 @@
 -(void)addUnsignedInteger:(NSUInteger)value;
 
 
+// deprecated: use integerAtIndex
 -(NSInteger)getInteger:(NSUInteger)index;
 -(NSUInteger)getUnsignedInteger:(NSUInteger)index;
+
+-(NSInteger)integerAtIndex:(NSUInteger)index;
 
 -(JBJsonArray*)jsonArrayAtIndex:(NSUInteger)index;
 
@@ -44,6 +47,7 @@
 -(id)objectAtIndex:(NSUInteger)index;
 -(id)objectAtIndex:(NSUInteger)index defaultValue:(id)defaultValue;
 
+// deprecated: use stringAtIndex
 -(NSString*)getString:(NSUInteger)index;
 -(NSString*)getString:(NSUInteger)index defaultValue:(NSString*)defaultValue;
 
@@ -53,6 +57,9 @@
 
 -(void)removeAllObjects;
 -(void)removeObjectAtIndex:(int)index;
+
+-(NSString*)stringAtIndex:(NSUInteger)index;
+
 
 -(NSString*)toString;
 

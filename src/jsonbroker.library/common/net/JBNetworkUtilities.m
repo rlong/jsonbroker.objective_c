@@ -10,7 +10,7 @@
 #if defined(__MAC_OS_X_VERSION_MIN_REQUIRED)
 
 
-#import <CoreWLAN/CoreWLAN.h>
+#import <CoreWLAN/CoreWLAN.h> // <<< link project with `CoreWLAN.framework`
 
 #else
 

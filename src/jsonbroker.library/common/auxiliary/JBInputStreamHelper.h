@@ -11,6 +11,7 @@
 @interface JBInputStreamHelper : NSObject
 
 +(NSData*)readDataFromStream:(NSInputStream*)inputStream count:(int)count;
++(NSMutableData*)readMutableDataFromStream:(NSInputStream*)inputStream count:(int)count;
 
 +(void)seek:(NSInputStream*)inputStream to:(long long)seekPosition;
 

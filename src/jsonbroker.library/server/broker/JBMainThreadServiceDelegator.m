@@ -39,7 +39,6 @@
 
 -(void)processInMainThread:(JBBrokerMessage*)request {
 	
-	Log_enteredMethod();
 	
 	@try {
 		JBBrokerMessage* response = [_delegate process:request];

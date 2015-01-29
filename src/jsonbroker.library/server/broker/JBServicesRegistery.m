@@ -59,8 +59,8 @@ static JBServicesRegisteryErrorDomain* _errorDomain = nil;
 }
 
 
--(void)addUserInterfaceService:(id<JBMainThreadService>)service  {
-    
+-(void)addMainThreadService:(id<JBMainThreadService>)service  {
+
     if( nil == service ) {
         Log_warnPointer( service  );
         return;
@@ -69,18 +69,19 @@ static JBServicesRegisteryErrorDomain* _errorDomain = nil;
     NSString* serviceName = [[service serviceDescription] serviceName];
     
     id<JBService> existingService = [_services objectForKey:serviceName];
-    if( nil != existingService ) { 
+    if( nil != existingService ) {
         Log_warnString( serviceName );
         Log_warnPointer( existingService );
     }
     
-    JBMainThreadServiceDelegator* userInterfaceService = [[JBMainThreadServiceDelegator alloc] initWithDelegate:service];
+    JBMainThreadServiceDelegator* mainThreadService = [[JBMainThreadServiceDelegator alloc] initWithDelegate:service];
     
-	[_services setObject:userInterfaceService forKey:serviceName];
-	
-	[userInterfaceService release];
+    [_services setObject:mainThreadService forKey:serviceName];
     
+    [mainThreadService release];
+
 }
+
 
 -(void)addService:(id<JBDescribedService>)service {
 
@@ -93,7 +94,7 @@ static JBServicesRegisteryErrorDomain* _errorDomain = nil;
     { 
         
         id<JBMainThreadService> userInterfaceService = (id<JBMainThreadService>)service;
-        [self addUserInterfaceService:userInterfaceService];
+        [self addMainThreadService:userInterfaceService];
         
     } else { 
         
@@ -223,7 +224,6 @@ static JBServicesRegisteryErrorDomain* _errorDomain = nil;
     
 
     NSString* serviceName = [request serviceName];
-    Log_debugString( serviceName );
     id<JBService> serviceDelegate = [self getService:serviceName];
     return [serviceDelegate process:request];
     

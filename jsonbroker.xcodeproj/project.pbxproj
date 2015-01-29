@@ -223,6 +223,18 @@
 		AE42BF03147FB6EF000FC3A4 /* JBHttpResponseWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A928114640A39006037B8 /* JBHttpResponseWriter.m */; };
 		AE42BF10147FB725000FC3A4 /* JBOsxWebViewBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = AE10647B14669F8C00AA500D /* JBOsxWebViewBridge.h */; };
 		AE42BF11147FB725000FC3A4 /* JBOsxWebViewBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = AE10647C14669F8C00AA500D /* JBOsxWebViewBridge.m */; };
+		AE4A04691A72499600F0A3B8 /* JBFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4A04671A72499600F0A3B8 /* JBFrame.h */; };
+		AE4A046A1A72499600F0A3B8 /* JBFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4A04671A72499600F0A3B8 /* JBFrame.h */; };
+		AE4A046B1A72499600F0A3B8 /* JBFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4A04681A72499600F0A3B8 /* JBFrame.m */; };
+		AE4A046C1A72499600F0A3B8 /* JBFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4A04681A72499600F0A3B8 /* JBFrame.m */; };
+		AE4A046F1A7249B000F0A3B8 /* JBTextWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4A046D1A7249B000F0A3B8 /* JBTextWebSocket.h */; };
+		AE4A04701A7249B000F0A3B8 /* JBTextWebSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4A046D1A7249B000F0A3B8 /* JBTextWebSocket.h */; };
+		AE4A04711A7249B000F0A3B8 /* JBTextWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4A046E1A7249B000F0A3B8 /* JBTextWebSocket.m */; };
+		AE4A04721A7249B000F0A3B8 /* JBTextWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4A046E1A7249B000F0A3B8 /* JBTextWebSocket.m */; };
+		AE4A04751A7249C200F0A3B8 /* JBWebSocketUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4A04731A7249C200F0A3B8 /* JBWebSocketUtilities.h */; };
+		AE4A04761A7249C200F0A3B8 /* JBWebSocketUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4A04731A7249C200F0A3B8 /* JBWebSocketUtilities.h */; };
+		AE4A04771A7249C200F0A3B8 /* JBWebSocketUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4A04741A7249C200F0A3B8 /* JBWebSocketUtilities.m */; };
+		AE4A04781A7249C200F0A3B8 /* JBWebSocketUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4A04741A7249C200F0A3B8 /* JBWebSocketUtilities.m */; };
 		AE4EB8F316B0C19500BD8CBE /* JBHttpStatus_ErrorDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4EB8F216B0C19500BD8CBE /* JBHttpStatus_ErrorDomain.h */; };
 		AE4EB8F416B0C19500BD8CBE /* JBHttpStatus_ErrorDomain.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4EB8F216B0C19500BD8CBE /* JBHttpStatus_ErrorDomain.h */; };
 		AE573A111523F76D0020D2DC /* JBHttpRunLoop.h in Headers */ = {isa = PBXBuildFile; fileRef = AE573A0F1523F76D0020D2DC /* JBHttpRunLoop.h */; };
@@ -278,6 +290,10 @@
 		AE6ACDAC16BE2DC10026E65D /* JBHttpHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6ACDAB16BE2DC00026E65D /* JBHttpHeader.h */; };
 		AE6ACDAD16BE2DC10026E65D /* JBHttpHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6ACDAB16BE2DC00026E65D /* JBHttpHeader.h */; };
 		AE6ACDAE16BE2E580026E65D /* JBAuthenticationHeaderScannerUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A378314BC074000AEA32E /* JBAuthenticationHeaderScannerUnitTest.m */; };
+		AE6C33FB1A737767004F1DF2 /* JBSampleWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6C33FA1A737767004F1DF2 /* JBSampleWebServer.m */; };
+		AE6C33FC1A737908004F1DF2 /* CoreWLAN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEAE44F5170E7D2400D047DA /* CoreWLAN.framework */; };
+		AE6C33FF1A737AF1004F1DF2 /* JBEchoConnectRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6C33FE1A737AF1004F1DF2 /* JBEchoConnectRequestHandler.m */; };
+		AE6C34021A737C63004F1DF2 /* JBEchoWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6C34011A737C63004F1DF2 /* JBEchoWebSocket.m */; };
 		AE70205016AE60E400453991 /* JBContentDispositionUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AE70204F16AE60E400453991 /* JBContentDispositionUnitTest.m */; };
 		AE70205416AE6DE700453991 /* JBDelimiterDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = AE70205216AE6DE700453991 /* JBDelimiterDetector.h */; };
 		AE70205516AE6DE700453991 /* JBDelimiterDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = AE70205216AE6DE700453991 /* JBDelimiterDetector.h */; };
@@ -305,6 +321,9 @@
 		AE70207916AE809500453991 /* JBMultiPartReader.h in Headers */ = {isa = PBXBuildFile; fileRef = AE70207616AE809400453991 /* JBMultiPartReader.h */; };
 		AE70207A16AE809500453991 /* JBMultiPartReader.m in Sources */ = {isa = PBXBuildFile; fileRef = AE70207716AE809400453991 /* JBMultiPartReader.m */; };
 		AE70207B16AE809500453991 /* JBMultiPartReader.m in Sources */ = {isa = PBXBuildFile; fileRef = AE70207716AE809400453991 /* JBMultiPartReader.m */; };
+		AE75E9A51A73734A00AB01D6 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = AE75E9A41A73734A00AB01D6 /* assets */; };
+		AE75E9A71A73736200AB01D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE75E9A61A73736200AB01D6 /* main.m */; };
+		AE75E9AA1A7376EB00AB01D6 /* libjsonbroker.library.osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE42BE45147FB5C1000FC3A4 /* libjsonbroker.library.osx.a */; };
 		AE78B7A71512E6B10049BAD5 /* JBJsonBooleanHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AE78B7A51512E6B10049BAD5 /* JBJsonBooleanHandler.h */; };
 		AE78B7A81512E6B10049BAD5 /* JBJsonBooleanHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AE78B7A51512E6B10049BAD5 /* JBJsonBooleanHandler.h */; };
 		AE78B7A91512E6B10049BAD5 /* JBJsonBooleanHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AE78B7A61512E6B10049BAD5 /* JBJsonBooleanHandler.m */; };
@@ -771,6 +790,12 @@
 		AE42BE49147FB5C1000FC3A4 /* jsonbroker.library.osx-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "jsonbroker.library.osx-Prefix.pch"; sourceTree = "<group>"; };
 		AE42BE4A147FB5C1000FC3A4 /* jsonbroker_library_osx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jsonbroker_library_osx.h; sourceTree = "<group>"; };
 		AE42BE4B147FB5C1000FC3A4 /* jsonbroker_library_osx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jsonbroker_library_osx.m; sourceTree = "<group>"; };
+		AE4A04671A72499600F0A3B8 /* JBFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBFrame.h; sourceTree = "<group>"; };
+		AE4A04681A72499600F0A3B8 /* JBFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBFrame.m; sourceTree = "<group>"; };
+		AE4A046D1A7249B000F0A3B8 /* JBTextWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBTextWebSocket.h; sourceTree = "<group>"; };
+		AE4A046E1A7249B000F0A3B8 /* JBTextWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBTextWebSocket.m; sourceTree = "<group>"; };
+		AE4A04731A7249C200F0A3B8 /* JBWebSocketUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBWebSocketUtilities.h; sourceTree = "<group>"; };
+		AE4A04741A7249C200F0A3B8 /* JBWebSocketUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBWebSocketUtilities.m; sourceTree = "<group>"; };
 		AE4E441717446EDE009C2F97 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		AE4E441A17446EDE009C2F97 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		AE4E441E17446EDE009C2F97 /* jsonbroker.samples.ios-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "jsonbroker.samples.ios-Info.plist"; sourceTree = "<group>"; };
@@ -823,6 +848,12 @@
 		AE6884FA1469ED87000E8466 /* JBWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBWorkManager.h; sourceTree = "<group>"; };
 		AE6884FB1469ED87000E8466 /* JBWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBWorkManager.m; sourceTree = "<group>"; };
 		AE6ACDAB16BE2DC00026E65D /* JBHttpHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBHttpHeader.h; sourceTree = "<group>"; };
+		AE6C33F91A737767004F1DF2 /* JBSampleWebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBSampleWebServer.h; sourceTree = "<group>"; };
+		AE6C33FA1A737767004F1DF2 /* JBSampleWebServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBSampleWebServer.m; sourceTree = "<group>"; };
+		AE6C33FD1A737AF1004F1DF2 /* JBEchoConnectRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBEchoConnectRequestHandler.h; sourceTree = "<group>"; };
+		AE6C33FE1A737AF1004F1DF2 /* JBEchoConnectRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBEchoConnectRequestHandler.m; sourceTree = "<group>"; };
+		AE6C34001A737C63004F1DF2 /* JBEchoWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBEchoWebSocket.h; sourceTree = "<group>"; };
+		AE6C34011A737C63004F1DF2 /* JBEchoWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBEchoWebSocket.m; sourceTree = "<group>"; };
 		AE70204E16AE60E400453991 /* JBContentDispositionUnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBContentDispositionUnitTest.h; sourceTree = "<group>"; };
 		AE70204F16AE60E400453991 /* JBContentDispositionUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBContentDispositionUnitTest.m; sourceTree = "<group>"; };
 		AE70205216AE6DE700453991 /* JBDelimiterDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBDelimiterDetector.h; sourceTree = "<group>"; };
@@ -838,6 +869,10 @@
 		AE70207316AE7FAA00453991 /* JBMultiPartHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBMultiPartHandler.h; sourceTree = "<group>"; };
 		AE70207616AE809400453991 /* JBMultiPartReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBMultiPartReader.h; sourceTree = "<group>"; };
 		AE70207716AE809400453991 /* JBMultiPartReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBMultiPartReader.m; sourceTree = "<group>"; };
+		AE75E9581A73729600AB01D6 /* jsonbroker.samples.osx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jsonbroker.samples.osx.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE75E95B1A73729600AB01D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE75E9A41A73734A00AB01D6 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
+		AE75E9A61A73736200AB01D6 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AE78B7A51512E6B10049BAD5 /* JBJsonBooleanHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBJsonBooleanHandler.h; sourceTree = "<group>"; };
 		AE78B7A61512E6B10049BAD5 /* JBJsonBooleanHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBJsonBooleanHandler.m; sourceTree = "<group>"; };
 		AE7A6C0B16686571003EB854 /* JBWebServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBWebServer.h; sourceTree = "<group>"; };
@@ -1128,6 +1163,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AE75E9551A73729600AB01D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE6C33FC1A737908004F1DF2 /* CoreWLAN.framework in Frameworks */,
+				AE75E9AA1A7376EB00AB01D6 /* libjsonbroker.library.osx.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE86B0B71717C48C00AFC43E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1322,6 +1366,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AE4A04661A72498000F0A3B8 /* web_socket */ = {
+			isa = PBXGroup;
+			children = (
+				AE4A04671A72499600F0A3B8 /* JBFrame.h */,
+				AE4A04681A72499600F0A3B8 /* JBFrame.m */,
+				AE4A046D1A7249B000F0A3B8 /* JBTextWebSocket.h */,
+				AE4A046E1A7249B000F0A3B8 /* JBTextWebSocket.m */,
+				AE4A04731A7249C200F0A3B8 /* JBWebSocketUtilities.h */,
+				AE4A04741A7249C200F0A3B8 /* JBWebSocketUtilities.m */,
+			);
+			path = web_socket;
+			sourceTree = "<group>";
+		};
 		AE4E441C17446EDE009C2F97 /* jsonbroker.samples.ios */ = {
 			isa = PBXGroup;
 			children = (
@@ -1436,6 +1493,37 @@
 			path = work;
 			sourceTree = "<group>";
 		};
+		AE75E9591A73729600AB01D6 /* jsonbroker.samples.osx */ = {
+			isa = PBXGroup;
+			children = (
+				AE75E9A61A73736200AB01D6 /* main.m */,
+				AE75E95A1A73729600AB01D6 /* Supporting Files */,
+			);
+			path = jsonbroker.samples.osx;
+			sourceTree = "<group>";
+		};
+		AE75E95A1A73729600AB01D6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE75E95B1A73729600AB01D6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AE75E9871A73730B00AB01D6 /* jsonbroker.samples */ = {
+			isa = PBXGroup;
+			children = (
+				AE75E9A41A73734A00AB01D6 /* assets */,
+				AE6C33F91A737767004F1DF2 /* JBSampleWebServer.h */,
+				AE6C33FA1A737767004F1DF2 /* JBSampleWebServer.m */,
+				AE6C33FD1A737AF1004F1DF2 /* JBEchoConnectRequestHandler.h */,
+				AE6C33FE1A737AF1004F1DF2 /* JBEchoConnectRequestHandler.m */,
+				AE6C34001A737C63004F1DF2 /* JBEchoWebSocket.h */,
+				AE6C34011A737C63004F1DF2 /* JBEchoWebSocket.m */,
+			);
+			path = jsonbroker.samples;
+			sourceTree = "<group>";
+		};
 		AE86B0BC1717C48C00AFC43E /* jsonbroker.library.integration_test */ = {
 			isa = PBXGroup;
 			children = (
@@ -1521,6 +1609,7 @@
 				AE8DACC61717C96B0045B1A8 /* jsonbroker.integration_test */,
 				AEDBC2001717E76E0073ABA8 /* jsonbroker.integration_test */,
 				AE4E441C17446EDE009C2F97 /* jsonbroker.samples.ios */,
+				AE75E9591A73729600AB01D6 /* jsonbroker.samples.osx */,
 				AE8A9168146408C3006037B8 /* Frameworks */,
 				AE8A9167146408C3006037B8 /* Products */,
 			);
@@ -1534,6 +1623,7 @@
 				AE66BB0514CD1C3F00ACD757 /* jsonbroker.unit_test.app */,
 				AE86B0BA1717C48C00AFC43E /* libjsonbroker.library.integration_test.a */,
 				AEDBC1FE1717E76E0073ABA8 /* jsonbroker.integration_test.app */,
+				AE75E9581A73729600AB01D6 /* jsonbroker.samples.osx.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1573,6 +1663,7 @@
 				AE86B0FF1717C77900AFC43E /* jsonbroker.library.integration_test */,
 				AE8A929514640A39006037B8 /* jsonbroker.library.ios */,
 				AE105E581466623000AA500D /* jsonbroker.library.osx */,
+				AE75E9871A73730B00AB01D6 /* jsonbroker.samples */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -1655,6 +1746,7 @@
 			children = (
 				AE8A377B14BC073F00AEA32E /* headers */,
 				AEE2FC1816AE5AFE00C854B9 /* multi_part */,
+				AE4A04661A72498000F0A3B8 /* web_socket */,
 				AE8A920914640A39006037B8 /* JBHttpStatus.h */,
 				AE8A920A14640A39006037B8 /* JBHttpStatus.m */,
 				AE4EB8F216B0C19500BD8CBE /* JBHttpStatus_ErrorDomain.h */,
@@ -2159,6 +2251,7 @@
 				AE8B9A6C1551FC9D00F02F33 /* JBNumericUtilities.h in Headers */,
 				AE8B9A741551FC9D00F02F33 /* JBObjectReference.h in Headers */,
 				AE8B9A781551FC9D00F02F33 /* JBObjectTracker.h in Headers */,
+				AE4A04761A7249C200F0A3B8 /* JBWebSocketUtilities.h in Headers */,
 				AE8B9A7C1551FC9D00F02F33 /* JBRandomUtilities.h in Headers */,
 				AE8B9A801551FC9D00F02F33 /* JBStreamHelper.h in Headers */,
 				AE8B9A841551FC9D00F02F33 /* JBStringHelper.h in Headers */,
@@ -2193,6 +2286,7 @@
 				AEE2FC1C16AE5B1D00C854B9 /* JBContentDisposition.h in Headers */,
 				AE70205516AE6DE700453991 /* JBDelimiterDetector.h in Headers */,
 				AE70205D16AE6E6400453991 /* JBDelimiterIndicator.h in Headers */,
+				AE4A04701A7249B000F0A3B8 /* JBTextWebSocket.h in Headers */,
 				AE70206116AE6E8200453991 /* JBDelimiterFound.h in Headers */,
 				AE70206716AE712200453991 /* JBPartialDelimiterMatched.h in Headers */,
 				AE70206C16AE7D9A00453991 /* JBPartHandler.h in Headers */,
@@ -2232,6 +2326,7 @@
 				AEBC167A16E990AF00E3917C /* JBService.h in Headers */,
 				AEBC168A16E9BAAC00E3917C /* JBJsonReader.h in Headers */,
 				AEBC169016E9BABA00E3917C /* JBJsonReaderUnitTest.h in Headers */,
+				AE4A046A1A72499600F0A3B8 /* JBFrame.h in Headers */,
 				AED43DB416ED906200367B80 /* JBHttpResponseHandler.h in Headers */,
 				AE0AD81A170D506900D0174A /* JBDefaults.h in Headers */,
 				AE0AD81F170D6E1600D0174A /* JBHttpAsyncResponseHandler.h in Headers */,
@@ -2271,10 +2366,12 @@
 				AE105E6F1466624A00AA500D /* JBBrokerMessage.h in Headers */,
 				AE105E711466624A00AA500D /* JBBrokerMessageType.h in Headers */,
 				AE105E751466625900AA500D /* BaseException.h in Headers */,
+				AE4A04751A7249C200F0A3B8 /* JBWebSocketUtilities.h in Headers */,
 				AE105E8F1466627C00AA500D /* JBHttpStatus.h in Headers */,
 				AE105EAF146662BE00AA500D /* JBSecurityUtilities.h in Headers */,
 				AE105EC91466633200AA500D /* JBJavascriptCallbackAdapterHelper.h in Headers */,
 				AE105ED21466633C00AA500D /* JBServicesRegistery.h in Headers */,
+				AE4A046F1A7249B000F0A3B8 /* JBTextWebSocket.h in Headers */,
 				AE105ED41466633C00AA500D /* JBMainThreadServiceDelegator.h in Headers */,
 				AE105EE61466635B00AA500D /* JBHttpDelegate.h in Headers */,
 				AE105EEE1466635B00AA500D /* JBHttpResponseWriter.h in Headers */,
@@ -2339,6 +2436,7 @@
 				AE8B9A531551FC9D00F02F33 /* JBDataHelper.h in Headers */,
 				AE8B9A571551FC9D00F02F33 /* JBDateTimeUtilities.h in Headers */,
 				AE8B9A5F1551FC9D00F02F33 /* JBExceptionHelper.h in Headers */,
+				AE4A04691A72499600F0A3B8 /* JBFrame.h in Headers */,
 				AE8B9A631551FC9D00F02F33 /* JBFileUtilities.h in Headers */,
 				AE8B9A6B1551FC9D00F02F33 /* JBNumericUtilities.h in Headers */,
 				AE8B9A731551FC9D00F02F33 /* JBObjectReference.h in Headers */,
@@ -2474,6 +2572,23 @@
 			productReference = AE66BB0514CD1C3F00ACD757 /* jsonbroker.unit_test.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AE75E9571A73729600AB01D6 /* jsonbroker.samples.osx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE75E9721A73729700AB01D6 /* Build configuration list for PBXNativeTarget "jsonbroker.samples.osx" */;
+			buildPhases = (
+				AE75E9541A73729600AB01D6 /* Sources */,
+				AE75E9551A73729600AB01D6 /* Frameworks */,
+				AE75E9561A73729600AB01D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = jsonbroker.samples.osx;
+			productName = jsonbroker.samples.osx;
+			productReference = AE75E9581A73729600AB01D6 /* jsonbroker.samples.osx.app */;
+			productType = "com.apple.product-type.application";
+		};
 		AE86B0B91717C48C00AFC43E /* jsonbroker.library.integration_test */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE86B0C21717C48C00AFC43E /* Build configuration list for PBXNativeTarget "jsonbroker.library.integration_test" */;
@@ -2532,6 +2647,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0450;
+				TargetAttributes = {
+					AE75E9571A73729600AB01D6 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+				};
 			};
 			buildConfigurationList = AE8A9160146408C3006037B8 /* Build configuration list for PBXProject "jsonbroker" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2539,6 +2659,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = AE8A915B146408C3006037B8;
 			productRefGroup = AE8A9167146408C3006037B8 /* Products */;
@@ -2550,6 +2671,7 @@
 				AE86B0B91717C48C00AFC43E /* jsonbroker.library.integration_test */,
 				AE66BB0414CD1C3F00ACD757 /* jsonbroker.unit_test */,
 				AEDBC1FD1717E76E0073ABA8 /* jsonbroker.integration_test */,
+				AE75E9571A73729600AB01D6 /* jsonbroker.samples.osx */,
 			);
 		};
 /* End PBXProject section */
@@ -2565,6 +2687,14 @@
 				AEBC16B416E9D33B00E3917C /* JBJsonReaderUnitTest.testStatusPaused.json in Resources */,
 				AEBC16B516E9D33B00E3917C /* JBJsonReaderUnitTest.testStatusPlaying.json in Resources */,
 				AEBC16B616E9D33B00E3917C /* JBJsonReaderUnitTest.testStatusStopped.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE75E9561A73729600AB01D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE75E9A51A73734A00AB01D6 /* assets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2614,6 +2744,7 @@
 				AE39974A14BAE74300EDE2CA /* JBJsonNumberHandler.m in Sources */,
 				AE39974E14BAE74300EDE2CA /* JBJsonObjectHandler.m in Sources */,
 				AE39975214BAE74300EDE2CA /* JBJsonStringHandler.m in Sources */,
+				AE4A04781A7249C200F0A3B8 /* JBWebSocketUtilities.m in Sources */,
 				AE39975C14BAE95300EDE2CA /* JBJsonInput.m in Sources */,
 				AE39976814BAF4CF00EDE2CA /* JBFaultSerializer.m in Sources */,
 				AE39977A14BAFEA500EDE2CA /* JBBrokerJob.m in Sources */,
@@ -2671,9 +2802,11 @@
 				AE1AAB4319FF5185009D593E /* JBConnectionHandler.m in Sources */,
 				AE187F2815B55B93006F94BC /* JBWebUIDelegate.m in Sources */,
 				AEC4D11515DE141200A15CBC /* JBServiceDescription.m in Sources */,
+				AE4A046C1A72499600F0A3B8 /* JBFrame.m in Sources */,
 				AED4017A15F985B100559EDD /* JBSimpleLogConsumer.m in Sources */,
 				AED4018015F98C8000559EDD /* JBSimpleLogEntry.m in Sources */,
 				AEFCC703160AE42800B6C3FC /* JBLog.m in Sources */,
+				AE4A04721A7249B000F0A3B8 /* JBTextWebSocket.m in Sources */,
 				AECDB79D1613FF3A00367667 /* JBMetaProxy.m in Sources */,
 				AECDB7B7161428AE00367667 /* JBKeychainSecurityAdapter.m in Sources */,
 				AECDB7BB161428AE00367667 /* JBKeychainUtilities.m in Sources */,
@@ -2756,6 +2889,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AE75E9541A73729600AB01D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE75E9A71A73736200AB01D6 /* main.m in Sources */,
+				AE6C33FF1A737AF1004F1DF2 /* JBEchoConnectRequestHandler.m in Sources */,
+				AE6C34021A737C63004F1DF2 /* JBEchoWebSocket.m in Sources */,
+				AE6C33FB1A737767004F1DF2 /* JBSampleWebServer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE86B0B61717C48C00AFC43E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2790,6 +2934,7 @@
 				AE105EB0146662BE00AA500D /* JBSecurityUtilities.m in Sources */,
 				AE105ECA1466633200AA500D /* JBJavascriptCallbackAdapterHelper.m in Sources */,
 				AE105ED31466633C00AA500D /* JBServicesRegistery.m in Sources */,
+				AE4A04711A7249B000F0A3B8 /* JBTextWebSocket.m in Sources */,
 				AE105ED51466633C00AA500D /* JBMainThreadServiceDelegator.m in Sources */,
 				AE105EE71466635B00AA500D /* JBHttpDelegate.m in Sources */,
 				AE105EE91466635B00AA500D /* JBWebServer.m in Sources */,
@@ -2822,6 +2967,7 @@
 				AE8A375B14BBDAD500AEA32E /* JBDataEntity.m in Sources */,
 				AE8A376114BBE36D00AEA32E /* JBHttpErrorHelper.m in Sources */,
 				AE8A376714BBE99100AEA32E /* JBHttpRequest.m in Sources */,
+				AE4A04771A7249C200F0A3B8 /* JBWebSocketUtilities.m in Sources */,
 				AE8A377314BBFE8F00AEA32E /* JBStreamEntity.m in Sources */,
 				AE8A379614BC074000AEA32E /* JBAuthenticationHeaderScanner.m in Sources */,
 				AE8A37C614BC109000AEA32E /* JBCredentials.m in Sources */,
@@ -2854,6 +3000,7 @@
 				AE8B9A511551FC9D00F02F33 /* JBClassHelper.m in Sources */,
 				AE8B9A551551FC9D00F02F33 /* JBDataHelper.m in Sources */,
 				AE8B9A591551FC9D00F02F33 /* JBDateTimeUtilities.m in Sources */,
+				AE4A046B1A72499600F0A3B8 /* JBFrame.m in Sources */,
 				AE8B9A611551FC9D00F02F33 /* JBExceptionHelper.m in Sources */,
 				AE8B9A651551FC9D00F02F33 /* JBFileUtilities.m in Sources */,
 				AE8B9A6D1551FC9D00F02F33 /* JBNumericUtilities.m in Sources */,
@@ -3092,6 +3239,75 @@
 			};
 			name = Release;
 		};
+		AE75E9731A73729700AB01D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = jsonbroker.samples.osx/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AE75E9741A73729700AB01D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = jsonbroker.samples.osx/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		AE86B0C31717C48C00AFC43E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3289,6 +3505,15 @@
 			buildConfigurations = (
 				AE66BB1B14CD1C4000ACD757 /* Debug */,
 				AE66BB1C14CD1C4000ACD757 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE75E9721A73729700AB01D6 /* Build configuration list for PBXNativeTarget "jsonbroker.samples.osx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE75E9731A73729700AB01D6 /* Debug */,
+				AE75E9741A73729700AB01D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -18,6 +18,12 @@
 
 +(NSData*)readDataFromStream:(NSInputStream*)inputStream count:(int)count {
     
+    return [self readMutableDataFromStream:inputStream count:count];
+    
+}
+
++(NSMutableData*)readMutableDataFromStream:(NSInputStream*)inputStream count:(int)count {
+    
     NSMutableData* answer = [NSMutableData dataWithLength:count];
     void* mutableBytes = [answer mutableBytes];
     
@@ -38,6 +44,7 @@
     return answer;
     
 }
+
 
 
 +(void)seek:(NSInputStream*)inputStream to:(long long)seekPosition {

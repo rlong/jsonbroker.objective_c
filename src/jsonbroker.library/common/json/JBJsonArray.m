@@ -153,7 +153,7 @@ static NSObject* _NULL_OBJECT = nil;
     
 }
 
-
+// deprecated: use integerAtIndex
 -(NSInteger)getInteger:(NSUInteger)index {
 	
     id blob = [self getBlobAtIndex:index throwExceptionOnNil:true];
@@ -186,6 +186,24 @@ static NSObject* _NULL_OBJECT = nil;
 	
 	NSNumber* number = (NSNumber*)blob;
 	return [number unsignedIntegerValue];
+}
+
+
+-(NSInteger)integerAtIndex:(NSUInteger)index {
+
+    id blob = [self getBlobAtIndex:index throwExceptionOnNil:true];
+    
+    if( ![blob isKindOfClass:[NSNumber class]] ) {
+        
+        NSString* technicalError = [NSString stringWithFormat:@"![blob isKindOfClass:[NSNumber class]]; NSStringFromClass([blob class]) = %@", NSStringFromClass([blob class])];
+        BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
+        [e autorelease];
+        @throw e;
+    }
+    
+    NSNumber* number = (NSNumber*)blob;
+    return [number integerValue];
+
 }
 
 
@@ -321,6 +339,25 @@ static NSObject* _NULL_OBJECT = nil;
 
 -(void)removeObjectAtIndex:(int)index {
     [_values removeObjectAtIndex:index];
+}
+
+-(NSString*)stringAtIndex:(NSUInteger)index {
+    
+    
+    id blob = [self getBlobAtIndex:index throwExceptionOnNil:true];
+    
+    if( ![blob isKindOfClass:[NSString class]] ) {
+        
+        NSString* technicalError = [NSString stringWithFormat:@"![blob isKindOfClass:[NSString class]]; NSStringFromClass([blob class]) = %@", NSStringFromClass([blob class])];
+        BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
+        [e autorelease];
+        @throw e;
+    }
+    
+    NSString* answer = (NSString*)blob;
+    return answer;
+
+    
 }
 
 
