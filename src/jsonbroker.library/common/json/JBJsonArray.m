@@ -1,7 +1,8 @@
-// Copyright (c) 2013 Richard Long & HexBeerium
+// Copyright (c) 2015 Richard Long & HexBeerium
 //
 // Released under the MIT license ( http://opensource.org/licenses/MIT )
 //
+
 
 
 
@@ -10,6 +11,7 @@
 #import "JBJsonArrayHandler.h"
 #import "JBJsonObject.h"
 #import "JBJsonStringOutput.h"
+#import "JBMemoryModel.h"
 #import "JBObjectTracker.h"
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -380,6 +382,7 @@ static NSObject* _NULL_OBJECT = nil;
 }
 
 
+
 #pragma mark instance lifecycle
 
 -(id)init {
@@ -387,8 +390,12 @@ static NSObject* _NULL_OBJECT = nil;
 	JBJsonArray* answer = [super init];
 	
 	[JBObjectTracker allocated:answer];
-	
-	answer->_values = [[NSMutableArray alloc] init];
+    
+    if( nil != answer ) {
+        
+        answer->_values = [[NSMutableArray alloc] init];
+        
+    }
 	
 	return answer;
 }
@@ -398,8 +405,12 @@ static NSObject* _NULL_OBJECT = nil;
 	JBJsonArray* answer = [super init];
 	
 	[JBObjectTracker allocated:answer];
-	
-	answer->_values = [[NSMutableArray alloc] initWithCapacity:capacity];
+
+    if( nil != answer ) {
+        
+        answer->_values = [[NSMutableArray alloc] initWithCapacity:capacity];
+        
+    }
 	
 	return answer;
 	
@@ -412,7 +423,7 @@ static NSObject* _NULL_OBJECT = nil;
 	
 	[self setValues:nil];
 	
-	[super dealloc];
+    JBSuperDealloc();
 }
 
 
