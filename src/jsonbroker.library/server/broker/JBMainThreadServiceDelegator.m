@@ -61,7 +61,7 @@
 
 -(JBBrokerMessage*)process:(JBBrokerMessage*)request {
 	
-	Log_enteredMethod();
+//	Log_enteredMethod();
 	
 	[self setException:nil];
 	[self setResponse:nil];
