@@ -4,6 +4,8 @@
 //
 
 
+#include <sys/socket.h> // `SOL_SOCKET`
+
 
 
 #import "JBAuthRequestHandler.h"
@@ -212,10 +214,28 @@ static int _connectionId = 1;
             
             // ^^^ derived from [ReceiveServerController startReceive:] in sample project `SimpleNetworkStreams`
             
+
+            // vvv derived from [iphone - CFNetwork HTTP timeout? - Stack Overflow](http://stackoverflow.com/questions/962076/cfnetwork-http-timeout)
+            {
+                
+                // setup the `readStream` to never timeout on a read
+                
+#define _kCFStreamPropertyReadTimeout CFSTR("_kCFStreamPropertyReadTimeout")
+                
+                double to = 0; // never timeout
+                CFNumberRef num = CFNumberCreate(kCFAllocatorDefault, kCFNumberDoubleType, &to);
+                CFReadStreamSetProperty(readStream, _kCFStreamPropertyReadTimeout, num);
+                CFRelease(num);
+                
+            }
+            // ^^^ derived from [iphone - CFNetwork HTTP timeout? - Stack Overflow](http://stackoverflow.com/questions/962076/cfnetwork-http-timeout)
+
+            
             [answer->_inputStream open];
             [answer->_outputStream open];
             
         }
+        
         
         {
             int postFlags = fcntl([socket fileDescriptor], F_GETFL, 0);
@@ -228,7 +248,20 @@ static int _connectionId = 1;
             Log_debugInt(postFlags);
             
         }
-        
+
+        {
+            socklen_t vslen = sizeof(struct timeval);
+            struct timeval trcv;
+            
+            int32_t err = getsockopt( [socket fileDescriptor], SOL_SOCKET, SO_RCVTIMEO, &trcv, &vslen);
+            if( 0 != err ) {
+                Log_errorFormat( @"getsockopt() call failed; err = %d; errno = %d; strerror(errno) = '%s'", err, errno, strerror(errno) );
+            } else {
+                Log_debugFormat( @"trcv.tv_sec = %ld; trcv.tv_usec = %ld", trcv.tv_sec, trcv.tv_usec );
+            }
+            
+        }
+
         answer->_delegate = [[JBHttpDelegate alloc] initWithRequestHandler:requestHandler];
     }
     
