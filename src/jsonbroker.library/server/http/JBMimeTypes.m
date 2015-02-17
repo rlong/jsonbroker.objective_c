@@ -36,6 +36,7 @@ static NSMutableDictionary* mimeTypes = nil;
 	[mimeTypes setObject:@"text/x.typescript" forKey:@".ts"]; // http://stackoverflow.com/questions/13213787/whats-the-mime-type-of-typescript
 	[mimeTypes setObject:@"application/x-font-ttf" forKey:@".ttf"]; // http://symbolset.com/blog/properly-serve-webfonts/
 	[mimeTypes setObject:@"application/x-font-woff" forKey:@".woff"]; // http://symbolset.com/blog/properly-serve-webfonts/
+    [mimeTypes setObject:@"application/font-woff2" forKey:@".woff2"]; // http://stackoverflow.com/questions/25796609/font-face-isnt-working-in-iis-8-0
 
 }
 
