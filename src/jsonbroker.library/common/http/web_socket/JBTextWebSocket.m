@@ -66,6 +66,8 @@
 -(NSMutableData*)recieveTextFrameBytes {
     
     
+    
+    
     JBFrame* frame = [JBFrame readFrame:_inputStream];
     if( nil == frame ) {
         return nil;
@@ -106,8 +108,6 @@
 }
 
 -(void)sendCloseFrame {
-    
-    
     
     Log_enteredMethod();
     JBFrame* frame = [[JBFrame alloc] initWithOpCode:JBFrame_OPCODE_CONNECTION_CLOSE payloadLength:0];

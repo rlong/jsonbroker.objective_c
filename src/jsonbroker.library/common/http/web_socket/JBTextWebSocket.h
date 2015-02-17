@@ -36,7 +36,7 @@
 
 -(NSString*)recieveTextFrame;
 
-//-(void)sendCloseFrame;
+-(void)sendCloseFrame;
 
 -(void)sendTextFrame:(NSString*)text;
 

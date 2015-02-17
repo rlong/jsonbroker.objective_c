@@ -41,7 +41,6 @@
 }
 
 
-
 -(uint8_t)opCode {
     
     return _opCode;
@@ -67,6 +66,10 @@
     
     // method failed
     if( 0 > bytesRead ) {
+        
+        Log_errorInt( [inputStream streamStatus] );
+        Log_errorError( [inputStream streamError] );
+
         @throw [JBBaseException baseExceptionWithOriginator:self line:__LINE__ faultStringFormat:@"0 > bytesRead; bytesRead = %d", bytesRead];
     }
     
@@ -96,9 +99,29 @@
         opCode = 0x7f & byte0; // mask of the 'FIN_BIT'
         
         if( JBFrame_OPCODE_TEXT_FRAME == opCode ) {
+            
             // ok
+            Log_debug( @"JBFrame_OPCODE_TEXT_FRAME" );
+            
         } else if( JBFrame_OPCODE_CONNECTION_CLOSE == opCode ) {
+            
             // ok
+            Log_debug( @"JBFrame_OPCODE_CONNECTION_CLOSE" );
+            
+        } else if( JBFrame_OPCODE_PONG == opCode ) {
+            
+            
+            // vvv [RFC 6455 - The WebSocket Protocol](https://tools.ietf.org/html/rfc6455#section-5.5.3)
+            
+//            A Pong frame MAY be sent unsolicited.  This serves as a
+//            unidirectional heartbeat.  A response to an unsolicited Pong frame is
+//            not expected.
+            
+            // ^^^ [RFC 6455 - The WebSocket Protocol](https://tools.ietf.org/html/rfc6455#section-5.5.3)
+            
+            // ok
+            Log_debug( @"JBFrame_OPCODE_PONG" );
+            
         } else {
             @throw  [JBBaseException baseExceptionWithOriginator:self line:__LINE__ faultStringFormat:@"unhandled opcode; opCode = %d", opCode];
         }
@@ -141,7 +164,12 @@
 +(JBFrame*)readFrame:(NSInputStream*)inputStream {
     
     @try {
-        return [self tryReadFrame:inputStream];
+        JBFrame* answer = nil;
+        do {
+            answer = [self tryReadFrame:inputStream];
+        }
+        while( nil != answer && JBFrame_OPCODE_PONG == [answer opCode] ); // we can get unsolicited `pong`s
+        return answer;
     }
     @catch (NSException *exception) {
         Log_errorException( exception );
@@ -167,7 +195,6 @@
 -(void)writeTo:(NSOutputStream*)outputStream {
     
     uint8_t byte0 = JBFrame_FIN_BIT|_opCode;
-    Log_debugInt( byte0 );
     
     uint8_t byte1;
     bool usingExtendedLength = false;

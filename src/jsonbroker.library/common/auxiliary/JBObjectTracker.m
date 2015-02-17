@@ -78,8 +78,21 @@ static NSMutableDictionary* _objects;
 
 +(void)reportForCaller:(const char*)caller {
 	
+    
+    
 #ifdef DEBUG
 
+    
+#if __has_feature(objc_arc)
+    Log_info(@"__has_feature(objc_arc)");
+#endif
+
+    
+#if ! __has_feature(objc_arc)
+    Log_info(@"! __has_feature(objc_arc)");
+#endif
+
+    
     @synchronized(_objects) {
         
         Log_debugUtf8String( caller );
