@@ -103,6 +103,7 @@
     
     uint8_t buffer[BUFFER_SIZE];
     
+    
     long long bytesRemaining = count;
     
     while( 0 < bytesRemaining ) {
@@ -136,16 +137,8 @@
         
         bytesRemaining -= bytesRead;
         
+        [JBOutputStreamHelper writeTo:outputStream buffer:buffer bufferLength:bytesRead];
         
-        long bytesWritten = [JBOutputStreamHelper writeTo:outputStream buffer:buffer maxLength:bytesRead];
-        
-        if( 0 != bytesRead && 0 == bytesWritten ) {
-            
-            
-            BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultStringFormat:@"0 != bytesRead && 0 == bytesWritten; bytesRead = %ld; bytesRemaining = %ld", bytesRead, bytesRemaining];
-            [e autorelease];
-            @throw  e;
-        }
     }
 }
 

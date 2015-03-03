@@ -10,26 +10,40 @@
 
 @implementation JBOutputStreamHelper
 
-+(long)writeTo:(NSOutputStream*)outputStream buffer:(const uint8_t *)buffer maxLength:(NSUInteger)length {
+
++(void)writeTo:(NSOutputStream*)outputStream buffer:(const uint8_t *)buffer bufferLength:(NSUInteger)bufferLength {
     
-    long answer = [outputStream write:buffer maxLength:length];
+
+    NSUInteger bufferRemaining = bufferLength;
+    NSUInteger bufferOffset = 0;
     
-    // error
-    if( 0 > answer ) {
+    while( 0 < bufferRemaining ) {
+
+        long numBytesWritten = [outputStream write:buffer+bufferOffset maxLength:bufferRemaining];
         
-        // More information about the error can be obtained with streamError
-        NSError* error = [outputStream streamError];
-        
-        JBBaseException* e = [JBBaseException baseExceptionWithOriginator:self line:__LINE__ callTo:@"[NSOutputStream write:maxLength:]" failedWithError:error];
-        
-        if( EPIPE == [error code] ) {
-            [e setErrorDomain:[JBStreamHelper ERROR_DOMAIN_BROKEN_PIPE]];
+        // error
+        if( 0 > numBytesWritten ) {
+            
+            // More information about the error can be obtained with streamError
+            NSError* error = [outputStream streamError];
+            
+            JBBaseException* e = [JBBaseException baseExceptionWithOriginator:self line:__LINE__ callTo:@"[NSOutputStream write:maxLength:]" failedWithError:error];
+            
+            if( EPIPE == [error code] ) {
+                [e setErrorDomain:[JBStreamHelper ERROR_DOMAIN_BROKEN_PIPE]];
+            }
+            
+            @throw  e;
         }
         
-        @throw  e;
+        bufferRemaining -= numBytesWritten;
+        bufferOffset += numBytesWritten;
+        
+        if( 0 < bufferRemaining ) {
+            Log_debugInt( bufferRemaining );
+        }
+
     }
-    
-    return answer;
     
     
 }

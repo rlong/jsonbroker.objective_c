@@ -127,7 +127,7 @@
     JBAutorelease( frame );
     
     [frame writeTo:_outputStream];
-    [JBOutputStreamHelper writeTo:_outputStream buffer:[utf8Data bytes] maxLength:[utf8Data length]];
+    [JBOutputStreamHelper writeTo:_outputStream buffer:[utf8Data bytes] bufferLength:[utf8Data length]];
 
     // TextWebSocket.sendTextFrame() in java sends a flush but there does not appear to be an API to flush an `NSOutputStream`
     

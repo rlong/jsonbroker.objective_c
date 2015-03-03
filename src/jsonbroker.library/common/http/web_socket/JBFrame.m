@@ -222,23 +222,23 @@
         @throw [JBBaseException baseExceptionWithOriginator:self line:__LINE__ faultStringFormat:@"unhandled payload length (too large); _payloadLength = %d", _payloadLength];
     }
     
-    [JBOutputStreamHelper writeTo:outputStream buffer:&byte0 maxLength:1];
+    [JBOutputStreamHelper writeTo:outputStream buffer:&byte0 bufferLength:1];
     
     if( nil != _maskingKey ) {
         byte1 |= JBFrame_MASK_BIT;
     }
     
-    [JBOutputStreamHelper writeTo:outputStream buffer:&byte1 maxLength:1];
+    [JBOutputStreamHelper writeTo:outputStream buffer:&byte1 bufferLength:1];
     
     if( usingExtendedLength ) {
 
-        [JBOutputStreamHelper writeTo:outputStream buffer:extendedLength maxLength:2];
+        [JBOutputStreamHelper writeTo:outputStream buffer:extendedLength bufferLength:2];
 
     }
     
     if( nil != _maskingKey ) {
         
-        [JBOutputStreamHelper writeTo:outputStream buffer:_maskingKey maxLength:JBFrame_MASKING_KEY_LENGTH];
+        [JBOutputStreamHelper writeTo:outputStream buffer:_maskingKey bufferLength:JBFrame_MASKING_KEY_LENGTH];
         
     }
 

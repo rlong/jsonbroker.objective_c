@@ -206,8 +206,6 @@ static int _connectionId = 1;
                 
                 [answer setInputStream:(NSInputStream*)readStream];
                 [answer setOutputStream:(NSOutputStream*)writeStream];
-                
-                
             }
             CFRelease(readStream);
             CFRelease(writeStream);
