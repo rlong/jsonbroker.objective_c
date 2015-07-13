@@ -5,8 +5,10 @@
 
 #import <Foundation/Foundation.h>
 
+
+@class JBBaseException;
 #import "JBJob.h"
-#import "JBJobListener.h"
+@protocol JBJobListener;
 
 @interface JBListenedJob : NSObject <JBJob> {
     
@@ -22,8 +24,8 @@
     
     
     // exceptionCaughtDuringExecute
-    BaseException* _exceptionCaughtDuringExecute;
-    //@property (nonatomic, retain) BaseException* exceptionCaughtDuringExecute;
+    JBBaseException* _exceptionCaughtDuringExecute;
+    //@property (nonatomic, retain) JBBaseException* exceptionCaughtDuringExecute;
     //@synthesize exceptionCaughtDuringExecute = _exceptionCaughtDuringExecute;
 
 

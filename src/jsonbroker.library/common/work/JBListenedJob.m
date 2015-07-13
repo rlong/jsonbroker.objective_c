@@ -29,8 +29,8 @@
 //@synthesize listener = _listener;
 
 // exceptionCaughtDuringExecute
-//BaseException* _exceptionCaughtDuringExecute;
-@property (nonatomic, retain) BaseException* exceptionCaughtDuringExecute;
+//JBBaseException* _exceptionCaughtDuringExecute;
+@property (nonatomic, retain) JBBaseException* exceptionCaughtDuringExecute;
 //@synthesize exceptionCaughtDuringExecute = _exceptionCaughtDuringExecute;
 
 
@@ -53,10 +53,6 @@
         [_delegate execute];
     }
     @catch (JBBaseException *exception) {
-        
-        [self setExceptionCaughtDuringExecute:exception];
-    }
-    @catch (BaseException *exception) {
         
         [self setExceptionCaughtDuringExecute:exception];
     }
@@ -224,8 +220,8 @@
 @synthesize listener = _listener;
 
 // exceptionCaughtDuringExecute
-//BaseException* _exceptionCaughtDuringExecute;
-//@property (nonatomic, retain) BaseException* exceptionCaughtDuringExecute;
+//JBBaseException* _exceptionCaughtDuringExecute;
+//@property (nonatomic, retain) JBBaseException* exceptionCaughtDuringExecute;
 @synthesize exceptionCaughtDuringExecute = _exceptionCaughtDuringExecute;
 
 

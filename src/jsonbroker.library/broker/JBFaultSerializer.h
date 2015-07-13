@@ -12,6 +12,6 @@
 
 +(JBJsonObject*)toJSONObject:(NSException*)exception;
 
-+(BaseException*)toBaseException:(JBJsonObject*)jsonObject;
++(JBBaseException*)toBaseException:(JBJsonObject*)jsonObject;
 
 @end

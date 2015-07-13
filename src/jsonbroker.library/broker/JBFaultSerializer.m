@@ -71,12 +71,12 @@
 
 }
 
-+(BaseException*)toBaseException:(JBJsonObject*)jsonObject {
++(JBBaseException*)toBaseException:(JBJsonObject*)jsonObject {
     
     NSString* originator = [jsonObject stringForKey:@"originator" defaultValue:@"NULL"];
     NSString* fault_string = [jsonObject stringForKey:@"faultMessage" defaultValue:@"NULL"];
     
-    BaseException* answer = [[BaseException alloc] initWithOriginator:originator faultMessage:fault_string];
+    JBBaseException* answer = [[JBBaseException alloc] initWithOriginator:originator faultMessage:fault_string];
     [answer autorelease];
     
 

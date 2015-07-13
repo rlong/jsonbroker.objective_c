@@ -3,6 +3,8 @@
 // Released under the MIT license ( http://opensource.org/licenses/MIT )
 //
 
+#include <stdlib.h>
+
 #import "JBRandomUtilities.h"
 #import "JBStringHelper.h"
 

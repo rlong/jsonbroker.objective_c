@@ -3,6 +3,7 @@
 //  Released under the MIT license ( http://opensource.org/licenses/MIT )
 //
 
+#import "JBBaseException.h"
 #import "JBMainThreadJobListener1.h"
 
 #import "JBLog.h"
@@ -64,7 +65,7 @@
     if( nil != _delegate )  {
 
         id<JBJob> job = [params objectAtIndex:0];
-        BaseException* exception = [params objectAtIndex:1];
+        JBBaseException* exception = [params objectAtIndex:1];
 
         [_delegate jobFailed:job withException:exception];
     }

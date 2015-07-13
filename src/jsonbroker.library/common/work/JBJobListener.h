@@ -12,7 +12,7 @@
 @protocol JBJobListener <NSObject>
 
 -(void)jobCompleted:(id<JBJob>)job;
--(void)jobFailed:(id<JBJob>)job withException:(BaseException*)exception;
+-(void)jobFailed:(id<JBJob>)job withException:(JBBaseException*)exception;
 
 
 @end
