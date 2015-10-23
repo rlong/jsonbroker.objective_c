@@ -3,6 +3,9 @@
 //  Released under the MIT license ( http://opensource.org/licenses/MIT )
 //
 
+
+#import <Foundation/Foundation.h>
+
 #import "JBJob.h"
 
 @interface JBWorkQueue : NSObject {

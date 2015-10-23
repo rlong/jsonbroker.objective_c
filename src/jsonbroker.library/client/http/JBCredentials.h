@@ -4,6 +4,9 @@
 //
 
 
+#import <Foundation/Foundation.h>
+
+
 @interface JBCredentials : NSObject {
 
 	NSString* _username;
