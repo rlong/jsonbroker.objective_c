@@ -40,13 +40,15 @@
 	
 	// OSX ... 
     Log_debug(@"OSX: using 'kSecClassInternetPassword'");
-	[query setObject:kSecClassInternetPassword forKey:(NSString *)kSecClass];
+    NSString* secClassInternetPassword = (NSString *)secClassInternetPassword;
+	[query setObject:secClassInternetPassword forKey:(NSString *)kSecClass];
     
 #else
 	
 	// iOS ... 
     Log_debug(@"iOS: returning 'kSecClassGenericPassword'");
-	[query setObject:kSecClassGenericPassword forKey:(NSString *)kSecClass];
+    NSString* secClassGenericPassword = (NSString *)kSecClassGenericPassword;
+	[query setObject:secClassGenericPassword forKey:(NSString *)kSecClass];
 	
 #endif
 
@@ -170,7 +172,7 @@
 			@throw e;
 		}
         Log_debugPointer( passwordData );
-        Log_debugString( [passwordData objectForKey:kSecAttrAccount] );
+        Log_debugString( [passwordData objectForKey:(NSString*)kSecAttrAccount] );
 		
         
     }
@@ -223,7 +225,7 @@
         
         NSDictionary* attributesDictionary = (NSDictionary*)attributes;
         
-        id secAttrAccount = [attributesDictionary objectForKey:kSecAttrAccount]; // 'acct'
+        id secAttrAccount = [attributesDictionary objectForKey:(NSString*)kSecAttrAccount]; // 'acct'
 
         NSString* answer = nil;
 

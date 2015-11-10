@@ -48,7 +48,7 @@
     
 }
 
--(void)handleException:(BaseException*)e {
+-(void)handleExceptionZZZ:(BaseException*)e {
     
     Log_errorException(e);
 
