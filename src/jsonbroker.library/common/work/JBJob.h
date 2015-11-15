@@ -3,6 +3,10 @@
 //  Released under the MIT license ( http://opensource.org/licenses/MIT )
 //
 
+
+#import <Foundation/Foundation.h>
+
+
 @protocol JBJob <NSObject>
 
 -(void)execute; 

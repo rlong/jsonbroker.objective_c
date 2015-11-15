@@ -4,6 +4,8 @@
 //
 
 
+#import <Foundation/Foundation.h>
+
 
 @class JBFileHandle;
 

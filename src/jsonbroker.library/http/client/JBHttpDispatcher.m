@@ -273,24 +273,11 @@
         [answer setHTTPBody:[dataEntity data]];
     } else { 
 
-        if( NO ) {
-            
-            /* from the docs on [NSMutableURLRequest setHTTPBodyStream:] ... 
-             
-             Parameters
-             inputStream
-             The input stream that will be the request body of the receiver. The entire contents of the stream will be sent as the body, as in an HTTP POST request. The inputStream should be unopened and the receiver will take over as the stream’s delegate.
-             */
-            [answer setHTTPBodyStream:[entity getContent]];
-            
-        } else {
-            
-            NSInputStream* inputStream = [entity getContent];
-            int contentLength = (int)[entity getContentLength];
-            
-            NSData* httpBody = [JBInputStreamHelper readDataFromStream:inputStream count:contentLength];
-            [answer setHTTPBody:httpBody];
-        }
+        NSInputStream* inputStream = [entity getContent];
+        int contentLength = (int)[entity getContentLength];
+        
+        NSData* httpBody = [JBInputStreamHelper readDataFromStream:inputStream count:contentLength];
+        [answer setHTTPBody:httpBody];
     }
     
     NSString* contentLength = [NSString stringWithFormat:@"%lld", [entity getContentLength]];

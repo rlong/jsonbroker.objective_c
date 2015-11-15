@@ -64,18 +64,6 @@ const char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a'
     
     NSString* answer;
     
-    if( NO ) { 
-        
-        NSURL* url = [NSURL fileURLWithPath:path];
-        
-        NSString* answer = [url absoluteString];
-        
-        if( [answer hasPrefix:@"file://localhost/"] )  {
-            
-            answer = [answer stringByReplacingOccurrencesOfString:@"file://localhost/" withString:@"file:///"];
-            
-        }
-    }
     
     if( isWindowsPath ) { 
         answer = [NSString stringWithFormat:@"file:///%@", path];

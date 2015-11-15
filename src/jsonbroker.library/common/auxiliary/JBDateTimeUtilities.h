@@ -4,6 +4,9 @@
 //
 
 
+
+#import <Foundation/Foundation.h>
+
 #import <sys/time.h>
 
 @interface JBDateTimeUtilities : NSObject 

@@ -29,7 +29,9 @@
     CC_SHA1_Final( hashBytes, &sha1Context);
     
     NSData* hashData = [NSData dataWithBytes:hashBytes length:20];
-    NSString* answer = [hashData base64Encoding];
+    
+    NSDataBase64EncodingOptions options;
+    NSString* answer = [hashData base64EncodedStringWithOptions:options];
     return answer;
     
 }

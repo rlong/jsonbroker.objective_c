@@ -33,36 +33,19 @@
 +(JBJsonArray*)getStackTrace:(NSException*)e {
     
     e = [self getRootCause:e];
+
     
-    if( NO ) {
-        
-        
-        NSArray* stack = [e callStackReturnAddresses];
-        
-        JBJsonArray* answer = [[JBJsonArray alloc] initWithCapacity:[stack count]];
-        [answer autorelease];
-        
-        for( NSNumber* n in stack ) {
-            NSString* frameAddress = [NSString stringWithFormat:@"0x%lx", [n longValue]];
-            [answer add:frameAddress];
-        }
-        
-        return answer;
-        
-    } else {
-
-        NSArray* callStackSymbols = [e callStackSymbols];
-        JBJsonArray* answer = [[JBJsonArray alloc] initWithCapacity:[callStackSymbols count]];
-        [answer autorelease];
-        
-        for( NSString* callStackSymbol in callStackSymbols ) {
-            callStackSymbol = [callStackSymbol stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            [answer add:callStackSymbol];
-        }
-        
-        return answer;
-
+    NSArray* callStackSymbols = [e callStackSymbols];
+    JBJsonArray* answer = [[JBJsonArray alloc] initWithCapacity:[callStackSymbols count]];
+    [answer autorelease];
+    
+    for( NSString* callStackSymbol in callStackSymbols ) {
+        callStackSymbol = [callStackSymbol stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [answer add:callStackSymbol];
     }
+    
+    return answer;
+
 
 
 }
