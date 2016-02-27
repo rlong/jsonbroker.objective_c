@@ -8,6 +8,7 @@
 
 #import "JBEntity.h"
 
+// __attribute__ ((deprecated)) // use HLDataEntity
 @interface JBDataEntity : NSObject<JBEntity> {
     
     // data

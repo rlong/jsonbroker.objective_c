@@ -7,9 +7,13 @@
 #import "JBMemoryModel.h"
 #import "JBStringHelper.h"
 
+
+extern const char hexDigits[]; // see CAStringHelper
+
+
 @implementation JBStringHelper
 
-const char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
+// const char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
 
 +(NSString*)trim:(NSString*)input {
     

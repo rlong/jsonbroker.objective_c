@@ -115,21 +115,21 @@ static JBHttpStatus_ErrorDomain* _errorDomain = nil;
 @end
 
 
-int const HttpStatus_SWITCHING_PROTOCOLS_101 = 101;
-
-int const HttpStatus_OK_200 = 200;
-int const HttpStatus_NO_CONTENT_204 = 204;
-int const HttpStatus_PARTIAL_CONTENT_206 = 206;
-
-int const HttpStatus_NOT_MODIFIED_304 = 304;
-
-int const HttpStatus_BAD_REQUEST_400 = 400;
-int const HttpStatus_UNAUTHORIZED_401 = 401;
-int const HttpStatus_FORBIDDEN_403 = 403;
-int const HttpStatus_NOT_FOUND_404 = 404;
-int const HttpStatus_REQUEST_ENTITY_TOO_LARGE_413 = 413;
-
-int const HttpStatus_INTERNAL_SERVER_ERROR_500 = 500;
-int const HttpStatus_NOT_IMPLEMENTED_501 = 501;
+//int const HttpStatus_SWITCHING_PROTOCOLS_101 = 101;
+//
+//int const HttpStatus_OK_200 = 200;
+//int const HttpStatus_NO_CONTENT_204 = 204;
+//int const HttpStatus_PARTIAL_CONTENT_206 = 206;
+//
+//int const HttpStatus_NOT_MODIFIED_304 = 304;
+//
+//int const HttpStatus_BAD_REQUEST_400 = 400;
+//int const HttpStatus_UNAUTHORIZED_401 = 401;
+//int const HttpStatus_FORBIDDEN_403 = 403;
+//int const HttpStatus_NOT_FOUND_404 = 404;
+//int const HttpStatus_REQUEST_ENTITY_TOO_LARGE_413 = 413;
+//
+//int const HttpStatus_INTERNAL_SERVER_ERROR_500 = 500;
+//int const HttpStatus_NOT_IMPLEMENTED_501 = 501;
 
 

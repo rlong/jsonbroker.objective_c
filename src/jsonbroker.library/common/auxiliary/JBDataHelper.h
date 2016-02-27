@@ -8,6 +8,8 @@
 
 #import "JBEntity.h"
 
+
+__attribute__ ((deprecated)) // use CADataHelper & HLEntityHelper
 @interface JBDataHelper : NSObject
 
 
@@ -17,6 +19,6 @@
 // DEPRECATED: use [StringHelper toUtf8Data]
 +(NSData*)getUtf8Data:(NSString*)input;
 
-+(NSData*)fromEntity:(id<JBEntity>)entity;
++(NSData*)fromEntity:(id<JBEntity>)entity; // use [HLEntityHelper toData:]
 
 @end

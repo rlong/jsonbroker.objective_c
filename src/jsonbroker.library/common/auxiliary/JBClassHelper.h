@@ -6,12 +6,14 @@
 
 #import <Foundation/Foundation.h>
 
+
+__attribute__ ((deprecated)) // use CAClassHelper
 @interface JBClassHelper  : NSObject {
 
 }
 
 
-+(NSString*)getClassName:(id)object;
++(NSString*)getClassName:(id)object __attribute__ ((deprecated));
 
 
 @end

@@ -5,6 +5,8 @@
 
 #import <Foundation/Foundation.h>
 
+
+//__attribute__ ((deprecated)) // use HLEntity
 @protocol JBEntity <NSObject>
 
 -(NSInputStream*)getContent;
