@@ -93,11 +93,11 @@
 
 -(void)testBitShifting {
 	uint32_t x = 0xFFFF0000;
-	STAssertTrue( 0 == (x & 0xFF), @"" );
-	STAssertTrue( 0 == ((x >> 8) & 0xFF), @"" );
-	STAssertTrue( 0xFF == ((x >> 16) & 0xFF), @"" );
-	STAssertTrue( 0xFF == ((x >> 24) & 0xFF), @"" );
-	STAssertTrue( 0x1 == ((x >> 31) & 0xFF), @"" );
+	XCTAssertTrue( 0 == (x & 0xFF), @"" );
+	XCTAssertTrue( 0 == ((x >> 8) & 0xFF), @"" );
+	XCTAssertTrue( 0xFF == ((x >> 16) & 0xFF), @"" );
+	XCTAssertTrue( 0xFF == ((x >> 24) & 0xFF), @"" );
+	XCTAssertTrue( 0x1 == ((x >> 31) & 0xFF), @"" );
 }
 
 
@@ -117,10 +117,10 @@
 	[gethostbyaddrRequest asyncExecute];
 	
 	
-	STAssertTrue( 127 == [self getByte:0 fromAddress:ipAddress], @"actual = %d", [self getByte:0 fromAddress:ipAddress] );
-	STAssertTrue( 0 == [self getByte:1 fromAddress:ipAddress], @"actual = %d", [self getByte:1 fromAddress:ipAddress] );
-	STAssertTrue( 0 == [self getByte:2 fromAddress:ipAddress], @"actual = %d", [self getByte:2 fromAddress:ipAddress] );
-	STAssertTrue( 1 == [self getByte:3 fromAddress:ipAddress], @"actual = %d", [self getByte:3 fromAddress:ipAddress] );
+	XCTAssertTrue( 127 == [self getByte:0 fromAddress:ipAddress], @"actual = %d", [self getByte:0 fromAddress:ipAddress] );
+	XCTAssertTrue( 0 == [self getByte:1 fromAddress:ipAddress], @"actual = %d", [self getByte:1 fromAddress:ipAddress] );
+	XCTAssertTrue( 0 == [self getByte:2 fromAddress:ipAddress], @"actual = %d", [self getByte:2 fromAddress:ipAddress] );
+	XCTAssertTrue( 1 == [self getByte:3 fromAddress:ipAddress], @"actual = %d", [self getByte:3 fromAddress:ipAddress] );
 }
 
 -(void)testLocalhostByAddress {
@@ -129,10 +129,10 @@
 	JBGethostbyaddrRequest* gethostbyaddrRequest = [[JBGethostbyaddrRequest alloc] initWithDnsName:@"127.0.0.1" ipAddress:ipAddress];
 	[gethostbyaddrRequest asyncExecute];
 	
-	STAssertTrue( 127 == [self getByte:0 fromAddress:ipAddress], @"" );
-	STAssertTrue( 0 == [self getByte:1 fromAddress:ipAddress], @"" );
-	STAssertTrue( 0 == [self getByte:2 fromAddress:ipAddress], @"" );
-	STAssertTrue( 1 == [self getByte:3 fromAddress:ipAddress], @"" );
+	XCTAssertTrue( 127 == [self getByte:0 fromAddress:ipAddress], @"" );
+	XCTAssertTrue( 0 == [self getByte:1 fromAddress:ipAddress], @"" );
+	XCTAssertTrue( 0 == [self getByte:2 fromAddress:ipAddress], @"" );
+	XCTAssertTrue( 1 == [self getByte:3 fromAddress:ipAddress], @"" );
 }
 
 -(void)testBigHostByAddress {
@@ -141,10 +141,10 @@
 	JBGethostbyaddrRequest* gethostbyaddrRequest = [[JBGethostbyaddrRequest alloc] initWithDnsName:@"255.1.2.3" ipAddress:ipAddress];
 	[gethostbyaddrRequest asyncExecute];
 	
-	STAssertTrue( 255 == [self getByte:0 fromAddress:ipAddress], @"actual = %d", [self getByte:0 fromAddress:ipAddress] );
-	STAssertTrue( 1 == [self getByte:1 fromAddress:ipAddress], @"actual = %d", [self getByte:1 fromAddress:ipAddress] );
-	STAssertTrue( 2 == [self getByte:2 fromAddress:ipAddress], @"actual = %d", [self getByte:2 fromAddress:ipAddress] );
-	STAssertTrue( 3 == [self getByte:3 fromAddress:ipAddress], @"actual = %d", [self getByte:3 fromAddress:ipAddress] );
+	XCTAssertTrue( 255 == [self getByte:0 fromAddress:ipAddress], @"actual = %d", [self getByte:0 fromAddress:ipAddress] );
+	XCTAssertTrue( 1 == [self getByte:1 fromAddress:ipAddress], @"actual = %d", [self getByte:1 fromAddress:ipAddress] );
+	XCTAssertTrue( 2 == [self getByte:2 fromAddress:ipAddress], @"actual = %d", [self getByte:2 fromAddress:ipAddress] );
+	XCTAssertTrue( 3 == [self getByte:3 fromAddress:ipAddress], @"actual = %d", [self getByte:3 fromAddress:ipAddress] );
 }
 
 -(void)testEtcHosts {
@@ -153,10 +153,10 @@
 	JBGethostbyaddrRequest* gethostbyaddrRequest = [[JBGethostbyaddrRequest alloc] initWithDnsName:@"hal.vmnet8" ipAddress:ipAddress];
 	[gethostbyaddrRequest asyncExecute];
 	
-	STAssertTrue( 172 == [self getByte:0 fromAddress:ipAddress], @"[self getByte:0 fromAddress:networkHost] = %d", [self getByte:0 fromAddress:ipAddress] );
-	STAssertTrue( 16 == [self getByte:1 fromAddress:ipAddress], @"" );
-	STAssertTrue( 74 == [self getByte:2 fromAddress:ipAddress], @"" );
-	STAssertTrue( 1 == [self getByte:3 fromAddress:ipAddress], @"" );
+	XCTAssertTrue( 172 == [self getByte:0 fromAddress:ipAddress], @"[self getByte:0 fromAddress:networkHost] = %d", [self getByte:0 fromAddress:ipAddress] );
+	XCTAssertTrue( 16 == [self getByte:1 fromAddress:ipAddress], @"" );
+	XCTAssertTrue( 74 == [self getByte:2 fromAddress:ipAddress], @"" );
+	XCTAssertTrue( 1 == [self getByte:3 fromAddress:ipAddress], @"" );
 }
 
 

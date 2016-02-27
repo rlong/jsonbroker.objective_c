@@ -3,9 +3,9 @@
 // Released under the MIT license ( http://opensource.org/licenses/MIT )
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface JBBaseExceptionUnitTest : SenTestCase {
+@interface JBBaseExceptionUnitTest : XCTestCase {
     
 }
 

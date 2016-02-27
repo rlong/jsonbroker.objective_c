@@ -4,11 +4,11 @@
 //
 
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
 
 
-@interface JBAuthorizationUnitTest : SenTestCase {
+@interface JBAuthorizationUnitTest : XCTestCase {
 
 }
 

@@ -19,11 +19,11 @@
     
     
     JBMediaType* mediaType = [JBMediaType buildFromString:@"multipart/form-data; boundary=---------------------------114782935826962"];
-    STAssertTrue( [@"multipart" isEqualToString:[mediaType type]], @"actual = '%@'", [mediaType type]);
-    STAssertTrue( [@"form-data" isEqualToString:[mediaType subtype]], @"actual = '%@'", [mediaType subtype]);
+    XCTAssertTrue( [@"multipart" isEqualToString:[mediaType type]], @"actual = '%@'", [mediaType type]);
+    XCTAssertTrue( [@"form-data" isEqualToString:[mediaType subtype]], @"actual = '%@'", [mediaType subtype]);
 
     NSString* actualBoundary = [mediaType getParameterValue:@"boundary" defaultValue:nil];
-    STAssertTrue( [@"---------------------------114782935826962" isEqualToString:actualBoundary], @"actual = '%@'", actualBoundary );
+    XCTAssertTrue( [@"---------------------------114782935826962" isEqualToString:actualBoundary], @"actual = '%@'", actualBoundary );
     
     
     
@@ -34,8 +34,8 @@
 -(void)testTextPlain  {
 
     JBMediaType* mediaType = [JBMediaType buildFromString:@"text/plain"];
-    STAssertTrue( [@"text" isEqualToString:[mediaType type]], @"actual = '%@'", [mediaType type]);
-    STAssertTrue( [@"plain" isEqualToString:[mediaType subtype]], @"actual = '%@'", [mediaType subtype]);
+    XCTAssertTrue( [@"text" isEqualToString:[mediaType type]], @"actual = '%@'", [mediaType type]);
+    XCTAssertTrue( [@"plain" isEqualToString:[mediaType subtype]], @"actual = '%@'", [mediaType subtype]);
 
     
 }
@@ -45,8 +45,8 @@
     
 
     JBMediaType* mediaType = [JBMediaType buildFromString:@"application/x-zip-compressed"];
-    STAssertTrue( [@"application" isEqualToString:[mediaType type]], @"actual = '%@'", [mediaType type]);
-    STAssertTrue( [@"x-zip-compressed" isEqualToString:[mediaType subtype]], @"actual = '%@'", [mediaType subtype]);
+    XCTAssertTrue( [@"application" isEqualToString:[mediaType type]], @"actual = '%@'", [mediaType type]);
+    XCTAssertTrue( [@"x-zip-compressed" isEqualToString:[mediaType subtype]], @"actual = '%@'", [mediaType subtype]);
 
     
 }

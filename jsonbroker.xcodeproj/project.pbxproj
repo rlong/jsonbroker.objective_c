@@ -709,7 +709,6 @@
 		AE60FA001B54818B0042F83A /* JBHttpRunLoop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBHttpRunLoop.m; sourceTree = "<group>"; };
 		AE60FA021B54818B0042F83A /* JBAuthenticationHeaderScanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBAuthenticationHeaderScanner.h; sourceTree = "<group>"; };
 		AE60FA031B54818B0042F83A /* JBAuthenticationHeaderScanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBAuthenticationHeaderScanner.m; sourceTree = "<group>"; };
-		AE60FA041B54818B0042F83A /* JBAuthenticationHeaderScannerUnitTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBAuthenticationHeaderScannerUnitTest.h; sourceTree = "<group>"; };
 		AE60FA051B54818B0042F83A /* JBAuthenticationHeaderScannerUnitTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBAuthenticationHeaderScannerUnitTest.m; sourceTree = "<group>"; };
 		AE60FA061B54818B0042F83A /* JBHttpHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBHttpHeader.h; sourceTree = "<group>"; };
 		AE60FA071B54818B0042F83A /* JBMediaType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBMediaType.h; sourceTree = "<group>"; };
@@ -1028,6 +1027,7 @@
 		AEDFD7CE1466607500EA85F9 /* jsonbroker_library_ios.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = jsonbroker_library_ios.m; sourceTree = "<group>"; };
 		AEE2FC0516AE2E0000C854B9 /* JBBaseExceptionUnitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBBaseExceptionUnitTest.h; sourceTree = "<group>"; };
 		AEE2FC0616AE2E0000C854B9 /* JBBaseExceptionUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBBaseExceptionUnitTest.m; sourceTree = "<group>"; };
+		AEE380D71C819456002A3AE9 /* JBAuthenticationHeaderScannerUnitTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBAuthenticationHeaderScannerUnitTest.h; sourceTree = "<group>"; };
 		AEEA65AD16E6D00B00560D5C /* JBClientSecurityConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBClientSecurityConfiguration.h; sourceTree = "<group>"; };
 		AEEA65B016E6D11600560D5C /* JBSecurityAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBSecurityAdapter.h; sourceTree = "<group>"; };
 		AEEA65B416E6D3E200560D5C /* JBServerSecurityConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBServerSecurityConfiguration.h; sourceTree = "<group>"; };
@@ -1357,7 +1357,7 @@
 			children = (
 				AE60FA021B54818B0042F83A /* JBAuthenticationHeaderScanner.h */,
 				AE60FA031B54818B0042F83A /* JBAuthenticationHeaderScanner.m */,
-				AE60FA041B54818B0042F83A /* JBAuthenticationHeaderScannerUnitTest.h */,
+				AEE380D71C819456002A3AE9 /* JBAuthenticationHeaderScannerUnitTest.h */,
 				AE60FA051B54818B0042F83A /* JBAuthenticationHeaderScannerUnitTest.m */,
 				AE60FA061B54818B0042F83A /* JBHttpHeader.h */,
 				AE60FA071B54818B0042F83A /* JBMediaType.h */,
@@ -2513,7 +2513,8 @@
 		AE8A915D146408C3006037B8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastTestingUpgradeCheck = 0710;
+				LastUpgradeCheck = 0710;
 				TargetAttributes = {
 					AE60FB071B5483CB0042F83A = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -3154,6 +3155,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hexbeerium.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -3189,6 +3191,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hexbeerium.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -3230,6 +3233,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hexbeerium.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unit.app/Contents/MacOS/Unit";
 			};
@@ -3269,6 +3273,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hexbeerium.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unit.app/Contents/MacOS/Unit";
 			};
@@ -3286,6 +3291,7 @@
 				GCC_PREFIX_HEADER = "jsonbroker.unit_test/jsonbroker.unit_test-Prefix.pch";
 				INFOPLIST_FILE = "jsonbroker.unit_test/jsonbroker.unit_test-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hexbeerium.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -3303,6 +3309,7 @@
 				GCC_PREFIX_HEADER = "jsonbroker.unit_test/jsonbroker.unit_test-Prefix.pch";
 				INFOPLIST_FILE = "jsonbroker.unit_test/jsonbroker.unit_test-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hexbeerium.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -3340,6 +3347,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hexbeerium.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -3373,6 +3381,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hexbeerium.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -3436,6 +3445,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -3517,6 +3527,7 @@
 				INFOPLIST_FILE = "jsonbroker.integration_test/jsonbroker.integration_test-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "hexbeerium.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -3543,6 +3554,7 @@
 				INFOPLIST_FILE = "jsonbroker.integration_test/jsonbroker.integration_test-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "hexbeerium.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -3600,6 +3612,7 @@
 				AE60FB241B5483CC0042F83A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE60FB251B5483CC0042F83A /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
 			isa = XCConfigurationList;
@@ -3608,6 +3621,7 @@
 				AE60FB271B5483CC0042F83A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE66BB1A14CD1C4000ACD757 /* Build configuration list for PBXNativeTarget "jsonbroker.unit_test" */ = {
 			isa = XCConfigurationList;

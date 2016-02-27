@@ -26,7 +26,7 @@
     JBTestService* testService = [[JBTestService alloc] init];
     [testService autorelease];
     
-    id<JBService> service = [[JBIntegrationTestUtilities getInstance] wrapService:testService];
+    id<JBService> service = [[JBIntegrationTestUtilities getInXCTAnce] wrapService:testService];
     
     JBTestProxy* answer = [[JBTestProxy alloc] initWithService:service];
     [answer autorelease];
@@ -50,11 +50,11 @@
     {
         @try {
             [proxy raiseError];
-            STFail( @"'BaseException' should have been thrown, %d",0);
+            XCTFail( @"'BaseException' should have been thrown, %d",0);
         }
         @catch (BaseException *exception) {
             NSString* actual = [exception errorDomain];
-            STAssertTrue( [@"jsonbroker.TestService.RAISE_ERROR" isEqualToString:actual], @"actual = '%@'", actual);
+            XCTAssertTrue( [@"jsonbroker.TestService.RAISE_ERROR" isEqualToString:actual], @"actual = '%@'", actual);
             
         }
     }

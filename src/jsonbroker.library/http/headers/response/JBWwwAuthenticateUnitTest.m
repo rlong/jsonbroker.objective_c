@@ -16,10 +16,10 @@
 	NSString* input = @"Digest realm=\"testrealm@host.com\", qop=\"auth,auth-int\", nonce=\"dcd98b7102dd2f0e8b11d0f600bfb0c093\", opaque=\"5ccc069c403ebaf9f0171e9517f40e41\"";
 	
 	JBWwwAuthenticate* authenticateResponseHeader = [JBWwwAuthenticate buildFromString:input];
-	STAssertTrue( [@"dcd98b7102dd2f0e8b11d0f600bfb0c093" isEqualToString:[authenticateResponseHeader nonce]], @"actual = %@", [authenticateResponseHeader nonce] ); 
-	STAssertTrue( [@"5ccc069c403ebaf9f0171e9517f40e41" isEqualToString:[authenticateResponseHeader opaque]], @"actual = %@", [authenticateResponseHeader opaque] ); 
-	STAssertTrue( [@"auth,auth-int" isEqualToString:[authenticateResponseHeader qop]], @"actual = %@", [authenticateResponseHeader qop] ); 
-	STAssertTrue( [@"testrealm@host.com" isEqualToString:[authenticateResponseHeader realm]], @"actual = %@", [authenticateResponseHeader realm] ); 
+	XCTAssertTrue( [@"dcd98b7102dd2f0e8b11d0f600bfb0c093" isEqualToString:[authenticateResponseHeader nonce]], @"actual = %@", [authenticateResponseHeader nonce] ); 
+	XCTAssertTrue( [@"5ccc069c403ebaf9f0171e9517f40e41" isEqualToString:[authenticateResponseHeader opaque]], @"actual = %@", [authenticateResponseHeader opaque] ); 
+	XCTAssertTrue( [@"auth,auth-int" isEqualToString:[authenticateResponseHeader qop]], @"actual = %@", [authenticateResponseHeader qop] ); 
+	XCTAssertTrue( [@"testrealm@host.com" isEqualToString:[authenticateResponseHeader realm]], @"actual = %@", [authenticateResponseHeader realm] ); 
 }
 
 -(void)testBuildFromStringWithUnkownEntries { 

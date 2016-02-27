@@ -18,7 +18,7 @@
 	
 	int integerValue = [JBNumericUtilities parseInteger:integerString];
 	
-	STAssertTrue( 12 == integerValue, @"actual = %d", integerValue );		
+	XCTAssertTrue( 12 == integerValue, @"actual = %d", integerValue );		
 }
 
 -(void)testParseIntegerBadData
@@ -47,7 +47,7 @@
 	@try
 	{
 		[JBNumericUtilities parseInteger:integerValue];
-		STAssertTrue( NO, @"element does not have any data" );		
+		XCTAssertTrue( NO, @"element does not have any data" );		
 	}
 	@catch( BaseException* e )
 	{
@@ -63,7 +63,7 @@
 	
 	double doubleValue = [JBNumericUtilities parseDouble:doubleString];
 	
-	STAssertTrue( -3.14 == doubleValue, @"actual = %f", doubleValue );		
+	XCTAssertTrue( -3.14 == doubleValue, @"actual = %f", doubleValue );		
 }
 
 -(void)testParse_15_650912 {
@@ -73,7 +73,7 @@
 	
 	double doubleValue = [JBNumericUtilities parseDouble:doubleString];
 	
-	STAssertTrue( 15.650912 == doubleValue, @"actual = %f", doubleValue );
+	XCTAssertTrue( 15.650912 == doubleValue, @"actual = %f", doubleValue );
 }
 
 
@@ -104,7 +104,7 @@
 	@try
 	{
 		[JBNumericUtilities parseDouble:doubleString];
-		STAssertTrue( NO, @"element does not have any data" );		
+		XCTAssertTrue( NO, @"element does not have any data" );		
 	}
 	@catch( BaseException* e )
 	{

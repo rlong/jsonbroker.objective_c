@@ -4,10 +4,10 @@
 //
 
 
-#import <Foundation/Foundation.h>
-#import <SenTestingKit/SenTestingKit.h>
 
-@interface JBMetaProxyIntegrationTest : SenTestCase
+#import <XCTest/XCTest.h>
+
+@interface JBMetaProxyIntegrationTest : XCTestCase
 
 @end
 

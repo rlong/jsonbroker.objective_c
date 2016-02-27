@@ -19,11 +19,11 @@
 	
 	JBAuthenticationInfo* authenticationInfoHeader = [JBAuthenticationInfo buildFromString:input];
 	
-	STAssertTrue( [@"0a4f113b" isEqualToString:[authenticationInfoHeader cnonce]], @"actual = %@", [authenticationInfoHeader cnonce] ); 
-	STAssertTrue( 255 == [authenticationInfoHeader nc], @"actual = %d", [authenticationInfoHeader nc] ); 
-	STAssertTrue( [@"dcd98b7102dd2f0e8b11d0f600bfb0c093" isEqualToString:[authenticationInfoHeader nextnonce]], @"actual = %@", [authenticationInfoHeader nextnonce] ); 
-	STAssertTrue( [@"auth-int" isEqualToString:[authenticationInfoHeader qop]], @"actual = %@", [authenticationInfoHeader qop] ); 
-	STAssertTrue( [@"6629fae49393a05397450978507c4ef1" isEqualToString:[authenticationInfoHeader rspauth]], @"actual = %@", [authenticationInfoHeader rspauth] ); 
+	XCTAssertTrue( [@"0a4f113b" isEqualToString:[authenticationInfoHeader cnonce]], @"actual = %@", [authenticationInfoHeader cnonce] ); 
+	XCTAssertTrue( 255 == [authenticationInfoHeader nc], @"actual = %d", [authenticationInfoHeader nc] ); 
+	XCTAssertTrue( [@"dcd98b7102dd2f0e8b11d0f600bfb0c093" isEqualToString:[authenticationInfoHeader nextnonce]], @"actual = %@", [authenticationInfoHeader nextnonce] ); 
+	XCTAssertTrue( [@"auth-int" isEqualToString:[authenticationInfoHeader qop]], @"actual = %@", [authenticationInfoHeader qop] ); 
+	XCTAssertTrue( [@"6629fae49393a05397450978507c4ef1" isEqualToString:[authenticationInfoHeader rspauth]], @"actual = %@", [authenticationInfoHeader rspauth] ); 
     
     
     Log_debugString([authenticationInfoHeader toString] );

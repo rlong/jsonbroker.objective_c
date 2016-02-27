@@ -3,10 +3,10 @@
 // Released under the MIT license ( http://opensource.org/licenses/MIT )
 //
 
-#import <Foundation/Foundation.h>
-#import <SenTestingKit/SenTestingKit.h>
 
-@interface JBSaxHandlerIntegrationTest : SenTestCase {
+#import <XCTest/XCTest.h>
+
+@interface JBSaxHandlerIntegrationTest : XCTestCase {
 
 }
 

@@ -21,19 +21,19 @@
 
     NSString* expected = @"A & B";
     NSString* actual = [JBStringHelper unescapeHtmlCodes:@"A &#38; B"];
-    STAssertTrue( [expected isEqualToString:actual], @"actual = %@", actual );
+    XCTAssertTrue( [expected isEqualToString:actual], @"actual = %@", actual );
 
     expected = @"& B";
     actual = [JBStringHelper unescapeHtmlCodes:@"&#38; B"];    
-    STAssertTrue( [expected isEqualToString:actual], @"actual = %@", actual );
+    XCTAssertTrue( [expected isEqualToString:actual], @"actual = %@", actual );
 
     expected = @"A &";
     actual = [JBStringHelper unescapeHtmlCodes:@"A &#38;"];
-    STAssertTrue( [expected isEqualToString:actual], @"actual = %@", actual );
+    XCTAssertTrue( [expected isEqualToString:actual], @"actual = %@", actual );
 
     expected = @"A & B &";
     actual = [JBStringHelper unescapeHtmlCodes:@"A &#38; B &#38;"];
-    STAssertTrue( [expected isEqualToString:actual], @"actual = %@", actual );
+    XCTAssertTrue( [expected isEqualToString:actual], @"actual = %@", actual );
 
 }
 @end

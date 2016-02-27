@@ -78,7 +78,7 @@ static JBDefaultJsonHandler* _handler;
 
     NSString *absoluteFilePath = [[NSBundle mainBundle] pathForResource:resourceName ofType:nil];
     Log_debugString(absoluteFilePath);
-    STAssertTrue(nil != absoluteFilePath, @"absoluteFilePath = %p", absoluteFilePath );
+    XCTAssertTrue(nil != absoluteFilePath, @"absoluteFilePath = %p", absoluteFilePath );
 
     NSData* answer = [NSData dataWithContentsOfFile:absoluteFilePath];
     return answer;

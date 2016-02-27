@@ -3,10 +3,9 @@
 // Released under the MIT license ( http://opensource.org/licenses/MIT )
 //
 
-#import <Foundation/Foundation.h>
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface JBJsonReaderUnitTest : SenTestCase {
+@interface JBJsonReaderUnitTest : XCTestCase {
     
 }
 

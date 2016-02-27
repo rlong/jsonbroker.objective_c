@@ -36,7 +36,7 @@
     
     JBJsonArray* jsonArray = [[JBJsonArrayHandler getInstance] readJSONArray:jsonDataInput];
     
-    STAssertTrue( 7 == [jsonArray count], @"actual = %d", [jsonArray count]);
+    XCTAssertTrue( 7 == [jsonArray count], @"actual = %d", [jsonArray count]);
     
 }
 

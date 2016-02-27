@@ -25,12 +25,12 @@
     
     JBRange* range = [JBRange buildFromString:@"bytes=-500"];
     
-    STAssertEquals( -500, [[range firstBytePosition] intValue], @"actual = %d", [[range firstBytePosition] intValue]);
-    STAssertNil( [range lastBytePosition], @"actual = %p", [range lastBytePosition]);
+    XCTAssertEqual( -500, [[range firstBytePosition] intValue], @"actual = %d", [[range firstBytePosition] intValue]);
+    XCTAssertNil( [range lastBytePosition], @"actual = %p", [range lastBytePosition]);
     
-    STAssertTrue( [@"bytes 9500-9999/10000" isEqualToString:[range toContentRange:10000]], @"actual = '%@'", [range toContentRange:10000] );
-    STAssertEquals( 9500l, [range getSeekPosition:10000], @"actual = %ld", [range getSeekPosition:10000] );
-    STAssertEquals( 500l, [range getContentLength:10000], @"actual = %ld", [range getContentLength:10000] );
+    XCTAssertTrue( [@"bytes 9500-9999/10000" isEqualToString:[range toContentRange:10000]], @"actual = '%@'", [range toContentRange:10000] );
+    XCTAssertEqual( 9500l, [range getSeekPosition:10000], @"actual = %ld", [range getSeekPosition:10000] );
+    XCTAssertEqual( 500l, [range getContentLength:10000], @"actual = %ld", [range getContentLength:10000] );
     
 }
 
@@ -40,12 +40,12 @@
     
     JBRange* range = [JBRange buildFromString:@"bytes=9500-"];
     
-    STAssertEquals( 9500, [[range firstBytePosition] intValue], @"actual = %d", [[range firstBytePosition] intValue]);
-    STAssertNil( [range lastBytePosition], @"actual = %p", [range lastBytePosition]);
+    XCTAssertEqual( 9500, [[range firstBytePosition] intValue], @"actual = %d", [[range firstBytePosition] intValue]);
+    XCTAssertNil( [range lastBytePosition], @"actual = %p", [range lastBytePosition]);
 
-    STAssertTrue( [@"bytes 9500-9999/10000" isEqualToString:[range toContentRange:10000]], @"actual = '%@'", [range toContentRange:10000] );
-    STAssertEquals( 9500l, [range getSeekPosition:10000], @"actual = %ld", [range getSeekPosition:10000] );
-    STAssertEquals( 500l, [range getContentLength:10000], @"actual = %ld", [range getContentLength:10000] );
+    XCTAssertTrue( [@"bytes 9500-9999/10000" isEqualToString:[range toContentRange:10000]], @"actual = '%@'", [range toContentRange:10000] );
+    XCTAssertEqual( 9500l, [range getSeekPosition:10000], @"actual = %ld", [range getSeekPosition:10000] );
+    XCTAssertEqual( 500l, [range getContentLength:10000], @"actual = %ld", [range getContentLength:10000] );
 
 }
 
@@ -55,24 +55,24 @@
 
     JBRange* range = [JBRange buildFromString:@"bytes=500-999"];
     
-    STAssertEquals( 500, [[range firstBytePosition] intValue], @"actual = %d", [[range firstBytePosition] intValue]);
-    STAssertEquals( 999, [[range lastBytePosition] intValue], @"actual = %d", [[range lastBytePosition] intValue]);
+    XCTAssertEqual( 500, [[range firstBytePosition] intValue], @"actual = %d", [[range firstBytePosition] intValue]);
+    XCTAssertEqual( 999, [[range lastBytePosition] intValue], @"actual = %d", [[range lastBytePosition] intValue]);
 
-    STAssertTrue( [@"bytes 500-999/10000" isEqualToString:[range toContentRange:10000]], @"actual = '%@'", [range toContentRange:10000] );
-    STAssertEquals( 500l, [range getSeekPosition:10000], @"actual = %ld", [range getSeekPosition:10000] );
-    STAssertEquals( 500l, [range getContentLength:10000], @"actual = %ld", [range getContentLength:10000] );
+    XCTAssertTrue( [@"bytes 500-999/10000" isEqualToString:[range toContentRange:10000]], @"actual = '%@'", [range toContentRange:10000] );
+    XCTAssertEqual( 500l, [range getSeekPosition:10000], @"actual = %ld", [range getSeekPosition:10000] );
+    XCTAssertEqual( 500l, [range getContentLength:10000], @"actual = %ld", [range getContentLength:10000] );
 
 }
 
 -(void)test0Hyphen499 {
     JBRange* range = [JBRange buildFromString:@"bytes=0-499"];
     
-    STAssertEquals( 0, [[range firstBytePosition] intValue], @"actual = %d", [[range firstBytePosition] intValue]);
-    STAssertEquals( 499, [[range lastBytePosition] intValue], @"actual = %d", [[range lastBytePosition] intValue]);
+    XCTAssertEqual( 0, [[range firstBytePosition] intValue], @"actual = %d", [[range firstBytePosition] intValue]);
+    XCTAssertEqual( 499, [[range lastBytePosition] intValue], @"actual = %d", [[range lastBytePosition] intValue]);
 
-    STAssertTrue( [@"bytes 0-499/10000" isEqualToString:[range toContentRange:10000]], @"actual = '%@'", [range toContentRange:10000] );
-    STAssertEquals( 0l, [range getSeekPosition:10000], @"actual = %ld", [range getSeekPosition:10000] );
-    STAssertEquals( 500l, [range getContentLength:10000], @"actual = %ld", [range getContentLength:10000] );
+    XCTAssertTrue( [@"bytes 0-499/10000" isEqualToString:[range toContentRange:10000]], @"actual = '%@'", [range toContentRange:10000] );
+    XCTAssertEqual( 0l, [range getSeekPosition:10000], @"actual = %ld", [range getSeekPosition:10000] );
+    XCTAssertEqual( 500l, [range getContentLength:10000], @"actual = %ld", [range getContentLength:10000] );
 
 
 }
@@ -80,24 +80,24 @@
 -(void)test0Hyphen {
     JBRange* range = [JBRange buildFromString:@"bytes=0-"];
     
-    STAssertEquals( 0, [[range firstBytePosition] intValue], @"actual = %d", [[range firstBytePosition] intValue]);
-    STAssertNil( [range lastBytePosition], @"actual = %p", [range lastBytePosition]);
+    XCTAssertEqual( 0, [[range firstBytePosition] intValue], @"actual = %d", [[range firstBytePosition] intValue]);
+    XCTAssertNil( [range lastBytePosition], @"actual = %p", [range lastBytePosition]);
     
-    STAssertTrue( [@"bytes 0-9999/10000" isEqualToString:[range toContentRange:10000]], @"actual = '%@'", [range toContentRange:10000] );
-    STAssertEquals( 0l, [range getSeekPosition:10000], @"actual = %ld", [range getSeekPosition:10000] );
-    STAssertEquals( 10000l, [range getContentLength:10000], @"actual = %ld", [range getContentLength:10000] );
+    XCTAssertTrue( [@"bytes 0-9999/10000" isEqualToString:[range toContentRange:10000]], @"actual = '%@'", [range toContentRange:10000] );
+    XCTAssertEqual( 0l, [range getSeekPosition:10000], @"actual = %ld", [range getSeekPosition:10000] );
+    XCTAssertEqual( 10000l, [range getContentLength:10000], @"actual = %ld", [range getContentLength:10000] );
 
 }
 
 -(void)test0Hyphen1 {
     JBRange* range = [JBRange buildFromString:@"bytes=0-1"];
     
-    STAssertEquals( 0, [[range firstBytePosition] intValue], @"actual = %d", [[range firstBytePosition] intValue]);
-    STAssertEquals( 1, [[range lastBytePosition] intValue], @"actual = %d", [[range lastBytePosition] intValue]);
+    XCTAssertEqual( 0, [[range firstBytePosition] intValue], @"actual = %d", [[range firstBytePosition] intValue]);
+    XCTAssertEqual( 1, [[range lastBytePosition] intValue], @"actual = %d", [[range lastBytePosition] intValue]);
     
-    STAssertTrue( [@"bytes 0-1/10000" isEqualToString:[range toContentRange:10000]], @"actual = '%@'", [range toContentRange:10000] );
-    STAssertEquals( 0l, [range getSeekPosition:10000], @"actual = %ld", [range getSeekPosition:10000] );
-    STAssertEquals( 2l, [range getContentLength:10000], @"actual = %ld", [range getContentLength:10000] );
+    XCTAssertTrue( [@"bytes 0-1/10000" isEqualToString:[range toContentRange:10000]], @"actual = '%@'", [range toContentRange:10000] );
+    XCTAssertEqual( 0l, [range getSeekPosition:10000], @"actual = %ld", [range getSeekPosition:10000] );
+    XCTAssertEqual( 2l, [range getContentLength:10000], @"actual = %ld", [range getContentLength:10000] );
     
 }
 
@@ -105,24 +105,24 @@
 -(void)test0Hyphen0 {
     JBRange* range = [JBRange buildFromString:@"bytes=0-0"];
     
-    STAssertEquals( 0, [[range firstBytePosition] intValue], @"actual = %d", [[range firstBytePosition] intValue]);
-    STAssertEquals( 0, [[range lastBytePosition] intValue], @"actual = %d", [[range lastBytePosition] intValue]);
+    XCTAssertEqual( 0, [[range firstBytePosition] intValue], @"actual = %d", [[range firstBytePosition] intValue]);
+    XCTAssertEqual( 0, [[range lastBytePosition] intValue], @"actual = %d", [[range lastBytePosition] intValue]);
     
-    STAssertTrue( [@"bytes 0-0/10000" isEqualToString:[range toContentRange:10000]], @"actual = '%@'", [range toContentRange:10000] );
-    STAssertEquals( 0l, [range getSeekPosition:10000], @"actual = %ld", [range getSeekPosition:10000] );
-    STAssertEquals( 1l, [range getContentLength:10000], @"actual = %ld", [range getContentLength:10000] );
+    XCTAssertTrue( [@"bytes 0-0/10000" isEqualToString:[range toContentRange:10000]], @"actual = '%@'", [range toContentRange:10000] );
+    XCTAssertEqual( 0l, [range getSeekPosition:10000], @"actual = %ld", [range getSeekPosition:10000] );
+    XCTAssertEqual( 1l, [range getContentLength:10000], @"actual = %ld", [range getContentLength:10000] );
     
 }
 
 -(void)test0Hyphen9999 {
     JBRange* range = [JBRange buildFromString:@"bytes=0-9999"];
     
-    STAssertEquals( 0, [[range firstBytePosition] intValue], @"actual = %d", [[range firstBytePosition] intValue]);
-    STAssertEquals( 9999, [[range lastBytePosition] intValue], @"actual = %d", [[range lastBytePosition] intValue]);
+    XCTAssertEqual( 0, [[range firstBytePosition] intValue], @"actual = %d", [[range firstBytePosition] intValue]);
+    XCTAssertEqual( 9999, [[range lastBytePosition] intValue], @"actual = %d", [[range lastBytePosition] intValue]);
     
-    STAssertTrue( [@"bytes 0-9999/10000" isEqualToString:[range toContentRange:10000]], @"actual = '%@'", [range toContentRange:10000] );
-    STAssertEquals( 0l, [range getSeekPosition:10000], @"actual = %ld", [range getSeekPosition:10000] );
-    STAssertEquals( 10000l, [range getContentLength:10000], @"actual = %ld", [range getContentLength:10000] );
+    XCTAssertTrue( [@"bytes 0-9999/10000" isEqualToString:[range toContentRange:10000]], @"actual = '%@'", [range toContentRange:10000] );
+    XCTAssertEqual( 0l, [range getSeekPosition:10000], @"actual = %ld", [range getSeekPosition:10000] );
+    XCTAssertEqual( 10000l, [range getContentLength:10000], @"actual = %ld", [range getContentLength:10000] );
     
 }
 
@@ -131,7 +131,7 @@
 
     @try {
         [JBRange buildFromString:@"bytes=1-2-3"];
-        STAssertTrue( false, @"exception expected", 0);
+        XCTAssertTrue( false, @"exception expected", 0);
     }
     @catch (BaseException *exception) {
         // good
@@ -145,7 +145,7 @@
         
         // from http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.1
         [JBRange buildFromString:@"bytes=0-0,-1"];
-        STAssertTrue( false, @"exception expected");
+        XCTAssertTrue( false, @"exception expected");
         
     }
     @catch (BaseException *exception) {

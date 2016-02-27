@@ -66,7 +66,7 @@
     
     NSString* actual = [self encodeJsonStringValue:@"ABC"];
     
-    STAssertTrue( [@"\"ABC\"" isEqualToString:actual], @"actual = '%@'", actual );
+    XCTAssertTrue( [@"\"ABC\"" isEqualToString:actual], @"actual = '%@'", actual );
     
 }
 
@@ -75,7 +75,7 @@
     Log_enteredMethod();
     
     NSString* actual = [self decodeJsonStringValue:@"\"ABC\""];
-    STAssertTrue( [@"ABC" isEqualToString:actual], @"actual = '%@'", actual );
+    XCTAssertTrue( [@"ABC" isEqualToString:actual], @"actual = '%@'", actual );
     
     
 }
@@ -88,17 +88,17 @@
     
     {
         NSString* encodedValue = [self encodeJsonStringValue:@"\\"];
-        STAssertTrue( [@"\"\\\\\"" isEqualToString:encodedValue], @"encodedValue = '%@'", encodedValue );
+        XCTAssertTrue( [@"\"\\\\\"" isEqualToString:encodedValue], @"encodedValue = '%@'", encodedValue );
         NSString* decodedValue = [self decodeJsonStringValue:encodedValue];
-        STAssertTrue( [@"\\" isEqualToString:decodedValue], @"decodedValue = '%@'", decodedValue );
+        XCTAssertTrue( [@"\\" isEqualToString:decodedValue], @"decodedValue = '%@'", decodedValue );
     }
 
     
     {
         NSString* encodedValue = [self encodeJsonStringValue:@"/"];
-        STAssertTrue( [@"\"\\/\"" isEqualToString:encodedValue], @"encodedValue = '%@'", encodedValue );
+        XCTAssertTrue( [@"\"\\/\"" isEqualToString:encodedValue], @"encodedValue = '%@'", encodedValue );
         NSString* decodedValue = [self decodeJsonStringValue:encodedValue];
-        STAssertTrue( [@"/" isEqualToString:decodedValue], @"decodedValue = '%@'", decodedValue );
+        XCTAssertTrue( [@"/" isEqualToString:decodedValue], @"decodedValue = '%@'", decodedValue );
     }
 
     
@@ -121,8 +121,8 @@
 
 
     
-    STAssertTrue( NSNotFound != [objToString rangeOfString:@"input"].location, @"" );
-    STAssertTrue( NSNotFound != [objToString rangeOfString:@"עולמו של יובל המבולבל"].location, @"" );
+    XCTAssertTrue( NSNotFound != [objToString rangeOfString:@"input"].location, @"" );
+    XCTAssertTrue( NSNotFound != [objToString rangeOfString:@"עולמו של יובל המבולבל"].location, @"" );
     
 }
 

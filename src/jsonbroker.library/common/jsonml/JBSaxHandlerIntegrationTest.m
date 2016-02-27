@@ -19,7 +19,7 @@
 	NSString *path = [[NSBundle mainBundle] pathForResource:xmlFile ofType: @"xml"];
     Log_debugString( path );
     
-	STAssertTrue( nil != path, @"actual = %x", path );
+	XCTAssertTrue( nil != path, @"actual = %x", path );
 	
 	NSURL* url = [NSURL fileURLWithPath:path];
 	NSData* answer = [NSData dataWithContentsOfURL:url];
@@ -34,7 +34,7 @@
 -(void)testSimple {
     
     NSData* xml = [self resolve:@"JBSaxHandlerIntegrationTest.testSimple"];
-	STAssertTrue( nil != xml, @"actual = %p", xml);
+	XCTAssertTrue( nil != xml, @"actual = %p", xml);
     
     
     JBJsonBuilder* jsonBuilder = [[JBJsonBuilder alloc] init];
@@ -50,12 +50,12 @@
     [parser parse];
     
     JBJsonArray* jsonArray = [jsonBuilder arrayDocument];
-	STAssertTrue( nil != jsonArray, @"actual = %p", jsonArray);
+	XCTAssertTrue( nil != jsonArray, @"actual = %p", jsonArray);
 
     Log_debugString( [jsonArray toString] );
     
     NSString* rootElementName = [jsonArray getString:0];
-    STAssertTrue( [@"company" isEqualToString:rootElementName],  @"actual = %@", rootElementName );
+    XCTAssertTrue( [@"company" isEqualToString:rootElementName],  @"actual = %@", rootElementName );
     
     
 }
@@ -64,7 +64,7 @@
 
     
     NSData* xml = [self resolve:@"JBSaxHandlerIntegrationTest.testRss"];
-	STAssertTrue( nil != xml, @"actual = %p", xml);
+	XCTAssertTrue( nil != xml, @"actual = %p", xml);
     
     
     JBJsonBuilder* jsonBuilder = [[JBJsonBuilder alloc] init];
@@ -80,7 +80,7 @@
     [parser parse];
     
     JBJsonArray* jsonArray = [jsonBuilder arrayDocument];
-	STAssertTrue( nil != jsonArray, @"actual = %p", jsonArray);
+	XCTAssertTrue( nil != jsonArray, @"actual = %p", jsonArray);
 
     
     

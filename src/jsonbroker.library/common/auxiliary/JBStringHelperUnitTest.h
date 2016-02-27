@@ -3,11 +3,11 @@
 // Released under the MIT license ( http://opensource.org/licenses/MIT )
 //
 
-#import <Foundation/Foundation.h>
-#import <SenTestingKit/SenTestingKit.h>
+
+#import <XCTest/XCTest.h>
 
 
-@interface JBStringHelperUnitTest : SenTestCase {
+@interface JBStringHelperUnitTest : XCTestCase {
     
 }
 

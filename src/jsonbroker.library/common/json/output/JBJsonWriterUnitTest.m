@@ -38,7 +38,7 @@
     }
     NSString* actual = [output toString];
     Log_debugString( actual );
-    STAssertTrue([@"{}" isEqualToString:actual], @"actual = '%@'", actual);
+    XCTAssertTrue([@"{}" isEqualToString:actual], @"actual = '%@'", actual);
     
 }
 
@@ -61,7 +61,7 @@
     }
     NSString* actual = [output toString];
     Log_debugString( actual );
-    STAssertTrue([@"[]" isEqualToString:actual], @"actual = '%@'", actual);
+    XCTAssertTrue([@"[]" isEqualToString:actual], @"actual = '%@'", actual);
     
 }
 
@@ -88,7 +88,7 @@
     }
     NSString* actual = [output toString];
     Log_debugString( actual );
-    STAssertTrue([@"{\"stringKey\":\"value\",\"booleanKey\":true,\"integerKey\":314,\"nullKey\":null}" isEqualToString:actual], @"actual = '%@'", actual);
+    XCTAssertTrue([@"{\"stringKey\":\"value\",\"booleanKey\":true,\"integerKey\":314,\"nullKey\":null}" isEqualToString:actual], @"actual = '%@'", actual);
 
 }
 
@@ -116,7 +116,7 @@
     }
     NSString* actual = [output toString];
     Log_debugString( actual );
-    STAssertTrue([@"[null,true,314,\"value\"]" isEqualToString:actual], @"actual = '%@'", actual);
+    XCTAssertTrue([@"[null,true,314,\"value\"]" isEqualToString:actual], @"actual = '%@'", actual);
 
     
     
@@ -138,7 +138,7 @@
 
     NSString* actual = [output toString];
     Log_debugString( actual );
-    STAssertTrue([@"[\"request\",{},\"jsonbroker.TestService\",1,0,\"ping\",{}]" isEqualToString:actual], @"actual = '%@'", actual);
+    XCTAssertTrue([@"[\"request\",{},\"jsonbroker.TestService\",1,0,\"ping\",{}]" isEqualToString:actual], @"actual = '%@'", actual);
 
 
 }

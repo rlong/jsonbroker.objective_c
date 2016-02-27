@@ -28,39 +28,39 @@
 	////////////////////////////////////////////////////////////////////////////
 	
 	NSString* name = [scanner scanName];
-	STAssertTrue( [@"realm" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"realm" isEqualToString:name], @"actual = %@", name );
 
 	NSString* value = [scanner scanQuotedValue];
-	STAssertTrue( [@"testrealm@host.com" isEqualToString:value], @"actual = %@", value );
+	XCTAssertTrue( [@"testrealm@host.com" isEqualToString:value], @"actual = %@", value );
 
 	////////////////////////////////////////////////////////////////////////////
 	
 	name = [scanner scanName];
-	STAssertTrue( [@"qop" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"qop" isEqualToString:name], @"actual = %@", name );
 	
 	value = [scanner scanQuotedValue];
-	STAssertTrue( [@"auth,auth-int" isEqualToString:value], @"actual = %@", value );
+	XCTAssertTrue( [@"auth,auth-int" isEqualToString:value], @"actual = %@", value );
 	
 	////////////////////////////////////////////////////////////////////////////
 	
 	name = [scanner scanName];
-	STAssertTrue( [@"nonce" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"nonce" isEqualToString:name], @"actual = %@", name );
 	
 	value = [scanner scanQuotedValue];
-	STAssertTrue( [@"dcd98b7102dd2f0e8b11d0f600bfb0c093" isEqualToString:value], @"actual = %@", value );
+	XCTAssertTrue( [@"dcd98b7102dd2f0e8b11d0f600bfb0c093" isEqualToString:value], @"actual = %@", value );
 
 	////////////////////////////////////////////////////////////////////////////
 	
 	name = [scanner scanName];
-	STAssertTrue( [@"opaque" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"opaque" isEqualToString:name], @"actual = %@", name );
 	
 	value = [scanner scanQuotedValue];
-	STAssertTrue( [@"5ccc069c403ebaf9f0171e9517f40e41" isEqualToString:value], @"actual = %@", value );
+	XCTAssertTrue( [@"5ccc069c403ebaf9f0171e9517f40e41" isEqualToString:value], @"actual = %@", value );
 
 	////////////////////////////////////////////////////////////////////////////
 	
 	name = [scanner scanName];
-	STAssertTrue( nil == name, @"actual = %p", name );
+	XCTAssertTrue( nil == name, @"actual = %p", name );
 	
 }
 
@@ -78,82 +78,82 @@
 	////////////////////////////////////////////////////////////////////////////
 	
 	NSString* name = [scanner scanName];
-	STAssertTrue( [@"username" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"username" isEqualToString:name], @"actual = %@", name );
 	
 	NSString* value = [scanner scanQuotedValue];
-	STAssertTrue( [@"Mufasa" isEqualToString:value], @"actual = %@", value );
+	XCTAssertTrue( [@"Mufasa" isEqualToString:value], @"actual = %@", value );
 	
 	
 	////////////////////////////////////////////////////////////////////////////
 	
 	name = [scanner scanName];
-	STAssertTrue( [@"realm" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"realm" isEqualToString:name], @"actual = %@", name );
 	
 	value = [scanner scanQuotedValue];
-	STAssertTrue( [@"testrealm@host.com" isEqualToString:value], @"actual = %@", value );
+	XCTAssertTrue( [@"testrealm@host.com" isEqualToString:value], @"actual = %@", value );
 	
 	
 	////////////////////////////////////////////////////////////////////////////
 	
 	name = [scanner scanName];
-	STAssertTrue( [@"nonce" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"nonce" isEqualToString:name], @"actual = %@", name );
 	
 	value = [scanner scanQuotedValue];
-	STAssertTrue( [@"dcd98b7102dd2f0e8b11d0f600bfb0c093" isEqualToString:value], @"actual = %@", value );
+	XCTAssertTrue( [@"dcd98b7102dd2f0e8b11d0f600bfb0c093" isEqualToString:value], @"actual = %@", value );
 	
 	////////////////////////////////////////////////////////////////////////////
 	
 	name = [scanner scanName];
-	STAssertTrue( [@"uri" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"uri" isEqualToString:name], @"actual = %@", name );
 	
 	value = [scanner scanQuotedValue];
-	STAssertTrue( [@"/dir/index.html" isEqualToString:value], @"actual = %@", value );
+	XCTAssertTrue( [@"/dir/index.html" isEqualToString:value], @"actual = %@", value );
 	
 	////////////////////////////////////////////////////////////////////////////
 	
 	name = [scanner scanName];
-	STAssertTrue( [@"qop" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"qop" isEqualToString:name], @"actual = %@", name );
 	
 	value = [scanner scanValue];
-	STAssertTrue( [@"auth" isEqualToString:value], @"actual = %@", value );
+	XCTAssertTrue( [@"auth" isEqualToString:value], @"actual = %@", value );
 	
 	
 	////////////////////////////////////////////////////////////////////////////
 	
 	name = [scanner scanName];
-	STAssertTrue( [@"nc" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"nc" isEqualToString:name], @"actual = %@", name );
 	
 	UInt32 nc = [scanner scanHexUInt32];
-	STAssertTrue( 1 == nc, @"actual = %d", nc );
+	XCTAssertTrue( 1 == nc, @"actual = %d", nc );
 	
 	////////////////////////////////////////////////////////////////////////////
 	
 	name = [scanner scanName];
-	STAssertTrue( [@"cnonce" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"cnonce" isEqualToString:name], @"actual = %@", name );
 	
 	value = [scanner scanQuotedValue];
-	STAssertTrue( [@"0a4f113b" isEqualToString:value], @"actual = %@", value );
+	XCTAssertTrue( [@"0a4f113b" isEqualToString:value], @"actual = %@", value );
 	
 	////////////////////////////////////////////////////////////////////////////
 	
 	name = [scanner scanName];
-	STAssertTrue( [@"response" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"response" isEqualToString:name], @"actual = %@", name );
 	
 	value = [scanner scanQuotedValue];
-	STAssertTrue( [@"6629fae49393a05397450978507c4ef1" isEqualToString:value], @"actual = %@", value );
+	XCTAssertTrue( [@"6629fae49393a05397450978507c4ef1" isEqualToString:value], @"actual = %@", value );
 	
 	////////////////////////////////////////////////////////////////////////////
 	
 	name = [scanner scanName];
-	STAssertTrue( [@"opaque" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"opaque" isEqualToString:name], @"actual = %@", name );
 	
 	value = [scanner scanQuotedValue];
-	STAssertTrue( [@"5ccc069c403ebaf9f0171e9517f40e41" isEqualToString:value], @"actual = %@", value );
+	XCTAssertTrue( [@"5ccc069c403ebaf9f0171e9517f40e41" isEqualToString:value], @"actual = %@", value );
 	
 	////////////////////////////////////////////////////////////////////////////
 	
 	name = [scanner scanName];
-	STAssertTrue( nil == name, @"actual = %p", name );
+	XCTAssertTrue( nil == name, @"actual = %p", name );
 	
 	
 }
@@ -169,35 +169,35 @@
 	////////////////////////////////////////////////////////////////////////////
 	
 	NSString* name = [scanner scanName];
-	STAssertTrue( [@"value00000000" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"value00000000" isEqualToString:name], @"actual = %@", name );
 	
 	UInt32 value = [scanner scanHexUInt32];
-	STAssertTrue( 0 == value, @"actual = %u", value );
+	XCTAssertTrue( 0 == value, @"actual = %u", value );
 	
 	////////////////////////////////////////////////////////////////////////////
 	
 	
 	name = [scanner scanName];
-	STAssertTrue( [@"value0000000a" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"value0000000a" isEqualToString:name], @"actual = %@", name );
 	
 	value = [scanner scanHexUInt32];
-	STAssertTrue( 10 == value, @"actual = %u", value );
+	XCTAssertTrue( 10 == value, @"actual = %u", value );
 	
 	////////////////////////////////////////////////////////////////////////////
 
 	name = [scanner scanName];
-	STAssertTrue( [@"valueFFFFFFFF" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"valueFFFFFFFF" isEqualToString:name], @"actual = %@", name );
 	
 	value = [scanner scanHexUInt32];
-	STAssertTrue( 0xFFFFFFFF == value, @"actual = %u", value );
+	XCTAssertTrue( 0xFFFFFFFF == value, @"actual = %u", value );
 	
 	////////////////////////////////////////////////////////////////////////////
 	
 	name = [scanner scanName];
-	STAssertTrue( [@"valueFFFFFFFFFFFF" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"valueFFFFFFFFFFFF" isEqualToString:name], @"actual = %@", name );
 	
 	value = [scanner scanHexUInt32];
-	STAssertTrue( 0 == value, @"actual = %u", value );
+	XCTAssertTrue( 0 == value, @"actual = %u", value );
 	
 	////////////////////////////////////////////////////////////////////////////
 	
@@ -216,19 +216,19 @@
 	////////////////////////////////////////////////////////////////////////////
 	
 	NSString* name = [scanner scanName];
-	STAssertTrue( [@"realm" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"realm" isEqualToString:name], @"actual = %@", name );
 	
 	NSString* value = [scanner scanQuotedValue];
-	STAssertTrue( [@"testrealm@host.com" isEqualToString:value], @"actual = %@", value );
+	XCTAssertTrue( [@"testrealm@host.com" isEqualToString:value], @"actual = %@", value );
 	
 	////////////////////////////////////////////////////////////////////////////
 
 	
 	name = [scanner scanName];
-	STAssertTrue( [@"qop" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"qop" isEqualToString:name], @"actual = %@", name );
 	
 	value = [scanner scanQuotedValue];
-	STAssertTrue( [@"auth-int" isEqualToString:value], @"actual = %@", value );
+	XCTAssertTrue( [@"auth-int" isEqualToString:value], @"actual = %@", value );
 	
 	////////////////////////////////////////////////////////////////////////////
 	
@@ -250,19 +250,19 @@
 	////////////////////////////////////////////////////////////////////////////
 	
 	NSString* name = [scanner scanName];
-	STAssertTrue( [@"realm" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"realm" isEqualToString:name], @"actual = %@", name );
 	
 	NSString* value = [scanner scanQuotedValue];
-	STAssertTrue( [@"testrealm@host.com" isEqualToString:value], @"actual = %@", value );
+	XCTAssertTrue( [@"testrealm@host.com" isEqualToString:value], @"actual = %@", value );
 	
 	////////////////////////////////////////////////////////////////////////////
 	
 	
 	name = [scanner scanName];
-	STAssertTrue( [@"nc" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"nc" isEqualToString:name], @"actual = %@", name );
 	
 	UInt32 nc = [scanner scanHexUInt32];
-	STAssertTrue( 10 == nc, @"actual = %u", nc );
+	XCTAssertTrue( 10 == nc, @"actual = %u", nc );
 
 	////////////////////////////////////////////////////////////////////////////
 	
@@ -283,19 +283,19 @@
 	////////////////////////////////////////////////////////////////////////////
 	
 	NSString* name = [scanner scanName];
-	STAssertTrue( [@"realm" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"realm" isEqualToString:name], @"actual = %@", name );
 	
 	NSString* value = [scanner scanQuotedValue];
-	STAssertTrue( [@"users@al's computer" isEqualToString:value], @"actual = %@", value );
+	XCTAssertTrue( [@"users@al's computer" isEqualToString:value], @"actual = %@", value );
 	
 	
 	////////////////////////////////////////////////////////////////////////////
 	
 	name = [scanner scanName];
-	STAssertTrue( [@"nonce" isEqualToString:name], @"actual = %@", name );
+	XCTAssertTrue( [@"nonce" isEqualToString:name], @"actual = %@", name );
 	
 	value = [scanner scanQuotedValue];
-	STAssertTrue( [@"dcd98b7102dd2f0e8b11d0f600bfb0c093" isEqualToString:value], @"actual = %@", value );
+	XCTAssertTrue( [@"dcd98b7102dd2f0e8b11d0f600bfb0c093" isEqualToString:value], @"actual = %@", value );
 	
 }
 

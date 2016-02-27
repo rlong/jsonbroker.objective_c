@@ -45,15 +45,15 @@
     JBMetaProxy* proxy = [JBMetaProxyIntegrationTest buildProxy];
     
     NSArray* version = [proxy getVersion:[JBTestService SERVICE_NAME]];
-    STAssertNotNil( version, @"version = %p", version);
+    XCTAssertNotNil( version, @"version = %p", version);
     
     NSNumber* majorVersion = [version objectAtIndex:0];
-    STAssertNotNil( majorVersion, @"majorVersion = %p", majorVersion);
-    STAssertTrue( 1 == [majorVersion intValue], @"[majorVersion intValue] = %d", [majorVersion intValue]);
+    XCTAssertNotNil( majorVersion, @"majorVersion = %p", majorVersion);
+    XCTAssertTrue( 1 == [majorVersion intValue], @"[majorVersion intValue] = %d", [majorVersion intValue]);
     
     NSNumber* minorVersion = [version objectAtIndex:1];
-    STAssertNotNil( minorVersion, @"minorVersion = %p", minorVersion);
-    STAssertTrue( 0 == [minorVersion intValue], @"[minorVersion intValue] = %d", [minorVersion intValue]);
+    XCTAssertNotNil( minorVersion, @"minorVersion = %p", minorVersion);
+    XCTAssertTrue( 0 == [minorVersion intValue], @"[minorVersion intValue] = %d", [minorVersion intValue]);
     
     
     
@@ -67,7 +67,7 @@
     JBMetaProxy* proxy = [JBMetaProxyIntegrationTest buildProxy];
     
     NSArray* version = [proxy getVersion:@"module.non-existing-service"];
-    STAssertNil( version, @"version = %p", version);
+    XCTAssertNil( version, @"version = %p", version);
     
     
 }

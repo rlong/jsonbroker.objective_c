@@ -4,9 +4,9 @@
 //
 
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface JBMediaTypeUnitTest : SenTestCase {
+@interface JBMediaTypeUnitTest : XCTestCase {
     
 }
 

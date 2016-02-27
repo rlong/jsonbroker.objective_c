@@ -4,13 +4,12 @@
 //
 
 
-#import <Foundation/Foundation.h>
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
 
 
 
-@interface JBJsonStringHandlerUnitTest : SenTestCase {
+@interface JBJsonStringHandlerUnitTest : XCTestCase {
     
 }
 

@@ -55,25 +55,25 @@ static NSCalendar *gregorianCalendar;
 
 -(void)validateDate:(NSDate*)date {
 
-	STAssertTrue( nil != date, @"actual = %p", date );
+	XCTAssertTrue( nil != date, @"actual = %p", date );
 
 	NSInteger year = [self yearFromDate:date];
-	STAssertTrue( 1998 == year, @"actual = %d", year );
+	XCTAssertTrue( 1998 == year, @"actual = %d", year );
 	
 	NSInteger month = [self monthFromDate:date];
-	STAssertTrue( 7 == month, @"actual = %d", month );
+	XCTAssertTrue( 7 == month, @"actual = %d", month );
 	
 	NSInteger days = [self daysFromDate:date];
-	STAssertTrue( 17 == days, @"actual = %d", days );
+	XCTAssertTrue( 17 == days, @"actual = %d", days );
 	
 	NSInteger hours = [self hoursFromDate:date];
-	STAssertTrue( 14 == hours, @"actual = %d", hours );
+	XCTAssertTrue( 14 == hours, @"actual = %d", hours );
 
 	NSInteger minutes = [self minutesFromDate:date];
-	STAssertTrue( 8 == minutes, @"actual = %d", minutes );
+	XCTAssertTrue( 8 == minutes, @"actual = %d", minutes );
 	
 	NSInteger seconds = [self secondsFromDate:date];
-	STAssertTrue( 55 == seconds, @"actual = %d", seconds );
+	XCTAssertTrue( 55 == seconds, @"actual = %d", seconds );
 	
 }
 
@@ -110,6 +110,6 @@ static NSCalendar *gregorianCalendar;
 	[self validateDate:date];
 
 	NSString* iso8601Representation = [JBDateTimeUtilities iso8601RepresentationOfDate:date];
-	STAssertTrue( [@"1998-07-17T14:08:55" isEqualToString:iso8601Representation], @"actual = %@", iso8601Representation );
+	XCTAssertTrue( [@"1998-07-17T14:08:55" isEqualToString:iso8601Representation], @"actual = %@", iso8601Representation );
 }
 @end

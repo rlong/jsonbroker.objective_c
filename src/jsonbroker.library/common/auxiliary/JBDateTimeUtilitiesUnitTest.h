@@ -5,9 +5,9 @@
 
 
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface JBDateTimeUtilitiesUnitTest : SenTestCase {
+@interface JBDateTimeUtilitiesUnitTest : XCTestCase {
 
 }
 

@@ -79,32 +79,32 @@
     JBMultiPartReader* reader = [[JBMultiPartReader alloc] initWithBoundary:@"---------------------------114782935826962" entity:entity];
     
     id<JBDelimiterIndicator> indicator = [reader skipToNextDelimiterIndicator];
-    STAssertNotNil(indicator, @"actual = %p", indicator);
-    STAssertTrue( [indicator isKindOfClass:[JBDelimiterFound class]], @"NSStringFromClass([indicator class]) = '%@'", NSStringFromClass([indicator class]));
+    XCTAssertNotNil(indicator, @"actual = %p", indicator);
+    XCTAssertTrue( [indicator isKindOfClass:[JBDelimiterFound class]], @"NSStringFromClass([indicator class]) = '%@'", NSStringFromClass([indicator class]));
     JBDelimiterFound* delimiterFound = (JBDelimiterFound*)indicator;
-    STAssertTrue( 0 == [delimiterFound startOfDelimiter], @"actual = %d", [delimiterFound startOfDelimiter] );
-    STAssertFalse( [delimiterFound isCloseDelimiter], @"actual = %d", [delimiterFound isCloseDelimiter]);
+    XCTAssertTrue( 0 == [delimiterFound startOfDelimiter], @"actual = %d", [delimiterFound startOfDelimiter] );
+    XCTAssertFalse( [delimiterFound isCloseDelimiter], @"actual = %d", [delimiterFound isCloseDelimiter]);
     
     
     // Content-Disposition
     NSMutableData* stringBuffer = [[NSMutableData alloc] init];
     NSString* contentDisposition = [reader readLine:stringBuffer];
-    STAssertTrue( [multipartLines[2] isEqualToString:contentDisposition], @"actual = %@", contentDisposition );
+    XCTAssertTrue( [multipartLines[2] isEqualToString:contentDisposition], @"actual = %@", contentDisposition );
     
     // Content-Type
     NSString* contentType = [reader readLine:stringBuffer];
-    STAssertTrue( [multipartLines[3] isEqualToString:contentType], @"actual = %@", contentType );
+    XCTAssertTrue( [multipartLines[3] isEqualToString:contentType], @"actual = %@", contentType );
     
     // empty line
     NSString* emptyLine = [reader readLine:stringBuffer];
-    STAssertTrue( [@"" isEqualToString:emptyLine], @"actual = %@", emptyLine );
+    XCTAssertTrue( [@"" isEqualToString:emptyLine], @"actual = %@", emptyLine );
     
     // ending indicator
     indicator = [reader skipToNextDelimiterIndicator];
-    STAssertNotNil(indicator, @"actual = %p", indicator);
-    STAssertTrue( [indicator isKindOfClass:[JBDelimiterFound class]], @"NSStringFromClass([indicator class]) = '%@'", NSStringFromClass([indicator class]));
+    XCTAssertNotNil(indicator, @"actual = %p", indicator);
+    XCTAssertTrue( [indicator isKindOfClass:[JBDelimiterFound class]], @"NSStringFromClass([indicator class]) = '%@'", NSStringFromClass([indicator class]));
     delimiterFound = (JBDelimiterFound*)indicator;
-    STAssertTrue( [delimiterFound isCloseDelimiter], @"actual = %d", [delimiterFound isCloseDelimiter]);
+    XCTAssertTrue( [delimiterFound isCloseDelimiter], @"actual = %d", [delimiterFound isCloseDelimiter]);
     
 }
 
@@ -141,25 +141,25 @@
     JBTestMultiPartHandler* testMultiPartHandler = [[JBTestMultiPartHandler alloc] init];
     [reader process:testMultiPartHandler];
     
-    STAssertTrue( [testMultiPartHandler haveFoundCloseDelimiter], @"actual = %d", [testMultiPartHandler haveFoundCloseDelimiter]);
-    STAssertTrue( 2 == [[testMultiPartHandler partHandlers] count], @"actual = %d", [[testMultiPartHandler partHandlers] count] );
+    XCTAssertTrue( [testMultiPartHandler haveFoundCloseDelimiter], @"actual = %d", [testMultiPartHandler haveFoundCloseDelimiter]);
+    XCTAssertTrue( 2 == [[testMultiPartHandler partHandlers] count], @"actual = %d", [[testMultiPartHandler partHandlers] count] );
     
     {
         JBTestPartHandler* firstTestPartHandler = [[testMultiPartHandler partHandlers] objectAtIndex:0];
-        STAssertTrue( (16+6) == [[firstTestPartHandler data] length], @"actual = %d", [[firstTestPartHandler data] length] );
+        XCTAssertTrue( (16+6) == [[firstTestPartHandler data] length], @"actual = %d", [[firstTestPartHandler data] length] );
         NSString* expectedContent = @"0123\r\n4567\r\n89ab\r\ncdef";
         NSString* actualContent = [JBDataHelper toUtf8String:[firstTestPartHandler data]];
-        STAssertTrue( [expectedContent isEqualToString:actualContent], @"actual = %@", actualContent );
+        XCTAssertTrue( [expectedContent isEqualToString:actualContent], @"actual = %@", actualContent );
         
     }
     
     {
         
         JBTestPartHandler* secondTestPartHandler = [[testMultiPartHandler partHandlers] objectAtIndex:1];
-        STAssertTrue( (16+6) == [[secondTestPartHandler data] length], @"actual = %d", [[secondTestPartHandler data] length] );
+        XCTAssertTrue( (16+6) == [[secondTestPartHandler data] length], @"actual = %d", [[secondTestPartHandler data] length] );
         NSString* expectedContent = @"cdef\r\n89ab\r\n4567\r\n0123";
         NSString* actualContent = [JBDataHelper toUtf8String:[secondTestPartHandler data]];
-        STAssertTrue( [expectedContent isEqualToString:actualContent], @"actual = %@", actualContent );
+        XCTAssertTrue( [expectedContent isEqualToString:actualContent], @"actual = %@", actualContent );
     }
     
 }
@@ -194,7 +194,7 @@
     }
     
     NSString* attachment = [self buildAttachment:contentSource length:length];
-    STAssertTrue( length == [attachment length], @"actual = %d", [attachment length]);
+    XCTAssertTrue( length == [attachment length], @"actual = %d", [attachment length]);
     
     NSMutableString* stringBuilder = [[NSMutableString alloc] init];
     [stringBuilder autorelease];
@@ -222,14 +222,14 @@
     JBTestMultiPartHandler* testMultiPartHandler = [[JBTestMultiPartHandler alloc] init];
     [reader process:testMultiPartHandler];
     
-    STAssertTrue( [testMultiPartHandler haveFoundCloseDelimiter], @"actual = %d", [testMultiPartHandler haveFoundCloseDelimiter]);
-    STAssertTrue( 1 == [[testMultiPartHandler partHandlers] count], @"actual = %d", [[testMultiPartHandler partHandlers] count] );
+    XCTAssertTrue( [testMultiPartHandler haveFoundCloseDelimiter], @"actual = %d", [testMultiPartHandler haveFoundCloseDelimiter]);
+    XCTAssertTrue( 1 == [[testMultiPartHandler partHandlers] count], @"actual = %d", [[testMultiPartHandler partHandlers] count] );
     
     JBTestPartHandler* firstTestPartHandler = [[testMultiPartHandler partHandlers] objectAtIndex:0];
-    STAssertTrue( [attachment length] == [[firstTestPartHandler data] length], @"actual = %d", [[firstTestPartHandler data] length] );
+    XCTAssertTrue( [attachment length] == [[firstTestPartHandler data] length], @"actual = %d", [[firstTestPartHandler data] length] );
     
     NSString* actualContent = [JBDataHelper toUtf8String:[firstTestPartHandler data]];
-    STAssertTrue( [attachment isEqualToString:actualContent], @"![attachment isEqualToString:actualContent]"); // `actual` value could be very large ... won't print to console
+    XCTAssertTrue( [attachment isEqualToString:actualContent], @"![attachment isEqualToString:actualContent]"); // `actual` value could be very large ... won't print to console
     
 
     
@@ -302,7 +302,7 @@
     }
     
     NSString* attachment = [self buildAttachment:contentSource length:length];
-    STAssertTrue( length == [attachment length], @"actual = %d", [attachment length]);
+    XCTAssertTrue( length == [attachment length], @"actual = %d", [attachment length]);
     
     NSMutableString* stringBuilder = [[NSMutableString alloc] init];
     [stringBuilder autorelease];
@@ -340,24 +340,24 @@
     JBTestMultiPartHandler* testMultiPartHandler = [[JBTestMultiPartHandler alloc] init];
     [reader process:testMultiPartHandler];
     
-    STAssertTrue( [testMultiPartHandler haveFoundCloseDelimiter], @"actual = %d", [testMultiPartHandler haveFoundCloseDelimiter]);
-    STAssertTrue( 2 == [[testMultiPartHandler partHandlers] count], @"actual = %d", [[testMultiPartHandler partHandlers] count] );
+    XCTAssertTrue( [testMultiPartHandler haveFoundCloseDelimiter], @"actual = %d", [testMultiPartHandler haveFoundCloseDelimiter]);
+    XCTAssertTrue( 2 == [[testMultiPartHandler partHandlers] count], @"actual = %d", [[testMultiPartHandler partHandlers] count] );
     
     {
         JBTestPartHandler* firstTestPartHandler = [[testMultiPartHandler partHandlers] objectAtIndex:0];
-        STAssertTrue( [attachment length] == [[firstTestPartHandler data] length], @"actual = %d", [[firstTestPartHandler data] length] );
+        XCTAssertTrue( [attachment length] == [[firstTestPartHandler data] length], @"actual = %d", [[firstTestPartHandler data] length] );
         
         NSString* actualContent = [JBDataHelper toUtf8String:[firstTestPartHandler data]];
-        STAssertTrue( [attachment isEqualToString:actualContent], @"![attachment isEqualToString:actualContent]"); // `actual` value could be very large ... won't print to console
+        XCTAssertTrue( [attachment isEqualToString:actualContent], @"![attachment isEqualToString:actualContent]"); // `actual` value could be very large ... won't print to console
         
     }
     
     {
         JBTestPartHandler* secondTestPartHandler = [[testMultiPartHandler partHandlers] objectAtIndex:1];
-        STAssertTrue( [attachment length] == [[secondTestPartHandler data] length], @"actual = %d", [[secondTestPartHandler data] length] );
+        XCTAssertTrue( [attachment length] == [[secondTestPartHandler data] length], @"actual = %d", [[secondTestPartHandler data] length] );
         
         NSString* actualContent = [JBDataHelper toUtf8String:[secondTestPartHandler data]];
-        STAssertTrue( [attachment isEqualToString:actualContent], @"![attachment isEqualToString:actualContent]"); // `actual` value could be very large ... won't print to console
+        XCTAssertTrue( [attachment isEqualToString:actualContent], @"![attachment isEqualToString:actualContent]"); // `actual` value could be very large ... won't print to console
         
     }
     

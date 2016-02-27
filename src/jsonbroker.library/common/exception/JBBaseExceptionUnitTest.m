@@ -87,7 +87,7 @@
     @catch (JBBaseException *exception) {
         
         Log_debugString( [exception reason] );
-        STAssertTrue( [@"'string', 3, 3.140000, 0x0" isEqualToString:[exception reason]], @"actual = %@", [exception reason]);
+        XCTAssertTrue( [@"'string', 3, 3.140000, 0x0" isEqualToString:[exception reason]], @"actual = %@", [exception reason]);
         
     }
     
