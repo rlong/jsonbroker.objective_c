@@ -55,7 +55,6 @@
 -(JBHttpResponse*)buildOptionsResponse:(JBHttpRequest*)request {
     
     JBHttpResponse* answer = [[JBHttpResponse alloc] initWithStatus:HttpStatus_NO_CONTENT_204];
-    [answer autorelease];
     
     // vvv http://www.w3.org/TR/cors/#access-control-allow-methods-response-header
     [answer putHeader:@"Access-Control-Allow-Methods" value:@"OPTIONS, POST"];
@@ -152,7 +151,6 @@
 	
     [self setServicesRegistery:nil];
 	
-	[super dealloc];
 	
 }
 

@@ -37,11 +37,10 @@
     
     NSArray* callStackSymbols = [e callStackSymbols];
     JBJsonArray* answer = [[JBJsonArray alloc] initWithCapacity:[callStackSymbols count]];
-    [answer autorelease];
     
     for( NSString* callStackSymbol in callStackSymbols ) {
-        callStackSymbol = [callStackSymbol stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [answer add:callStackSymbol];
+        NSString* trimmedCallStackSymbol = [callStackSymbol stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [answer add:trimmedCallStackSymbol];
     }
     
     return answer;
@@ -59,7 +58,6 @@
 	NSString* executable = [arguments objectAtIndex:0];
 	
 	NSMutableString* answer = [[NSMutableString alloc] initWithFormat:@"/usr/bin/atos -o \"%@\"", executable];
-    [answer autorelease];
 	
 	
 	NSArray* stack = [e callStackReturnAddresses];

@@ -49,7 +49,7 @@
 	
     Log_enteredMethod();
     
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+//	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     {
         
         Log_debug( @"Starting ... " );
@@ -61,7 +61,7 @@
         Log_debug( @"... Finished" );
         
     }
-	[pool release];
+//	[pool release];
     
 }
 
@@ -94,7 +94,6 @@
 	
 	[self setHttpSecurityManager:nil];
 	
-	[super dealloc];
 	
 }
 

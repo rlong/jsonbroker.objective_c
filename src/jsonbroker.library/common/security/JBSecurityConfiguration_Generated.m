@@ -25,7 +25,6 @@
 
 -(JBJsonObject*)toJsonObject {
 	JBJsonObject* answer = [[JBJsonObject alloc] init];
-	[answer autorelease];
 	[answer setObject:_localRealm forKey:@"localRealm"];
 	return answer;
     
@@ -53,7 +52,6 @@
     
     [self setLocalRealm:nil];
     
-	[super dealloc];
     
 }
 

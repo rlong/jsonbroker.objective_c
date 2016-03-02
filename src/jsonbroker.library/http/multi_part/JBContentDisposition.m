@@ -90,7 +90,6 @@
     // see http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1 for rules
 
     JBParametersScanner* scanner = [[JBParametersScanner alloc] initWithValue:value offset:0];
-    [scanner autorelease];
     
     
     NSString* firstAttribute = [scanner nextAttribute];
@@ -109,7 +108,6 @@
     }
     
     JBContentDisposition* answer = [[JBContentDisposition alloc] initWithValue:value];
-    [answer autorelease];
     
     [answer setDispExtensionToken:dispExtensionToken];
     
@@ -154,7 +152,6 @@
     [self setValue:nil];
 	[self setDispositionParameters:nil];
 
-	[super dealloc];
 	
 }
 

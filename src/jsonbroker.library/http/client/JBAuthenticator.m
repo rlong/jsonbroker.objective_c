@@ -146,7 +146,6 @@
     Log_infoString( label );
     
     answer = [[JBSubject alloc] initWithUsername:username realm:serverRealm password:password label:label];
-    [answer autorelease];
     
     [_securityConfiguration addServer:answer];
     
@@ -234,7 +233,6 @@
     [self setSecurityConfiguration:nil];
     [self setAuthorization:nil];
     
-    [super dealloc];
 	
 }
 

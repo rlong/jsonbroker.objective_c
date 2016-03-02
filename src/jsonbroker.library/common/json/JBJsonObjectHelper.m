@@ -32,7 +32,6 @@
     }
     
     JBJsonBuilder* builder = [[JBJsonBuilder alloc] init];
-    [builder autorelease];
     
     [JBJsonReader readFromData:jsonData handler:builder];
     
@@ -46,7 +45,6 @@
     
 
     JBJsonBuilder* builder = [[JBJsonBuilder alloc] init];
-    [builder autorelease];
     
     [JBJsonReader readFromData:jsonData handler:builder];
     

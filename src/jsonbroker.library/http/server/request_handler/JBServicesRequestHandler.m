@@ -110,7 +110,6 @@ static int _MAXIMUM_REQUEST_ENTITY_LENGTH;
         if( [JBBrokerMessageType oneway] == [call messageType] ) {
             
             answer = [[JBHttpResponse alloc] initWithStatus:HttpStatus_NO_CONTENT_204];
-            [answer autorelease];
             
         } else {
         
@@ -119,10 +118,8 @@ static int _MAXIMUM_REQUEST_ENTITY_LENGTH;
             
             
             id<JBEntity> responseBody = [[JBDataEntity alloc] initWithData:responseData];
-            [responseBody autorelease];
             
             answer = [[JBHttpResponse alloc] initWithStatus:HttpStatus_OK_200 entity:responseBody];
-            [answer autorelease];
         }
     }
 
@@ -179,7 +176,6 @@ static int _MAXIMUM_REQUEST_ENTITY_LENGTH;
 	
     [self setServicesRegistery:nil];
 	
-	[super dealloc];
 	
 }
 

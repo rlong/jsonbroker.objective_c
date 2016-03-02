@@ -48,9 +48,6 @@ static JBJsonArrayHandler* _jsonArrayHandler = nil;
     }
 	
 	JBBrokerMessage* answer = [[JBBrokerMessage alloc] initWithValues:messageComponents];
-	[answer autorelease];
-	
-	[reader release];
 	
 	return answer;
 	

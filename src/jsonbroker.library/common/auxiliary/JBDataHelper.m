@@ -14,7 +14,6 @@
 
 +(NSString*)toUtf8String:(NSData*)data { 
     NSString* answer = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    [answer autorelease];
     return answer;
 }
 
@@ -44,7 +43,6 @@
     NSUInteger contentLength = (NSUInteger)[entity getContentLength];
 
     NSMutableData* answer = [[NSMutableData alloc] initWithCapacity:contentLength];
-    [answer autorelease];
     
     NSInputStream* entityContent = [entity getContent];
 

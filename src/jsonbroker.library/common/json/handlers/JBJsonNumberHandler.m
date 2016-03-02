@@ -77,7 +77,6 @@ static JBJsonNumberHandler* _instance = nil;
 			NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
             NSString* numberString = [JBStringHelper getUtf8String:data];
 			answer = [numberFormatter numberFromString:numberString];
-			[numberFormatter release];
 			return answer;
 			
 		}while( true );
@@ -88,7 +87,6 @@ static JBJsonNumberHandler* _instance = nil;
     
 	// code 'should' never arrive here
 	BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:@"unexpected code path"];
-	[e autorelease];
 	@throw e;
     
 }

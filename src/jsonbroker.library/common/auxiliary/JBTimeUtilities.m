@@ -25,7 +25,6 @@
 	if( 0 != success ) {
 		NSString* technicalError = [NSString stringWithFormat:@"%s (errno = %d)", strerror(errno), errno];
 		BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-		[e autorelease];
 		@throw e;
 	}
 }

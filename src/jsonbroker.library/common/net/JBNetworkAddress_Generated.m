@@ -23,7 +23,6 @@
 
 -(JBJsonObject*)toJsonObject {
 	JBJsonObject* answer = [[JBJsonObject alloc] init];
-	[answer autorelease];
 	[answer setInt:_port forKey:@"port"];
 	return answer;
     
@@ -50,7 +49,6 @@
 -(void)dealloc {
     
     
-	[super dealloc];
     
 }
 

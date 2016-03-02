@@ -73,7 +73,6 @@
     [self setServiceDelegate:nil];
     [self setNext:nil];
     
-    [super dealloc];
 }
 
 #pragma mark fields

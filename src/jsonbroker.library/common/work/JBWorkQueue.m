@@ -57,7 +57,6 @@
 	[_inqueueLock lockWhenCondition:MESSAGES_PENDING];
 	
 	id<JBJob> answer = [_inqueue objectAtIndex:0];
-	[[answer retain] autorelease];
 	
 	[_inqueue removeObjectAtIndex:0];
 	
@@ -95,7 +94,6 @@
 	[self setInqueueLock:nil];
 	[self setInqueue:nil];
 	
-	[super dealloc];
 }
 
 #pragma mark fields

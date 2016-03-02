@@ -44,11 +44,9 @@
     
     
     id popped = [_stack lastObject];
-    [popped retain];
     {
         [_stack removeLastObject];
     }
-    [popped autorelease];
     
     [self setCurrentObject:nil];
     [self setCurrentArray:nil];
@@ -106,7 +104,6 @@
     [self setCurrentObject:nil];
 	[self setCurrentArray:nil];
 
-	[super dealloc];
 	
 }
 

@@ -97,7 +97,6 @@
 	[self setIpAddress:nil];
 	[self setHostName:nil];
 	
-	[super dealloc];
 }
 
 

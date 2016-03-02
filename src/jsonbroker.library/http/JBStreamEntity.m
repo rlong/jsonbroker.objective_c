@@ -83,7 +83,6 @@
 -(NSString*)md5 {
     
     BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:@"unsupported"];
-    [e autorelease];
     @throw  e;
     
 }
@@ -176,7 +175,6 @@
     [self setContentSource:nil];
 	[self setMimeType:nil];
 
-    [super dealloc];
 	
 }
 

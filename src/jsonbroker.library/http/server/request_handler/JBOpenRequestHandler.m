@@ -128,7 +128,6 @@ static NSMutableDictionary* _processors;
 	
 	[self setProcessors:nil];
 	
-	[super dealloc];
 	
 }
 

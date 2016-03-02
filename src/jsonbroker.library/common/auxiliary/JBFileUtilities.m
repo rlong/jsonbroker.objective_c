@@ -40,7 +40,6 @@
     if( nil != error ) {
         
         BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ callTo:@"[ NSFileManager attributesOfItemAtPath:error:]" failedWithError:error];
-        [e autorelease];
         @throw  e;
         
     }
@@ -89,7 +88,6 @@
         }
         
         BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-        [e autorelease];
         
         if( nil != error )  {
             [e setError:error];
@@ -158,7 +156,6 @@
         }
         
         BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-        [e autorelease];
         
         if( nil != error )  {
             [e setError:error];

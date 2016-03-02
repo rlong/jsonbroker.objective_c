@@ -72,7 +72,6 @@ static JBWorker** _workers = nil;
     {
         [_workQueue enqueue:wrapper];
     }
-    [wrapper release];
     
 }
 

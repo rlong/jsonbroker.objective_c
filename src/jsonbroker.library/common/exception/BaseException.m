@@ -94,7 +94,6 @@ static int _defaultFaultCode;
 
 -(NSArray*)getLogMessages {
     NSMutableArray* answer = [[NSMutableArray alloc] init];
-    [answer autorelease];
 
     if( nil != _errorDomain ) {
         [answer addObject:[NSString stringWithFormat:@"errorDomain = '%@'", _errorDomain]];
@@ -136,8 +135,9 @@ static int _defaultFaultCode;
         
         NSArray* callStackSymbols = [self callStackSymbols];
         for( NSString* callStackSymbol in callStackSymbols ) {
-            callStackSymbol = [callStackSymbol stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            [answer addObject:[NSString stringWithFormat:@"\t%@", callStackSymbol]];
+            
+            NSString* trimmedCallStackSymbol = [callStackSymbol stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            [answer addObject:[NSString stringWithFormat:@"\t%@", trimmedCallStackSymbol]];
         }
         
         [answer addObject:@"]"];
@@ -194,7 +194,6 @@ static int _defaultFaultCode;
 	NSString* technicalError = nil;
 	
     technicalError = [[NSString alloc] initWithFormat:faultStringFormat arguments:argList];
-    [technicalError autorelease];
     
     
     BaseException* answer = [self initWithOriginator:originator faultMessage:technicalError];
@@ -286,7 +285,6 @@ static int _defaultFaultCode;
     [self setUnderlyingFaultMessage:nil];
 	
 	
-	[super dealloc];
 }
 
 

@@ -44,7 +44,6 @@ static JBJsonArrayHandler* _jsonArrayHandler = nil;
     }
     
     JBJsonBuilder* builder = [[JBJsonBuilder alloc] init];
-    [builder autorelease];
     
     [JBJsonReader readFromData:jsonData handler:builder];
     
@@ -65,12 +64,9 @@ static JBJsonArrayHandler* _jsonArrayHandler = nil;
         [JBJsonReader readFromData:data handler:builder];
         
         JBJsonArray* answer = [builder arrayDocument];
-        [answer retain];
-        [answer autorelease];
         return  answer;
     }
     @finally {
-        [builder release];
     }
 }
 
@@ -94,7 +90,6 @@ static JBJsonArrayHandler* _jsonArrayHandler = nil;
         
     }
     @finally {
-        [writer release];
     }
     
     return answer;
@@ -104,10 +99,8 @@ static JBJsonArrayHandler* _jsonArrayHandler = nil;
 +(NSString*)toString:(JBJsonArray*)array {
     
     JBJsonStringOutput* output = [[JBJsonStringOutput alloc] init];
-    [output autorelease];
     
     JBJsonWriter* writer = [[JBJsonWriter alloc] initWithOutput:output];
-    [writer autorelease];
     
     [JBJsonWalker walkJsonArrayDocument:array visitor:writer];
     NSString* answer = [output toString];

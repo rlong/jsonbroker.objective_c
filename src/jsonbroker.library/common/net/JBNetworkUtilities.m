@@ -67,7 +67,6 @@ static bool _loggedDeviceType = false;
 		BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
         
 		[e addIntContext:success withName:@"success"];
-		[e autorelease];
 		
 		freeifaddrs(interfaces); // free up the memory ... 
 		@throw e;
@@ -111,7 +110,6 @@ static bool _loggedDeviceType = false;
 	struct in_addr sin_addr = sockAddrIn->sin_addr;
     
 	JBIPAddress* answer = [[JBIPAddress alloc] initWithAddress:sin_addr.s_addr];
-	[answer autorelease];
 	
 	freeifaddrs(interfaces);
 	
@@ -150,13 +148,12 @@ static bool _loggedDeviceType = false;
 
     NSString* networkInfoKeySSID = (NSString*)kCNNetworkInfoKeySSID;
 
-    NSArray *ifs = (id)CNCopySupportedInterfaces();
-    [ifs autorelease];
+    NSArray *ifs = (__bridge id)CNCopySupportedInterfaces();
+//    [ifs autorelease];
     
     for (NSString *ifname in ifs) {
 
-        NSDictionary* currentNetworkInfo = (NSDictionary*)CNCopyCurrentNetworkInfo((CFStringRef)ifname);
-        [currentNetworkInfo autorelease];
+        NSDictionary* currentNetworkInfo = (__bridge NSDictionary*)CNCopyCurrentNetworkInfo((CFStringRef)ifname);
 
         NSString* answer = [currentNetworkInfo objectForKey:networkInfoKeySSID];
         if( nil != answer ) {

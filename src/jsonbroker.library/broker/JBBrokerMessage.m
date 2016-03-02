@@ -20,7 +20,6 @@
 +(JBBrokerMessage*)buildRequestWithServiceName:(NSString*)serviceName methodName:(NSString*)methodName {
 
     JBBrokerMessage* answer = [[JBBrokerMessage alloc] init];
-	[answer autorelease];
     
     [answer setMessageType:[JBBrokerMessageType request]];
     
@@ -35,7 +34,6 @@
 +(JBBrokerMessage*)buildMetaRequestWithServiceName:(NSString*)serviceName methodName:(NSString*)methodName {
     
     JBBrokerMessage* answer = [[JBBrokerMessage alloc] init];
-	[answer autorelease];
     
     [answer setMessageType:[JBBrokerMessageType metaRequest]];
     
@@ -50,7 +48,6 @@
 +(JBBrokerMessage*)buildFault:(JBBrokerMessage*)request exception:(NSException*)exception {
 
     JBBrokerMessage* answer = [[JBBrokerMessage alloc] init];
-	[answer autorelease];
 
     [answer setMessageType:[JBBrokerMessageType fault]];
     [answer setMetaData:[request metaData]];
@@ -69,7 +66,6 @@
 +(JBBrokerMessage*)buildMetaResponse:(JBBrokerMessage*)request {
 	
 	JBBrokerMessage* answer = [[JBBrokerMessage alloc] init];
-	[answer autorelease];
 	
 	[answer setMessageType:[JBBrokerMessageType metaResponse]];
     [answer setMetaData:[request metaData]];
@@ -84,7 +80,6 @@
 +(JBBrokerMessage*)buildResponse:(JBBrokerMessage*)request {
 	
 	JBBrokerMessage* answer = [[JBBrokerMessage alloc] init];
-	[answer autorelease];
 	
 	[answer setMessageType:[JBBrokerMessageType response]];
     [answer setMetaData:[request metaData]];
@@ -131,7 +126,6 @@
         answer = [writer toString];
         
     }
-    [writer release];
     
     return answer;
 
@@ -142,7 +136,6 @@
 -(JBJsonArray*)toJsonArray {
     
     JBJsonArray* answer = [[JBJsonArray alloc] initWithCapacity:8];
-    [answer autorelease];
     
     [answer add:[_messageType identifier]];
     [answer add:_metaData];
@@ -223,7 +216,6 @@
 	[self setAssociativeParamaters:nil];
 	[self setOrderedParamaters:nil];
 	
-	[super dealloc];
 	
 }
 

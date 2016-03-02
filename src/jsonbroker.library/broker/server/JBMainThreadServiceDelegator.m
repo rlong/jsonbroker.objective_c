@@ -99,7 +99,6 @@
 	[self setException:nil];
 	[self setResponse:nil];
 	
-	[super dealloc];
 	
 }
 #pragma mark fields

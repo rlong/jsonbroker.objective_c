@@ -40,7 +40,6 @@
     
     [self setServiceName:nil];
 	
-	[super dealloc];
 
 }
 

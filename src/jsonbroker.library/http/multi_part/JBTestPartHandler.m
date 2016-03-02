@@ -74,7 +74,6 @@
 	
 	[self setData:nil];
 	
-	[super dealloc];
 	
 }
 

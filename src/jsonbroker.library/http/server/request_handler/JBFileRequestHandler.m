@@ -45,7 +45,6 @@
     
     NSData* fileData = [NSData dataWithContentsOfFile:absolutePath];
     JBDataEntity* answer = [[JBDataEntity alloc] initWithData:fileData];
-    [answer autorelease];
     return answer;
 
 }
@@ -162,7 +161,6 @@
     
     [self setRootFolder:nil];
     
-    [super dealloc];
 
 }
 

@@ -16,7 +16,6 @@ __attribute__ ((deprecated)) // use CADataHelper & HLEntityHelper
 
 +(NSString*)toUtf8String:(NSData*)data;
 
-// DEPRECATED: use [StringHelper toUtf8Data]
 +(NSData*)getUtf8Data:(NSString*)input;
 
 +(NSData*)fromEntity:(id<JBEntity>)entity; // use [HLEntityHelper toData:]

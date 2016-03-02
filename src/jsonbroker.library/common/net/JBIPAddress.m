@@ -16,7 +16,6 @@ static const uint32_t loopbackIp4Address = (1 << 24) + 127;
 	
 	
 	JBIPAddress* answer = [[JBIPAddress alloc] initWithAddress:loopbackIp4Address];
-	[answer autorelease];
 	
 	return answer;
 	
@@ -36,7 +35,6 @@ static const uint32_t loopbackIp4Address = (1 << 24) + 127;
 	_ip4Address = ip4Address;
 	
 	if( nil != _toString ) {
-		[_toString release];
 	}
 	
 	int ip1 = _ip4Address & 0xFF;
@@ -45,7 +43,7 @@ static const uint32_t loopbackIp4Address = (1 << 24) + 127;
 	int ip4 = ( _ip4Address >> 24 ) & 0xFF;
 	
 	//TODO: inet_ntoa
-	_toString = [[NSString stringWithFormat:@"%d.%d.%d.%d", ip1, ip2, ip3, ip4 ] retain];
+	_toString = [NSString stringWithFormat:@"%d.%d.%d.%d", ip1, ip2, ip3, ip4 ];
 	
 	
 }
@@ -67,7 +65,7 @@ static const uint32_t loopbackIp4Address = (1 << 24) + 127;
 
 	_ip4Address |= a;
 	
-	_toString = [ip4Address retain];
+	_toString = ip4Address;
 	
 	Log_debugString(_toString );
 	
@@ -78,7 +76,6 @@ static const uint32_t loopbackIp4Address = (1 << 24) + 127;
 -(JBJsonArray*)toJSONArray {
 
 	JBJsonArray* answer = [[JBJsonArray alloc] initWithCapacity:4];
-	[answer autorelease];
 
 	NSNumber* a = [NSNumber numberWithInt:_ip4Address & 0xFF];
 	NSNumber* b = [NSNumber numberWithInt:( _ip4Address >> 8 ) & 0xFF];
@@ -137,11 +134,9 @@ static const uint32_t loopbackIp4Address = (1 << 24) + 127;
 -(void)dealloc {
 	
 	if( nil != _toString ) {
-		[_toString release];
 		_toString = nil;
 	}
 	
-	[super dealloc];
 }
 
 #pragma mark fields

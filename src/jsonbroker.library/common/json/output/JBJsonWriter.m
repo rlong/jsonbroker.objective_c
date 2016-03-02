@@ -294,7 +294,6 @@
 -(void)dealloc {
 	[self setOutput:nil];
 	
-	[super dealloc];
 	
 }
 

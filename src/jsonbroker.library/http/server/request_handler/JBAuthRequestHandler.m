@@ -185,7 +185,6 @@ static NSString* _REQUEST_URI = @"/_dynamic_/auth";
 	[self setProcessors:nil];
 	[self setSecurityManager:nil];
 	
-	[super dealloc];
 	
 }
 

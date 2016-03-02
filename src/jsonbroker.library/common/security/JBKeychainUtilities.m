@@ -90,7 +90,6 @@
 			NSString* technicalError = [NSString stringWithFormat:@"SecItemCopyMatching call failed for account '%@' for service '%@' (%ld == status)", account, service, longStatus];
 			BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
 			[e addIntContext:longStatus withName:@"longStatus"];
-			[e autorelease];
 			
 			@throw e;
 		}
@@ -99,7 +98,6 @@
 			NSString* technicalError = [NSString stringWithFormat:@"got unexpected response from SecItemCopyMatching call (nil == passwordData). account = '%@', service = '%@'", account, service];
 			BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
 			[e addIntContext:longStatus withName:@"longStatus"];
-			[e autorelease];
 			
 			@throw e;
 		}
@@ -107,14 +105,10 @@
 		answer = [[NSString alloc] initWithData:passwordData encoding:NSUTF8StringEncoding];
         
         Log_debugString( answer );
-		[answer autorelease];
 		
 	}
 	@finally {
-		[query release];
-		[attributeQuery release];
 		if( nil != passwordData ) {
-			[passwordData release];
 		}
 	}
 	return answer;
@@ -158,7 +152,6 @@
 			NSString* technicalError = [NSString stringWithFormat:@"SecItemCopyMatching call failed for account; status = %ld", longStatus];
 			BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
 			[e addIntContext:longStatus withName:@"longStatus"];
-			[e autorelease];
 			
 			@throw e;
 		}
@@ -167,18 +160,15 @@
 			NSString* technicalError = @"nil == passwordData";
 			BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
 			[e addIntContext:longStatus withName:@"longStatus"];
-			[e autorelease];
 			
 			@throw e;
 		}
-        Log_debugPointer( passwordData );
+        Log_debugPointer( (__bridge void*)passwordData );
         Log_debugString( [passwordData objectForKey:(NSString*)kSecAttrAccount] );
 		
         
     }
     @finally {
-		[query release];
-		[attributeQuery release];
     }
     
 }
@@ -244,7 +234,6 @@
             NSString* technicalError = [NSString stringWithFormat:@"unsupported type; NSStringFromClass(clazz) = %@", NSStringFromClass(clazz)];
             
             BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-            [e autorelease];
             @throw  e;
         }
         // ^^^ documentation says 'secAttrAccount' should be a CFStringRef (i.e. NSString), but finding in simulator on OSX 10.8.5 that 'secAttrAccount' is a NSData
@@ -255,8 +244,6 @@
         
     }
     @finally {
-		[query release];
-		[attributeQuery release];
     }
     
     
@@ -291,7 +278,6 @@
 	if( errSecSuccess == status ) {		
 		Log_debug( @"errSecSuccess == status" );
 		
-		[query release];
 		return YES;
 	} 
 	
@@ -303,7 +289,6 @@
         Log_warnInt( status);
 	}
 	
-	[query release];
 	return NO;
 }
 
@@ -327,8 +312,6 @@
 	if( errSecSuccess == status ) {		
 		Log_debug( @"errSecSuccess == status" );
 		
-		[attributesToUpdate release];
-		[query release];
 		return YES;
 	} 
 	
@@ -338,8 +321,6 @@
         Log_warnInt( status);
 	}
 	
-	[attributesToUpdate release];
-	[query release];
 	return NO;
 }
 
@@ -365,7 +346,6 @@
                 if( throwExceptionOnFail ) {
                     
                     BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-                    [e autorelease];
                     
                     @throw e;
                     
@@ -386,7 +366,6 @@
 +(void)removePasswordForUsername:(NSString*)username atService:(NSString*)service {
 	
 	NSMutableDictionary *query = [[NSMutableDictionary alloc] init];
-    [query autorelease];
 	
     [self setupSecurityClassForQuery:query];
 	[self setupAccessGroupForQuery:query];
@@ -414,7 +393,6 @@
 		NSString* technicalError = [NSString stringWithFormat:@"SecItemDelete call failed for user '%@' for service '%@' (%ld == longStatus)", username, service, longStatus];
 		BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
 		[e addIntContext:longStatus withName:@"longStatus"];
-		[e autorelease];
 		
 		@throw e;
 	}

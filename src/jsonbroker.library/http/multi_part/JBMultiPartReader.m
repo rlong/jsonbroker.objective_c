@@ -146,7 +146,6 @@ const UInt8 _CARRAIGE_RETURN_AND_NEWLINE[2] = {0x0d,0x0a};
     
 
     JBDelimiterDetector* detector = [[JBDelimiterDetector alloc] initWithBoundary:_boundary];
-    [detector autorelease];
     
     if( _currentOffset == _bufferEnd) {
         
@@ -219,7 +218,6 @@ const UInt8 _CARRAIGE_RETURN_AND_NEWLINE[2] = {0x0d,0x0a};
 -(JBDelimiterFound*)tryProcessPart:(id<JBPartHandler>)partHandler detector:(JBDelimiterDetector*)detector {
     
     NSMutableData* stringBuffer = [[NSMutableData alloc] init];
-    [stringBuffer autorelease];
     
     NSString* line = [self readLine:stringBuffer];
     while( 0 != [line length] ) {
@@ -380,7 +378,6 @@ const UInt8 _CARRAIGE_RETURN_AND_NEWLINE[2] = {0x0d,0x0a};
         }
         
     }
-    [detector release];
     
     
     [multiPartHandler foundCloseDelimiter];
@@ -439,8 +436,7 @@ const UInt8 _CARRAIGE_RETURN_AND_NEWLINE[2] = {0x0d,0x0a};
     free( _buffer );
 
 	
-	[super dealloc];
-	
+
 }
 
 

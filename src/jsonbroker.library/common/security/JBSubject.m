@@ -66,7 +66,6 @@ static JBSubject* _test = nil;
 		
 		NSString* a1 = [NSString stringWithFormat:@"%@:%@:%@", _username, _realm, _password];
 		_ha1 = [JBSecurityUtilities md5HashOfString:a1];
-		[_ha1 retain];
 		Log_debugString( _ha1 );
 		
 	}
@@ -113,12 +112,12 @@ static JBSubject* _test = nil;
 	
 	[JBObjectTracker allocated:answer];
 	
-	answer->_born = [[NSDate date] retain];
+	answer->_born = [NSDate date];
     
-    answer->_username = [username retain];
-    answer->_realm = [realm retain];
-	answer->_password = [password retain];
-	answer->_label = [label retain];
+    answer->_username = username;
+    answer->_realm = realm;
+	answer->_password = password;
+	answer->_label = label;
 	
 	return answer;
 }
@@ -131,35 +130,28 @@ static JBSubject* _test = nil;
     
     
     if( nil != _username ) { 
-        [_username release];
         _username = nil;
          
     }
 	
     if( nil != _realm ) { 
-        [_realm release];
         _realm = nil;
     }
     
     if( nil != _password ) { 
-        [_password release];
         _password = nil;
     }
     
     if( nil != _label ) {
-        [_label release];
         _label = nil;
     }
 	
-	[_born release];
 	_born = nil;
 	
 	if( nil != _ha1 ) {
-		[_ha1 release];
 		_ha1 = nil;
 	}
 	
-	[super dealloc];
 	
 }
 

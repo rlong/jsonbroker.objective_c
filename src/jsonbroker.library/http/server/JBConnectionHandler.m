@@ -152,7 +152,7 @@ static int _connectionId = 1;
 
 -(void)run:(NSObject*)ignoredObject {
     
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+//    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     
     NSString* threadName = [NSString stringWithFormat:@"ConnectionHandler.%d.%d", _connectionId++, [_socket fileDescriptor]];
     [[NSThread currentThread] setName:threadName];
@@ -163,7 +163,7 @@ static int _connectionId = 1;
         [[NSRunLoop currentRunLoop] run];
         
     }
-    [pool release];
+//    [pool release];
 }
 
 
@@ -173,7 +173,6 @@ static int _connectionId = 1;
     {
         [NSThread detachNewThreadSelector:@selector(run:) toTarget:connectionHandler withObject:nil];
     }
-    [connectionHandler release];
     
 }
 
@@ -204,8 +203,8 @@ static int _connectionId = 1;
             {
                 assert(readStream != NULL);
                 
-                [answer setInputStream:(NSInputStream*)readStream];
-                [answer setOutputStream:(NSOutputStream*)writeStream];
+                [answer setInputStream:(__bridge NSInputStream*)readStream];
+                [answer setOutputStream:(__bridge NSOutputStream*)writeStream];
             }
             CFRelease(readStream);
             CFRelease(writeStream);

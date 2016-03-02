@@ -25,7 +25,6 @@
 
 -(JBJsonObject*)toJsonObject {
 	JBJsonObject* answer = [[JBJsonObject alloc] init];
-	[answer autorelease];
 	[answer setObject:_applicationName forKey:@"application_name"];
 	[answer setObject:_zeroconfName forKey:@"zeroconf_name"];
 	[answer setObject:_dnsName forKey:@"dns_name"];
@@ -61,7 +60,6 @@
 	[self setZeroconfName:nil];
 	[self setDnsName:nil];
     
-	[super dealloc];
     
 }
 

@@ -138,7 +138,6 @@ static JBServiceDescription* _SERVICE_DESCRIPTION = nil;
 		
 		BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
 		[e setError:error];
-		[e autorelease];
 		
 		@throw e;
 	}
@@ -186,7 +185,6 @@ static JBServiceDescription* _SERVICE_DESCRIPTION = nil;
 		[scanner scanString:@"/" intoString:nil]; // discard any trailing '/' that *might* exist
 	}
 	
-	[scanner release];
 	
 }
 
@@ -282,7 +280,6 @@ static JBServiceDescription* _SERVICE_DESCRIPTION = nil;
 	[self setRoot:nil];
 	[self setFileManager:nil];
 	
-	[super dealloc];
 }
 
 

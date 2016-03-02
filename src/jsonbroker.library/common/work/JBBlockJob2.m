@@ -129,7 +129,6 @@
         
     }
     
-    [job release];
     
 }
 
@@ -142,7 +141,6 @@
         
     }
     
-    [job release];
     
 }
 
@@ -188,7 +186,6 @@
 	[self setBlockFailed:nil];
     [self setBlockResponse:nil];
 
-	[super dealloc];
 	
 }
 

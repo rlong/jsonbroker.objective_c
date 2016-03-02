@@ -32,7 +32,6 @@
 	[jsonWriter appendString:@");"];
 	NSString* answer = [jsonWriter toString];
 	
-	[jsonWriter release];
 	
 	return answer;
 	
@@ -88,7 +87,6 @@
 	[jsonWriter appendString:@");"];
 	NSString* answer = [jsonWriter toString];
 	
-	[jsonWriter release];
 	
 	return answer;
 	

@@ -109,7 +109,7 @@ extern const char hexDigits[]; // see CAStringHelper
 +(NSString*)escapeString:(NSString*)input { 
 	
 	
-	CFStringRef inputAsStringRef = (CFStringRef)input;
+	CFStringRef inputAsStringRef = (__bridge CFStringRef)input;
 	CFStringRef answerAsStringRef;
     
 	answerAsStringRef = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, inputAsStringRef, NULL,CFSTR(":/=,!$&'()*+;@?"),kCFStringEncodingUTF8);
@@ -117,7 +117,7 @@ extern const char hexDigits[]; // see CAStringHelper
 	// from http://discussions.apple.com/thread.jspa?messageID=7996967 ...
 	// answerAsStringRef = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, inputAsStringRef, NULL,CFSTR("!$&'()*+,-./:;=?@_~"),kCFStringEncodingUTF8);
 	
-	NSString* answer = (NSString*)answerAsStringRef;
+	NSString* answer = (__bridge NSString*)answerAsStringRef;
     JBAutorelease( answer );
     
 	return answer;
@@ -195,7 +195,6 @@ extern const char hexDigits[]; // see CAStringHelper
     
     
     NSMutableString* answer = [[NSMutableString alloc] init];
-    [answer autorelease];
     
     NSScanner* scanner = [NSScanner scannerWithString:input];
     [scanner setCharactersToBeSkipped:nil]; // we want all white-space

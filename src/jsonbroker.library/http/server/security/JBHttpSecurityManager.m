@@ -133,7 +133,6 @@
         // setup a new unauthenticated security session ...
         JBHttpSecuritySession* securitySession = [[JBHttpSecuritySession alloc] initWithUsersRealm:[_securityConfiguration realm]];
 		[_unauthenticatedSessions setObject:securitySession forKey:[securitySession opaque]];
-		[securitySession release]; 
         
 		JBWwwAuthenticate* answer = [securitySession buildWwwAuthenticate];
         return answer;
@@ -176,7 +175,6 @@
 	[_securityConfiguration removeClient:username];
 	
 	NSMutableArray* sessionsForRemoval = [[NSMutableArray alloc] init];
-    [sessionsForRemoval autorelease];
     
 	for( NSString* opaque in _authenticatedSessions ) {
 		JBHttpSecuritySession* authenticatedSession = [_authenticatedSessions objectForKey:opaque];
@@ -251,7 +249,6 @@
 	for( JBSubject* unregisteredSubject in stale ) {				
 		[_unregisteredSubjects removeSubject:unregisteredSubject];
 	}
-	[stale release];
     
 }
 
@@ -304,7 +301,6 @@
 	[self setAuthenticatedSessions:nil];
 	[self setUnregisteredSubjects:nil];
 	
-	[super dealloc];
 }
 
 

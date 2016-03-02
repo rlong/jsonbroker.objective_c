@@ -97,7 +97,6 @@
     
     
     JBFileHandle* socket = [[JBFileHandle alloc] initWithFileDescriptor:socketfd];
-    [socket autorelease];
     [JBConnectionHandler handleConnection:socket httpProcessor:_httpProcessor];
 	
 }
@@ -133,7 +132,7 @@
     NSString* threadName = [NSString stringWithFormat:@"WebServer:%d", _port];
 	[[NSThread currentThread] setName:threadName];
 	
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+//	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     {
 
         [NSTimer scheduledTimerWithTimeInterval:0.0 target:self selector:@selector(timerCallback:) userInfo:nil repeats:YES];
@@ -141,7 +140,7 @@
         [[NSRunLoop currentRunLoop] run];
 
     }
-	[pool release];
+//	[pool release];
 
 }
 
@@ -154,7 +153,6 @@
 	if((_serverSocketFileDescriptor = socket(AF_INET, SOCK_STREAM,0)) <0) {
         
         BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ callTo:@"socket" failedWithErrno:errno];		
-		[e autorelease];
 		@throw e;
 		
 	}
@@ -181,14 +179,12 @@
 		
         BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ callTo:@"bind" failedWithErrno:errno];
         [e setErrorDomain:@"jsonbroker.WebServer.SOCKET_BIND_FAILED"];
-		[e autorelease];
 		@throw e;
 		
 	}
 	if( listen(_serverSocketFileDescriptor,64) <0) {
 		
         BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ callTo:@"listen" failedWithErrno:errno];		
-		[e autorelease];
 		@throw e;
 		
 	}

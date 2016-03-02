@@ -62,7 +62,7 @@ static JBServicesRegisteryErrorDomain* _errorDomain = nil;
 -(void)addMainThreadService:(id<JBMainThreadService>)service  {
 
     if( nil == service ) {
-        Log_warnPointer( service  );
+        Log_warnPointer( (__bridge  void *)service  );
         return;
     }
     
@@ -71,14 +71,13 @@ static JBServicesRegisteryErrorDomain* _errorDomain = nil;
     id<JBService> existingService = [_services objectForKey:serviceName];
     if( nil != existingService ) {
         Log_warnString( serviceName );
-        Log_warnPointer( existingService );
+        Log_warnPointer( (__bridge  void *)existingService );
     }
     
     JBMainThreadServiceDelegator* mainThreadService = [[JBMainThreadServiceDelegator alloc] initWithDelegate:service];
     
     [_services setObject:mainThreadService forKey:serviceName];
     
-    [mainThreadService release];
 
 }
 
@@ -132,7 +131,6 @@ static JBServicesRegisteryErrorDomain* _errorDomain = nil;
 		
 		BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
         [e setErrorDomain:[_errorDomain SERVICE_NOT_FOUND]];
-		[e autorelease];
 		@throw e;
 							  
 	}
@@ -147,7 +145,7 @@ static JBServicesRegisteryErrorDomain* _errorDomain = nil;
     Log_enteredMethod();
     
     if( nil == serviceToRemove ) {
-        Log_warnPointer( serviceToRemove  );
+        Log_warnPointer( (__bridge void *)serviceToRemove  );
         return;
     }
 
@@ -267,7 +265,6 @@ static JBServicesRegisteryErrorDomain* _errorDomain = nil;
 	[self setServices:nil];
     [self setNext:nil];
 	
-	[super dealloc];
 }
 
 #pragma mark fields

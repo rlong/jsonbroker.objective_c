@@ -16,7 +16,6 @@
 +(JBAuthorization*)buildFromString:(NSString*)credentials {
 	
 	JBAuthorization* answer = [[JBAuthorization alloc] init];
-	[answer autorelease];
 
 	JBAuthenticationHeaderScanner* authenticationHeaderScanner = [[JBAuthenticationHeaderScanner alloc] initWithHeaderValue:credentials];
 
@@ -66,7 +65,6 @@
 		}
 	}
 	@finally {
-		[authenticationHeaderScanner release];
 	}
 	
 	return answer;
@@ -119,7 +117,6 @@
 	[self setUri:nil];
 	[self setUsername:nil];
 	
-	[super dealloc];
 }
 
 #pragma mark fields

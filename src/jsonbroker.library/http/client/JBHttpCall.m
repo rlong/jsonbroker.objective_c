@@ -267,7 +267,6 @@
     [self setResponseData:nil];
     [self setError:nil];
     
-    [super dealloc];
     
 }
 

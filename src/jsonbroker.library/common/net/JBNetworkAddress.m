@@ -130,7 +130,6 @@
     [self setExtension:nil];
 
 	
-	[super dealloc];
 }
 
 #pragma mark -

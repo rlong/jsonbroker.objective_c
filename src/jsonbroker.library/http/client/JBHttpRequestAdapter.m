@@ -37,7 +37,6 @@
 	[self setRequestHeaders:nil];
 	[self setRequestEntity:nil];
 	
-	[super dealloc];
 	
 }
 

@@ -51,7 +51,6 @@
             Log_error(faultMessage);
             
             BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:faultMessage];
-            [e autorelease];
             @throw  e;
         }
         JBDataEntity* dataEntity = (JBDataEntity*)entity;
@@ -255,7 +254,6 @@
 
 -(JBWwwAuthenticate*)buildWwwAuthenticate {
 	JBWwwAuthenticate* answer = [[JBWwwAuthenticate alloc] init];
-	[answer autorelease];
 	
 	[answer setNonce:_nonce];
 	[answer setOpaque:_opaque];
@@ -270,7 +268,6 @@
     Log_enteredMethod();
     
 	JBAuthenticationInfo* answer = [[JBAuthenticationInfo alloc] init];
-	[answer autorelease];
 	
 	[answer setCnonce:_cnonce];
 	[answer setNc:_nc];
@@ -334,7 +331,6 @@
 	[self setOpaque:nil];
 	[self setRegisteredSubject:nil];
 	
-	[super dealloc];
 	
 }
 

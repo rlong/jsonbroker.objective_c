@@ -46,7 +46,6 @@ static NSMutableDictionary* _objects;
             {
                 [_objects setObject:reference forKey:key];
             }
-            [reference release];
         }
     }
 	
@@ -107,8 +106,6 @@ static NSMutableDictionary* _objects;
             
             printf("key = %s", [key UTF8String] );
             
-            int retainCount = (int)[[reference object] retainCount];
-            printf("; retainCount = %d\n", retainCount);
             
         }
         Log_debug( @"}" );

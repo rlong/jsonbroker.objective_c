@@ -65,7 +65,6 @@
 	
 	[self setResponseData:nil];
 	
-	[super dealloc];
 	
 }
 

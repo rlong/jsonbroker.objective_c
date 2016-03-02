@@ -41,7 +41,6 @@
     {
         [_partHandlers addObject:answer];
     }
-    [answer release];
     
     return answer;
     
@@ -84,7 +83,6 @@
 	
 	[self setPartHandlers:nil];
 	
-	[super dealloc];
 	
 }
 

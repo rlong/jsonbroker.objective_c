@@ -121,7 +121,6 @@
     [self setEntity:nil];
 	[self setCloseConnectionIndicated:nil];
 	
-	[super dealloc];
 }
 
 

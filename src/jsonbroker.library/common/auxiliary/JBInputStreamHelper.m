@@ -31,13 +31,11 @@
     
     if( 0 > bytesRead ) {
         BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultStringFormat:@"0 > bytesRead; bytesRead = %ld", bytesRead];
-        [e autorelease];
         @throw  e;
     }
     
     if( bytesRead != count ) {
         BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultStringFormat:@"bytesRead != count; bytesRead = %ld; count = %d", bytesRead, count];
-        [e autorelease];
         @throw  e;
     }
     
@@ -65,7 +63,6 @@
     
     if( !accepted ) {
         BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultStringFormat:@"!accepted; seekPosition = %ld", seekPosition];
-        [e autorelease];
         @throw  e;
     }
     
@@ -86,7 +83,6 @@
         long bytesRead = [inputStream read:buffer maxLength:amountToRead];
         if( 0 == bytesRead ) { 
             BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:@"0 == bytesRead"];
-            [e autorelease];
             @throw  e;
         }
         [outputData appendBytes:buffer length:bytesRead];
@@ -121,7 +117,6 @@
         if( 0 > bytesRead ) {
             
             BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultStringFormat:@"0 > bytesRead; bytesRead = %ld; bytesRemaining = %ld", bytesRead, bytesRemaining];
-            [e autorelease];
             @throw  e;
             
         }
@@ -131,7 +126,6 @@
         if( 0 == bytesRead && 0 != bytesRemaining ) {
             
             BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultStringFormat:@"0 == bytesRead && 0 != bytesRemaining; bytesRemaining = %ld; [inputStream streamStatus] = %d", bytesRemaining, [inputStream streamStatus]];
-            [e autorelease];
             @throw  e;
         }
         
@@ -165,13 +159,11 @@
         if( 0 > bytesRead ) {
             
             BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultStringFormat:@"0 > bytesRead; bytesRead = %ld; bytesRemaining = %ld", bytesRead, bytesRemaining];
-            [e autorelease];
             @throw  e;
             
         }
         if( 0 == bytesRead && 0 != bytesRemaining ) {
             BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultStringFormat:@"0 == bytesRead && 0 != bytesRemaining; bytesRemaining = %ld", bytesRemaining];
-            [e autorelease];
             @throw  e;
         }
         
@@ -184,7 +176,6 @@
         if( -1 == bytesWritten ) {
 
             BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ callTo:@"write" failedWithErrno:errno];
-            [e autorelease];
             
             if( EPIPE == errno ) {
                 [e setErrorDomain:[JBStreamHelper ERROR_DOMAIN_BROKEN_PIPE]];
@@ -197,7 +188,6 @@
             
             
             BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultStringFormat:@"0 != bytesRead && 0 == bytesWritten; bytesRead = %ld; bytesRemaining = %ld", bytesRead, bytesRemaining];
-            [e autorelease];
             @throw  e;
         }
     }

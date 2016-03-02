@@ -72,7 +72,6 @@ static JBJsonArrayHandler* _instance = nil;
 -(JBJsonArray*)readJSONArray:(JBJsonInput*)reader {
 	
 	JBJsonArray* answer = [[JBJsonArray alloc] init];
-	[answer autorelease];
 	
 	[reader nextByte]; // move past the '['
 	

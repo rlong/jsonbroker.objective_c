@@ -44,7 +44,6 @@
     
 	[self setService:nil];
 	
-	[super dealloc];
 	
 }
 

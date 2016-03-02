@@ -67,7 +67,6 @@ static JBJsonObjectHandler* _instance = nil;
 -(JBJsonObject*)readJSONObject:(JBJsonInput*)reader { 
 	
 	JBJsonObject* answer = [[JBJsonObject alloc] init];
-	[answer autorelease];
 	
 	[reader nextByte]; // move past the '{'
 	

@@ -31,7 +31,6 @@
 +(JBRange*)buildFromString:(NSString*)value { 
     
     JBRange* answer = [[JBRange alloc] initWithValue:value];
-    [answer autorelease];
     
     
     NSRange rangeOfBytes = [value rangeOfString:@"bytes="];
@@ -39,7 +38,6 @@
     if( 0 != rangeOfBytes.location ) { 
         NSString* technicalError = [NSString stringWithFormat:@"0 != rangeOfBytes.location; value = '%@'", value];
         BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-        [e autorelease];
         @throw e;
         
     }
@@ -50,7 +48,6 @@
     if( NSNotFound == firstHyphen.location ) { 
         NSString* technicalError = [NSString stringWithFormat:@"NSNotFound == firstHyphen.location; value = '%@'", value];
         BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-        [e autorelease];
         @throw e;
     }
     
@@ -59,7 +56,6 @@
     if( firstHyphen.location != lastHyphen.location ) { 
         NSString* technicalError = [NSString stringWithFormat:@"firstHyphen.location != lastHyphen.location; value = '%@'", value];
         BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-        [e autorelease];
         @throw e;
     }
     
@@ -188,7 +184,7 @@
     
     JBRange* answer = [super init];
     
-    answer->_toString = [value retain];
+    answer->_toString = value;
     
     return answer;
     
@@ -200,11 +196,8 @@
     [self setLastBytePosition:nil];
     
     if( nil != _toString ) { 
-        [_toString release];
     }
     _toString = nil;
-	
-	[super dealloc];
 	
 }
 

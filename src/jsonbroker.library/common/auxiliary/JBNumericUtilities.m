@@ -17,7 +17,6 @@
 	
 		NSString* technicalError = [NSString stringWithFormat:@"failed to parse '%@' as an integer", integerValue];
 		BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-		[e autorelease];
 		
 		@throw e;
 	}
@@ -35,7 +34,6 @@
         
 		NSString* technicalError = [NSString stringWithFormat:@"failed to parse '%@' as an integer", integerValue];
 		BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-		[e autorelease];
 		
 		@throw e;
 	}
@@ -54,7 +52,6 @@
         
 		NSString* technicalError = [NSString stringWithFormat:@"failed to parse '%@' as a 'long long'", longString];
 		BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-		[e autorelease];
 		
 		@throw e;
 	}
@@ -73,7 +70,6 @@
         
 		NSString* technicalError = [NSString stringWithFormat:@"failed to parse '%@' as a 'long long'", longString];
 		BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-		[e autorelease];
 		
 		@throw e;
 	}
@@ -93,7 +89,6 @@
 		
 		NSString* technicalError = [NSString stringWithFormat:@"failed to parse '%@' as a double", doubleValue];
 		BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-		[e autorelease];
 		
 		@throw e;
 	}

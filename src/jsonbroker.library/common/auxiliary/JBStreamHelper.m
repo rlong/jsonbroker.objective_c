@@ -39,7 +39,6 @@ static NSString* _ERROR_DOMAIN_BROKEN_PIPE = @"jsonbroker.StreamHelper.BROKEN_PI
             
             BaseException* e = [[BaseException alloc] initWithOriginator:[JBStreamHelper class] line:__LINE__ cause:exception];
             [e addStringContext:callerClassName withName:@"callerClassName"];
-            [e autorelease];            
             @throw e;
             
         }

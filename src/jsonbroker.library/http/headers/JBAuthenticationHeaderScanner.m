@@ -80,7 +80,6 @@
 	
 	[self setScanner:nil];
 	
-	[super dealloc];
 }
 
 #pragma mark fields

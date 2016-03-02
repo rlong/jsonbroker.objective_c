@@ -42,7 +42,6 @@
 	
 	[self setMatchingData:nil];
 	
-	[super dealloc];
 	
 }
 

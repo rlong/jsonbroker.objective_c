@@ -51,7 +51,6 @@
     
     
     id<JBEntity> entity = [[JBDataEntity alloc] initWithData:bodyData];
-    [entity autorelease];
     
     NSString* requestUri;
     
@@ -66,7 +65,6 @@
     }
     
     JBHttpRequestAdapter* requestAdapter = [[JBHttpRequestAdapter alloc] initWithRequestUri:requestUri];
-    [requestAdapter autorelease];
     [requestAdapter setRequestEntity:entity];
     
     [_httpDispatcher post:requestAdapter authenticator:_authenticator responseHandler:_responseHandler];
@@ -126,7 +124,6 @@
 	[self setAuthenticator:nil];
     [self setResponseHandler:nil];
 
-	[super dealloc];
 	
 }
 

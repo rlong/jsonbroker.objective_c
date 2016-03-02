@@ -106,7 +106,6 @@
             [self addLogEntry:entry];
         }
     }
-    [entry release];
 	
 }
 
@@ -131,7 +130,6 @@
 	
 	
 	[self setLogEntries:nil];
-	[super dealloc];
 }
 
 

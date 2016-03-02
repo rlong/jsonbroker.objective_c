@@ -19,7 +19,6 @@
     {
         [JBLog setLogConsumer:answer forCaller:__func__];
     }
-    [answer release];
     
     return answer;
 

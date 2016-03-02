@@ -16,7 +16,6 @@
     
     
     JBJsonObject* answer = [[JBJsonObject alloc] init];
-    [answer autorelease];
     
     [answer setObject:[baseException errorDomain] forKey:@"errorDomain"]; // nil is OK
     
@@ -34,7 +33,6 @@
     JBJsonObject* faultContext = [[JBJsonObject alloc] init];
     [faultContext setObject:[JBExceptionHelper getAtosCommand:baseException] forKey:@"atos"];
     [answer setObject:faultContext forKey:@"faultContext"];
-    [faultContext autorelease];	 
     
     return answer;
     
@@ -48,7 +46,6 @@
     }
     
     JBJsonObject* answer = [[JBJsonObject alloc] init];
-    [answer autorelease];
 
     [answer setObject:nil forKey:@"errorDomain"];
 
@@ -64,7 +61,6 @@
     
     JBJsonObject* faultContext = [[JBJsonObject alloc] init];
     [faultContext setObject:[JBExceptionHelper getAtosCommand:exception] forKey:@"atos"];
-    [faultContext autorelease];
     [answer setObject:faultContext forKey:@"faultContext"];
     
     return answer;
@@ -77,7 +73,6 @@
     NSString* fault_string = [jsonObject stringForKey:@"faultMessage" defaultValue:@"NULL"];
     
     JBBaseException* answer = [[JBBaseException alloc] initWithOriginator:originator faultMessage:fault_string];
-    [answer autorelease];
     
 
     {

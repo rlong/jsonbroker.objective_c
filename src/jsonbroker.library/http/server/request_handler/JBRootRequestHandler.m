@@ -112,7 +112,6 @@
     [self setHttpProcessors:nil];
     [self setDefaultProcessor:nil];
     
-    [super dealloc];
 }
 
 #pragma mark fields

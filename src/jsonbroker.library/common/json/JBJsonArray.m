@@ -65,7 +65,6 @@ static NSObject* _NULL_OBJECT = nil;
         NSString* technicalError = [NSString stringWithFormat:@"nil == answer; index = %ld",(unsigned long)index];
 		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
         [e setErrorDomain:[JBJsonArray NULL_VALUE_REFERENCED]];
-		[e autorelease];
 		@throw e;
 		
 	}
@@ -107,7 +106,6 @@ static NSObject* _NULL_OBJECT = nil;
 		
         NSString* technicalError = [NSString stringWithFormat:@"![blob isKindOfClass:[NSNumber class]]; NSStringFromClass([blob class]) = %@", NSStringFromClass([blob class])];
 		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-		[e autorelease];
 		@throw e;
 	}
 	
@@ -138,7 +136,6 @@ static NSObject* _NULL_OBJECT = nil;
 
         NSString* technicalError = [NSString stringWithFormat:@"![blob isKindOfClass:[NSNumber class]]; NSStringFromClass([blob class]) = %@", NSStringFromClass([blob class])];
 		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-		[e autorelease];
 		@throw e;
 	}
 	
@@ -164,7 +161,6 @@ static NSObject* _NULL_OBJECT = nil;
 		
         NSString* technicalError = [NSString stringWithFormat:@"![blob isKindOfClass:[NSNumber class]]; NSStringFromClass([blob class]) = %@", NSStringFromClass([blob class])];
 		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-		[e autorelease];
 		@throw e;
 	}
 	
@@ -182,7 +178,6 @@ static NSObject* _NULL_OBJECT = nil;
 		
         NSString* technicalError = [NSString stringWithFormat:@"![blob isKindOfClass:[NSNumber class]]; NSStringFromClass([blob class]) = %@", NSStringFromClass([blob class])];
 		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-		[e autorelease];
 		@throw e;
 	}
 	
@@ -199,7 +194,6 @@ static NSObject* _NULL_OBJECT = nil;
         
         NSString* technicalError = [NSString stringWithFormat:@"![blob isKindOfClass:[NSNumber class]]; NSStringFromClass([blob class]) = %@", NSStringFromClass([blob class])];
         BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-        [e autorelease];
         @throw e;
     }
     
@@ -219,7 +213,6 @@ static NSObject* _NULL_OBJECT = nil;
 		
         NSString* technicalError = [NSString stringWithFormat:@"![blob isKindOfClass:[JSONArray class]]; NSStringFromClass([blob class]) = %@", NSStringFromClass([blob class])];
 		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-		[e autorelease];
 		@throw e;
 
 	}
@@ -236,7 +229,6 @@ static NSObject* _NULL_OBJECT = nil;
 		
         NSString* technicalError = [NSString stringWithFormat:@"![blob isKindOfClass:[JSONObject class]]; NSStringFromClass([blob class]) = %@", NSStringFromClass([blob class])];
 		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-		[e autorelease];
 		@throw e;
 
 	}
@@ -253,7 +245,6 @@ static NSObject* _NULL_OBJECT = nil;
 		
         NSString* technicalError = [NSString stringWithFormat:@"![blob isKindOfClass:[NSNumber class]]; NSStringFromClass([blob class]) = %@", NSStringFromClass([blob class])];
 		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-		[e autorelease];
 		@throw e;
 	}
 	
@@ -292,7 +283,6 @@ static NSObject* _NULL_OBJECT = nil;
 		
         NSString* technicalError = [NSString stringWithFormat:@"![blob isKindOfClass:[NSString class]]; NSStringFromClass([blob class]) = %@", NSStringFromClass([blob class])];
 		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-		[e autorelease];
 		@throw e;
 	}
 	
@@ -313,7 +303,6 @@ static NSObject* _NULL_OBJECT = nil;
 		
         NSString* technicalError = [NSString stringWithFormat:@"![blob isKindOfClass:[NSString class]]; NSStringFromClass([blob class]) = %@", NSStringFromClass([blob class])];
 		BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-		[e autorelease];
 		@throw e;
 	}
 	
@@ -352,7 +341,6 @@ static NSObject* _NULL_OBJECT = nil;
         
         NSString* technicalError = [NSString stringWithFormat:@"![blob isKindOfClass:[NSString class]]; NSStringFromClass([blob class]) = %@", NSStringFromClass([blob class])];
         BaseException *e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-        [e autorelease];
         @throw e;
     }
     
@@ -375,7 +363,6 @@ static NSObject* _NULL_OBJECT = nil;
 		answer = [writer toString];
 		
 	}
-	[writer release];
 	
 	return answer;
 	

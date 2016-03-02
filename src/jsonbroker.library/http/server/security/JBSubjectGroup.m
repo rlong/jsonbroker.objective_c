@@ -123,7 +123,6 @@
 	
 	[self setSubjectDictionary:nil];
 	
-	[super dealloc];
 }
 
 

@@ -72,7 +72,7 @@
 	
 	Log_enteredMethod();
 	
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+//	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
 	
 	[[NSThread currentThread] setName:_name];
@@ -85,7 +85,7 @@
 	
 	Log_debug( @"... Finished" );
 	
-	[pool release];
+//	[pool release];
 	
 }
 
@@ -124,7 +124,6 @@
 	[self setName:nil];
 	[self setWorkQueue:nil];
 	
-	[super dealloc];
 }
 #pragma mark fields
 

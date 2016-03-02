@@ -140,7 +140,6 @@
                     { // in C#: creating another answer object outside of the `PartialDelimiterCompleted` above, causes a compiler error
                         
                         JBDelimiterFound* answer = [[JBDelimiterFound alloc] initWithStartOfDelimiter:startOfDelimiter endOfDelimiter:endOfDelimiter isCloseDelimiter:isCloseDelimiter completesPartialMatch:partialDelimiterMatched];
-                        [answer autorelease];
                         return answer;
                         
                         
@@ -176,7 +175,6 @@
         NSData* partialData = [NSData dataWithBytes:currentDelimiterBytes length:_currentMatchingDelimiterIndex];
         
         JBPartialDelimiterMatched* answer = [[JBPartialDelimiterMatched alloc] initWithMatchingData:partialData];
-        [answer autorelease];
         return answer;
         
         
@@ -231,7 +229,6 @@
 	[self setCloseDelimiterData:nil];
 	[self setCurrentDelimiterData:nil];
 
-	[super dealloc];
 	
 }
 

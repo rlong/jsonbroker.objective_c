@@ -19,7 +19,6 @@
 +(JBWwwAuthenticate*)buildFromString:(NSString*)challenge {
 
 	JBWwwAuthenticate* answer = [[JBWwwAuthenticate alloc] init];
-	[answer autorelease];
 
 	JBAuthenticationHeaderScanner* authenticationHeaderScanner = [[JBAuthenticationHeaderScanner alloc] initWithHeaderValue:challenge];
 	@try {
@@ -50,7 +49,6 @@
 		}
 	}
 	@finally {
-		[authenticationHeaderScanner release];
 	}
 	
 	
@@ -108,7 +106,6 @@
 	[self setQop:nil];
 	[self setRealm:nil];
 	
-	[super dealloc];
 }
 	 
 #pragma mark fields

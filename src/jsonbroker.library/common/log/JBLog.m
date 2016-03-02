@@ -26,14 +26,12 @@ static id <JBLogConsumer> _logConsumer;
     
     if( nil != _logConsumer ) { 
         [_logConsumer logMessage:logMessage forFunction:__func__ atLevel:@"INF"];
-        [_logConsumer release];
     }
 
     _logConsumer = logConsumer;
     
     if( nil != _logConsumer ) { 
         [_logConsumer logMessage:logMessage forFunction:__func__ atLevel:@"INF"];
-        [_logConsumer retain];
     }
 
 	
@@ -133,7 +131,6 @@ static id <JBLogConsumer> _logConsumer;
 	
 	
 	[JBLog debug:line inFunction:function];
-	[line release];
 	
 	
 	
@@ -229,7 +226,6 @@ static id <JBLogConsumer> _logConsumer;
     va_start(vaList, format);
     {
         message = [[NSString alloc] initWithFormat:format arguments:vaList];
-		[message autorelease];
     }
     va_end(vaList);
     [self debug:message inFunction:function];
@@ -546,7 +542,6 @@ static id <JBLogConsumer> _logConsumer;
 	va_start(vaList, format);
 	{
 		message = [[NSString alloc] initWithFormat:format arguments:vaList];
-		[message autorelease];
 	}
 	va_end(vaList);
     
@@ -621,8 +616,8 @@ static id <JBLogConsumer> _logConsumer;
     [JBLog warnInFunction:function format:@"[%s callStackSymbols] = [", name];
     NSArray* callStackSymbols = [e callStackSymbols];
     for( NSString* callStackSymbol in callStackSymbols ) {
-        callStackSymbol = [callStackSymbol stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [JBLog warnInFunction:function format:@"\t%@", callStackSymbol];
+        NSString* trimmedCallStackSymbol = [callStackSymbol stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [JBLog warnInFunction:function format:@"\t%@", trimmedCallStackSymbol];
     }
     [JBLog warn:@"]" inFunction:function];
     
@@ -734,7 +729,6 @@ static id <JBLogConsumer> _logConsumer;
 	va_start(vaList, format);
 	{
 		message = [[NSString alloc] initWithFormat:format arguments:vaList];
-		[message autorelease];
 	}
 	va_end(vaList);
     
@@ -804,8 +798,8 @@ static id <JBLogConsumer> _logConsumer;
     [JBLog errorInFunction:function format:@"[%s callStackSymbols] = [", name];
     NSArray* callStackSymbols = [e callStackSymbols];
     for( NSString* callStackSymbol in callStackSymbols ) {
-        callStackSymbol = [callStackSymbol stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        [JBLog errorInFunction:function format:@"\t%@", callStackSymbol];
+        NSString* trimmedCallStackSymbol = [callStackSymbol stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        [JBLog errorInFunction:function format:@"\t%@", trimmedCallStackSymbol];
     }
     [JBLog error:@"]" inFunction:function];
 
@@ -838,7 +832,6 @@ static id <JBLogConsumer> _logConsumer;
 	va_start(vaList, format);
 	{
 		message = [[NSString alloc] initWithFormat:format arguments:vaList];
-		[message autorelease];
 	}
 	va_end(vaList);
     

@@ -156,7 +156,6 @@ static bool tokenChars[128];
     
     const char* start = _utf8Value + (sizeof(char)*startOfToken);
     NSString* answer = [[NSString alloc] initWithBytes:start length:length encoding:NSUTF8StringEncoding];
-    [answer autorelease];
     
     return answer;
     
@@ -233,7 +232,6 @@ static bool tokenChars[128];
     NSUInteger length = _offset - startOfToken;
     const char* start = _utf8Value + (sizeof(char)*startOfToken);
     NSString* answer = [[NSString alloc] initWithBytes:start length:length encoding:NSUTF8StringEncoding];
-    [answer autorelease];
     
     
     if (isQuotedString) // move past the closing quotes
@@ -276,7 +274,6 @@ static bool tokenChars[128];
 	[self setValue:nil];
     _utf8Value = nil; // _utf8Value is owned by `value`
 	
-	[super dealloc];
 	
 }
 

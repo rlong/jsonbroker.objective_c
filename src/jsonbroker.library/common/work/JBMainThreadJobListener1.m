@@ -116,7 +116,6 @@
 	
 	[self setDelegate:nil];
 	
-	[super dealloc];
 	
 }
 

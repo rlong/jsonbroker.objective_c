@@ -50,7 +50,6 @@
     }
     
     JBMediaType* answer = [[JBMediaType alloc] initWithStringValue:value];
-    [answer autorelease];
     
     NSString* type = [value substringToIndex:indexOfSlash.location];
     Log_debugString( type );
@@ -67,7 +66,6 @@
         } else {
             subtype = [remainder substringToIndex:indexOfSemiColon.location];
             JBParametersScanner* scanner = [[JBParametersScanner alloc] initWithValue:remainder offset:indexOfSemiColon.location];
-            [scanner autorelease];
             
             NSString* attribute;
             while( nil != (attribute = [scanner nextAttribute])) {
@@ -133,8 +131,6 @@
 	[self setParameters:nil];
     [self setToString:nil];
 
-
-	[super dealloc];
 	
 }
 

@@ -115,7 +115,7 @@
 
 -(void)threadMain:(NSObject*)ignoredObject {
 	
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+//	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
 	
 	NSString* threadName = [NSString stringWithFormat:@"GethostbyaddrRequest.%@", _dnsName];
@@ -127,7 +127,7 @@
 	
     Log_debug(@"... Finished");
 	
-    [pool release];
+//    [pool release];
 
 }
 
@@ -161,7 +161,6 @@
 	
 	[self setErrorMessage:nil];
 	
-	[super dealloc];
 }
 
 #pragma mark fields

@@ -40,7 +40,6 @@
 	va_start(vaList, faultStringFormat);
 	{
 		technicalError = [[NSString alloc] initWithFormat:faultStringFormat arguments:vaList];
-		[technicalError autorelease];
 	}
 	va_end(vaList);
     

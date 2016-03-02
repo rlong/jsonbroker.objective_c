@@ -14,7 +14,6 @@
     
 
     JBBaseException* answer = [[JBBaseException alloc] initWithOriginator:originatingObject line:line faultMessage:faultString];
-    [answer autorelease];
     
     return answer;
 
@@ -31,7 +30,6 @@
 	va_start(vaList, format);
 	{
         answer = [[JBBaseException alloc] initWithOriginator:originatingObject line:line faultStringFormat:format arguments:vaList];
-        [answer autorelease];
 	}
 	va_end(vaList);
 
@@ -43,7 +41,6 @@
 +(JBBaseException*)baseExceptionWithOriginator:(id)originatingObject line:(int)line callTo:(NSString*)methodName failedWithError:(NSError*)error {
     
     JBBaseException* answer = [[JBBaseException alloc] initWithOriginator:originatingObject line:line callTo:methodName failedWithError:error];
-    [answer autorelease];
     
     return answer;
     

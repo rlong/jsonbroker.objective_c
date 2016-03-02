@@ -182,7 +182,6 @@ static bool INVALID_CHARS[256];
 +(JBHttpRequest*)readRequest:(NSInputStream*)inputStream { 
     
     NSMutableData* buffer = [[NSMutableData alloc] init];
-    [buffer autorelease];
     
     NSString* firstLine = [self readLine:inputStream buffer:buffer];
     

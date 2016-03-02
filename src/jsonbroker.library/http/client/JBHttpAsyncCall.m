@@ -147,8 +147,8 @@
         
         NSString* headerValue = [allHeaderFields valueForKey:headerName];
         
-        headerName = [headerName lowercaseString]; // http headers are case insensitive
-        [_delegate onResponseHeaderWithName:headerName value:headerValue];
+        NSString* lowerHeaderName = [headerName lowercaseString]; // http headers are case insensitive
+        [_delegate onResponseHeaderWithName:lowerHeaderName value:headerValue];
     }
 
 }
@@ -256,7 +256,6 @@
     [self setConditionLock:nil];
     [self setError:nil];
     
-    [super dealloc];
     
 }
 

@@ -24,7 +24,6 @@
     
     if( -1 == closeResponse ) {
         BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ callTo:@"close" failedWithErrno:errno];
-        [e autorelease];
         @throw  e;
     }
     
@@ -52,8 +51,6 @@
     if( _open ) { 
         Log_warnFormat( @"_open; _fileDescriptor = %d", _fileDescriptor);
     }
-	
-	[super dealloc];
 	
 }
 

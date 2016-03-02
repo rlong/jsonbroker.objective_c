@@ -53,7 +53,6 @@ static bool _doNotEscapeForwardSlashForOldRemoteGateway = false;
 			
 			if('"' == b ) {
 				NSString* answer = [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding:NSUTF8StringEncoding];
-				[answer autorelease];
                 
 				
 				[reader nextByte]; // move past the '"'
@@ -108,7 +107,6 @@ static bool _doNotEscapeForwardSlashForOldRemoteGateway = false;
 	
 	// control should never reach here ... either the loop will continue forever or the return statement in the loop will get executed
 	BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:@"unexpected control flow"];
-	[e autorelease];
 	@throw e;
 
     

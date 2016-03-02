@@ -195,7 +195,6 @@ static NSObject* _NULL_OBJECT = nil;
         [walker walkJsonArrayDocument:jsonArray visitor:visitor];
     }
     @finally {
-        [walker release];
     }
 
     
@@ -212,7 +211,6 @@ static NSObject* _NULL_OBJECT = nil;
         [walker walkJsonObjectDocument:jsonObject visitor:visitor];
     }
     @finally {
-        [walker release];
     }
     
     

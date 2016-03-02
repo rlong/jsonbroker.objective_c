@@ -198,7 +198,6 @@
 	[self setListener:nil];
 	[self setExceptionCaughtDuringExecute:nil];
 
-	[super dealloc];
 	
 }
 

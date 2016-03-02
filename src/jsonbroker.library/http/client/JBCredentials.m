@@ -50,14 +50,12 @@
 	NSString* a1 = [NSString stringWithFormat:@"%@:%@:%@", _username, _realm, _password];
 	
 	_ha1 = [JBSecurityUtilities md5HashOfString:a1];
-	[_ha1 retain];
-	return _ha1;	
+	return _ha1;
 	
 }
 
 -(void)unsetHa1 {
 	if( nil != _ha1 ) {
-		[_ha1 release];
 		_ha1 = nil;
 	}
 }
@@ -67,13 +65,11 @@
 	[self unsetHa1];
 	
 	if( nil != _username ) {
-		[_username release];
 	}
 	
 	_username = username;
 
 	if( nil != _username ) {
-		[_username retain];
 	}
 	
 }
@@ -82,13 +78,11 @@
 	[self unsetHa1];
 	
 	if( nil != _realm ) {
-		[_realm release];
 	}
 	
 	_realm = realm;
 	
 	if( nil != _realm ) {
-		[_realm retain];
 	}
 }
 
@@ -96,13 +90,11 @@
 	[self unsetHa1];
 	
 	if( nil != _password ) {
-		[_password release];
 	}
 	
 	_password = password;
 	
 	if( nil != _password ) {
-		[_password retain];
 	}
 	
 }
@@ -134,26 +126,21 @@
 -(void)dealloc {
 	
 	if( nil != _username ) {
-		[_username release];
 		_username = nil;
 	}
 
 	if( nil != _realm ) {
-		[_realm release];
 		_realm = nil;
 	}
 	
 	if( nil != _password ) {
-		[_password release];
 		_password = nil;
 	}
 	
 	if( nil != _ha1 ) {
-		[_ha1 release];
 		_ha1 = nil;
 	}
 	
-	[super dealloc];
 }
 
 #pragma mark fields

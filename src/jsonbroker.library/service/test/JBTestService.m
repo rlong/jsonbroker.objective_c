@@ -36,7 +36,6 @@ static JBServiceDescription* _SERVICE_DESCRIPTION = nil;
 	Log_enteredMethod();
     BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:@"[jsonbroker.TestService raiseError] called "];
     [e setErrorDomain:@"jsonbroker.TestService.RAISE_ERROR"];
-    [e autorelease]; 
     @throw e;
     
                       

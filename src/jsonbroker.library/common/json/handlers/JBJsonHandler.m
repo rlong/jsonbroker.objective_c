@@ -72,7 +72,6 @@
     NSString* technicalError = [NSString stringWithFormat:@"unsupported type; NSStringFromClass(clazz) = %@", NSStringFromClass(clazz)];
     
     BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-    [e autorelease];    
     @throw  e;
     
 	
@@ -121,7 +120,6 @@
 	NSString* technicalError = [NSString stringWithFormat:@"bad tokenBeginning; tokenBeginning = %d (%c)", tokenBeginning, tokenBeginning];
 	
 	BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-	[e autorelease];
 	@throw e;
 	
 }
@@ -130,14 +128,12 @@
 -(void)writeValue:(id)value writer:(id<JBJsonOutput>)writer {
 
 	BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:@"unimplemented"];
-	[e autorelease];
 	@throw e;
 	
 }
 
 -(id)readValue:(JBJsonInput*)reader { 
 	BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:@"unimplemented"];
-	[e autorelease];
 	@throw e;
 }
 
@@ -157,7 +153,6 @@
 -(void)dealloc { 
 	
 	[JBObjectTracker deallocated:self];
-	[super dealloc];
 }
 
 

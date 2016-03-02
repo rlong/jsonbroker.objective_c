@@ -75,7 +75,6 @@
             Log_debugString( environmentValue );
             JBJsonObject* environment = [JBJsonObjectHelper buildFromString:environmentValue];
             JBDefaults* answer = [[JBDefaults alloc] initWithEnvironment:environment];
-            [answer autorelease];
             return answer;
             
         }
@@ -91,7 +90,6 @@
             Log_debugString( bundleValue );
             JBJsonObject* environment = [JBJsonObjectHelper buildFromString:bundleValue];
             JBDefaults* answer = [[JBDefaults alloc] initWithEnvironment:environment];
-            [answer autorelease];
             return answer;
             
         }
@@ -101,10 +99,8 @@
     
     
     JBJsonObject* environment = [[JBJsonObject alloc] init];
-    [environment autorelease];
     
     JBDefaults* answer = [[JBDefaults alloc] initWithEnvironment:environment];
-    [answer autorelease];
     
     return answer;
     
@@ -163,7 +159,6 @@
 	
 	[self setEnvironment:nil];
 	
-	[super dealloc];
 	
 }
 

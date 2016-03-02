@@ -20,7 +20,6 @@
     NSString* reason = [JBHttpStatus getReason:statusCode];
     
     JBBaseException* answer = [[JBBaseException alloc] initWithOriginator:originator line:line faultMessage:reason];
-    [answer autorelease];
     [answer setFaultCode:statusCode];
     
     return answer;
@@ -72,7 +71,6 @@
     NSData* data=[messageBody dataUsingEncoding:NSUTF8StringEncoding];
     
     JBDataEntity* answer = [[JBDataEntity alloc] initWithData:data];
-    [answer autorelease];
     return answer;
     
 }
@@ -95,7 +93,6 @@
   
     id<JBEntity> entity = [self toEntity:statusCode];
     JBHttpResponse* answer = [[JBHttpResponse alloc] initWithStatus:statusCode entity:entity];
-    [answer autorelease];
     return answer;
     
     

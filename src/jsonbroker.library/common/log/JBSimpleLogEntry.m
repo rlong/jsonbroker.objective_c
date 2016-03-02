@@ -55,7 +55,6 @@
     }
     
     _toString = [NSString stringWithFormat:@"%@ %@ %@ %@", _threadName, _level, _function, _message];
-    [_toString retain];
     return _toString;
 }
 
@@ -86,11 +85,9 @@
 	[self setFunction:nil];
 	[self setMessage:nil];
     if( nil != _toString ) {
-        [_toString release];
         _toString = nil;
     }
 	
-	[super dealloc];
 	
 }
 

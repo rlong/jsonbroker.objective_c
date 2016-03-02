@@ -46,10 +46,10 @@ static NSString* _libraryDirectory = nil;
         @throw  [JBBaseException baseExceptionWithOriginator:self line:__LINE__ faultStringFormat:@"0 == [paths count], searching for `NSApplicationSupportDirectory`"];
         
     } else if( 1 == [paths count] ) {
-        _applicationSupportDirectory = [[paths objectAtIndex:0] retain];
+        _applicationSupportDirectory = [paths objectAtIndex:0];
     } else {
         Log_warnInt([paths count]);
-        _applicationSupportDirectory = [[paths objectAtIndex:0] retain];
+        _applicationSupportDirectory = [paths objectAtIndex:0];
     }
 
     Log_debugString(_applicationSupportDirectory);
@@ -74,10 +74,10 @@ static NSString* _libraryDirectory = nil;
         @throw  [JBBaseException baseExceptionWithOriginator:self line:__LINE__ faultStringFormat:@"0 == [paths count], searching for `NSCachesDirectory`"];
         
     } else if( 1 == [paths count] ) {
-        _cachesDirectory = [[paths objectAtIndex:0] retain];
+        _cachesDirectory = [paths objectAtIndex:0];
     } else {
         Log_warnInt([paths count]);
-        _cachesDirectory = [[paths objectAtIndex:0] retain];
+        _cachesDirectory = [paths objectAtIndex:0];
     }
 
     Log_debugString(_cachesDirectory);
@@ -98,10 +98,10 @@ static NSString* _libraryDirectory = nil;
         @throw  [JBBaseException baseExceptionWithOriginator:self line:__LINE__ faultStringFormat:@"0 == [paths count], searching for `NSDocumentDirectory`"];
         
     } else if( 1 == [paths count] ) {
-        _documentDirectory = [[paths objectAtIndex:0] retain];
+        _documentDirectory = [paths objectAtIndex:0];
     } else {
         Log_warnInt([paths count]);
-        _documentDirectory = [[paths objectAtIndex:0] retain];
+        _documentDirectory = [paths objectAtIndex:0];
     }
     
     Log_debugString(_documentDirectory);
@@ -123,10 +123,10 @@ static NSString* _libraryDirectory = nil;
         @throw  [JBBaseException baseExceptionWithOriginator:self line:__LINE__ faultStringFormat:@"0 == [paths count], searching for `NSLibraryDirectory`"];
         
     } else if( 1 == [paths count] ) {
-        _libraryDirectory = [[paths objectAtIndex:0] retain];
+        _libraryDirectory = [paths objectAtIndex:0];
     } else {
         Log_warnInt([paths count]);
-        _libraryDirectory = [[paths objectAtIndex:0] retain];
+        _libraryDirectory = [paths objectAtIndex:0];
     }
     
     Log_debugString(_libraryDirectory);

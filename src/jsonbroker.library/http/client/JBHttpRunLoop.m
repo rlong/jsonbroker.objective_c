@@ -88,23 +88,19 @@ static JBHttpRunLoop* _instance = nil;
         
         answer = [call responseData];
         if( nil != answer ) { 
-            [[answer retain] autorelease];
         }
         
         *urlResponse = [call response];
         if( nil != *urlResponse ) { 
-            [[*urlResponse retain] autorelease];
         }
         
         if( nil != error ) {
             *error = [call error];
             if( nil != *error ) {
-                [[*error retain] autorelease];
-            }            
+            }
         }
     }
-    [call release];
-        
+    
     return answer;
 
 }
@@ -125,7 +121,7 @@ static JBHttpRunLoop* _instance = nil;
 -(void)main:(NSObject*)ignoredObject {
 	
 	
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+//	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
 	[[NSThread currentThread] setName:@"JBHttpRunLoop"];
 
@@ -144,7 +140,7 @@ static JBHttpRunLoop* _instance = nil;
 	
 	Log_debug( @"... Finished" );
 	
-	[pool release];
+//	[pool release];
 	
 }
 
@@ -177,7 +173,6 @@ static JBHttpRunLoop* _instance = nil;
 	[self setRunLoop:nil];
     [self setRunLoopInitialised:nil];
 	
-	[super dealloc];
 	
 }
 

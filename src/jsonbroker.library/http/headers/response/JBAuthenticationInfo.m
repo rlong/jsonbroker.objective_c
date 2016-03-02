@@ -22,7 +22,6 @@
 +(JBAuthenticationInfo*)buildFromString:(NSString*)authInfo {
 	
 	JBAuthenticationInfo* answer = [[JBAuthenticationInfo alloc] init];
-	[answer autorelease];
 	
 	JBAuthenticationHeaderScanner* authenticationHeaderScanner = [[JBAuthenticationHeaderScanner alloc] initWithHeaderValue:authInfo];
 	@try {
@@ -58,7 +57,6 @@
 		}
 	}
 	@finally {
-		[authenticationHeaderScanner release];
 	}
 	return answer;
 	
@@ -103,7 +101,6 @@
 	[self setQop:nil];
 	[self setRspauth:nil];
 	
-	[super dealloc];
 }
 
 #pragma mark fields

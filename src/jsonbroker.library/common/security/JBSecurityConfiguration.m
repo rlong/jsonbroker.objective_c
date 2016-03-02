@@ -79,7 +79,6 @@ static JBSecurityConfiguration* _test = nil;
     }
     
     _test = [JBSecurityConfiguration buildTestConfiguration];
-    [_test retain];
     
     return _test;
     
@@ -91,7 +90,6 @@ static JBSecurityConfiguration* _test = nil;
 +(JBSecurityConfiguration*)buildTestConfiguration {
     
     JBSecurityConfiguration* answer = [[JBSecurityConfiguration alloc] initWithIdentifier:[JBSubject TEST_REALM] configurationService:nil];
-    [answer autorelease];
     
     [answer addClient:[JBSubject TEST]];
     
@@ -186,7 +184,6 @@ static JBSecurityConfiguration* _test = nil;
                 Log_debugString( identifier );
                 
                 answer = [[JBSecurityConfiguration alloc] initWithIdentifier:identifier configurationService:configurationService];
-                [answer autorelease];
                 return answer;
             }
             
@@ -204,7 +201,6 @@ static JBSecurityConfiguration* _test = nil;
                 Log_debugString( identifier );
                 
                 answer = [[JBSecurityConfiguration alloc] initWithIdentifier:identifier configurationService:configurationService];
-                [answer autorelease];
                 return answer;
 
             }
@@ -212,7 +208,6 @@ static JBSecurityConfiguration* _test = nil;
             // ^^^ fix any badly formed 'identifier' in 'jsonbroker.SecurityConfiguration.json' (ref: B0312DC4-2B62-4BF4-B745-B1B99BE21D73)
             
             answer = [[JBSecurityConfiguration alloc] initWithValue:bundleData configurationService:configurationService];
-            [answer autorelease];
             return answer;
         }
     }
@@ -220,7 +215,6 @@ static JBSecurityConfiguration* _test = nil;
     Log_debugString( identifier );
     
     answer = [[JBSecurityConfiguration alloc] initWithIdentifier:identifier configurationService:configurationService];
-    [answer autorelease];
     
     return answer;
     
@@ -248,7 +242,6 @@ static JBSecurityConfiguration* _test = nil;
     {
         [_clients setObject:client forKey:subjectIdentifier];        
     }
-    [client release];
     
     
     JBSubject* server = [[JBSubject alloc] initWithUsername:_identifier realm:subjectIdentifier password:subjectPassword label:subjectLabel];
@@ -256,7 +249,6 @@ static JBSecurityConfiguration* _test = nil;
         
         [_servers setObject:server forKey:subjectIdentifier];
     }
-    [server release];
     
     [self save];
     
@@ -276,7 +268,6 @@ static JBSecurityConfiguration* _test = nil;
 -(JBJsonObject*)toJsonObject {
 
     JBJsonObject* answer = [[JBJsonObject alloc] init];
-    [answer autorelease];
     
     [answer setObject:_identifier forKey:@"identifier"];
     
@@ -294,13 +285,11 @@ static JBSecurityConfiguration* _test = nil;
                 
                 [subjects add:subjectData];
             }
-            [subjectData release];
             
         }
         
         [answer setObject:subjects forKey:@"subjects"];
     }
-    [subjects release];
     
     return answer;
     
@@ -480,7 +469,6 @@ static JBSecurityConfiguration* _test = nil;
     
     [self setRegisteredSubjects:nil];
     
-    [super dealloc];
 }
 
 #pragma mark fields

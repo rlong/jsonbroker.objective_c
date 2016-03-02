@@ -90,7 +90,6 @@
         [[_stack currentObject] setObject:jsonArray forKey:key];
         [_stack pushJsonArray:jsonArray];
     }
-    [jsonArray release];
     
 }
 
@@ -127,7 +126,6 @@
         [[_stack currentObject] setObject:jsonObject forKey:key];
         [_stack pushJsonObject:jsonObject];
     }
-    [jsonObject release];
 
     
 }
@@ -157,7 +155,6 @@
         [[_stack currentArray] add:jsonArray];
         [_stack pushJsonArray:jsonArray];
     }
-    [jsonArray release];
     
     
 }
@@ -196,7 +193,6 @@
         [[_stack currentArray] add:jsonObject];
         [_stack pushJsonObject:jsonObject];
     }
-    [jsonObject release];
     
 }
 
@@ -236,8 +232,6 @@
 	[self setStack:nil];
 	[self setObjectDocument:nil];
 	[self setArrayDocument:nil];
-
-	[super dealloc];
 	
 }
 

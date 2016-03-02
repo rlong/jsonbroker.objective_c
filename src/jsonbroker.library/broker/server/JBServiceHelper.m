@@ -18,7 +18,6 @@
 	
 	BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
     [e setErrorDomain:@"jsonbroker.ServiceHelper.METHOD_NOT_FOUND"];
-	[e autorelease];
     
     return e;
 

@@ -70,7 +70,6 @@
 	
 	[self setStringBuffer:nil];
 	 
-	[super dealloc];
 
 }
 	 

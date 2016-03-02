@@ -44,7 +44,6 @@
     NSDictionary* allHeaderFields = [httpResponse allHeaderFields];
     
     NSMutableDictionary* answer = [[NSMutableDictionary alloc] initWithCapacity:[allHeaderFields count]];
-    [answer autorelease];
     
     for( NSString* key in allHeaderFields ) {
         
@@ -94,7 +93,6 @@
 		BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
         [e setFaultCode:(int)[error code]];
 		[e setError:error];
-		[e autorelease];
 		
 		@throw e;
 		
@@ -117,7 +115,6 @@
                 [responseHandler handleResponseHeaders:responsehHeaders responseEntity:nil];
             } else {
                 JBDataEntity* dataEntity = [[JBDataEntity alloc] initWithData:data];
-                [dataEntity autorelease];
                 [responseHandler handleResponseHeaders:responsehHeaders responseEntity:dataEntity];                
             }
         }
@@ -195,7 +192,6 @@
     
     if( statusCode < 200 || statusCode > 299 ) {
         BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:[JBHttpStatus getReason:statusCode]];
-        [e autorelease];
         [e setFaultCode:statusCode];
         NSString* requestUri = [requestAdapter requestUri];
         [e addStringContext:requestUri withName:@"requestUri"];
@@ -214,7 +210,6 @@
     
     if( statusCode < 200 || statusCode > 299 ) {
         BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:[JBHttpStatus getReason:statusCode]];
-        [e autorelease];
         [e setFaultCode:statusCode];
         NSString* requestUri = [requestAdapter requestUri];
         [e addStringContext:requestUri withName:@"requestUri"];
@@ -307,7 +302,6 @@
     
     if( statusCode < 200 || statusCode > 299 ) {
         BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:[JBHttpStatus getReason:statusCode]];
-        [e autorelease];
         [e setFaultCode:statusCode];
         NSString* requestUri = [requestAdapter requestUri];
         [e addStringContext:requestUri withName:@"requestUri"];
@@ -326,7 +320,6 @@
     
     if( statusCode < 200 || statusCode > 299 ) {
         BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:[JBHttpStatus getReason:statusCode]];
-        [e autorelease];
         [e setFaultCode:statusCode];
         NSString* requestUri = [requestAdapter requestUri];
         [e addStringContext:requestUri withName:@"requestUri"];
@@ -360,7 +353,6 @@
 	
 
 	
-	[super dealloc];
 }
 
 #pragma mark -

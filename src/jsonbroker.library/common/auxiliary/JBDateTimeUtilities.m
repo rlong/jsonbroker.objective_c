@@ -46,7 +46,6 @@ static NSDateFormatter *dateFormatter4;
 	
 	if( 0 != success ) {
 		BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ callTo:@"gettimeofday" failedWithErrno:errno];
-		[e autorelease];
 		@throw e;
 	}
 }
@@ -98,7 +97,6 @@ static NSDateFormatter *dateFormatter4;
 	
 	NSString* technicalError = [NSString stringWithFormat:@"could not interpret '%@' as a date", string];
 	BaseException* e = [[BaseException alloc] initWithOriginator:self line:__LINE__ faultMessage:technicalError];
-	[e autorelease];
 	@throw e;
 	
 }

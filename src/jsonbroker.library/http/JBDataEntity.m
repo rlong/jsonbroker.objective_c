@@ -111,7 +111,6 @@
     }
 	[self setStreamContent:nil];
 
-    [super dealloc];
 	
 }
 

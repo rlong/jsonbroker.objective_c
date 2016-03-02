@@ -154,7 +154,6 @@ static NSString* _JSON_BROKER_SCHEME = @"jsonbroker:";
 	[self setCallbackAdapter:nil];
     
 	
-	[super dealloc];
 }
 
 #pragma mark fields

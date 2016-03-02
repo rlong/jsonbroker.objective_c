@@ -69,7 +69,7 @@ static JBHttpMethod* _POST = nil;
     JBHttpMethod* answer = [super init];
     
     if( nil != answer ) {
-        answer->_name = [name retain];
+        answer->_name = name;
         
     }
     
@@ -78,9 +78,6 @@ static JBHttpMethod* _POST = nil;
 
 -(void)dealloc {
 	
-    [_name release];
-	
-	[super dealloc];
 	
 }
 
