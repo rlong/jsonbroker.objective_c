@@ -9,7 +9,6 @@
 #import "JBEntity.h"
 
 
-__attribute__ ((deprecated)) // use CADataHelper & HLEntityHelper
 @interface JBDataHelper : NSObject
 
 

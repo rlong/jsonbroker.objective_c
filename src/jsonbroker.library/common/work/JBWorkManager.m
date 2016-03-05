@@ -18,13 +18,14 @@
 
 @implementation JBWorkManager
 
-static JBWorkQueue* _workQueue = nil; 
-static JBWorker** _workers = nil; 
+static JBWorkQueue* _workQueue = nil;
+static NSMutableArray* _workers = nil;
 
 
 +(void)initialize {
 	
 	_workQueue = [[JBWorkQueue alloc] init];
+    
 	
 }
 
@@ -38,16 +39,15 @@ static JBWorker** _workers = nil;
         return;
     }
     
-	_workers = malloc(sizeof(JBWorker*) * NUM_WORKERS);
+    _workers = [[NSMutableArray alloc] init];
     
 	for( int i = 0; i < NUM_WORKERS; i++ ) {
 		NSString* name = [NSString stringWithFormat:@"Worker.%d",i+1];
         
-		_workers[i] = [[JBWorker alloc] initWithName:name workQueue:_workQueue];
-        [_workers[i] start];
+        JBWorker* worker = [[JBWorker alloc] initWithName:name workQueue:_workQueue];
+        [worker start];
+        [_workers addObject:worker];
 	}
-	
-	
 	
 }
 

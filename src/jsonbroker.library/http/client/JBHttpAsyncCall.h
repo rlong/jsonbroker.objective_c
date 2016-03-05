@@ -13,7 +13,7 @@
 
     
     // delegate
-    id<JBHttpAsyncResponseHandler> _delegate;
+    __unsafe_unretained id<JBHttpAsyncResponseHandler> _delegate;
     //@property (nonatomic, assign) id<JBHttpAsyncResponseHandler> delegate;
     //@synthesize delegate = _delegate;
     

@@ -78,7 +78,7 @@
         
         // vvv some weirdness experienced between OSStatus and OSX 64 bit (just being sure)
         long longErrSecSuccess = errSecSuccess;
-        long longStatus = SecItemCopyMatching((CFDictionaryRef) attributeQuery, (CFTypeRef *) &passwordData);
+        long longStatus = SecItemCopyMatching((CFDictionaryRef) attributeQuery, (void *) &passwordData);
         // ^^^ some weirdness experienced between OSStatus and OSX 64 bit (just being sure)
 		
 		if( longErrSecSuccess != longStatus ) {
@@ -138,7 +138,7 @@
         
         // vvv some weirdness experienced between OSStatus and OSX 64 bit (just being sure)
         long longErrSecSuccess = errSecSuccess;
-        long longStatus = SecItemCopyMatching((CFDictionaryRef) attributeQuery, (CFTypeRef *) &passwordData);
+        long longStatus = SecItemCopyMatching((CFDictionaryRef) attributeQuery, (void *) &passwordData);
         // ^^^ some weirdness experienced between OSStatus and OSX 64 bit (just being sure)
 
         
@@ -190,7 +190,7 @@
         // vvv some weirdness experienced between OSStatus and OSX 64 bit (just being sure)
         long longErrSecSuccess = errSecSuccess;
         long longErrSecItemNotFound = errSecItemNotFound;
-        long longStatus = SecItemCopyMatching((CFDictionaryRef) attributeQuery, (CFTypeRef *) &attributes);
+        long longStatus = SecItemCopyMatching((CFDictionaryRef) attributeQuery, (void *) &attributes);
         // ^^^ some weirdness experienced between OSStatus and OSX 64 bit (just being sure)
 
 		

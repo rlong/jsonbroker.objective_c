@@ -10,7 +10,7 @@
 @interface JBMainThreadJobListener1 : NSObject <JBJobListener> {
     
     // delegate
-	id<JBJobListener> _delegate;
+	__unsafe_unretained  id<JBJobListener> _delegate;
 	//@property (nonatomic, retain) id<JobListener> delegate;
 	//@synthesize delegate = _delegate;
 

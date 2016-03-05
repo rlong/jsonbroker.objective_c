@@ -9,7 +9,7 @@
 @interface JBObjectReference : NSObject {
 	
 	
-	NSObject* _object;
+	__unsafe_unretained NSObject* _object;
 	//@property (nonatomic, assign) NSObject* object;
 	//@synthesize object = _object;
 	
