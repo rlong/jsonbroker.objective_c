@@ -187,5 +187,7 @@
 @end
 
 
+// vvv see CAGethostbyaddrRequest.m
+// NSString* const GethostbyaddrRequest_GethostbyaddrCompleted_Notification = @"GethostbyaddrRequest_GethostbyaddrCompleted_Notification";
+// ^^^ see CAGethostbyaddrRequest.m
 
-NSString* const GethostbyaddrRequest_GethostbyaddrCompleted_Notification = @"GethostbyaddrRequest_GethostbyaddrCompleted_Notification";
