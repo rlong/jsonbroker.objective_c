@@ -52,7 +52,8 @@
 
 #define _BUFFER_SIZE 8 * 1024
 
-const UInt8 _CARRAIGE_RETURN_AND_NEWLINE[2] = {0x0d,0x0a};
+// const UInt8 _CARRAIGE_RETURN_AND_NEWLINE[2] = {0x0d,0x0a};
+extern const UInt8 _CARRAIGE_RETURN_AND_NEWLINE[2]; // <<< include 'HLMultiPartReader' in project
 
 +(NSUInteger)BUFFER_SIZE {
     return _BUFFER_SIZE;
