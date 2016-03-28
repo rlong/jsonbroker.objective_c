@@ -8,7 +8,9 @@
 #import "JBMimeTypes.h"
 
 
-extern NSString* const MimeTypes_APPLICATION_JSON;
+extern NSString* const MimeTypes_APPLICATION_JSON; // defined in 'HLMimeTypes.m'
+extern NSString* const MimeTypes_AUDIO_MPEG; // defined in 'HLMimeTypes.m'
+extern NSString* const MimeTypes_VIDEO_MP4; // defined in 'HLMimeTypes.m'
 
 @implementation JBMimeTypes
 
@@ -59,9 +61,9 @@ static NSMutableDictionary* mimeTypes = nil;
 
 @end
 
-NSString* const MimeTypes_APPLICATION_JSON = @"application/json";
-
-NSString* const MimeTypes_AUDIO_MPEG = @"audio/mpeg";
-
-NSString* const MimeTypes_VIDEO_MP4 = @"video/mp4";
-
+// NSString* const MimeTypes_APPLICATION_JSON = @"application/json"; // defined in 'HLMimeTypes.m'
+//
+// NSString* const MimeTypes_AUDIO_MPEG = @"audio/mpeg"; // defined in 'HLMimeTypes.m'
+//
+// NSString* const MimeTypes_VIDEO_MP4 = @"video/mp4"; // defined in 'HLMimeTypes.m'
+//
